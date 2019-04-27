@@ -15,3 +15,11 @@ It is assumed that the concrete syntax is graphical only, thus models are manipu
 
 ## Contents
 This repository contains the source code of the DSM editor generator. It also contains examples of editors that are output by the tool along with all the required models. Finally, it also contains the data set and results of a performance evaluation of the generator.
+
+
+## Installation requirements
+* Eclipse Photon
+* Epsilon plug-in version 
+* ...
+
+## How to use the DSM edtior generator
