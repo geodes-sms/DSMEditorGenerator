@@ -22,21 +22,23 @@ This repository contains the source code of the DSM editor generator. It also co
 * Epsilon plug-in version 1.4 (available in eclipse marketplace)
 * Python 2.7 (https://www.python.org/download/releases/2.7/)
 * SCCD 0.9 (https://msdl.uantwerpen.be/git/simon/SCCD/src/master)
+* Chrome browser or equivalent
 
 ## How to use the DSM edtior generator
-* Follow requirments instalation procedures
+* Follow requirment's instalation procedures
 * Place dependency plugins in your eclipse dropin folder
 * Import transformation2scd project into your workspace
 * Import example into workspace
-* Run \<Example_Name\>Run.launch
-* Find and replace in /OutModels/\<Example_Name\>.js instances of "and" for "&&"
-* Open /Test \<Example_Name\>/OutModels/\<Example_Name\>.html in a browser
+* Inside `/Test <Example_Name>/` run `<Example_Name>Run.launch`
+* Find and replace in `/Test <Example_Name>/OutModels/<Example_Name>.js` instances of `and` for `&&`
+* Open `/Test <Example_Name>/OutModels/<Example_Name>.html` in a browser
 
 ## Example requirements
 * Chrome browser or equivalent
 * Unicode fonts for best viewing
 
 ## How to use the example DSM edtiors
-* Open /Test \<Example_Name\>/OutModels/\<Example_Name\>.html in a browser
+* Download `/Test <Example_Name>/OutModels/`
+* Open `<Example_Name>.html` in a browser
 * Music03 - Select note length in toolbar. Use keys [Q,W,E,R,T,Y,U] as input.
 * PacMan03 - Use [Esc] key to exit properties tab, use [Del] to remove last selected insance
