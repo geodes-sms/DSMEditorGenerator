@@ -1,0 +1,25 @@
+rule CreateXML 
+	transform aDiagram : SC!Diagram {
+	
+	// The EGL template to be invoked
+	//template : "generatesccd2.egl"
+	template : "generatesccd2javascript.egl"
+	
+	// Output file
+	//target : "../../SCCDModels/OutModels/"+ aDiagram.name +".xml"
+	target : "../../InteractionModels/Test "+ aDiagram.name +"/OutModels/" + aDiagram.name +".xml"
+	
+}
+
+rule CreateBat
+	transform bat : SC!Diagram {
+	
+	
+	// The EGL template to be invoked
+	template : "generatebat2javascript.egl"
+	
+	// Output file
+	//target : "../../SCCDModels/OutModels/compile"+ bat.name +".bat"
+	target : "../../InteractionModels/Test "+ bat.name +"/OutModels/compile.bat"
+	
+}

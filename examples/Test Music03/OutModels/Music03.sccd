@@ -1,0 +1,1699 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sccd:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:sccd="http://www.example.org/sccd" name="Music03" description="RunGhostGameofLifeEditor">
+  <class name="Interaction">
+    <attributes name="context" type="String"/>
+    <scxml initialState="//@class.0/@scxml.0/@parallel.0">
+      <parallel id="System">
+        <states id="LayercommonTools" initial="//@class.0/@scxml.0/@parallel.0/@states.0/@states.0">
+          <states id="s0">
+            <transition event="select5" name="select5" target="//@class.0/@scxml.0/@parallel.0/@states.0/@states.0"/>
+            <ielement id="commonTools" value="0"/>
+            <ielement id="newModel"/>
+          </states>
+        </states>
+        <states id="LayertimeBar" initial="//@class.0/@scxml.0/@parallel.0/@states.1/@states.0">
+          <states id="s1">
+            <transition event="select0" name="select0" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.1">
+              <script script="screenActive.call(this,'fullTime',1);"/>
+            </transition>
+            <transition event="select1" name="select1" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.2">
+              <script script="screenActive.call(this,'halfTime',1);"/>
+            </transition>
+            <transition event="select2" name="select2" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.3">
+              <script script="screenActive.call(this,'quarterTime',1);"/>
+            </transition>
+            <transition event="select3" name="select3" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.4">
+              <script script="screenActive.call(this,'eighthTime',1);"/>
+            </transition>
+            <transition event="select4" name="select4" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.5">
+              <script script="screenActive.call(this,'timedMode',1);"/>
+              <script script="screenActive.call(this,'eighthTime',0);"/>
+            </transition>
+            <ielement id="timeBar" value="0"/>
+            <ielement id="fullTime"/>
+            <ielement id="halfTime"/>
+            <ielement id="quarterTime"/>
+            <ielement id="eighthTime"/>
+            <ielement id="timedMode"/>
+          </states>
+          <states id="s6">
+            <transition event="tapC6" name="tapC6" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.1"/>
+            <transition event="select7" name="select7" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.3">
+              <script script="screenActive.call(this,'quarterTime',1);"/>
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="tapF8" name="tapF8" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.1"/>
+            <transition event="select9" name="select9" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.4">
+              <script script="screenActive.call(this,'eighthTime',1);"/>
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="tapD10" name="tapD10" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.1"/>
+            <transition event="select11" name="select11" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'timedMode',1);"/>
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="tapE12" name="tapE12" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.1"/>
+            <transition event="tapG13" name="tapG13" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.1"/>
+            <transition event="tapB14" name="tapB14" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.1"/>
+            <transition event="tapA15" name="tapA15" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.1"/>
+            <transition event="select16" name="select16" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.2">
+              <script script="screenActive.call(this,'halfTime',1);"/>
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <ielement id="timeBar" value="0"/>
+            <ielement id="fullTime" value="active"/>
+            <ielement id="halfTime"/>
+            <ielement id="quarterTime"/>
+            <ielement id="eighthTime"/>
+            <ielement id="timedMode"/>
+          </states>
+          <states id="s7">
+            <transition event="tapF17" name="tapF17" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.2"/>
+            <transition event="select18" name="select18" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.4">
+              <script script="screenActive.call(this,'eighthTime',1);"/>
+              <script script="screenActive.call(this,'halfTime',0);"/>
+            </transition>
+            <transition event="select19" name="select19" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.3">
+              <script script="screenActive.call(this,'quarterTime',1);"/>
+              <script script="screenActive.call(this,'halfTime',0);"/>
+            </transition>
+            <transition event="select20" name="select20" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.1">
+              <script script="screenActive.call(this,'fullTime',1);"/>
+              <script script="screenActive.call(this,'halfTime',0);"/>
+            </transition>
+            <transition event="tapG21" name="tapG21" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.2"/>
+            <transition event="tapA22" name="tapA22" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.2"/>
+            <transition event="select23" name="select23" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'timedMode',1);"/>
+              <script script="screenActive.call(this,'halfTime',0);"/>
+            </transition>
+            <transition event="tapD24" name="tapD24" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.2"/>
+            <transition event="tapE25" name="tapE25" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.2"/>
+            <transition event="tapC26" name="tapC26" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.2"/>
+            <transition event="tapB27" name="tapB27" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.2"/>
+            <ielement id="timeBar" value="0"/>
+            <ielement id="fullTime"/>
+            <ielement id="halfTime" value="active"/>
+            <ielement id="quarterTime"/>
+            <ielement id="eighthTime"/>
+            <ielement id="timedMode"/>
+          </states>
+          <states id="s8">
+            <transition event="select28" name="select28" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.1">
+              <script script="screenActive.call(this,'fullTime',1);"/>
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+            </transition>
+            <transition event="select29" name="select29" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'timedMode',1);"/>
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+            </transition>
+            <transition event="tapF30" name="tapF30" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.3"/>
+            <transition event="select31" name="select31" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.2">
+              <script script="screenActive.call(this,'halfTime',1);"/>
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+            </transition>
+            <transition event="tapG32" name="tapG32" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.3"/>
+            <transition event="tapE33" name="tapE33" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.3"/>
+            <transition event="tapC34" name="tapC34" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.3"/>
+            <transition event="select35" name="select35" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.4">
+              <script script="screenActive.call(this,'eighthTime',1);"/>
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+            </transition>
+            <transition event="tapA36" name="tapA36" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.3"/>
+            <transition event="tapB37" name="tapB37" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.3"/>
+            <transition event="tapD38" name="tapD38" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.3"/>
+            <ielement id="timeBar" value="0"/>
+            <ielement id="fullTime"/>
+            <ielement id="halfTime"/>
+            <ielement id="quarterTime" value="active"/>
+            <ielement id="eighthTime"/>
+            <ielement id="timedMode"/>
+          </states>
+          <states id="s9">
+            <transition event="tapF39" name="tapF39" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.4"/>
+            <transition event="tapE40" name="tapE40" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.4"/>
+            <transition event="tapG41" name="tapG41" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.4"/>
+            <transition event="tapD42" name="tapD42" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.4"/>
+            <transition event="select43" name="select43" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.3">
+              <script script="screenActive.call(this,'quarterTime',1);"/>
+              <script script="screenActive.call(this,'eighthTime',0);"/>
+            </transition>
+            <transition event="tapB44" name="tapB44" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.4"/>
+            <transition event="tapA45" name="tapA45" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.4"/>
+            <transition event="select46" name="select46" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.1">
+              <script script="screenActive.call(this,'fullTime',1);"/>
+              <script script="screenActive.call(this,'eighthTime',0);"/>
+            </transition>
+            <transition event="select47" name="select47" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'timedMode',1);"/>
+              <script script="screenActive.call(this,'eighthTime',0);"/>
+            </transition>
+            <transition event="select48" name="select48" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.2">
+              <script script="screenActive.call(this,'halfTime',1);"/>
+              <script script="screenActive.call(this,'eighthTime',0);"/>
+            </transition>
+            <transition event="tapC49" name="tapC49" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.4"/>
+            <ielement id="timeBar" value="0"/>
+            <ielement id="fullTime"/>
+            <ielement id="halfTime"/>
+            <ielement id="quarterTime"/>
+            <ielement id="eighthTime" value="active"/>
+            <ielement id="timedMode"/>
+          </states>
+          <states id="s10">
+            <transition event="pat50" name="pat50" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.7">
+              <script script="screenActive.call(this,'eighthTime',1);"/>
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+              <script script="screenActive.call(this,'halfTime',0);"/>
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <ielement id="timeBar" value="0"/>
+            <ielement id="fullTime"/>
+            <ielement id="halfTime"/>
+            <ielement id="quarterTime"/>
+            <ielement id="eighthTime" value="newtral"/>
+            <ielement id="timedMode" value="active"/>
+          </states>
+          <states id="s12">
+            <transition event="pat51" name="pat51" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.7">
+              <script script="screenActive.call(this,'eighthTime',1);"/>
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+              <script script="screenActive.call(this,'halfTime',0);"/>
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="select52" name="select52" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.3">
+              <script script="screenActive.call(this,'quarterTime',1);"/>
+              <script script="screenActive.call(this,'timedMode',0);"/>
+            </transition>
+            <transition event="select53" name="select53" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.1">
+              <script script="screenActive.call(this,'fullTime',1);"/>
+              <script script="screenActive.call(this,'timedMode',0);"/>
+            </transition>
+            <transition event="select54" name="select54" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.2">
+              <script script="screenActive.call(this,'halfTime',1);"/>
+              <script script="screenActive.call(this,'timedMode',0);"/>
+            </transition>
+            <transition event="select55" name="select55" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.4">
+              <script script="screenActive.call(this,'eighthTime',1);"/>
+              <script script="screenActive.call(this,'timedMode',0);"/>
+            </transition>
+            <transition event="pat65" name="pat65" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.7">
+              <script script="screenActive.call(this,'eighthTime',1);"/>
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+              <script script="screenActive.call(this,'halfTime',0);"/>
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="select66" name="select66" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.3">
+              <script script="screenActive.call(this,'quarterTime',1);"/>
+              <script script="screenActive.call(this,'timedMode',0);"/>
+            </transition>
+            <transition event="select67" name="select67" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.1">
+              <script script="screenActive.call(this,'fullTime',1);"/>
+              <script script="screenActive.call(this,'timedMode',0);"/>
+            </transition>
+            <transition event="select68" name="select68" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.2">
+              <script script="screenActive.call(this,'halfTime',1);"/>
+              <script script="screenActive.call(this,'timedMode',0);"/>
+            </transition>
+            <transition event="select69" name="select69" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.4">
+              <script script="screenActive.call(this,'eighthTime',1);"/>
+              <script script="screenActive.call(this,'timedMode',0);"/>
+            </transition>
+            <ielement id="timeBar" value="0"/>
+            <ielement id="fullTime"/>
+            <ielement id="halfTime"/>
+            <ielement id="quarterTime"/>
+            <ielement id="eighthTime"/>
+            <ielement id="timedMode" value="active"/>
+          </states>
+          <states id="s13">
+            <transition event="tapE56" name="tapE56" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'eighthTime',0);"/>
+            </transition>
+            <transition event="pat57" name="pat57" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.7">
+              <script script="screenActive.call(this,'eighthTime',1);"/>
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+              <script script="screenActive.call(this,'halfTime',0);"/>
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="tapD58" name="tapD58" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'eighthTime',0);"/>
+            </transition>
+            <transition event="tapA59" name="tapA59" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'eighthTime',0);"/>
+            </transition>
+            <transition event="tapC60" name="tapC60" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'eighthTime',0);"/>
+            </transition>
+            <transition event="_after261" name="_after261" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.8">
+              <script script="screenActive.call(this,'eighthTime',0);"/>
+              <script script="screenActive.call(this,'quarterTime',1);"/>
+            </transition>
+            <transition event="tapB62" name="tapB62" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'eighthTime',0);"/>
+            </transition>
+            <transition event="tapG63" name="tapG63" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'eighthTime',0);"/>
+            </transition>
+            <transition event="tapF64" name="tapF64" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'eighthTime',0);"/>
+            </transition>
+            <transition event="tapE79" name="tapE79" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'eighthTime',0);"/>
+            </transition>
+            <transition event="pat80" name="pat80" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.7">
+              <script script="screenActive.call(this,'eighthTime',1);"/>
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+              <script script="screenActive.call(this,'halfTime',0);"/>
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="tapD81" name="tapD81" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'eighthTime',0);"/>
+            </transition>
+            <transition event="tapA82" name="tapA82" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'eighthTime',0);"/>
+            </transition>
+            <transition event="tapC83" name="tapC83" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'eighthTime',0);"/>
+            </transition>
+            <transition event="_after284" name="_after284" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.8">
+              <script script="screenActive.call(this,'eighthTime',0);"/>
+              <script script="screenActive.call(this,'quarterTime',1);"/>
+            </transition>
+            <transition event="tapB85" name="tapB85" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'eighthTime',0);"/>
+            </transition>
+            <transition event="tapG86" name="tapG86" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'eighthTime',0);"/>
+            </transition>
+            <transition event="tapF87" name="tapF87" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'eighthTime',0);"/>
+            </transition>
+            <ielement id="timeBar" value="0"/>
+            <ielement id="fullTime"/>
+            <ielement id="halfTime"/>
+            <ielement id="quarterTime"/>
+            <ielement id="eighthTime" value="active"/>
+            <ielement id="timedMode" value="active"/>
+          </states>
+          <states id="s14">
+            <transition event="tapD70" name="tapD70" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+            </transition>
+            <transition event="pat71" name="pat71" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.7">
+              <script script="screenActive.call(this,'eighthTime',1);"/>
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+              <script script="screenActive.call(this,'halfTime',0);"/>
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="tapA72" name="tapA72" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+            </transition>
+            <transition event="tapF73" name="tapF73" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+            </transition>
+            <transition event="_after274" name="_after274" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.9">
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+              <script script="screenActive.call(this,'halfTime',1);"/>
+            </transition>
+            <transition event="tapC75" name="tapC75" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+            </transition>
+            <transition event="tapE76" name="tapE76" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+            </transition>
+            <transition event="tapG77" name="tapG77" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+            </transition>
+            <transition event="tapB78" name="tapB78" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+            </transition>
+            <transition event="tapD97" name="tapD97" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+            </transition>
+            <transition event="pat98" name="pat98" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.7">
+              <script script="screenActive.call(this,'eighthTime',1);"/>
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+              <script script="screenActive.call(this,'halfTime',0);"/>
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="tapA99" name="tapA99" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+            </transition>
+            <transition event="tapF100" name="tapF100" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+            </transition>
+            <transition event="_after2101" name="_after2101" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.9">
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+              <script script="screenActive.call(this,'halfTime',1);"/>
+            </transition>
+            <transition event="tapC102" name="tapC102" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+            </transition>
+            <transition event="tapE103" name="tapE103" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+            </transition>
+            <transition event="tapG104" name="tapG104" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+            </transition>
+            <transition event="tapB105" name="tapB105" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+            </transition>
+            <ielement id="timeBar" value="0"/>
+            <ielement id="fullTime"/>
+            <ielement id="halfTime"/>
+            <ielement id="quarterTime" value="active"/>
+            <ielement id="eighthTime"/>
+            <ielement id="timedMode" value="active"/>
+          </states>
+          <states id="s15">
+            <transition event="pat88" name="pat88" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.7">
+              <script script="screenActive.call(this,'eighthTime',1);"/>
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+              <script script="screenActive.call(this,'halfTime',0);"/>
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="tapA89" name="tapA89" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'halfTime',0);"/>
+            </transition>
+            <transition event="_after490" name="_after490" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.10">
+              <script script="screenActive.call(this,'halfTime',0);"/>
+              <script script="screenActive.call(this,'fullTime',1);"/>
+            </transition>
+            <transition event="tapB91" name="tapB91" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'halfTime',0);"/>
+            </transition>
+            <transition event="tapG92" name="tapG92" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'halfTime',0);"/>
+            </transition>
+            <transition event="tapD93" name="tapD93" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'halfTime',0);"/>
+            </transition>
+            <transition event="tapE94" name="tapE94" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'halfTime',0);"/>
+            </transition>
+            <transition event="tapF95" name="tapF95" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'halfTime',0);"/>
+            </transition>
+            <transition event="tapC96" name="tapC96" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'halfTime',0);"/>
+            </transition>
+            <transition event="pat114" name="pat114" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.7">
+              <script script="screenActive.call(this,'eighthTime',1);"/>
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+              <script script="screenActive.call(this,'halfTime',0);"/>
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="tapA115" name="tapA115" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'halfTime',0);"/>
+            </transition>
+            <transition event="_after4116" name="_after4116" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.10">
+              <script script="screenActive.call(this,'halfTime',0);"/>
+              <script script="screenActive.call(this,'fullTime',1);"/>
+            </transition>
+            <transition event="tapB117" name="tapB117" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'halfTime',0);"/>
+            </transition>
+            <transition event="tapG118" name="tapG118" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'halfTime',0);"/>
+            </transition>
+            <transition event="tapD119" name="tapD119" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'halfTime',0);"/>
+            </transition>
+            <transition event="tapE120" name="tapE120" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'halfTime',0);"/>
+            </transition>
+            <transition event="tapF121" name="tapF121" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'halfTime',0);"/>
+            </transition>
+            <transition event="tapC122" name="tapC122" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'halfTime',0);"/>
+            </transition>
+            <ielement id="timeBar" value="0"/>
+            <ielement id="fullTime"/>
+            <ielement id="halfTime" value="active"/>
+            <ielement id="quarterTime"/>
+            <ielement id="eighthTime"/>
+            <ielement id="timedMode" value="active"/>
+          </states>
+          <states id="s16">
+            <transition event="tapC106" name="tapC106" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="pat107" name="pat107" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.7">
+              <script script="screenActive.call(this,'eighthTime',1);"/>
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+              <script script="screenActive.call(this,'halfTime',0);"/>
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="tapE108" name="tapE108" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="tapA109" name="tapA109" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="tapF110" name="tapF110" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="tapD111" name="tapD111" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="tapB112" name="tapB112" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="tapG113" name="tapG113" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="tapC123" name="tapC123" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="pat124" name="pat124" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.7">
+              <script script="screenActive.call(this,'eighthTime',1);"/>
+              <script script="screenActive.call(this,'quarterTime',0);"/>
+              <script script="screenActive.call(this,'halfTime',0);"/>
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="tapE125" name="tapE125" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="tapA126" name="tapA126" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="tapF127" name="tapF127" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="tapD128" name="tapD128" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="tapB129" name="tapB129" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <transition event="tapG130" name="tapG130" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.6">
+              <script script="screenActive.call(this,'fullTime',0);"/>
+            </transition>
+            <ielement id="timeBar" value="0"/>
+            <ielement id="fullTime" value="active"/>
+            <ielement id="halfTime"/>
+            <ielement id="quarterTime"/>
+            <ielement id="eighthTime"/>
+            <ielement id="timedMode" value="active"/>
+          </states>
+        </states>
+        <states id="Layercanvas" initial="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+          <states id="s2">
+            <transition event="select5" name="select5" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.newModel();"/>
+            </transition>
+            <transition event="tapC6" name="tapC6" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.fulldoadd();"/>
+            </transition>
+            <transition event="tapF8" name="tapF8" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.fullfaadd();"/>
+            </transition>
+            <transition event="tapD10" name="tapD10" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.fullreadd();"/>
+            </transition>
+            <transition event="tapE12" name="tapE12" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.fullmiadd();"/>
+            </transition>
+            <transition event="tapG13" name="tapG13" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.fullsoladd();"/>
+            </transition>
+            <transition event="tapB14" name="tapB14" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.fullsiadd();"/>
+            </transition>
+            <transition event="tapA15" name="tapA15" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.fulllaadd();"/>
+            </transition>
+            <transition event="tapF17" name="tapF17" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.halffaadd();"/>
+            </transition>
+            <transition event="tapG21" name="tapG21" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.halfsoladd();"/>
+            </transition>
+            <transition event="tapA22" name="tapA22" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.halflaadd();"/>
+            </transition>
+            <transition event="tapD24" name="tapD24" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.halfreadd();"/>
+            </transition>
+            <transition event="tapE25" name="tapE25" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.halfmiadd();"/>
+            </transition>
+            <transition event="tapC26" name="tapC26" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.halfdoadd();"/>
+            </transition>
+            <transition event="tapB27" name="tapB27" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.halfsiadd();"/>
+            </transition>
+            <transition event="tapF30" name="tapF30" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.quarterfaadd();"/>
+            </transition>
+            <transition event="tapG32" name="tapG32" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.quartersoladd();"/>
+            </transition>
+            <transition event="tapE33" name="tapE33" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.quartermiadd();"/>
+            </transition>
+            <transition event="tapC34" name="tapC34" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.quarterdoadd();"/>
+            </transition>
+            <transition event="tapA36" name="tapA36" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.quarterlaadd();"/>
+            </transition>
+            <transition event="tapB37" name="tapB37" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.quartersiadd();"/>
+            </transition>
+            <transition event="tapD38" name="tapD38" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.quarterreadd();"/>
+            </transition>
+            <transition event="tapF39" name="tapF39" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.eighthfaadd();"/>
+            </transition>
+            <transition event="tapE40" name="tapE40" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.eighthmiadd();"/>
+            </transition>
+            <transition event="tapG41" name="tapG41" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.eighthsoladd();"/>
+            </transition>
+            <transition event="tapD42" name="tapD42" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.eighthreadd();"/>
+            </transition>
+            <transition event="tapB44" name="tapB44" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.eighthsiadd();"/>
+            </transition>
+            <transition event="tapA45" name="tapA45" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.eighthlaadd();"/>
+            </transition>
+            <transition event="tapC49" name="tapC49" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.eighthdoadd();"/>
+            </transition>
+            <transition event="tapE56" name="tapE56" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.eighthmiadd();"/>
+            </transition>
+            <transition event="tapD58" name="tapD58" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.eighthreadd();"/>
+            </transition>
+            <transition event="tapA59" name="tapA59" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.eighthlaadd();"/>
+            </transition>
+            <transition event="tapC60" name="tapC60" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.eighthdoadd();"/>
+            </transition>
+            <transition event="tapB62" name="tapB62" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.eighthsiadd();"/>
+            </transition>
+            <transition event="tapG63" name="tapG63" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.eighthsoladd();"/>
+            </transition>
+            <transition event="tapF64" name="tapF64" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.eighthfaadd();"/>
+            </transition>
+            <transition event="tapD70" name="tapD70" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.quarterreadd();"/>
+            </transition>
+            <transition event="tapA72" name="tapA72" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.quarterlaadd();"/>
+            </transition>
+            <transition event="tapF73" name="tapF73" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.quarterfaadd();"/>
+            </transition>
+            <transition event="tapC75" name="tapC75" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.quarterdoadd();"/>
+            </transition>
+            <transition event="tapE76" name="tapE76" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.quartermiadd();"/>
+            </transition>
+            <transition event="tapG77" name="tapG77" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.quartersoladd();"/>
+            </transition>
+            <transition event="tapB78" name="tapB78" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.quartersiadd();"/>
+            </transition>
+            <transition event="tapE79" name="tapE79" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.eighthmiadd();"/>
+            </transition>
+            <transition event="tapD81" name="tapD81" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.eighthreadd();"/>
+            </transition>
+            <transition event="tapA82" name="tapA82" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.eighthlaadd();"/>
+            </transition>
+            <transition event="tapC83" name="tapC83" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.eighthdoadd();"/>
+            </transition>
+            <transition event="tapB85" name="tapB85" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.eighthsiadd();"/>
+            </transition>
+            <transition event="tapG86" name="tapG86" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.eighthsoladd();"/>
+            </transition>
+            <transition event="tapF87" name="tapF87" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.eighthfaadd();"/>
+            </transition>
+            <transition event="tapA89" name="tapA89" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.halflaadd();"/>
+            </transition>
+            <transition event="tapB91" name="tapB91" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.halfsiadd();"/>
+            </transition>
+            <transition event="tapG92" name="tapG92" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.halfsoladd();"/>
+            </transition>
+            <transition event="tapD93" name="tapD93" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.halfreadd();"/>
+            </transition>
+            <transition event="tapE94" name="tapE94" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.halfmiadd();"/>
+            </transition>
+            <transition event="tapF95" name="tapF95" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.halffaadd();"/>
+            </transition>
+            <transition event="tapC96" name="tapC96" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.halfdoadd();"/>
+            </transition>
+            <transition event="tapD97" name="tapD97" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.quarterreadd();"/>
+            </transition>
+            <transition event="tapA99" name="tapA99" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.quarterlaadd();"/>
+            </transition>
+            <transition event="tapF100" name="tapF100" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.quarterfaadd();"/>
+            </transition>
+            <transition event="tapC102" name="tapC102" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.quarterdoadd();"/>
+            </transition>
+            <transition event="tapE103" name="tapE103" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.quartermiadd();"/>
+            </transition>
+            <transition event="tapG104" name="tapG104" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.quartersoladd();"/>
+            </transition>
+            <transition event="tapB105" name="tapB105" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.quartersiadd();"/>
+            </transition>
+            <transition event="tapC106" name="tapC106" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.fulldoadd();"/>
+            </transition>
+            <transition event="tapE108" name="tapE108" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.fullmiadd();"/>
+            </transition>
+            <transition event="tapA109" name="tapA109" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.fulllaadd();"/>
+            </transition>
+            <transition event="tapF110" name="tapF110" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.fullfaadd();"/>
+            </transition>
+            <transition event="tapD111" name="tapD111" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.fullreadd();"/>
+            </transition>
+            <transition event="tapB112" name="tapB112" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.fullsiadd();"/>
+            </transition>
+            <transition event="tapG113" name="tapG113" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.fullsoladd();"/>
+            </transition>
+            <transition event="tapA115" name="tapA115" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.halflaadd();"/>
+            </transition>
+            <transition event="tapB117" name="tapB117" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.halfsiadd();"/>
+            </transition>
+            <transition event="tapG118" name="tapG118" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.halfsoladd();"/>
+            </transition>
+            <transition event="tapD119" name="tapD119" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.halfreadd();"/>
+            </transition>
+            <transition event="tapE120" name="tapE120" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.halfmiadd();"/>
+            </transition>
+            <transition event="tapF121" name="tapF121" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.halffaadd();"/>
+            </transition>
+            <transition event="tapC122" name="tapC122" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.halfdoadd();"/>
+            </transition>
+            <transition event="tapC123" name="tapC123" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.fulldoadd();"/>
+            </transition>
+            <transition event="tapE125" name="tapE125" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.fullmiadd();"/>
+            </transition>
+            <transition event="tapA126" name="tapA126" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.fulllaadd();"/>
+            </transition>
+            <transition event="tapF127" name="tapF127" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.fullfaadd();"/>
+            </transition>
+            <transition event="tapD128" name="tapD128" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.fullreadd();"/>
+            </transition>
+            <transition event="tapB129" name="tapB129" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.fullsiadd();"/>
+            </transition>
+            <transition event="tapG130" name="tapG130" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.fullsoladd();"/>
+            </transition>
+            <ielement id="23"/>
+          </states>
+        </states>
+        <states id="Layercursor" initial="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0">
+          <states id="s3">
+            <transition event="tapC6" name="tapC6" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapF8" name="tapF8" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapD10" name="tapD10" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapE12" name="tapE12" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapG13" name="tapG13" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapB14" name="tapB14" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapA15" name="tapA15" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapF17" name="tapF17" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapG21" name="tapG21" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapA22" name="tapA22" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapD24" name="tapD24" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapE25" name="tapE25" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapC26" name="tapC26" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapB27" name="tapB27" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapF30" name="tapF30" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapG32" name="tapG32" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapE33" name="tapE33" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapC34" name="tapC34" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapA36" name="tapA36" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapB37" name="tapB37" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapD38" name="tapD38" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapF39" name="tapF39" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapE40" name="tapE40" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapG41" name="tapG41" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapD42" name="tapD42" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapB44" name="tapB44" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapA45" name="tapA45" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapC49" name="tapC49" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapE56" name="tapE56" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapD58" name="tapD58" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapA59" name="tapA59" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapC60" name="tapC60" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapB62" name="tapB62" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapG63" name="tapG63" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapF64" name="tapF64" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapD70" name="tapD70" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapA72" name="tapA72" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapF73" name="tapF73" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapC75" name="tapC75" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapE76" name="tapE76" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapG77" name="tapG77" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapB78" name="tapB78" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapE79" name="tapE79" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapD81" name="tapD81" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapA82" name="tapA82" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapC83" name="tapC83" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapB85" name="tapB85" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapG86" name="tapG86" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapF87" name="tapF87" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapA89" name="tapA89" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapB91" name="tapB91" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapG92" name="tapG92" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapD93" name="tapD93" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapE94" name="tapE94" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapF95" name="tapF95" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapC96" name="tapC96" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapD97" name="tapD97" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapA99" name="tapA99" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapF100" name="tapF100" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapC102" name="tapC102" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapE103" name="tapE103" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapG104" name="tapG104" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapB105" name="tapB105" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapC106" name="tapC106" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapE108" name="tapE108" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapA109" name="tapA109" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapF110" name="tapF110" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapD111" name="tapD111" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapB112" name="tapB112" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapG113" name="tapG113" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapA115" name="tapA115" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapB117" name="tapB117" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapG118" name="tapG118" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapD119" name="tapD119" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapE120" name="tapE120" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapF121" name="tapF121" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapC122" name="tapC122" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapC123" name="tapC123" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapE125" name="tapE125" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapA126" name="tapA126" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapF127" name="tapF127" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapD128" name="tapD128" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapB129" name="tapB129" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapG130" name="tapG130" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <ielement id="27"/>
+          </states>
+          <states id="s11">
+            <transition event="tapC6" name="tapC6" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapF8" name="tapF8" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapD10" name="tapD10" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapE12" name="tapE12" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapG13" name="tapG13" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapB14" name="tapB14" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapA15" name="tapA15" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapF17" name="tapF17" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapG21" name="tapG21" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapA22" name="tapA22" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapD24" name="tapD24" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapE25" name="tapE25" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapC26" name="tapC26" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapB27" name="tapB27" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapF30" name="tapF30" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapG32" name="tapG32" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapE33" name="tapE33" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapC34" name="tapC34" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapA36" name="tapA36" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapB37" name="tapB37" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapD38" name="tapD38" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapF39" name="tapF39" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapE40" name="tapE40" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapG41" name="tapG41" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapD42" name="tapD42" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapB44" name="tapB44" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapA45" name="tapA45" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapC49" name="tapC49" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapE56" name="tapE56" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapD58" name="tapD58" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapA59" name="tapA59" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapC60" name="tapC60" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapB62" name="tapB62" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapG63" name="tapG63" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapF64" name="tapF64" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapD70" name="tapD70" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapA72" name="tapA72" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapF73" name="tapF73" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapC75" name="tapC75" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapE76" name="tapE76" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapG77" name="tapG77" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapB78" name="tapB78" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapE79" name="tapE79" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapD81" name="tapD81" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapA82" name="tapA82" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapC83" name="tapC83" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapB85" name="tapB85" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapG86" name="tapG86" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapF87" name="tapF87" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapA89" name="tapA89" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapB91" name="tapB91" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapG92" name="tapG92" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapD93" name="tapD93" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapE94" name="tapE94" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapF95" name="tapF95" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapC96" name="tapC96" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapD97" name="tapD97" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapA99" name="tapA99" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapF100" name="tapF100" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapC102" name="tapC102" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapE103" name="tapE103" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapG104" name="tapG104" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapB105" name="tapB105" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapC106" name="tapC106" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapE108" name="tapE108" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapA109" name="tapA109" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapF110" name="tapF110" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapD111" name="tapD111" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapB112" name="tapB112" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapG113" name="tapG113" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapA115" name="tapA115" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapB117" name="tapB117" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapG118" name="tapG118" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapD119" name="tapD119" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapE120" name="tapE120" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapF121" name="tapF121" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapC122" name="tapC122" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapC123" name="tapC123" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapE125" name="tapE125" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapA126" name="tapA126" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapF127" name="tapF127" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapD128" name="tapD128" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapB129" name="tapB129" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <transition event="tapG130" name="tapG130" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+              <script script="screenUpdater.call(this,'27');"/>
+            </transition>
+            <ielement id="27" value="update"/>
+          </states>
+        </states>
+        <states id="Layertab01" initial="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+          <states id="s4">
+            <ielement id="tab01" value="0"/>
+            <ielement id="line0101"/>
+            <ielement id="line0102"/>
+            <ielement id="line0103"/>
+            <ielement id="line0104"/>
+            <ielement id="line0105"/>
+            <ielement id="line0201"/>
+            <ielement id="line0202"/>
+            <ielement id="line0203"/>
+            <ielement id="line0204"/>
+            <ielement id="line0205"/>
+            <ielement id="line0301"/>
+            <ielement id="line0302"/>
+            <ielement id="line0303"/>
+            <ielement id="line0304"/>
+            <ielement id="line0305"/>
+            <ielement id="line0401"/>
+            <ielement id="line0402"/>
+            <ielement id="line0403"/>
+            <ielement id="line0404"/>
+            <ielement id="line0405"/>
+          </states>
+        </states>
+        <states id="LayerControler" initial="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+          <states id="h00">
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s1') and this.type == 'fullTime'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select0"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s1') and this.type == 'halfTime'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select1"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s1') and this.type == 'quarterTime'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select2"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s1') and this.type == 'eighthTime'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select3"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s1') and this.type == 'timedMode'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select4"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayercommonTools/s0') and this.type == 'newModel'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select5"/>
+            </transition>
+            <transition event="tapC" cond="INSTATE('/System/LayertimeBar/s6')" name="tapC" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapC6"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s6') and this.type == 'quarterTime'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select7"/>
+            </transition>
+            <transition event="tapF" cond="INSTATE('/System/LayertimeBar/s6')" name="tapF" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapF8"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s6') and this.type == 'eighthTime'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select9"/>
+            </transition>
+            <transition event="tapD" cond="INSTATE('/System/LayertimeBar/s6')" name="tapD" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapD10"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s6') and this.type == 'timedMode'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select11"/>
+            </transition>
+            <transition event="tapE" cond="INSTATE('/System/LayertimeBar/s6')" name="tapE" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapE12"/>
+            </transition>
+            <transition event="tapG" cond="INSTATE('/System/LayertimeBar/s6')" name="tapG" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapG13"/>
+            </transition>
+            <transition event="tapB" cond="INSTATE('/System/LayertimeBar/s6')" name="tapB" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapB14"/>
+            </transition>
+            <transition event="tapA" cond="INSTATE('/System/LayertimeBar/s6')" name="tapA" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapA15"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s6') and this.type == 'halfTime'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select16"/>
+            </transition>
+            <transition event="tapF" cond="INSTATE('/System/LayertimeBar/s7')" name="tapF" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapF17"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s7') and this.type == 'eighthTime'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select18"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s7') and this.type == 'quarterTime'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select19"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s7') and this.type == 'fullTime'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select20"/>
+            </transition>
+            <transition event="tapG" cond="INSTATE('/System/LayertimeBar/s7')" name="tapG" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapG21"/>
+            </transition>
+            <transition event="tapA" cond="INSTATE('/System/LayertimeBar/s7')" name="tapA" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapA22"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s7') and this.type == 'timedMode'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select23"/>
+            </transition>
+            <transition event="tapD" cond="INSTATE('/System/LayertimeBar/s7')" name="tapD" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapD24"/>
+            </transition>
+            <transition event="tapE" cond="INSTATE('/System/LayertimeBar/s7')" name="tapE" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapE25"/>
+            </transition>
+            <transition event="tapC" cond="INSTATE('/System/LayertimeBar/s7')" name="tapC" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapC26"/>
+            </transition>
+            <transition event="tapB" cond="INSTATE('/System/LayertimeBar/s7')" name="tapB" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapB27"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s8') and this.type == 'fullTime'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select28"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s8') and this.type == 'timedMode'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select29"/>
+            </transition>
+            <transition event="tapF" cond="INSTATE('/System/LayertimeBar/s8')" name="tapF" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapF30"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s8') and this.type == 'halfTime'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select31"/>
+            </transition>
+            <transition event="tapG" cond="INSTATE('/System/LayertimeBar/s8')" name="tapG" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapG32"/>
+            </transition>
+            <transition event="tapE" cond="INSTATE('/System/LayertimeBar/s8')" name="tapE" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapE33"/>
+            </transition>
+            <transition event="tapC" cond="INSTATE('/System/LayertimeBar/s8')" name="tapC" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapC34"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s8') and this.type == 'eighthTime'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select35"/>
+            </transition>
+            <transition event="tapA" cond="INSTATE('/System/LayertimeBar/s8')" name="tapA" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapA36"/>
+            </transition>
+            <transition event="tapB" cond="INSTATE('/System/LayertimeBar/s8')" name="tapB" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapB37"/>
+            </transition>
+            <transition event="tapD" cond="INSTATE('/System/LayertimeBar/s8')" name="tapD" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapD38"/>
+            </transition>
+            <transition event="tapF" cond="INSTATE('/System/LayertimeBar/s9')" name="tapF" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapF39"/>
+            </transition>
+            <transition event="tapE" cond="INSTATE('/System/LayertimeBar/s9')" name="tapE" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapE40"/>
+            </transition>
+            <transition event="tapG" cond="INSTATE('/System/LayertimeBar/s9')" name="tapG" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapG41"/>
+            </transition>
+            <transition event="tapD" cond="INSTATE('/System/LayertimeBar/s9')" name="tapD" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapD42"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s9') and this.type == 'quarterTime'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select43"/>
+            </transition>
+            <transition event="tapB" cond="INSTATE('/System/LayertimeBar/s9')" name="tapB" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapB44"/>
+            </transition>
+            <transition event="tapA" cond="INSTATE('/System/LayertimeBar/s9')" name="tapA" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapA45"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s9') and this.type == 'fullTime'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select46"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s9') and this.type == 'timedMode'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select47"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s9') and this.type == 'halfTime'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select48"/>
+            </transition>
+            <transition event="tapC" cond="INSTATE('/System/LayertimeBar/s9')" name="tapC" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapC49"/>
+            </transition>
+            <transition event="pat" cond="INSTATE('/System/LayertimeBar/s10')" name="pat" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="pat50"/>
+            </transition>
+            <transition event="pat" cond="INSTATE('/System/LayertimeBar/s12')" name="pat" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="pat51"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s12') and this.type == 'quarterTime'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select52"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s12') and this.type == 'fullTime'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select53"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s12') and this.type == 'halfTime'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select54"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s12') and this.type == 'eighthTime'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select55"/>
+            </transition>
+            <transition event="tapE" cond="INSTATE('/System/LayertimeBar/s13')" name="tapE" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapE56"/>
+            </transition>
+            <transition event="pat" cond="INSTATE('/System/LayertimeBar/s13')" name="pat" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="pat57"/>
+            </transition>
+            <transition event="tapD" cond="INSTATE('/System/LayertimeBar/s13')" name="tapD" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapD58"/>
+            </transition>
+            <transition event="tapA" cond="INSTATE('/System/LayertimeBar/s13')" name="tapA" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapA59"/>
+            </transition>
+            <transition event="tapC" cond="INSTATE('/System/LayertimeBar/s13')" name="tapC" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapC60"/>
+            </transition>
+            <transition after="2" cond="INSTATE('/System/LayertimeBar/s13')" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="_after261"/>
+            </transition>
+            <transition event="tapB" cond="INSTATE('/System/LayertimeBar/s13')" name="tapB" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapB62"/>
+            </transition>
+            <transition event="tapG" cond="INSTATE('/System/LayertimeBar/s13')" name="tapG" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapG63"/>
+            </transition>
+            <transition event="tapF" cond="INSTATE('/System/LayertimeBar/s13')" name="tapF" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapF64"/>
+            </transition>
+            <transition event="pat" cond="INSTATE('/System/LayertimeBar/s12')" name="pat" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="pat65"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s12') and this.type == 'quarterTime'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select66"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s12') and this.type == 'fullTime'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select67"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s12') and this.type == 'halfTime'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select68"/>
+            </transition>
+            <transition event="select" cond="INSTATE('/System/LayertimeBar/s12') and this.type == 'eighthTime'" name="select" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="select69"/>
+            </transition>
+            <transition event="tapD" cond="INSTATE('/System/LayertimeBar/s14')" name="tapD" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapD70"/>
+            </transition>
+            <transition event="pat" cond="INSTATE('/System/LayertimeBar/s14')" name="pat" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="pat71"/>
+            </transition>
+            <transition event="tapA" cond="INSTATE('/System/LayertimeBar/s14')" name="tapA" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapA72"/>
+            </transition>
+            <transition event="tapF" cond="INSTATE('/System/LayertimeBar/s14')" name="tapF" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapF73"/>
+            </transition>
+            <transition after="2" cond="INSTATE('/System/LayertimeBar/s14')" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="_after274"/>
+            </transition>
+            <transition event="tapC" cond="INSTATE('/System/LayertimeBar/s14')" name="tapC" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapC75"/>
+            </transition>
+            <transition event="tapE" cond="INSTATE('/System/LayertimeBar/s14')" name="tapE" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapE76"/>
+            </transition>
+            <transition event="tapG" cond="INSTATE('/System/LayertimeBar/s14')" name="tapG" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapG77"/>
+            </transition>
+            <transition event="tapB" cond="INSTATE('/System/LayertimeBar/s14')" name="tapB" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapB78"/>
+            </transition>
+            <transition event="tapE" cond="INSTATE('/System/LayertimeBar/s13')" name="tapE" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapE79"/>
+            </transition>
+            <transition event="pat" cond="INSTATE('/System/LayertimeBar/s13')" name="pat" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="pat80"/>
+            </transition>
+            <transition event="tapD" cond="INSTATE('/System/LayertimeBar/s13')" name="tapD" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapD81"/>
+            </transition>
+            <transition event="tapA" cond="INSTATE('/System/LayertimeBar/s13')" name="tapA" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapA82"/>
+            </transition>
+            <transition event="tapC" cond="INSTATE('/System/LayertimeBar/s13')" name="tapC" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapC83"/>
+            </transition>
+            <transition after="2" cond="INSTATE('/System/LayertimeBar/s13')" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="_after284"/>
+            </transition>
+            <transition event="tapB" cond="INSTATE('/System/LayertimeBar/s13')" name="tapB" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapB85"/>
+            </transition>
+            <transition event="tapG" cond="INSTATE('/System/LayertimeBar/s13')" name="tapG" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapG86"/>
+            </transition>
+            <transition event="tapF" cond="INSTATE('/System/LayertimeBar/s13')" name="tapF" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapF87"/>
+            </transition>
+            <transition event="pat" cond="INSTATE('/System/LayertimeBar/s15')" name="pat" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="pat88"/>
+            </transition>
+            <transition event="tapA" cond="INSTATE('/System/LayertimeBar/s15')" name="tapA" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapA89"/>
+            </transition>
+            <transition after="4" cond="INSTATE('/System/LayertimeBar/s15')" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="_after490"/>
+            </transition>
+            <transition event="tapB" cond="INSTATE('/System/LayertimeBar/s15')" name="tapB" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapB91"/>
+            </transition>
+            <transition event="tapG" cond="INSTATE('/System/LayertimeBar/s15')" name="tapG" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapG92"/>
+            </transition>
+            <transition event="tapD" cond="INSTATE('/System/LayertimeBar/s15')" name="tapD" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapD93"/>
+            </transition>
+            <transition event="tapE" cond="INSTATE('/System/LayertimeBar/s15')" name="tapE" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapE94"/>
+            </transition>
+            <transition event="tapF" cond="INSTATE('/System/LayertimeBar/s15')" name="tapF" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapF95"/>
+            </transition>
+            <transition event="tapC" cond="INSTATE('/System/LayertimeBar/s15')" name="tapC" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapC96"/>
+            </transition>
+            <transition event="tapD" cond="INSTATE('/System/LayertimeBar/s14')" name="tapD" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapD97"/>
+            </transition>
+            <transition event="pat" cond="INSTATE('/System/LayertimeBar/s14')" name="pat" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="pat98"/>
+            </transition>
+            <transition event="tapA" cond="INSTATE('/System/LayertimeBar/s14')" name="tapA" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapA99"/>
+            </transition>
+            <transition event="tapF" cond="INSTATE('/System/LayertimeBar/s14')" name="tapF" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapF100"/>
+            </transition>
+            <transition after="2" cond="INSTATE('/System/LayertimeBar/s14')" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="_after2101"/>
+            </transition>
+            <transition event="tapC" cond="INSTATE('/System/LayertimeBar/s14')" name="tapC" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapC102"/>
+            </transition>
+            <transition event="tapE" cond="INSTATE('/System/LayertimeBar/s14')" name="tapE" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapE103"/>
+            </transition>
+            <transition event="tapG" cond="INSTATE('/System/LayertimeBar/s14')" name="tapG" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapG104"/>
+            </transition>
+            <transition event="tapB" cond="INSTATE('/System/LayertimeBar/s14')" name="tapB" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapB105"/>
+            </transition>
+            <transition event="tapC" cond="INSTATE('/System/LayertimeBar/s16')" name="tapC" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapC106"/>
+            </transition>
+            <transition event="pat" cond="INSTATE('/System/LayertimeBar/s16')" name="pat" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="pat107"/>
+            </transition>
+            <transition event="tapE" cond="INSTATE('/System/LayertimeBar/s16')" name="tapE" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapE108"/>
+            </transition>
+            <transition event="tapA" cond="INSTATE('/System/LayertimeBar/s16')" name="tapA" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapA109"/>
+            </transition>
+            <transition event="tapF" cond="INSTATE('/System/LayertimeBar/s16')" name="tapF" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapF110"/>
+            </transition>
+            <transition event="tapD" cond="INSTATE('/System/LayertimeBar/s16')" name="tapD" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapD111"/>
+            </transition>
+            <transition event="tapB" cond="INSTATE('/System/LayertimeBar/s16')" name="tapB" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapB112"/>
+            </transition>
+            <transition event="tapG" cond="INSTATE('/System/LayertimeBar/s16')" name="tapG" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapG113"/>
+            </transition>
+            <transition event="pat" cond="INSTATE('/System/LayertimeBar/s15')" name="pat" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="pat114"/>
+            </transition>
+            <transition event="tapA" cond="INSTATE('/System/LayertimeBar/s15')" name="tapA" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapA115"/>
+            </transition>
+            <transition after="4" cond="INSTATE('/System/LayertimeBar/s15')" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="_after4116"/>
+            </transition>
+            <transition event="tapB" cond="INSTATE('/System/LayertimeBar/s15')" name="tapB" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapB117"/>
+            </transition>
+            <transition event="tapG" cond="INSTATE('/System/LayertimeBar/s15')" name="tapG" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapG118"/>
+            </transition>
+            <transition event="tapD" cond="INSTATE('/System/LayertimeBar/s15')" name="tapD" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapD119"/>
+            </transition>
+            <transition event="tapE" cond="INSTATE('/System/LayertimeBar/s15')" name="tapE" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapE120"/>
+            </transition>
+            <transition event="tapF" cond="INSTATE('/System/LayertimeBar/s15')" name="tapF" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapF121"/>
+            </transition>
+            <transition event="tapC" cond="INSTATE('/System/LayertimeBar/s15')" name="tapC" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapC122"/>
+            </transition>
+            <transition event="tapC" cond="INSTATE('/System/LayertimeBar/s16')" name="tapC" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapC123"/>
+            </transition>
+            <transition event="pat" cond="INSTATE('/System/LayertimeBar/s16')" name="pat" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="pat124"/>
+            </transition>
+            <transition event="tapE" cond="INSTATE('/System/LayertimeBar/s16')" name="tapE" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapE125"/>
+            </transition>
+            <transition event="tapA" cond="INSTATE('/System/LayertimeBar/s16')" name="tapA" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapA126"/>
+            </transition>
+            <transition event="tapF" cond="INSTATE('/System/LayertimeBar/s16')" name="tapF" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapF127"/>
+            </transition>
+            <transition event="tapD" cond="INSTATE('/System/LayertimeBar/s16')" name="tapD" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapD128"/>
+            </transition>
+            <transition event="tapB" cond="INSTATE('/System/LayertimeBar/s16')" name="tapB" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapB129"/>
+            </transition>
+            <transition event="tapG" cond="INSTATE('/System/LayertimeBar/s16')" name="tapG" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+              <raise event="tapG130"/>
+            </transition>
+          </states>
+        </states>
+      </parallel>
+    </scxml>
+  </class>
+</sccd:Diagram>

@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:auxiliar="http:\\geodes.iro.ca\auxiliar" xsi:schemaLocation="http:\\geodes.iro.ca\auxiliar ../../../ca.umontreal.iro.geodes.interaction.transformation2scd/Models/auxiliar.ecore">
+  <auxiliar:Controll alphaParents="/1 /2 /3 /4 /5 /6 /7 /8 /9 /10 /11 /12">
+    <rules name="R1">
+      <rulePtr href="../InModels/Synthetic25H.interaction#//@interactions.0"/>
+    </rules>
+    <rules name="R2">
+      <rulePtr href="../InModels/Synthetic25H.interaction#//@interactions.1"/>
+    </rules>
+    <rules name="R3">
+      <rulePtr href="../InModels/Synthetic25H.interaction#//@interactions.2"/>
+    </rules>
+    <rules name="R4">
+      <rulePtr href="../InModels/Synthetic25H.interaction#//@interactions.3"/>
+    </rules>
+    <rules name="R5">
+      <rulePtr href="../InModels/Synthetic25H.interaction#//@interactions.4"/>
+    </rules>
+    <rules queue="/13" name="R6">
+      <rulePtr href="../InModels/Synthetic25H.interaction#//@interactions.5"/>
+    </rules>
+    <rules name="R7">
+      <rulePtr href="../InModels/Synthetic25H.interaction#//@interactions.6"/>
+    </rules>
+    <rules name="R8">
+      <rulePtr href="../InModels/Synthetic25H.interaction#//@interactions.7"/>
+    </rules>
+    <rules name="R9">
+      <rulePtr href="../InModels/Synthetic25H.interaction#//@interactions.8"/>
+    </rules>
+    <rules name="R10">
+      <rulePtr href="../InModels/Synthetic25H.interaction#//@interactions.9"/>
+    </rules>
+    <rules name="R11">
+      <rulePtr href="../InModels/Synthetic25H.interaction#//@interactions.10"/>
+    </rules>
+    <rules name="R12">
+      <rulePtr href="../InModels/Synthetic25H.interaction#//@interactions.11"/>
+    </rules>
+    <rules name="R13">
+      <rulePtr href="../InModels/Synthetic25H.interaction#//@interactions.12"/>
+    </rules>
+    <rules name="R14">
+      <rulePtr href="../InModels/Synthetic25H.interaction#//@interactions.13"/>
+    </rules>
+    <rules name="R15">
+      <rulePtr href="../InModels/Synthetic25H.interaction#//@interactions.14"/>
+    </rules>
+    <rules name="R16">
+      <rulePtr href="../InModels/Synthetic25H.interaction#//@interactions.15"/>
+    </rules>
+    <rules name="R17">
+      <rulePtr href="../InModels/Synthetic25H.interaction#//@interactions.16"/>
+    </rules>
+    <rules name="R18">
+      <rulePtr href="../InModels/Synthetic25H.interaction#//@interactions.17"/>
+    </rules>
+    <rules name="R19">
+      <rulePtr href="../InModels/Synthetic25H.interaction#//@interactions.18"/>
+    </rules>
+    <rules name="R20">
+      <rulePtr href="../InModels/Synthetic25H.interaction#//@interactions.19"/>
+    </rules>
+    <rules name="R21">
+      <rulePtr href="../InModels/Synthetic25H.interaction#//@interactions.20"/>
+    </rules>
+    <rules name="R22">
+      <rulePtr href="../InModels/Synthetic25H.interaction#//@interactions.21"/>
+    </rules>
+    <rules name="R23">
+      <rulePtr href="../InModels/Synthetic25H.interaction#//@interactions.22"/>
+    </rules>
+    <rules name="R24">
+      <rulePtr href="../InModels/Synthetic25H.interaction#//@interactions.23"/>
+    </rules>
+    <rules name="R25">
+      <rulePtr href="../InModels/Synthetic25H.interaction#//@interactions.24"/>
+    </rules>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="0" ruleParameterID="null"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="2" toBeta="/0/@desisions.0 /0/@desisions.3 /0/@desisions.6 /0/@desisions.7 /0/@desisions.12 /0/@desisions.15 /0/@desisions.21" ruleParameterID="E8" inLayer="/0/@parameters.2"/>
+    <parameters xsi:type="auxiliar:AlphaNodeLayer" tokenIndex="3" toBeta="/0/@desisions.0 /0/@desisions.3 /0/@desisions.6 /0/@desisions.7 /0/@desisions.9 /0/@desisions.12 /0/@desisions.15 /0/@desisions.16 /0/@desisions.21" hasParams="E8 E8 E8" layerID="LayerE8"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="4" toBeta="/0/@desisions.0" ruleParameterID="23" inLayer="/0/@parameters.4"/>
+    <parameters xsi:type="auxiliar:AlphaNodeLayer" tokenIndex="5" toBeta="/0/@desisions.0 /0/@desisions.3 /0/@desisions.4 /0/@desisions.5 /0/@desisions.6 /0/@desisions.7" hasParams="23 23 23 23 23 23 23 23 23 23" layerID="Layercanvas"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="6" toBeta="/0/@desisions.0 /0/@desisions.6 /0/@desisions.8 /0/@desisions.10 /0/@desisions.12 /0/@desisions.18 /0/@desisions.21" ruleParameterID="E1" value="1" inLayer="/0/@parameters.6"/>
+    <parameters xsi:type="auxiliar:AlphaNodeLayer" tokenIndex="7" toBeta="/0/@desisions.0 /0/@desisions.6 /0/@desisions.8 /0/@desisions.10 /0/@desisions.12 /0/@desisions.18 /0/@desisions.21" hasParams="E1 E1 E1 E1" layerID="LayerE1"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="8" toBeta="/0/@desisions.0 /0/@desisions.8 /0/@desisions.16 /0/@desisions.19 /0/@desisions.23 /0/@desisions.24" ruleParameterID="E2" inLayer="/0/@parameters.8"/>
+    <parameters xsi:type="auxiliar:AlphaNodeLayer" tokenIndex="9" toBeta="/0/@desisions.0 /0/@desisions.2 /0/@desisions.8 /0/@desisions.16 /0/@desisions.19 /0/@desisions.21 /0/@desisions.23 /0/@desisions.24" hasParams="E2 E2 E2 E2 E2" layerID="LayerE2"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="10" toBeta="/0/@desisions.0 /0/@desisions.1 /0/@desisions.3 /0/@desisions.5 /0/@desisions.10 /0/@desisions.18 /0/@desisions.23" ruleParameterID="E6" inLayer="/0/@parameters.10"/>
+    <parameters xsi:type="auxiliar:AlphaNodeLayer" tokenIndex="11" toBeta="/0/@desisions.0 /0/@desisions.1 /0/@desisions.3 /0/@desisions.4 /0/@desisions.5 /0/@desisions.10 /0/@desisions.14 /0/@desisions.18 /0/@desisions.22 /0/@desisions.23" hasParams="E6 E6 E6 E6" layerID="LayerE6"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="13" toBeta="/0/@desisions.1 /0/@desisions.7 /0/@desisions.9 /0/@desisions.10 /0/@desisions.12 /0/@desisions.15 /0/@desisions.18 /0/@desisions.24" ruleParameterID="E3" inLayer="/0/@parameters.12"/>
+    <parameters xsi:type="auxiliar:AlphaNodeLayer" tokenIndex="14" toBeta="/0/@desisions.1 /0/@desisions.7 /0/@desisions.9 /0/@desisions.10 /0/@desisions.12 /0/@desisions.15 /0/@desisions.16 /0/@desisions.18 /0/@desisions.21 /0/@desisions.24" hasParams="E3 E3 E3 E3 E3 E3 E3 E3" layerID="LayerE3"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="15" toBeta="/0/@desisions.1 /0/@desisions.2 /0/@desisions.9 /0/@desisions.16 /0/@desisions.24" ruleParameterID="E4" inLayer="/0/@parameters.14"/>
+    <parameters xsi:type="auxiliar:AlphaNodeLayer" tokenIndex="16" toBeta="/0/@desisions.1 /0/@desisions.2 /0/@desisions.9 /0/@desisions.14 /0/@desisions.16 /0/@desisions.17 /0/@desisions.21 /0/@desisions.24" hasParams="E4 E4 E4" layerID="LayerE4"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="18" toBeta="/0/@desisions.2" ruleParameterID="E2" value="2" inLayer="/0/@parameters.8"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="20" toBeta="/0/@desisions.3" ruleParameterID="23" inLayer="/0/@parameters.4"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="21" toBeta="/0/@desisions.3 /0/@desisions.6 /0/@desisions.9 /0/@desisions.11 /0/@desisions.23" ruleParameterID="E7" inLayer="/0/@parameters.18"/>
+    <parameters xsi:type="auxiliar:AlphaNodeLayer" tokenIndex="22" toBeta="/0/@desisions.3 /0/@desisions.4 /0/@desisions.6 /0/@desisions.9 /0/@desisions.11 /0/@desisions.12 /0/@desisions.14 /0/@desisions.23" hasParams="E7 E7 E7 E7 E7" layerID="LayerE7"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="23" toBeta="/0/@desisions.3" ruleParameterID="23" inLayer="/0/@parameters.4"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="25" toBeta="/0/@desisions.4 /0/@desisions.10 /0/@desisions.22" ruleParameterID="E6" value="2" inLayer="/0/@parameters.10"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="26" toBeta="/0/@desisions.4" ruleParameterID="23" inLayer="/0/@parameters.4"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="27" toBeta="/0/@desisions.4" ruleParameterID="E7" value="1" inLayer="/0/@parameters.18"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="28" toBeta="/0/@desisions.4 /0/@desisions.6 /0/@desisions.10 /0/@desisions.12 /0/@desisions.14 /0/@desisions.15 /0/@desisions.16 /0/@desisions.24" ruleParameterID="E5" value="2" inLayer="/0/@parameters.24"/>
+    <parameters xsi:type="auxiliar:AlphaNodeLayer" tokenIndex="29" toBeta="/0/@desisions.4 /0/@desisions.6 /0/@desisions.7 /0/@desisions.10 /0/@desisions.12 /0/@desisions.14 /0/@desisions.15 /0/@desisions.16 /0/@desisions.21 /0/@desisions.23 /0/@desisions.24" hasParams="E5 E5 E5 E5 E5 E5" layerID="LayerE5"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="31" toBeta="/0/@desisions.5" ruleParameterID="23" inLayer="/0/@parameters.4"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="32" toBeta="/0/@desisions.5" ruleParameterID="23" inLayer="/0/@parameters.4"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="34" toBeta="/0/@desisions.6" ruleParameterID="23" inLayer="/0/@parameters.4"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="35" toBeta="/0/@desisions.6" ruleParameterID="E1" inLayer="/0/@parameters.6"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="36" toBeta="/0/@desisions.6" ruleParameterID="23" inLayer="/0/@parameters.4"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="38" toBeta="/0/@desisions.7" ruleParameterID="E3" value="1" inLayer="/0/@parameters.12"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="39" toBeta="/0/@desisions.7" ruleParameterID="23" inLayer="/0/@parameters.4"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="40" toBeta="/0/@desisions.7 /0/@desisions.9 /0/@desisions.13 /0/@desisions.15 /0/@desisions.18 /0/@desisions.19 /0/@desisions.21" ruleParameterID="E9" value="1" inLayer="/0/@parameters.33"/>
+    <parameters xsi:type="auxiliar:AlphaNodeLayer" tokenIndex="41" toBeta="/0/@desisions.7 /0/@desisions.9 /0/@desisions.11 /0/@desisions.13 /0/@desisions.14 /0/@desisions.15 /0/@desisions.16 /0/@desisions.18 /0/@desisions.19 /0/@desisions.20 /0/@desisions.21 /0/@desisions.22 /0/@desisions.23 /0/@desisions.24" hasParams="E9 E9 E9 E9 E9 E9 E9" layerID="LayerE9"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="42" toBeta="/0/@desisions.7 /0/@desisions.9 /0/@desisions.16" ruleParameterID="E8" value="1" inLayer="/0/@parameters.2"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="43" toBeta="/0/@desisions.7" ruleParameterID="23" inLayer="/0/@parameters.4"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="44" toBeta="/0/@desisions.7" ruleParameterID="E5" value="3" inLayer="/0/@parameters.24"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="47" toBeta="/0/@desisions.9" ruleParameterID="E7" value="5" inLayer="/0/@parameters.18"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="48" toBeta="/0/@desisions.9" ruleParameterID="E3" value="3" inLayer="/0/@parameters.12"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="50" toBeta="/0/@desisions.10 /0/@desisions.13" ruleParameterID="E10" value="1" inLayer="/0/@parameters.40"/>
+    <parameters xsi:type="auxiliar:AlphaNodeLayer" tokenIndex="51" toBeta="/0/@desisions.10 /0/@desisions.13 /0/@desisions.15 /0/@desisions.18 /0/@desisions.19 /0/@desisions.22" hasParams="E10 E10 E10 E10 E10" layerID="LayerE10"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="52" toBeta="/0/@desisions.10" ruleParameterID="E3" value="4" inLayer="/0/@parameters.12"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="53" toBeta="/0/@desisions.10 /0/@desisions.15" ruleParameterID="E10" value="2" inLayer="/0/@parameters.40"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="55" toBeta="/0/@desisions.11 /0/@desisions.13 /0/@desisions.15" ruleParameterID="E9" value="2" inLayer="/0/@parameters.33"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="57" toBeta="/0/@desisions.12" ruleParameterID="E7" value="6" inLayer="/0/@parameters.18"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="59" toBeta="/0/@desisions.13" ruleParameterID="E9" inLayer="/0/@parameters.33"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="60" toBeta="/0/@desisions.13" ruleParameterID="E10" inLayer="/0/@parameters.40"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="62" toBeta="/0/@desisions.14 /0/@desisions.17" ruleParameterID="E4" value="2" inLayer="/0/@parameters.14"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="63" toBeta="/0/@desisions.14" ruleParameterID="E6" value="1" inLayer="/0/@parameters.10"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="64" toBeta="/0/@desisions.14" ruleParameterID="E7" value="4" inLayer="/0/@parameters.18"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="65" toBeta="/0/@desisions.14" ruleParameterID="E5" value="8" inLayer="/0/@parameters.24"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="66" toBeta="/0/@desisions.14 /0/@desisions.22 /0/@desisions.23" ruleParameterID="E9" value="4" inLayer="/0/@parameters.33"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="68" toBeta="/0/@desisions.15" ruleParameterID="E5" value="6" inLayer="/0/@parameters.24"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="69" toBeta="/0/@desisions.15" ruleParameterID="E3" value="6" inLayer="/0/@parameters.12"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="71" toBeta="/0/@desisions.16" ruleParameterID="E9" value="6" inLayer="/0/@parameters.33"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="72" toBeta="/0/@desisions.16" ruleParameterID="E8" value="2" inLayer="/0/@parameters.2"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="73" toBeta="/0/@desisions.16" ruleParameterID="E3" value="8" inLayer="/0/@parameters.12"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="74" toBeta="/0/@desisions.16" ruleParameterID="E2" value="3" inLayer="/0/@parameters.8"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="77" toBeta="/0/@desisions.18" ruleParameterID="E3" value="2" inLayer="/0/@parameters.12"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="78" toBeta="/0/@desisions.18 /0/@desisions.19" ruleParameterID="E10" value="3" inLayer="/0/@parameters.40"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="79" toBeta="/0/@desisions.18" ruleParameterID="E1" value="2" inLayer="/0/@parameters.6"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="80" toBeta="/0/@desisions.18" ruleParameterID="E1" value="4" inLayer="/0/@parameters.6"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="81" toBeta="/0/@desisions.18" ruleParameterID="E6" value="3" inLayer="/0/@parameters.10"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="84" toBeta="/0/@desisions.20" ruleParameterID="E9" value="8" inLayer="/0/@parameters.33"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="86" toBeta="/0/@desisions.21" ruleParameterID="E3" value="9" inLayer="/0/@parameters.12"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="87" toBeta="/0/@desisions.21" ruleParameterID="E4" value="1" inLayer="/0/@parameters.14"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="88" toBeta="/0/@desisions.21" ruleParameterID="E5" value="9" inLayer="/0/@parameters.24"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="89" toBeta="/0/@desisions.21" ruleParameterID="E2" value="5" inLayer="/0/@parameters.8"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="91" toBeta="/0/@desisions.22" ruleParameterID="E10" value="4" inLayer="/0/@parameters.40"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="93" toBeta="/0/@desisions.23" ruleParameterID="E5" value="11" inLayer="/0/@parameters.24"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="94" toBeta="/0/@desisions.23" ruleParameterID="E2" value="9" inLayer="/0/@parameters.8"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="96" toBeta="/0/@desisions.24" ruleParameterID="E9" value="10" inLayer="/0/@parameters.33"/>
+    <desisions tokenIndex="1" positiveValue="8" rule="/0/@rules.0" fromAlpha="E8 /0/@parameters.2 23 /0/@parameters.4 E1 /0/@parameters.6 E2 /0/@parameters.8 E6 /0/@parameters.10"/>
+    <desisions tokenIndex="12" positiveValue="4" rule="/0/@rules.1" fromAlpha="E3 /0/@parameters.12 E4 /0/@parameters.14 E6 /0/@parameters.10"/>
+    <desisions tokenIndex="17" positiveValue="2" rule="/0/@rules.2" fromAlpha="E2 /0/@parameters.8 E4 /0/@parameters.14"/>
+    <desisions tokenIndex="19" positiveValue="7" rule="/0/@rules.3" fromAlpha="E6 /0/@parameters.10 23 /0/@parameters.4 E7 /0/@parameters.18 E8 /0/@parameters.2 23"/>
+    <desisions tokenIndex="24" positiveValue="4" rule="/0/@rules.4" fromAlpha="E6 /0/@parameters.10 23 /0/@parameters.4 E7 /0/@parameters.18 E5 /0/@parameters.24"/>
+    <desisions tokenIndex="30" positiveValue="3" rule="/0/@rules.5" fromAlpha="23 /0/@parameters.4 E6 /0/@parameters.10 23"/>
+    <desisions tokenIndex="33" positiveValue="7" rule="/0/@rules.6" fromAlpha="23 /0/@parameters.4 E5 /0/@parameters.24 E8 /0/@parameters.2 E1 /0/@parameters.6 E7 /0/@parameters.18 23 E1"/>
+    <desisions tokenIndex="37" positiveValue="10" rule="/0/@rules.7" fromAlpha="E3 /0/@parameters.12 E3 E8 /0/@parameters.2 23 /0/@parameters.4 E9 /0/@parameters.33 E8 23 E5 /0/@parameters.24"/>
+    <desisions tokenIndex="45" positiveValue="2" rule="/0/@rules.8" fromAlpha="E1 /0/@parameters.6 E2 /0/@parameters.8"/>
+    <desisions tokenIndex="46" positiveValue="9" rule="/0/@rules.9" fromAlpha="E7 /0/@parameters.18 E3 /0/@parameters.12 E7 E4 /0/@parameters.14 E3 E8 /0/@parameters.2 E9 /0/@parameters.33"/>
+    <desisions tokenIndex="49" positiveValue="10" rule="/0/@rules.10" fromAlpha="E10 /0/@parameters.40 E6 /0/@parameters.10 E6 E5 /0/@parameters.24 E3 /0/@parameters.12 E3 E1 /0/@parameters.6 E10"/>
+    <desisions tokenIndex="54" positiveValue="2" rule="/0/@rules.11" fromAlpha="E9 /0/@parameters.33 E7 /0/@parameters.18"/>
+    <desisions tokenIndex="56" positiveValue="5" rule="/0/@rules.12" fromAlpha="E3 /0/@parameters.12 E1 /0/@parameters.6 E8 /0/@parameters.2 E5 /0/@parameters.24 E7 /0/@parameters.18"/>
+    <desisions tokenIndex="58" positiveValue="7" rule="/0/@rules.13" fromAlpha="E9 /0/@parameters.33 E9 E9 E10 /0/@parameters.40 E10"/>
+    <desisions tokenIndex="61" positiveValue="6" rule="/0/@rules.14" fromAlpha="E5 /0/@parameters.24 E4 /0/@parameters.14 E6 /0/@parameters.10 E7 /0/@parameters.18 E5 E9 /0/@parameters.33"/>
+    <desisions tokenIndex="67" positiveValue="10" rule="/0/@rules.15" fromAlpha="E10 /0/@parameters.40 E5 /0/@parameters.24 E9 /0/@parameters.33 E8 /0/@parameters.2 E5 E3 /0/@parameters.12 E3 E9"/>
+    <desisions tokenIndex="70" positiveValue="9" rule="/0/@rules.16" fromAlpha="E9 /0/@parameters.33 E8 /0/@parameters.2 E5 /0/@parameters.24 E8 E3 /0/@parameters.12 E4 /0/@parameters.14 E2 /0/@parameters.8 E2"/>
+    <desisions tokenIndex="75" positiveValue="1" rule="/0/@rules.17" fromAlpha="E4 /0/@parameters.14"/>
+    <desisions tokenIndex="76" positiveValue="9" rule="/0/@rules.18" fromAlpha="E3 /0/@parameters.12 E3 E9 /0/@parameters.33 E10 /0/@parameters.40 E1 /0/@parameters.6 E1 E6 /0/@parameters.10 E1 E6"/>
+    <desisions tokenIndex="82" positiveValue="3" rule="/0/@rules.19" fromAlpha="E2 /0/@parameters.8 E10 /0/@parameters.40 E9 /0/@parameters.33"/>
+    <desisions tokenIndex="83" positiveValue="1" rule="/0/@rules.20" fromAlpha="E9 /0/@parameters.33"/>
+    <desisions tokenIndex="85" positiveValue="8" rule="/0/@rules.21" fromAlpha="E3 /0/@parameters.12 E1 /0/@parameters.6 E4 /0/@parameters.14 E9 /0/@parameters.33 E5 /0/@parameters.24 E8 /0/@parameters.2 E2 /0/@parameters.8"/>
+    <desisions tokenIndex="90" positiveValue="3" rule="/0/@rules.22" fromAlpha="E9 /0/@parameters.33 E10 /0/@parameters.40 E6 /0/@parameters.10"/>
+    <desisions tokenIndex="92" positiveValue="7" rule="/0/@rules.23" fromAlpha="E2 /0/@parameters.8 E5 /0/@parameters.24 E7 /0/@parameters.18 E9 /0/@parameters.33 E6 /0/@parameters.10 E2"/>
+    <desisions tokenIndex="95" positiveValue="5" rule="/0/@rules.24" fromAlpha="E3 /0/@parameters.12 E2 /0/@parameters.8 E5 /0/@parameters.24 E4 /0/@parameters.14 E9 /0/@parameters.33"/>
+    <tokenConfigurations tokenID="/13">
+      <tokens/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="4"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="3"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="5"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="3"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="5"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="4"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="3"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="2"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="2"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="2"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="2"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="2"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="2"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="3"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="3"/>
+      <tokens isDirty="true"/>
+    </tokenConfigurations>
+    <tokenConfigurations tokenID="/37">
+      <tokens/>
+      <tokens tokenValue="true" numberOfTokens="4" PrevValue="true"/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens/>
+      <tokens isDirty="true" tokenValue="true" PrevValue="true"/>
+      <tokens/>
+      <tokens/>
+      <tokens/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens/>
+      <tokens tokenValue="true" numberOfTokens="3" PrevValue="true"/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens/>
+      <tokens tokenValue="true" numberOfTokens="1" PrevValue="true"/>
+      <tokens/>
+      <tokens tokenValue="true" numberOfTokens="5" PrevValue="true"/>
+      <tokens isDirty="true" tokenValue="true" PrevValue="true"/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens/>
+      <tokens isDirty="true" tokenValue="true" PrevValue="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1" PrevValue="true"/>
+      <tokens/>
+      <tokens isDirty="true" tokenValue="true" PrevValue="true"/>
+      <tokens/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens tokenValue="true" numberOfTokens="3" PrevValue="true"/>
+      <tokens isDirty="true" tokenValue="true" PrevValue="true"/>
+      <tokens isDirty="true" tokenValue="true" PrevValue="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="5" PrevValue="true"/>
+      <tokens isDirty="true" tokenValue="true" PrevValue="true"/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens isDirty="true" tokenValue="true" PrevValue="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="5" PrevValue="true"/>
+      <tokens/>
+      <tokens isDirty="true" tokenValue="true" PrevValue="true"/>
+      <tokens/>
+      <tokens/>
+      <tokens/>
+      <tokens isDirty="true" tokenValue="true" PrevValue="true"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens tokenValue="true" numberOfTokens="1" PrevValue="true"/>
+      <tokens tokenValue="true" numberOfTokens="3" PrevValue="true"/>
+      <tokens/>
+      <tokens/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="2" PrevValue="true"/>
+      <tokens/>
+      <tokens/>
+      <tokens/>
+      <tokens/>
+      <tokens tokenValue="true" numberOfTokens="1" PrevValue="true"/>
+      <tokens/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="2" PrevValue="true"/>
+      <tokens/>
+      <tokens tokenValue="true" numberOfTokens="2" PrevValue="true"/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens/>
+      <tokens/>
+      <tokens/>
+      <tokens isDirty="true"/>
+      <tokens/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="2" PrevValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="2" PrevValue="true"/>
+      <tokens/>
+      <tokens/>
+      <tokens/>
+      <tokens/>
+      <tokens/>
+      <tokens tokenValue="true" numberOfTokens="2" PrevValue="true"/>
+      <tokens/>
+      <tokens/>
+      <tokens/>
+      <tokens/>
+      <tokens/>
+      <tokens tokenValue="true" numberOfTokens="1" PrevValue="true"/>
+      <tokens/>
+      <tokens/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1" PrevValue="true"/>
+      <tokens/>
+      <tokens/>
+      <tokens isDirty="true"/>
+      <tokens/>
+      <tokens/>
+      <tokens/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="3" PrevValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="3" PrevValue="true"/>
+      <tokens/>
+    </tokenConfigurations>
+  </auxiliar:Controll>
+  <auxiliar:AlphaParent alphas="null" ruleParameterID="null"/>
+  <auxiliar:AlphaParent alphas="E8 E8 E8" ruleParameterID="E8"/>
+  <auxiliar:AlphaParent alphas="23 23 23 23 23 23 23 23 23 23" ruleParameterID="23"/>
+  <auxiliar:AlphaParent alphas="E1 E1 E1 E1" ruleParameterID="E1"/>
+  <auxiliar:AlphaParent alphas="E2 E2 E2 E2 E2" ruleParameterID="E2"/>
+  <auxiliar:AlphaParent alphas="E6 E6 E6 E6" ruleParameterID="E6"/>
+  <auxiliar:AlphaParent alphas="E3 E3 E3 E3 E3 E3 E3 E3" ruleParameterID="E3"/>
+  <auxiliar:AlphaParent alphas="E4 E4 E4" ruleParameterID="E4"/>
+  <auxiliar:AlphaParent alphas="E7 E7 E7 E7 E7" ruleParameterID="E7"/>
+  <auxiliar:AlphaParent alphas="E5 E5 E5 E5 E5 E5" ruleParameterID="E5"/>
+  <auxiliar:AlphaParent alphas="E9 E9 E9 E9 E9 E9 E9" ruleParameterID="E9"/>
+  <auxiliar:AlphaParent alphas="E10 E10 E10 E10 E10" ruleParameterID="E10"/>
+  <auxiliar:QueueElem states="s0 s1 s2 s3 s4 s5 s6 s7 s8 s9 s10 h00" elements="/15 /17 /19 /21 /23 /25 /27 /29 /31 /33 /35" tokenConfiguration="/0/@tokenConfigurations.0" dirtyElements="/15 /17 /19 /21 /23 /25 /27 /29 /31 /33 /35"/>
+  <auxiliar:StateRef id="s0" layer="LayerE2" hasElements="/15" inConfiguration="/13">
+    <statePtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0"/>
+    <layerPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.0"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s0" id="E2">
+    <elemPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s1" layer="LayerE1" hasElements="/17" inConfiguration="/13">
+    <statePtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.0"/>
+    <layerPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.1"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s1" id="E1">
+    <elemPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s2" layer="Layercanvas" hasElements="/19" inConfiguration="/13">
+    <statePtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.2/@states.0"/>
+    <layerPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.2"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s2" id="23">
+    <elemPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.2/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s3" layer="LayerE3" hasElements="/21" inConfiguration="/13">
+    <statePtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.3/@states.0"/>
+    <layerPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.3"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s3" id="E3">
+    <elemPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.3/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s4" layer="LayerE4" hasElements="/23" inConfiguration="/13">
+    <statePtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.4/@states.0"/>
+    <layerPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.4"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s4" id="E4">
+    <elemPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.4/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s5" layer="LayerE5" hasElements="/25" inConfiguration="/13">
+    <statePtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.5/@states.0"/>
+    <layerPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.5"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s5" id="E5">
+    <elemPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.5/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s6" layer="LayerE6" hasElements="/27" inConfiguration="/13">
+    <statePtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.6/@states.0"/>
+    <layerPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.6"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s6" id="E6">
+    <elemPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.6/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s7" layer="LayerE7" hasElements="/29" inConfiguration="/13">
+    <statePtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.7/@states.0"/>
+    <layerPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.7"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s7" id="E7">
+    <elemPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.7/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s8" layer="LayerE8" hasElements="/31" inConfiguration="/13">
+    <statePtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.8/@states.0"/>
+    <layerPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.8"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s8" id="E8">
+    <elemPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.8/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s9" layer="LayerE9" hasElements="/33" inConfiguration="/13">
+    <statePtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.9/@states.0"/>
+    <layerPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.9"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s9" id="E9">
+    <elemPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.9/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s10" layer="LayerE10" hasElements="/35" inConfiguration="/13">
+    <statePtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.10/@states.0"/>
+    <layerPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.10"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s10" id="E10">
+    <elemPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.10/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="h00" layer="LayerControler" inConfiguration="/13">
+    <statePtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.11/@states.0"/>
+    <layerPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.11"/>
+  </auxiliar:StateRef>
+  <auxiliar:QueueElem states="s0 s1 s2 s3 s4 s12 s6 s7 s8 s9 s10 h00" elements="/39 /41 /43 /45 /47 /49 /51 /53 /55 /57 /59" tokenConfiguration="/0/@tokenConfigurations.1" dirtyElements="/43 /49"/>
+  <auxiliar:StateRef id="s0" layer="LayerE2" hasElements="/39" inConfiguration="/37">
+    <statePtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0"/>
+    <layerPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.0"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s0" id="E2">
+    <elemPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s1" layer="LayerE1" hasElements="/41" inConfiguration="/37">
+    <statePtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.0"/>
+    <layerPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.1"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s1" id="E1">
+    <elemPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s2" layer="Layercanvas" hasElements="/63" isDirty="true" inConfiguration="/37">
+    <statePtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.2/@states.0"/>
+    <layerPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.2"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef id="23">
+    <elemPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.2/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s3" layer="LayerE3" hasElements="/45" inConfiguration="/37">
+    <statePtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.3/@states.0"/>
+    <layerPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.3"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s3" id="E3">
+    <elemPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.3/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s4" layer="LayerE4" hasElements="/47" inConfiguration="/37">
+    <statePtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.4/@states.0"/>
+    <layerPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.4"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s4" id="E4">
+    <elemPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.4/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s12" layer="LayerE5" hasElements="/49" isDirty="true" inConfiguration="/37">
+    <statePtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.5/@states.1"/>
+    <layerPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.5"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s12" id="E5" value="3">
+    <elemPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.5/@states.1/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s6" layer="LayerE6" hasElements="/51" inConfiguration="/37">
+    <statePtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.6/@states.0"/>
+    <layerPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.6"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s6" id="E6">
+    <elemPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.6/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s7" layer="LayerE7" hasElements="/53" inConfiguration="/37">
+    <statePtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.7/@states.0"/>
+    <layerPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.7"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s7" id="E7">
+    <elemPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.7/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s8" layer="LayerE8" hasElements="/55" inConfiguration="/37">
+    <statePtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.8/@states.0"/>
+    <layerPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.8"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s8" id="E8">
+    <elemPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.8/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s9" layer="LayerE9" hasElements="/57" inConfiguration="/37">
+    <statePtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.9/@states.0"/>
+    <layerPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.9"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s9" id="E9">
+    <elemPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.9/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s10" layer="LayerE10" hasElements="/59" inConfiguration="/37">
+    <statePtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.10/@states.0"/>
+    <layerPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.10"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s10" id="E10">
+    <elemPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.10/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="h00" layer="LayerControler" inConfiguration="/37">
+    <statePtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.11/@states.0"/>
+    <layerPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.11"/>
+  </auxiliar:StateRef>
+  <auxiliar:DirtyState preCond="true"/>
+  <auxiliar:DirtyState>
+    <elements href="../InModels/Synthetic25H.interaction#//@interactions.5/@hasStates.1/@conditions.0"/>
+  </auxiliar:DirtyState>
+  <auxiliar:ElemRef inState="s2" id="23">
+    <elemPtr href="Synthetic25H.sccd#//@class.0/@scxml.0/@parallel.0/@states.2/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+</xmi:XMI>

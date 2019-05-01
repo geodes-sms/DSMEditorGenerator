@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sccd:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:sccd="http://www.example.org/sccd" name="Synthetic280X" description="RunGhostGameofLifeEditor">
+  <class name="Interaction">
+    <attributes name="context" type="String"/>
+    <scxml initialState="//@class.0/@scxml.0/@parallel.0">
+      <parallel id="System">
+        <states id="LayerE2" initial="//@class.0/@scxml.0/@parallel.0/@states.0/@states.0">
+          <transition event="event0" name="event0" target="//@class.0/@scxml.0/@parallel.0/@states.0/@states.1">
+            <script script="screenActive.call(this,'E2',0);"/>
+            <script script="screenActive.call(this,'E2',0);"/>
+          </transition>
+          <transition event="event3" name="event3" target="//@class.0/@scxml.0/@parallel.0/@states.0/@states.2">
+            <script script="screenActive.call(this,'E2',0);"/>
+          </transition>
+          <transition event="event4" name="event4" target="//@class.0/@scxml.0/@parallel.0/@states.0/@states.3">
+            <script script="screenActive.call(this,'E2',0);"/>
+          </transition>
+          <transition event="event5" name="event5" target="//@class.0/@scxml.0/@parallel.0/@states.0/@states.4">
+            <script script="screenActive.call(this,'E2',0);"/>
+          </transition>
+          <transition event="event7" name="event7" target="//@class.0/@scxml.0/@parallel.0/@states.0/@states.5">
+            <script script="screenActive.call(this,'E2',0);"/>
+          </transition>
+          <states id="s0">
+            <ielement id="E2"/>
+          </states>
+          <states id="s12">
+            <ielement id="E2" value="10"/>
+          </states>
+          <states id="s23">
+            <ielement id="E2" value="26"/>
+          </states>
+          <states id="s26">
+            <ielement id="E2" value="4"/>
+          </states>
+          <states id="s28">
+            <ielement id="E2" value="7"/>
+          </states>
+          <states id="s32">
+            <ielement id="E2" value="13"/>
+          </states>
+        </states>
+        <states id="LayerE1" initial="//@class.0/@scxml.0/@parallel.0/@states.1/@states.0">
+          <transition event="event1" name="event1" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.1">
+            <script script="screenActive.call(this,'E1',0);"/>
+          </transition>
+          <transition event="event8" name="event8" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.2">
+            <script script="screenActive.call(this,'E1',0);"/>
+          </transition>
+          <transition event="event12" name="event12" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.3">
+            <script script="screenActive.call(this,'E1',0);"/>
+          </transition>
+          <states id="s1">
+            <ielement id="E1"/>
+          </states>
+          <states id="s17">
+            <ielement id="E1" value="42"/>
+          </states>
+          <states id="s36">
+            <ielement id="E1" value="2"/>
+          </states>
+          <states id="s43">
+            <ielement id="E1" value="6"/>
+          </states>
+        </states>
+        <states id="Layercanvas" initial="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+          <transition event="event0" name="event0" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+            <script script="this.E4update();"/>
+            <script script="this.E8add();"/>
+            <script script="this.E1add();"/>
+            <script script="this.E6rem();"/>
+          </transition>
+          <transition event="event14" name="event14" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+            <script script="this.E3update();"/>
+            <script script="this.E10update();"/>
+          </transition>
+          <states id="s2">
+            <transition event="event1" name="event1" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.E9add();"/>
+              <script script="this.E1update();"/>
+              <script script="this.E7update();"/>
+              <script script="this.E4update();"/>
+              <script script="this.E1add();"/>
+              <script script="this.E4rem();"/>
+              <script script="this.E2rem();"/>
+            </transition>
+            <transition event="event2" name="event2" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.E7add();"/>
+              <script script="this.E4rem();"/>
+            </transition>
+            <transition event="event3" name="event3" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.E10update();"/>
+              <script script="this.E9add();"/>
+              <script script="this.E3add();"/>
+              <script script="this.E5add();"/>
+              <script script="this.E6add();"/>
+              <script script="this.E9update();"/>
+            </transition>
+            <transition event="event4" name="event4" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.E5add();"/>
+              <script script="this.E2rem();"/>
+              <script script="this.E9add();"/>
+              <script script="this.E7update();"/>
+            </transition>
+            <transition event="event5" name="event5" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.E3add();"/>
+              <script script="this.E10update();"/>
+              <script script="this.E6update();"/>
+            </transition>
+            <transition event="event6" name="event6" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.E4add();"/>
+              <script script="this.E3update();"/>
+            </transition>
+            <transition event="event7" name="event7" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.E7update();"/>
+              <script script="this.E8update();"/>
+              <script script="this.E5update();"/>
+            </transition>
+            <transition event="event8" name="event8" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.E10update();"/>
+            </transition>
+            <transition event="event9" name="event9" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.E10add();"/>
+            </transition>
+            <transition event="event10" name="event10" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0"/>
+            <transition event="event11" name="event11" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.E9update();"/>
+            </transition>
+            <transition event="event12" name="event12" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.E4update();"/>
+              <script script="this.E3rem();"/>
+              <script script="this.E3rem();"/>
+              <script script="this.E7update();"/>
+            </transition>
+            <transition event="event13" name="event13" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0"/>
+            <transition event="event15" name="event15" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+              <script script="this.E7add();"/>
+              <script script="this.E5update();"/>
+              <script script="this.E1add();"/>
+            </transition>
+            <ielement id="23"/>
+          </states>
+        </states>
+        <states id="LayerE3" initial="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0">
+          <transition event="event0" name="event0" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.1">
+            <script script="screenActive.call(this,'E3',0);"/>
+          </transition>
+          <transition event="event5" name="event5" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.2">
+            <script script="screenActive.call(this,'E3',0);"/>
+          </transition>
+          <transition event="event8" name="event8" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.3">
+            <script script="screenActive.call(this,'E3',0);"/>
+          </transition>
+          <transition event="event13" name="event13" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.4">
+            <script script="screenActive.call(this,'E3',0);"/>
+          </transition>
+          <states id="s3">
+            <transition event="event4" name="event4" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0"/>
+            <ielement id="E3"/>
+          </states>
+          <states id="s15">
+            <ielement id="E3" value="3"/>
+          </states>
+          <states id="s27">
+            <ielement id="E3" value="10"/>
+          </states>
+          <states id="s34">
+            <ielement id="E3" value="2"/>
+          </states>
+          <states id="s49">
+            <ielement id="E3" value="50"/>
+          </states>
+        </states>
+        <states id="LayerE4" initial="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+          <transition event="event1" name="event1" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.1">
+            <script script="screenActive.call(this,'E4',0);"/>
+          </transition>
+          <transition event="event4" name="event4" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.2">
+            <script script="screenActive.call(this,'E4',0);"/>
+          </transition>
+          <transition event="event9" name="event9" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.3">
+            <script script="screenActive.call(this,'E4',0);"/>
+            <script script="screenActive.call(this,'E4',0);"/>
+            <script script="screenActive.call(this,'E4',0);"/>
+          </transition>
+          <transition event="event12" name="event12" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.4">
+            <script script="screenActive.call(this,'E4',0);"/>
+          </transition>
+          <transition event="event13" name="event13" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.5">
+            <script script="screenActive.call(this,'E4',0);"/>
+          </transition>
+          <states id="s4">
+            <ielement id="E4"/>
+          </states>
+          <states id="s16">
+            <ielement id="E4" value="9"/>
+          </states>
+          <states id="s24">
+            <ielement id="E4" value="7"/>
+          </states>
+          <states id="s41">
+            <transition event="event15" name="event15" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.3"/>
+            <ielement id="E4" value="26"/>
+          </states>
+          <states id="s44">
+            <ielement id="E4" value="10"/>
+          </states>
+          <states id="s46">
+            <ielement id="E4" value="49"/>
+          </states>
+        </states>
+        <states id="LayerE5" initial="//@class.0/@scxml.0/@parallel.0/@states.5/@states.0">
+          <transition event="event3" name="event3" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.1">
+            <script script="screenActive.call(this,'E5',0);"/>
+          </transition>
+          <transition event="event7" name="event7" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.2">
+            <script script="screenActive.call(this,'E5',0);"/>
+          </transition>
+          <transition event="event8" name="event8" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.3">
+            <script script="screenActive.call(this,'E5',0);"/>
+            <script script="screenActive.call(this,'E5',0);"/>
+          </transition>
+          <transition event="event13" name="event13" target="//@class.0/@scxml.0/@parallel.0/@states.5/@states.4">
+            <script script="screenActive.call(this,'E5',0);"/>
+          </transition>
+          <states id="s5">
+            <ielement id="E5"/>
+          </states>
+          <states id="s22">
+            <ielement id="E5" value="33"/>
+          </states>
+          <states id="s31">
+            <ielement id="E5" value="58"/>
+          </states>
+          <states id="s35">
+            <ielement id="E5" value="20"/>
+          </states>
+          <states id="s47">
+            <ielement id="E5" value="54"/>
+          </states>
+        </states>
+        <states id="LayerE6" initial="//@class.0/@scxml.0/@parallel.0/@states.6/@states.0">
+          <transition event="event7" name="event7" target="//@class.0/@scxml.0/@parallel.0/@states.6/@states.1">
+            <script script="screenActive.call(this,'E6',0);"/>
+          </transition>
+          <transition event="event9" name="event9" target="//@class.0/@scxml.0/@parallel.0/@states.6/@states.2">
+            <script script="screenActive.call(this,'E6',0);"/>
+          </transition>
+          <transition event="event13" name="event13" target="//@class.0/@scxml.0/@parallel.0/@states.6/@states.3">
+            <script script="screenActive.call(this,'E6',0);"/>
+          </transition>
+          <states id="s6">
+            <ielement id="E6"/>
+          </states>
+          <states id="s33">
+            <ielement id="E6" value="51"/>
+          </states>
+          <states id="s40">
+            <ielement id="E6" value="4"/>
+          </states>
+          <states id="s48">
+            <ielement id="E6" value="42"/>
+          </states>
+        </states>
+        <states id="LayerE7" initial="//@class.0/@scxml.0/@parallel.0/@states.7/@states.0">
+          <transition event="event3" name="event3" target="//@class.0/@scxml.0/@parallel.0/@states.7/@states.0">
+            <script script="screenActive.call(this,'E7',0);"/>
+          </transition>
+          <transition event="event6" name="event6" target="//@class.0/@scxml.0/@parallel.0/@states.7/@states.1">
+            <script script="screenActive.call(this,'E7',0);"/>
+          </transition>
+          <transition event="event9" name="event9" target="//@class.0/@scxml.0/@parallel.0/@states.7/@states.2">
+            <script script="screenActive.call(this,'E7',0);"/>
+            <script script="screenActive.call(this,'E7',0);"/>
+          </transition>
+          <transition event="event14" name="event14" target="//@class.0/@scxml.0/@parallel.0/@states.7/@states.3">
+            <script script="screenActive.call(this,'E7',0);"/>
+          </transition>
+          <transition event="event15" name="event15" target="//@class.0/@scxml.0/@parallel.0/@states.7/@states.4">
+            <script script="screenActive.call(this,'E7',0);"/>
+          </transition>
+          <states id="s7">
+            <ielement id="E7"/>
+          </states>
+          <states id="s30">
+            <ielement id="E7" value="19"/>
+          </states>
+          <states id="s37">
+            <ielement id="E7" value="38"/>
+          </states>
+          <states id="s50">
+            <ielement id="E7" value="16"/>
+          </states>
+          <states id="s54">
+            <ielement id="E7" value="32"/>
+          </states>
+        </states>
+        <states id="LayerE8" initial="//@class.0/@scxml.0/@parallel.0/@states.8/@states.0">
+          <transition event="event0" name="event0" target="//@class.0/@scxml.0/@parallel.0/@states.8/@states.1">
+            <script script="screenActive.call(this,'E8',0);"/>
+          </transition>
+          <transition event="event2" name="event2" target="//@class.0/@scxml.0/@parallel.0/@states.8/@states.2">
+            <script script="screenActive.call(this,'E8',0);"/>
+          </transition>
+          <transition event="event6" name="event6" target="//@class.0/@scxml.0/@parallel.0/@states.8/@states.3">
+            <script script="screenActive.call(this,'E8',0);"/>
+          </transition>
+          <transition event="event13" name="event13" target="//@class.0/@scxml.0/@parallel.0/@states.8/@states.4">
+            <script script="screenActive.call(this,'E8',0);"/>
+          </transition>
+          <transition event="event15" name="event15" target="//@class.0/@scxml.0/@parallel.0/@states.8/@states.5">
+            <script script="screenActive.call(this,'E8',0);"/>
+          </transition>
+          <states id="s8">
+            <ielement id="E8"/>
+          </states>
+          <states id="s14">
+            <transition event="event14" name="event14" target="//@class.0/@scxml.0/@parallel.0/@states.8/@states.1"/>
+            <ielement id="E8" value="5"/>
+          </states>
+          <states id="s19">
+            <ielement id="E8" value="11"/>
+          </states>
+          <states id="s29">
+            <ielement id="E8" value="2"/>
+          </states>
+          <states id="s45">
+            <ielement id="E8" value="40"/>
+          </states>
+          <states id="s52">
+            <ielement id="E8" value="20"/>
+          </states>
+        </states>
+        <states id="LayerE9" initial="//@class.0/@scxml.0/@parallel.0/@states.9/@states.0">
+          <transition event="event2" name="event2" target="//@class.0/@scxml.0/@parallel.0/@states.9/@states.1">
+            <script script="screenActive.call(this,'E9',0);"/>
+          </transition>
+          <transition event="event3" name="event3" target="//@class.0/@scxml.0/@parallel.0/@states.9/@states.2">
+            <script script="screenActive.call(this,'E9',0);"/>
+          </transition>
+          <transition event="event9" name="event9" target="//@class.0/@scxml.0/@parallel.0/@states.9/@states.3">
+            <script script="screenActive.call(this,'E9',0);"/>
+          </transition>
+          <transition event="event10" name="event10" target="//@class.0/@scxml.0/@parallel.0/@states.9/@states.4">
+            <script script="screenActive.call(this,'E9',0);"/>
+          </transition>
+          <transition event="event15" name="event15" target="//@class.0/@scxml.0/@parallel.0/@states.9/@states.5">
+            <script script="screenActive.call(this,'E9',0);"/>
+          </transition>
+          <states id="s9">
+            <ielement id="E9"/>
+          </states>
+          <states id="s20">
+            <ielement id="E9" value="8"/>
+          </states>
+          <states id="s21">
+            <ielement id="E9" value="12"/>
+          </states>
+          <states id="s39">
+            <ielement id="E9" value="14"/>
+          </states>
+          <states id="s42">
+            <ielement id="E9" value="29"/>
+          </states>
+          <states id="s53">
+            <ielement id="E9" value="2"/>
+          </states>
+        </states>
+        <states id="LayerE10" initial="//@class.0/@scxml.0/@parallel.0/@states.10/@states.0">
+          <transition event="event1" name="event1" target="//@class.0/@scxml.0/@parallel.0/@states.10/@states.2">
+            <script script="screenActive.call(this,'E10',0);"/>
+          </transition>
+          <transition event="event4" name="event4" target="//@class.0/@scxml.0/@parallel.0/@states.10/@states.3">
+            <script script="screenActive.call(this,'E10',0);"/>
+          </transition>
+          <transition event="event9" name="event9" target="//@class.0/@scxml.0/@parallel.0/@states.10/@states.4">
+            <script script="screenActive.call(this,'E10',0);"/>
+            <script script="screenActive.call(this,'E10',0);"/>
+          </transition>
+          <transition event="event15" name="event15" target="//@class.0/@scxml.0/@parallel.0/@states.10/@states.5">
+            <script script="screenActive.call(this,'E10',0);"/>
+            <script script="screenActive.call(this,'E10',0);"/>
+            <script script="screenActive.call(this,'E10',0);"/>
+            <script script="screenActive.call(this,'E10',0);"/>
+          </transition>
+          <states id="s10">
+            <transition event="event0" name="event0" target="//@class.0/@scxml.0/@parallel.0/@states.10/@states.1">
+              <script script="screenActive.call(this,'E10',0);"/>
+            </transition>
+            <ielement id="E10"/>
+          </states>
+          <states id="s13">
+            <ielement id="E10" value="10"/>
+          </states>
+          <states id="s18">
+            <ielement id="E10" value="50"/>
+          </states>
+          <states id="s25">
+            <ielement id="E10" value="2"/>
+          </states>
+          <states id="s38">
+            <ielement id="E10" value="18"/>
+          </states>
+          <states id="s51">
+            <ielement id="E10" value="17"/>
+          </states>
+        </states>
+        <states id="LayerControler" initial="//@class.0/@scxml.0/@parallel.0/@states.11/@states.0">
+          <states id="h00">
+            <transition event="event" cond="INSTATE('/System/LayerE10/s10') and this.type == 'E10'" name="event" target="//@class.0/@scxml.0/@parallel.0/@states.11/@states.0">
+              <raise event="event0"/>
+            </transition>
+            <transition event="event" cond="INSTATE('/System/Layercanvas/s2') and this.type == 'E3'" name="event" target="//@class.0/@scxml.0/@parallel.0/@states.11/@states.0">
+              <raise event="event1"/>
+            </transition>
+            <transition event="event" cond="INSTATE('/System/Layercanvas/s2') and this.type == 'E9'" name="event" target="//@class.0/@scxml.0/@parallel.0/@states.11/@states.0">
+              <raise event="event2"/>
+            </transition>
+            <transition event="event" cond="INSTATE('/System/Layercanvas/s2') and this.type == 'E6'" name="event" target="//@class.0/@scxml.0/@parallel.0/@states.11/@states.0">
+              <raise event="event3"/>
+            </transition>
+            <transition event="event" cond="INSTATE('/System/LayerE3/s3') and INSTATE('/System/Layercanvas/s2') and this.type == 'E3'" name="event" target="//@class.0/@scxml.0/@parallel.0/@states.11/@states.0">
+              <raise event="event4"/>
+            </transition>
+            <transition event="event" cond="INSTATE('/System/Layercanvas/s2') and this.type == 'E3'" name="event" target="//@class.0/@scxml.0/@parallel.0/@states.11/@states.0">
+              <raise event="event5"/>
+            </transition>
+            <transition event="event" cond="INSTATE('/System/Layercanvas/s2') and this.type == 'E6'" name="event" target="//@class.0/@scxml.0/@parallel.0/@states.11/@states.0">
+              <raise event="event6"/>
+            </transition>
+            <transition event="event" cond="INSTATE('/System/Layercanvas/s2') and this.type == 'E9'" name="event" target="//@class.0/@scxml.0/@parallel.0/@states.11/@states.0">
+              <raise event="event7"/>
+            </transition>
+            <transition event="event" cond="INSTATE('/System/Layercanvas/s2') and this.type == 'E9'" name="event" target="//@class.0/@scxml.0/@parallel.0/@states.11/@states.0">
+              <raise event="event8"/>
+            </transition>
+            <transition event="event" cond="INSTATE('/System/Layercanvas/s2') and this.type == 'E5'" name="event" target="//@class.0/@scxml.0/@parallel.0/@states.11/@states.0">
+              <raise event="event9"/>
+            </transition>
+            <transition event="event" cond="INSTATE('/System/Layercanvas/s2') and this.type == 'E6'" name="event" target="//@class.0/@scxml.0/@parallel.0/@states.11/@states.0">
+              <raise event="event10"/>
+            </transition>
+            <transition event="event" cond="INSTATE('/System/Layercanvas/s2') and this.type == 'E6'" name="event" target="//@class.0/@scxml.0/@parallel.0/@states.11/@states.0">
+              <raise event="event11"/>
+            </transition>
+            <transition event="event" cond="INSTATE('/System/Layercanvas/s2') and this.type == 'E6'" name="event" target="//@class.0/@scxml.0/@parallel.0/@states.11/@states.0">
+              <raise event="event12"/>
+            </transition>
+            <transition event="event" cond="INSTATE('/System/Layercanvas/s2') and this.type == 'E8'" name="event" target="//@class.0/@scxml.0/@parallel.0/@states.11/@states.0">
+              <raise event="event13"/>
+            </transition>
+            <transition event="event" cond="INSTATE('/System/LayerE8/s14') and this.type == 'E8'" name="event" target="//@class.0/@scxml.0/@parallel.0/@states.11/@states.0">
+              <raise event="event14"/>
+            </transition>
+            <transition event="event" cond="INSTATE('/System/Layercanvas/s2') and INSTATE('/System/LayerE4/s41') and this.type == 'E3'" name="event" target="//@class.0/@scxml.0/@parallel.0/@states.11/@states.0">
+              <raise event="event15"/>
+            </transition>
+          </states>
+        </states>
+      </parallel>
+    </scxml>
+  </class>
+</sccd:Diagram>

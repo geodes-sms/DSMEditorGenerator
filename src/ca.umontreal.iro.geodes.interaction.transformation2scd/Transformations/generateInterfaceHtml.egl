@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--script defer src="https://use.fontawesome.com/releases/v5.7.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Vasco Sousa">
+
+    <title>AToMPM</title>
+    <style type="text/css">
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .vertical{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;    
+        }
+        
+        .horizontal{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;    
+        }
+        
+        .overlap *{
+            position: absolute;
+        }
+        
+        .textWidget{
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            background-color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        
+        .buttonWidget a{
+            float: left;
+            text-align: center;
+            padding: 12px 16px;
+            transition: all 0.3s ease;
+            font-size: 30px;
+        }
+                
+        .buttonWidget a:hover {
+            background-color: #000;
+        }
+        
+        .buttonWidget.active {
+            background-color: dodgerblue;
+        }
+        
+        .buttonWidget.active :hover{
+            background-color:darkblue;
+        }
+        
+        .text{
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            display: block;
+            transition: 0.3s;
+        }
+        
+        .image{
+        }
+        
+        .notVisible{
+            display: none;
+        }
+        
+[%for (lDLayer: LD!Layer in LD!InteractionStream.all.selectOne(s|s.name=="screen").layers) {%]
+    .[%=lDLayer.name%]{
+        z-index: [%=lDLayer.index%];
+        position: fixed;                       
+        top: 0px;
+        left: 0px;
+    }
+    [%for (lDComponents in lDLayer.components) {%]
+    [%=lDComponents.element.defStyle()%]
+    [%}%]
+[%}%]
+
+        .cellPropertiesTab{
+          height: 100%;
+          width: 250px;
+          position: fixed;
+          top: 0px;
+          right: 0px;
+          background-color: #515151;
+          overflow-x: hidden;
+          transition: 0.5s;
+        }
+
+    </style>
+</head>
+
+<script src="./javascript_sccd_runtime/libs/HackTimer.js"></script>
+<script src="./javascript_sccd_runtime/statecharts_core.js"></script>
+<script src="./javascript_sccd_runtime/libs/utils.js"></script>
+<script src="./javascript_sccd_runtime/libs/svg.js"></script>
+<script src="./javascript_sccd_runtime/libs/ui.js"></script>
+<script src="./mapinglib.js"></script>
+<script src="./[%=LD!RelLayoutDiagram.all.first().name%].js"></script>
+
+<body>
+[%for (lDLayer: LD!Layer in LD!InteractionStream.all.selectOne(s|s.name=="screen").layers) {%]
+    <div id="[%=lDLayer.name%]" class="[%=lDLayer.behaviour%] [%=lDLayer.name%] container">
+    [%for (lDComponents in lDLayer.components) {%]
+        [%=lDComponents.element.defElement()%]
+    [%}%]
+    </div>
+[%}%]
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <p class="lead">Icons from Font Awesome used and colors altered under creative commons licence</p>
+        </div>
+      </div>
+    </div>
+
+<script>
+</script>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <!--script src="vendor/jquery/jquery.min.js"></script-->
+    <!--script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script-->
+
+  </body>
+
+</html>
+
+[*comment Elements*]
+[% @template
+operation loopElements(elements: OrderedSet(LD!Element)) {
+for (elem : LD!Element in elements) {%]
+[%=elem.defElement()%]
+[%}
+}%]
+
+[*comment Group Elements*]
+[% @template
+operation LD!ElemSequence defElement() {%]
+<div id="[%=self.id%]" class="[%=self.name%] sequence container[%if (not self.isDefault) {%] notVisible[%}%]">
+    [%=self.elements[0].defElement()%]
+</div>
+[%}%]
+
+[% @template
+operation LD!ElemSelector defElement() {%]
+<div id="[%=self.id%]" class="[%=self.name%] selector container[%if (not self.isDefault) {%] notVisible[%}%]">
+    [%=self.elements[self.visibility].defElement()%]
+</div>
+[%}%]
+
+[% @template
+operation LD!VisualContainer defElement() {%]
+<div id="[%=self.id%]" class="[%=self.name%] [%=self.behaviour%] container[%if (not self.isDefault) {%] notVisible[%}%]">
+    [%=loopElements(self.elements)%]
+</div>
+[%}%]
+
+[*comment Visual Elements*]
+[% @template
+operation LD!Image defElement() {%]
+<a id="[%=self.id%]" [%if (self.XPos >0 or self.YPos > 0) {%]style="[%if (self.XPos >0) {%] left:[%=self.XPos%]px;[%}%][%if (self.YPos >0) {%] top:[%=self.YPos%]px;[%}}%]" class="[%=self.name%] image" href="#"><i class="[%=self.ref%][%if (not self.isDefault) {%] notVisible[%}%]"></i></a>
+[%}%]
+
+[% @template
+operation LD!Text defElement() {%]
+<a id="[%=self.id%]"  [%if (self.XPos >0 or self.YPos > 0) {%]style="[%if (self.XPos >0) {%] left:[%=self.XPos%]px;[%}%][%if (self.YPos >0) {%] top:[%=self.YPos%]px;[%}}%]" data-atompm-interface-data-source="data-[%=self.ref%]" class="[%=self.name%] text[%if (not self.isDefault) {%] notVisible[%}%]" href="#">[%=self.ref%]</a>
+[%}%]
+
+[*comment Widget Elements*]
+[% @template
+operation LD!TextWidget defElement() {%]
+<p id="[%=self.id%]" data-atompm-interface-data-source="data-[%=self.ref%]" class="[%=self.name%] textWidget[%if (not self.isDefault) {%] notVisible[%}%]" href="#" contenteditable="true">[%=self.ref%]</p>
+[%}%]
+
+[% @template
+operation LD!ButtonWidget defElement() {%]
+<div id="[%=self.id%]" class="[%=self.name%] buttonWidget[%if (not self.isDefault) {%] notVisible[%}%]">
+    <a href="#"><i class="[%=self.ref%]"></i></a>
+</div>
+[%}%]
+
+[% @template
+operation LD!Canvas defElement() {%]
+<div id="[%=self.id%]" class="canvas container" data-gridSizeX=[%=self.gridSizeX%] data-gridSizeY=[%=self.gridSizeY%]>
+    <script>
+        controller = new [%=LD!RelLayoutDiagram.all.first().name%].Controller(new JsEventLoop());
+        controller.start();
+        console.log('echo');
+    </script>
+</div>
+[%}%]
+
+[*comment Styles*]
+[% @template
+operation loopStyles(elements: OrderedSet(LD!Element)) {
+for (elem : LD!Element in elements) {%]
+[%=elem.defStyle()%]
+[%}
+}%]
+
+[*comment Group Elements*]
+
+[% @template
+operation LD!ElemSequence defStyle() {%]
+[%=loopStyles(self.elements)%]
+[%}%]
+
+[% @template
+operation LD!ElemSelector defStyle() {%]
+[%=loopStyles(self.elements)%]
+[%}%]
+
+[% @template
+operation LD!VisualContainer defStyle() {%]
+[%=loopStyles(self.elements)%]
+.[%=self.name%]{
+[%if (self.behaviour.asString() = "horizontal") {%]
+
+[%}
+else { if (self.behaviour.asString() = "vertical") {%]
+
+[%}}%]
+}
+[%}%]
+
+[*comment Visual Elements*]
+[% @template
+operation LD!Image defStyle() {%]
+[%=self.defStyleGen()%]
+[%}%]
+
+[% @template
+operation LD!Text defStyle() {%]
+[%=self.defStyleGen()%]
+[%}%]
+
+[*comment Widget Elements*]
+[% @template
+operation LD!TextWidget defStyle() {%]
+[%=self.defStyleGen()%]
+[%}%]
+
+[% @template
+operation LD!ButtonWidget defStyle() {%]
+[%=self.defStyleGen()%]
+[%}%]
+
+[% @template
+operation LD!VisualElement defStyleGen() {%]
+.[%=self.name%]{
+    background-color: [%=self.backgroundColour%];
+    color: [%=self.foregroundColour%];
+    [%if (self.xSize<>0) {%]
+	width: [%=self.xSize%]px;
+    [%}%]
+    [%if (self.ySize<>0) {%]
+    height: [%=self.ySize%]px;
+    [%}%]
+}
+
+.[%=self.name%] a{
+    color: [%=self.foregroundColour%];
+}
+[%}%]
+
+[% @template
+operation LD!Canvas defStyle() {%]
+[%}%]

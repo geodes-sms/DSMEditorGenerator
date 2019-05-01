@@ -1,0 +1,74 @@
+var interactions = Row.all;
+var acumulate = "";
+var controll = "";
+
+var sequenceControll = 3;
+var state;
+
+var transition;
+
+var interactionRoot =  new InteractionM!Interactions;
+var interactionRule;
+
+interactions.println();
+for (i in interactions) {
+	if (i.field.size() == 1) {
+		continue ;
+	}
+	interactionRule = new InteractionM!AtomicInteraction;
+	interactionRoot.interactions.add(interactionRule);
+	for (c2 in i.field) {
+		var c = c2.replace(" ","");
+		if (sequenceControll == 0) {
+			state = new InteractionM!State;
+			var index = c.toCharSequence().indexOf('|');
+			state.id = c.substring(0,index);
+			for(p in c.substring(index+1,c.length()).split(",")){
+				var cond = p.split(":");
+				if (p="") {
+					continue ;
+				}
+				var element;
+				switch (cond.at(1)){
+					case "L" : element = new InteractionM!LElement;
+					case "O" : element = new InteractionM!OElement;
+					case "V" : element = new InteractionM!VElement;
+					case "I" : element = new InteractionM!IElement;
+				}
+				
+				element.id = cond.at(2);
+				if(cond.at(3) <> "_"){
+					element.value = cond.at(3);
+				}
+				switch (cond.at(0)){
+					case "f" : element.isFocus=true;
+					case "n" : element.isNegative=true;
+				}
+				state.conditions.add(element);
+			}
+			state.from=transition;
+			interactionRule.hasStates.add(state);
+			if(interactionRule.preCondition == null){
+				interactionRule.preCondition = state;
+			}
+			interactionRule.goal = state;
+			sequenceControll = 1;
+		}else if (sequenceControll == 1) {
+			transition = new InteractionM!Transition;
+			transition.Event = c.replace("-","").replace(">","");
+			transition.source = state;
+			interactionRule.hasTransitions.add(transition);
+			sequenceControll = 0;
+		}else{
+			interactionRule.name = c;
+			sequenceControll =0;
+		}
+		
+
+	}
+	interactionRule.println();
+	interactionRule.hasStates.println();
+	sequenceControll = 3;
+	state= null;
+	transition =null;
+}

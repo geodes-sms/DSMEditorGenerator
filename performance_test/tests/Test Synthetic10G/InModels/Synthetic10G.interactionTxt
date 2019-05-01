@@ -1,0 +1,10 @@
+R1 # C1 | f:L:E5:_,_:I:E2:_,_:I:E1:_,_:I:E4:1,_:L:E2:_ # --- event --> # E1 | _:I:E2:_ #
+R2 # C2 | f:I:E7:_,_:L:E3:_,_:I:E2:1,_:L:E4:_,_:L:E4:_,_:L:E8:_,_:I:E3:_,_:I:E7:_ # --- event --> # E2 | _:I:E5:1,_:L:E2:update,_:L:E2:rem,_:I:E7:_,_:L:E1:add,_:L:E5:update,_:L:E8:add #
+R3 # C3 | f:I:E7:_,_:L:E5:_,_:I:E4:2,_:L:E6:_,_:L:E8:_,_:I:E10:1,_:L:E7:_,_:L:E8:_,_:I:E7:_ # --- event --> # E3 | _:I:E2:_,_:L:E9:update,_:I:E1:_,_:I:E8:_,_:L:E10:add,_:L:E4:add,_:I:E4:1,_:L:E4:rem,_:L:E10:update #
+R4 # C4 | f:I:E3:_,_:L:E6:_,_:I:E2:2,_:I:E6:_,_:L:E2:_,_:L:E7:_,_:I:E3:_ # --- event --> # E4 | _:I:E5:2,_:I:E8:1,_:L:E9:rem,_:L:E5:rem,_:L:E9:update,_:L:E6:rem,_:I:E5:2,_:L:E2:update #
+R5 # C5 | f:I:E3:_,_:I:E8:2,_:I:E2:2,_:L:E6:_ # --- event --> # E5 | _:I:E8:3,_:I:E5:3,_:I:E8:4,_:L:E5:rem #
+R6 # C6 | f:I:E4:3,_:I:E3:_,_:L:E7:_ # --- event --> # E6 | _:I:E10:1,_:L:E5:update,_:L:E6:rem,_:I:E6:1,_:I:E3:1,_:I:E1:1 #
+R7 # C7 | f:I:E7:_,_:I:E7:_ # --- event --> # E7 | _:L:E6:add,_:L:E3:add,_:I:E6:2,_:I:E4:4,_:L:E1:rem,_:L:E10:add,_:L:E2:rem,_:I:E6:3 #
+R8 # C8 | f:L:E10:_,_:L:E1:_,_:I:E10:2,_:L:E2:_,_:L:E8:_,_:L:E8:_,_:I:E8:_,_:I:E2:_,_:I:E1:2 # --- event --> # E8 | _:L:E1:add,_:I:E6:3 #
+R9 # C9 | f:L:E2:_ # --- event --> # E9 | _:I:E9:1,_:L:E9:add,_:L:E9:add,_:I:E3:2,_:L:E8:add,_:L:E7:rem,_:L:E9:update,_:L:E9:add #
+R10 # C10 | f:L:E7:_,_:I:E3:3,_:I:E5:_ # --- event --> # E10 | _:I:E8:2,_:I:E9:_,_:I:E4:1,_:I:E3:_,_:L:E8:update,_:I:E4:1,_:L:E4:add,_:I:E3:_ #

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.epsilon.etl.eclipse.dt.launching.EtlLaunchConfigurationDelegate">
+<booleanAttribute key="fine_grained_profiling" value="true"/>
+<listAttribute key="models">
+<listEntry value="#Tue May 15 11:00:12 EDT 2018&#13;&#10;isMetamodelFileBased=false&#13;&#10;name=Layout&#13;&#10;readOnLoad=true&#13;&#10;storeOnDisposal=false&#13;&#10;aliases=&#13;&#10;cached=true&#13;&#10;fileBasedMetamodelUri=&#13;&#10;metamodelUri=http\://udem.iro.geodes.ca/layoutRel&#13;&#10;modelUri=platform\:/resource/SyntheticTesting/Test%20Synthetic280Y/InModels/Synthetic280Y.layoutrel&#13;&#10;reuseUnmodifiedFileBasedMetamodels=true&#13;&#10;type=EMF&#13;&#10;modelFile=/SyntheticTesting/Test Synthetic280Y/InModels/Synthetic280Y.layoutrel&#13;&#10;expand=true&#13;&#10;metamodelFile="/>
+<listEntry value="#Tue May 15 11:00:19 EDT 2018&#13;&#10;isMetamodelFileBased=false&#13;&#10;name=SCCD&#13;&#10;readOnLoad=false&#13;&#10;storeOnDisposal=true&#13;&#10;aliases=&#13;&#10;cached=true&#13;&#10;fileBasedMetamodelUri=&#13;&#10;metamodelUri=http\://www.example.org/sccd&#13;&#10;modelUri=platform\:/resource/SyntheticTesting/Test%20Synthetic280Y/OutModels/Synthetic280Y.sccd&#13;&#10;reuseUnmodifiedFileBasedMetamodels=true&#13;&#10;type=EMF&#13;&#10;modelFile=/SyntheticTesting/Test Synthetic280Y/OutModels/Synthetic280Y.sccd&#13;&#10;expand=true&#13;&#10;metamodelFile="/>
+</listAttribute>
+<listAttribute key="parameters">
+<listEntry value="#Tue Apr 23 00:59:25 EDT 2019&#13;&#10;name=projectName&#13;&#10;type=String&#13;&#10;value=Synthetic280Y"/>
+</listAttribute>
+<booleanAttribute key="profile_model_loading" value="true"/>
+<booleanAttribute key="profiling_enabled" value="true"/>
+<booleanAttribute key="reset_profiler" value="false"/>
+<stringAttribute key="source" value="/ca.umontreal.iro.geodes.interaction.transformation2scd/Transformations/relLayout2scd.etl"/>
+</launchConfiguration>

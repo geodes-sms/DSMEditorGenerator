@@ -1,0 +1,700 @@
+// Current version
+// optimizations on the execution and patterns used
+// TODO cleanup unised variables
+// TODO remove hack for SCCD
+
+//Comented out because native deep clone sucks
+//var emfTool = new Native("org.eclipse.epsilon.emc.emf.tools.EmfTool");
+//var ecoreUtil = emfTool.ecoreUtil;
+
+var controll = new AUX!Controll;
+
+
+//Initial setup
+var rule;
+var beta : AUX!BetaNode;
+var alpha : AUX!AlphaNodeParam;
+var alphaLayer : AUX!AlphaNodeLayer;
+var message : String;
+var nextStateID : Integer = 0;
+var nextTStateID : Integer = 0;
+//hack for parallel transitions
+var nextTransitionID : Integer = 0;
+var controllerState : SCCD!State = SCCD!State.allInstances().selectOne(i|"h00" = i.id);
+
+var token : AUX!Token;
+var tokenConfig = new AUX!TokenConfiguration;
+controll.tokenConfigurations.add(tokenConfig);
+
+var canvas : LAYOUT!Canvas = LAYOUT!Canvas.allInstances().first();
+
+var nullRun = true;
+
+//build initial RETElike network
+// O(n^2)
+//one beta node per interaction rule
+//one alpha node per globaly diferent lhs element
+//connect alphas and betas as per lhs requirements
+////"Building initial RETE like Network".println();
+
+var nullAlpha:AUX!AlphaNodeParam = new AUX!AlphaNodeParam;
+nullAlpha.tokenIndex = tokenConfig.tokens.size();
+nullAlpha.ruleParameterID = "null";
+token = new AUX!Token;
+tokenConfig.tokens.add(token);
+controll.parameters.add(nullAlpha);
+var alphaParent:AUX!AlphaParent;
+alphaParent = new AUX!AlphaParent;
+alphaParent.ruleParameterID = nullAlpha.ruleParameterID;
+controll.alphaParents.add(alphaParent);
+alphaParent.alphas.add(nullAlpha);
+
+for (r in INTERACTION!AtomicInteraction) {
+	rule = new AUX!Rule;
+	rule.name = r.name;
+	rule.rulePtr = r;
+	//one beta per rule
+	beta = new AUX!BetaNode;
+	beta.rule = rule;
+	controll.rules.add(rule);
+	controll.desisions.add(beta);
+	//add stub token
+	token = new AUX!Token;
+	beta.tokenIndex = tokenConfig.tokens.size();
+	tokenConfig.tokens.add(token);
+	for(e in rule.rulePtr.preCondition.conditions){
+		//issues with the token indexes
+		//get alphaNode
+		alpha = e.findAsParamIn(controll.parameters);
+		//add stub token
+		if(alpha.tokenIndex = -1){
+			token = new AUX!Token;
+			alpha.tokenIndex = tokenConfig.tokens.size();
+			tokenConfig.tokens.add(token);
+		}
+		alphaParent = controll.alphaParents.selectOne(a|a.ruleParameterID = alpha.ruleParameterID);
+		if(alphaParent = null){
+			alphaParent = new AUX!AlphaParent;
+			alphaParent.ruleParameterID = alpha.ruleParameterID;
+			controll.alphaParents.add(alphaParent);
+		}
+		alphaParent.alphas.add(alpha);
+		
+		//get and connect to  Layer alphaNode
+		alphaLayer = alpha.getLayerAsParamIn(controll.parameters);
+		//add stub token
+		if(alphaLayer.tokenIndex = -1){
+			token = new AUX!Token;
+			alphaLayer.tokenIndex = tokenConfig.tokens.size();
+			tokenConfig.tokens.add(token);
+		}
+		//connect alphas to relevant beta node
+		alpha.toBeta.add(beta);
+		//might need to check if it already exists
+		alphaLayer.toBeta.add(beta);
+		
+		//here because layers do not count!
+		beta.positiveValue++;
+	}
+	//add any additional layers as betas to the rules
+
+	//TODO check what is excuded here
+	if(false) {
+	for(e in rule.rulePtr.hasStates.collect(s|s.conditions).flatten().reject(c : INTERACTION!OElement | true).asSet().excludingAll(rule.rulePtr.preCondition.conditions)) {
+		//TODO just check if e is an LElement instead of searching
+		var alID;
+		if(e.type().name <> "LElement"){
+//		if(SCCD!IElement.allInstances().selectOne(i|e.id = i.id) <> null){
+			alID = SCCD!IElement.allInstances().selectOne(i|e.id = i.id).eContainer().eContainer().id;
+		}else{ // if at first you don't succeed try and try again'
+			alID = SCCD!IElement.allInstances().selectOne(i|canvas.id = i.id).eContainer().eContainer().id;
+		}
+		alphaLayer = controll.parameters.selectOne(p : AUX!AlphaNodeLayer|p.layerID = alID);
+		if(alphaLayer == null){
+			alphaLayer = new AUX!AlphaNodeLayer;
+			alphaLayer.layerID = alID;
+			//add stub token
+			token = new AUX!Token;
+			alphaLayer.tokenIndex = tokenConfig.tokens.size();
+			tokenConfig.tokens.add(token);
+			controll.parameters.add(alphaLayer);
+			alphaLayer.toBeta.add(beta);
+		}
+	}	
+	}else{
+	if (beta.positiveValue = 0) {
+		nullAlpha.toBeta.add(beta);
+	}
+	}
+}
+
+////"RETE like Network built".println();
+
+// generate initial state configuration to apply rules
+// each new rule will create a potencialy new state configuration
+// if it does it will be enqueued for evaluation
+
+//var stateConfig = new OrderedSet(AUX!StateRef);
+
+////"Generating initial state configuration".println();
+
+var stateMap : Map;
+var configurationsMap : Map;
+//var key : String;
+var stateConfig = new AUX!QueueElem;
+var ref : AUX!StateRef;
+var s : SCCD!State;
+var newElem : AUX!ElemRef;
+
+for (e in SCCD!Parallel) {
+	for (l in e.states){
+		s = l.states.selectOne(i|true); // maybe change this to loop pre existing statechart
+		nextStateID++; //count the ids of the initial states // could be done by query e.states.size() ...
+		ref = new AUX!StateRef;
+		ref.layer = l.id;
+		ref.layerPtr = l;
+		ref.id = s.id;
+		ref.statePtr = s;
+		stateConfig.states.add(ref);
+//		stateConfig.dirtyStates.add(ref);
+		for(elem in s.ielement){
+			newElem = new AUX!ElemRef;
+			newElem.id = elem.id;
+			//rename this in SCCD
+			newElem.value = elem.value;
+			newElem.elemPtr = elem;
+			newElem.inState = ref;
+			stateConfig.elements.add(newElem);
+			stateConfig.dirtyElements.add(newElem);
+		}
+		//put states in a map for later indexing
+		stateMap.put(ref.hasElements.asString(),ref);
+	}
+}
+
+tokenConfig.tokenID = stateConfig;
+stateConfig.tokenConfiguration = tokenConfig;
+configurationsMap.put(stateConfig.states.collect(i| i.id).asString(), stateConfig);
+
+
+////"Initial state configuration generated".println();
+
+controll.globalQueue.add(stateConfig);
+
+
+////"Roundrobin interaction processing".println();
+
+//terminate.println();
+
+var ruleList : Sequence<AUX!Rule>;
+
+while (not controll.globalQueue.isEmpty()){
+	var currentQueueElem = controll.globalQueue.first();
+	var newQueueElem : AUX!QueueElem;
+	ruleList = currentQueueElem.RETERun(controll);
+	for(r in ruleList){
+		newQueueElem = r.applyRule(currentQueueElem, stateMap, configurationsMap);
+		if(newQueueElem <> null){
+			controll.globalQueue.add(newQueueElem);
+		}
+	}
+	controll.globalQueue.remove(currentQueueElem);
+}
+
+//roundrobin the rules
+//O(n^4) for rules application
+//O(n^3) for rete
+
+////"Interactions processed".println();
+
+// end of code
+
+operation AUX!QueueElem copy() : AUX!QueueElem {
+	var r = new AUX!QueueElem;
+	for (s in self.states){
+		r.states.add(s.copy());
+	}
+	return r;
+}
+
+operation AUX!StateRef copy() : AUX!StateRef {
+	var r = new AUX!StateRef;
+	r.id = self.id;
+	r.layer = self.layer;
+	r.statePtr = self.statePtr;
+	r.layerPtr = self.layerPtr;
+	return r;
+}
+
+// let us deprecate this one :D
+operation AUX!QueueElem clone() : AUX!QueueElem {
+	var clone = new AUX!QueueElem;
+	var pivotState : AUX!StateRef;
+	for(s in self.states){
+		pivotState = s.clone();
+		clone.states.add(pivotState);
+		for(e in pivotState.hasElements){
+			clone.elements.add(e);
+		}
+	}
+	return clone;
+}
+
+// let us deprecate this one :D
+operation AUX!StateRef clone() : AUX!StateRef {
+	var clone = new AUX!StateRef;
+	clone.id = self.id;
+	clone.layer = self.layer;
+	clone.statePtr = self.statePtr;
+	clone.layerPtr = self.layerPtr;
+	//the clone of the set is the set of the clones
+	for(e in self.hasElements){
+		clone.hasElements.add(e.clone());
+	}
+	return clone;
+}
+
+//maybe switch type am parameter to make more sence  ?
+operation AUX!StateRef cloneAdd(newConfiguration : AUX!QueueElem) : AUX!StateRef {
+	var clone = new AUX!StateRef;
+	clone.id = self.id;
+	clone.layer = self.layer;
+	clone.statePtr = self.statePtr;
+	clone.layerPtr = self.layerPtr;
+	newConfiguration.states.add(clone);
+	//the clone of the set is the set of the clones
+	for(e in self.hasElements){
+		clone.hasElements.add(e.clone());
+		newConfiguration.elements.add(e);
+	}
+	return clone;
+}
+
+operation AUX!ElemRef clone() : AUX!ElemRef {
+	var clone = new AUX!ElemRef;
+	clone.elemPtr = self.elemPtr;
+	clone.id = self.id;
+	clone.value = self.value;
+	return clone;
+}
+
+//operations to identify elements
+operation INTERACTION!IElement findAsParamIn(params:OrderedSet(AUX!AlphaNodeParam)) : AUX!AlphaNodeParam {
+	var a = params.selectOne(p: AUX!AlphaNodeParam|p.ruleParameterID = self.id and p.value = self.value and p.isNegative = self.isNegative);
+	if(a = null){
+		a = new AUX!AlphaNodeParam;
+		a.ruleParameterID = self.id;
+		a.value = self.value; 
+		a.isNegative = self.isNegative;
+		params.add(a);
+	}
+	return a;
+}
+
+operation INTERACTION!OElement findAsParamIn(params:OrderedSet(AUX!AlphaNodeParam)) : AUX!AlphaNodeParam {
+	var a = params.selectOne(p: AUX!AlphaNodeParam|p.ruleParameterID = self.id and p.isNegative = self.isNegative);
+	if(a = null){
+		a = new AUX!AlphaNodeParam;
+		a.ruleParameterID = self.id;
+		a.isNegative = self.isNegative;
+		params.add(a);
+	}
+	return a;
+}
+
+operation INTERACTION!LElement findAsParamIn(params:OrderedSet(AUX!AlphaNodeParam)) : AUX!AlphaNodeParam {
+	var a = params.selectOne(p: AUX!AlphaNodeParam|p.ruleParameterID = self.id and p.isNegative = self.isNegative);
+	if(a = null){
+		a = new AUX!AlphaNodeParam;
+		a.ruleParameterID = canvas.id;
+//		a.value = self.id;  //comment this out
+		a.isNegative = self.isNegative;
+		params.add(a);
+	}
+	return a;
+}
+
+operation INTERACTION!VElement findAsParamIn(params:OrderedSet(AUX!AlphaNodeParam)) : AUX!AlphaNodeParam {
+	var a = params.selectOne(p: AUX!AlphaNodeParam|p.ruleParameterID = self.id and p.isNegative = self.isNegative);
+	if(a = null){
+		a = new AUX!AlphaNodeParam;
+		a.ruleParameterID = self.id;
+		a.value = self.value; 
+		a.isNegative = self.isNegative;
+		params.add(a);
+	}
+	return a;
+}
+
+operation INTERACTION!IElement asOp() : String {
+    ////"elem that thing".println();
+    ////self.id.println();
+    var is = LAYOUT!Element.allInstances().selectOne(i|self.id = i.id);
+    while (not is.isTypeOf(LAYOUT!InteractionStream)) {
+		is = is.eContainer();////.println();
+	}
+    ////controll.parameters.selectOne(param: AUX!AlphaNodeParam|param.ruleParameterID = self.id).asString().println();
+// this should be done in the mapping
+	var retValue = "";
+	switch (self.value) {
+	   case "visible" : retValue = (is.name + "Setter.call(this,'" + self.id + "',"+ 1 +");");
+       case "notvisible" : retValue = (is.name + "Setter.call(this,'" + self.id + "',"+ 0 +");");
+       case "active" : retValue = (is.name + "Active.call(this,'" + self.id + "',"+ 1 +");");
+       case "inactive" : retValue = (is.name + "Active.call(this,'" + self.id + "',"+ 0 +");");
+       case "update" : retValue = (is.name + "Updater.call(this,'" + self.id + "');");
+       case "enable" : retValue = (is.name + "Enable.call(this,'" + self.id + "',"+ 1 +");");
+       case "disable" : retValue = (is.name + "Disable.call(this,'" + self.id + "',"+ 0 +");");
+       default : retValue = (is.name + "Active.call(this,'" + self.id + "',"+ 0 +");");
+	}
+	return retValue;
+}
+
+operation INTERACTION!OElement asOp() : String {
+//here
+	return ("this." + self.value + "();");
+}
+
+operation INTERACTION!LElement asOp() : String {
+	return ("this." + self.id + self.value + "();");
+//	return (self.value + self.id + ".call(this);");
+}
+
+operation AUX!QueueElem update (conditionElem:INTERACTION!IElement) : AUX!StateRef {
+	var pivot = self.elements.selectOne(elem|conditionElem.id = elem.id);
+	if(pivot <> null){
+		pivot.value = conditionElem.value; //discriminate type here
+		pivot.inState.isDirty = true;
+//		pivot.inState.inConfiguration.dirtyStates.add(pivot.inState);
+//		pivot.inState.inConfiguration.dirtyLayers.add(pivot.inState);
+		pivot.inState.inConfiguration.dirtyElements.add(pivot);
+		return pivot.inState;
+	}
+	return null;
+}
+
+operation AUX!QueueElem update (conditionElem:INTERACTION!OElement) : AUX!StateRef {
+	var pivot = self.elements.selectOne(elem|canvas.id = elem.id);
+	if(pivot <> null){
+		pivot.inState.isDirty = true;
+//		pivot.inState.inConfiguration.dirtyStates.add(pivot.inState);
+//		pivot.inState.inConfiguration.dirtyLayers.add(pivot.inState);
+		pivot.inState.inConfiguration.dirtyElements.add(pivot);
+		return pivot.inState;
+	}
+	return null;
+}
+
+operation AUX!QueueElem update (conditionElem:INTERACTION!LElement) : AUX!StateRef {
+	var pivot = self.elements.selectOne(elem|canvas.id = elem.id);
+	if(pivot <> null){
+//		pivot.value = conditionElem.id; //exclude this
+		pivot.inState.isDirty = true;
+//		pivot.inState.inConfiguration.dirtyStates.add(pivot.inState);
+//		pivot.inState.inConfiguration.dirtyLayers.add(pivot.inState);
+		pivot.inState.inConfiguration.dirtyElements.add(pivot);
+		return pivot.inState;
+	}
+	return null;
+}
+
+
+operation AUX!AlphaNodeParam getLayerAsParamIn(params:OrderedSet(AUX!AlphaNodeParam)) : AUX!AlphaNodeLayer {
+	var al = self.inLayer;
+	if(al == null){
+		//make sure the base statechart has all referenced elements
+		self.id.println();
+		SCCD!IElement.allInstances().selectOne(i|self.id = i.id).println();
+		var alID = SCCD!IElement.allInstances().selectOne(i|self.id = i.id).eContainer().eContainer().id;
+		al = params.selectOne(p : AUX!AlphaNodeLayer|p.layerID = alID);
+		if(al == null){
+			al = new AUX!AlphaNodeLayer;
+			al.layerID = alID;
+			params.add(al);
+		}
+		al.hasParams.add(self);
+	}
+	return al;
+}
+
+//operation to run RETE
+
+operation AUX!QueueElem RETERun(controll:AUX!Controll) : Sequence<AUX!Rule> {
+	var tokenConfig = self.tokenConfiguration;
+	var list : Sequence<AUX!Rule>;
+	//Alphas to Betas
+
+	var listOfAlphas : Set<AUX!AlphaNodeParam> = new Set<AUX!AlphaNodeParam>;	
+
+	for (ap in controll.alphaParents) {
+		if(self.dirtyElements.exists(e|ap.ruleParameterID = e.id)){
+			listOfAlphas.addAll(ap.alphas);
+		}
+	}
+
+	var listOfBetas : Set<AUX!AlphaNodeParam> = new Set<AUX!AlphaNodeParam>;
+	
+	if(nullRun){
+		listOfBetas.addAll(nullAlpha.toBeta);
+		nullRun = false;
+	}
+	
+//	for(a in controll.parameters.select(p : AUX!AlphaNodeParam | true)){
+	for(a in listOfAlphas){
+		// if NAC is true the comparison should be false and if false the comparison should be true
+		var value = (a.isNegative xor (a.value.asString() = self.dirtyElements.selectOne(r| r.id = a.ruleParameterID).value.asString()));
+//		var value = not (a.isNegative <> (a.value.asString() <> self.dirtyElements.selectOne(r| r.id = a.ruleParameterID).value.asString()));
+		//because var value = a.visible = r.value; does not feel right
+		token = tokenConfig.tokens[a.tokenIndex];
+		var oldTokenValue = token.PrevValue;
+		token.tokenValue = value;
+		token.isDirty = true; //might not need this on alphas, not here anyway
+		//propagate token to betas
+		var isDirty = false;
+		if(value){
+			if (not oldTokenValue) {
+				isDirty = true;
+				for(b in a.toBeta){
+					var btoken = tokenConfig.tokens[b.tokenIndex];
+					btoken.numberOfTokens++;
+					btoken.isDirty = true;
+					listOfBetas.add(b);
+					btoken.tokenValue = value; //not necessary ?
+				}
+			}
+		}else{
+			if (oldTokenValue) {
+				isDirty = true;
+				for(b in a.toBeta){
+					var btoken = tokenConfig.tokens[b.tokenIndex];
+					btoken.numberOfTokens-=1;
+					btoken.isDirty = true;
+					listOfBetas.add(b);
+					btoken.tokenValue = value; //not necessary ?
+				}					
+			}
+		}
+		
+		if(isDirty){
+			var a2 = a.inLayer;
+			//propagate token to layer alpha
+			token = tokenConfig.tokens[a2.tokenIndex];
+			oldTokenValue = token.PrevValue;
+			token.isDirty = true;
+			//propagate token to layer dependent betas
+			for(b in a2.toBeta){
+				token = tokenConfig.tokens[b.tokenIndex];
+				token.isDirty = true;
+				listOfBetas.add(b);
+			}
+		}	
+	}
+	//Evaluate Betas
+//	for(b in controll.desisions){
+//		if(tokenConfig.tokens[b.tokenIndex].numberOfTokens = b.positiveValue and tokenConfig.tokens[b.tokenIndex].isDirty){
+	for(b in listOfBetas){
+		if(tokenConfig.tokens[b.tokenIndex].numberOfTokens = b.positiveValue){
+			list.add(b.rule);
+			b.rule.queue.add(tokenConfig.tokenID);
+		}
+	}
+	
+	return list;
+}
+
+operation AUX!Rule applyRule(currentQueueElem : AUX!QueueElem, stateMap : Map, configurationsMap : Map) : AUX!QueueElem{
+	var oldStateRef : AUX!StateRef;
+	var isDirty = false;
+	//var newConfiguration  = new AUX!QueueElem; //outplace
+	var newConfiguration = currentQueueElem.clone(); //inplace
+	
+	var guards : OrderedSet;
+	var dirtyStates : Map = new Map;
+	//apply rule to elements
+	//create guard requirements for the transition // requires inplace ?
+//	var preCond = true;
+
+	for(ruleState in self.rulePtr.hasStates){
+		if(ruleState = self.rulePtr.preCondition){
+			for(conditionElem in ruleState.conditions){
+				var guardState = newConfiguration.update(conditionElem);
+				if(guardState <> null){
+					////dirtyStates.println();
+					var dirtyValue;
+					//if a state has not been yet modified by this rule mark it as dirty and to guards
+					if(not dirtyStates.containsKey(guardState)){
+						dirtyValue = new AUX!DirtyState;
+						////dirtyValue.println();
+						dirtyValue.preCond = true;
+						dirtyStates.put(guardState,dirtyValue);
+						guards.add(("INSTATE('/System/" + guardState.layer + "/" + guardState.id + "')"));
+					}
+				}
+			}		
+		}else{
+			for(conditionElem in ruleState.conditions){
+				var guardState = newConfiguration.update(conditionElem);
+		//		if(guardState <> null and not dirtyStates.containsKey(guardState) ){
+		//			dirtyStates.put(guardState,preCond);
+		//		}
+				if(guardState <> null){
+					////dirtyStates.println();
+					var dirtyValue;
+					//if a state has not been yet modified by this rule mark it as dirty and to guards
+					if(not dirtyStates.containsKey(guardState)){
+						dirtyValue = new AUX!DirtyState;
+						dirtyValue.preCond = false;
+						////dirtyValue.println();
+						dirtyStates.put(guardState,dirtyValue);
+						// do I need guard on the post conditions ?
+						// guards.add(("INSTATE('/System/" + guardState.layer + "/" + guardState.id + "')"));
+					}else{
+						dirtyValue = dirtyStates.get(guardState);
+						////dirtyValue.println();
+					    //do we realy need this ? the layer should allways be true, no ?
+					//	guards.add(("INSTATE('/System/" + guardState.layer + "')"));
+					}
+					dirtyValue.elements.add(conditionElem); //add action preformed
+				}
+			}
+//			preCond = false;
+		}
+	}
+
+	var focus = self.rulePtr.preCondition.conditions.selectOne(c|c.isFocus);
+	if(focus <> null){
+	    ////focus.id.println();
+		//python
+	    //guards.add(("self.type == '" + focus.id + "'"));
+	    //javascript
+		guards.add(("this.type == '" + focus.id + "'"));
+	}
+	//guards.add(("context == '" + self.rulePtr.preCondition.conditions.selectOne(c|c.isFocus).id + "'"));
+	
+	// for (newStateRef in currentQueueElem.states) { // outplace
+	var sourceStateRef;
+	for (newStateRef in dirtyStates.keySet()) { // inplace
+		var dirtyState = dirtyStates.get(newStateRef);
+		if(dirtyState.preCond){
+			sourceStateRef = newStateRef.statePtr;
+		}else{
+			sourceStateRef = newStateRef.layerPtr;
+		}
+		//was there a state for this configuration
+		oldStateRef = stateMap.get(newStateRef.hasElements.asString());
+		if(oldStateRef = null){
+			//create an actual new state
+			isDirty = true;
+			newStateRef.id = "s" + nextStateID.asString();
+			nextStateID++;
+			var newState = new SCCD!State;
+			newState.id = newStateRef.id;
+			newStateRef.statePtr = newState;
+			newStateRef.layerPtr.states.add(newState);
+			for(elem in newStateRef.hasElements){
+				var newElem = new SCCD!IElement;
+				newElem.id = elem.id;
+				newElem.value = elem.value;
+				elem.elemPtr = newElem;
+				newState.ielement.add(newElem);
+			}
+			stateMap.put(newStateRef.hasElements.asString(),newStateRef);
+		}else{
+			//update the statereference to the existing state
+			newStateRef.id = oldStateRef.id;
+			//there may be an issue here because the ptrs are not different before the match ...
+			newStateRef.statePtr = oldStateRef.statePtr;
+			//layer should be the same
+			newStateRef.hasElements.clear();
+			for(e in oldStateRef.hasElements){
+				newStateRef.hasElements.add(e.clone()); //or remove this and the clear
+			}
+		}
+		//add interaction transition
+		//TODO actions
+		var transition = new SCCD!Transition;
+		//hack for parallel transitions
+		//transition.event = self.rulePtr.hasTransitions.first().Event;
+		transition.event = self.rulePtr.hasTransitions.first().Event + nextTransitionID.asString();
+		transition.name = transition.event;
+		
+		////"action".println();
+		////transition.println();
+		////dirtyState.elements.println();
+		for (elem in dirtyState.elements) {
+			var action = new SCCD!Script;
+			////elem.println();
+			action.script = elem.asOp();
+			transition.script.add(action);
+		}
+
+        //no transition states 
+		if (true) {
+			transition.target = newStateRef.statePtr;
+		}else{
+		    var newTState = new SCCD!State;
+		    newTState.id = "t" + nextTStateID.asString();
+		    transition.target = newTState;
+		    var transitionOut = new SCCD!Transition;
+			transitionOut.after = 1;
+			transitionOut.name = "after" + nextStateID.asString();
+			transitionOut.target = newStateRef.statePtr;
+			nextTStateID++;
+			newStateRef.layerPtr.states.add(newTState);
+			newTState.transition.add(transitionOut);
+		}
+		//currentQueueElem.states[loopCount-1].statePtr.transition.add(transition);
+		sourceStateRef.transition.add(transition);
+	}
+	
+	//hack for parallel transitions
+	var transition = new SCCD!Transition;
+	var event = self.rulePtr.hasTransitions.first().Event;
+	if (event.startsWith("_after")){
+		transition.after = event.replace("_after","").asInteger();
+	}else{
+		transition.event = event;
+	}
+	transition.name = transition.event;
+	var raise = new SCCD!Raise;
+	raise.event = self.rulePtr.hasTransitions.first().Event + nextTransitionID.asString();
+	transition.raise.add(raise);
+	transition.target = controllerState;
+
+	var newguard : String = "";
+	var notStart : Boolean = false;
+	for(g in guards){
+		if(notStart){
+			newguard += " and ";
+		}
+		newguard += g;
+		notStart = true;
+	}
+	transition.cond = newguard;
+
+	controllerState.transition.add(transition);
+
+	nextTransitionID++;
+	
+	if(not configurationsMap.containsKey(newConfiguration.states.collect(i| i.id).asString())){
+		configurationsMap.put(newConfiguration.states.collect(i| i.id).asString(), newConfiguration);
+		isDirty = true;
+	}
+	
+	if(isDirty){
+		//copy token configuration and apply the copy to the network
+		var newTokenConfig = new AUX!TokenConfiguration;
+		newTokenConfig.tokenID = newConfiguration;
+		for(t in currentQueueElem.tokenConfiguration.tokens){
+			var tokenCopy = new AUX!Token;
+			tokenCopy.tokenValue = t.tokenValue;
+			tokenCopy.PrevValue = t.tokenValue;
+			tokenCopy.numberOfTokens = t.numberOfTokens;
+			newTokenConfig.tokens.add(tokenCopy);
+		}
+		controll.tokenConfigurations.add(newTokenConfig); // probably unecessary
+		newConfiguration.tokenConfiguration = newTokenConfig;
+		return newConfiguration;
+	}else{
+		return null;
+	}
+}
