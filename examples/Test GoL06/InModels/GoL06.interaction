@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ASCII"?>
+<interaction:Interactions xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:interaction="http://udem.iro.geodes.ca/interaction">
+  <interactions preCondition="//@interactions.0/@hasStates.0" goal="//@interactions.0/@hasStates.1" name="RunTransformation">
+    <hasStates to="//@interactions.0/@hasTransitions.0" id="S101">
+      <conditions xsi:type="interaction:IElement" id="playModelButton" isFocus="true"/>
+    </hasStates>
+    <hasStates from="//@interactions.0/@hasTransitions.0" id="S102">
+      <conditions xsi:type="interaction:IElement" id="lightBlue" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="playModelButton" value="active"/>
+      <conditions xsi:type="interaction:OElement" id="3002" value="runGoL"/>
+    </hasStates>
+    <hasTransitions Event="press" source="//@interactions.0/@hasStates.0" target="//@interactions.0/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.1/@hasStates.0" goal="//@interactions.1/@hasStates.1" name="TurnLightOff">
+    <hasStates to="//@interactions.1/@hasTransitions.0" id="S103">
+      <conditions xsi:type="interaction:IElement" id="lightButton" isFocus="true"/>
+    </hasStates>
+    <hasStates from="//@interactions.1/@hasTransitions.0" id="S104">
+      <conditions xsi:type="interaction:IElement" id="lightBlue" value="update"/>
+    </hasStates>
+    <hasTransitions Event="press" source="//@interactions.1/@hasStates.0" target="//@interactions.1/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.2/@hasStates.0" goal="//@interactions.2/@hasStates.1" name="CSAddInstance">
+    <hasStates to="//@interactions.2/@hasTransitions.0" id="S901">
+      <conditions xsi:type="interaction:LElement" id="svgCanvas" isFocus="true"/>
+    </hasStates>
+    <hasStates from="//@interactions.2/@hasTransitions.0" id="S902">
+      <conditions xsi:type="interaction:LElement" id="Life" value="add"/>
+    </hasStates>
+    <hasTransitions Event="select" source="//@interactions.2/@hasStates.0" target="//@interactions.2/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.3/@hasStates.0" goal="//@interactions.3/@hasStates.1" name="CSRemInstance">
+    <hasStates to="//@interactions.3/@hasTransitions.0" id="S901">
+      <conditions xsi:type="interaction:LElement" id="Life" isFocus="true"/>
+    </hasStates>
+    <hasStates from="//@interactions.3/@hasTransitions.0" id="S902">
+      <conditions xsi:type="interaction:LElement" id="Life" value="rem"/>
+    </hasStates>
+    <hasTransitions Event="select" source="//@interactions.3/@hasStates.0" target="//@interactions.3/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.4/@hasStates.0" goal="//@interactions.4/@hasStates.1" name="EndTransformation">
+    <hasStates to="//@interactions.4/@hasTransitions.0" id="P101">
+      <conditions xsi:type="interaction:IElement" id="playModelButton" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.4/@hasTransitions.0" id="P102">
+      <conditions xsi:type="interaction:IElement" id="lightBlue" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="playModelButton"/>
+    </hasStates>
+    <hasTransitions Event="_after50" source="//@interactions.4/@hasStates.0" target="//@interactions.4/@hasStates.1"/>
+  </interactions>
+</interaction:Interactions>

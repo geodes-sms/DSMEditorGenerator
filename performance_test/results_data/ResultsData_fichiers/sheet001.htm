@@ -1,0 +1,1609 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link id=Main-File rel=Main-File href="../ResultsData.htm">
+<link rel=File-List href=filelist.xml>
+<link rel=Stylesheet href=stylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\,";
+	mso-displayed-thousand-separator:" ";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+-->
+</style>
+<![if !supportTabStrip]><script language="JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=4) {
+   if (parent.document.readyState=="complete"
+    && parent.frames['frTabs'].document.readyState=="complete")
+   parent.fnSetActiveSheet(0);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!="frSheet")
+ window.location.replace("../ResultsData.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]>
+</head>
+
+<body link="#0563C1" vlink="#954F72">
+
+<table border=0 cellpadding=0 cellspacing=0 width=1167 style='border-collapse:
+ collapse;table-layout:fixed;width:876pt'>
+ <col width=95 style='mso-width-source:userset;mso-width-alt:3384;width:71pt'>
+ <col width=54 style='mso-width-source:userset;mso-width-alt:1905;width:40pt'>
+ <col width=55 style='mso-width-source:userset;mso-width-alt:1962;width:41pt'>
+ <col width=94 style='mso-width-source:userset;mso-width-alt:3356;width:71pt'>
+ <col width=107 style='mso-width-source:userset;mso-width-alt:3811;width:80pt'>
+ <col width=89 style='mso-width-source:userset;mso-width-alt:3157;width:67pt'>
+ <col width=97 style='mso-width-source:userset;mso-width-alt:3441;width:73pt'>
+ <col width=94 style='mso-width-source:userset;mso-width-alt:3356;width:71pt'>
+ <col width=79 style='mso-width-source:userset;mso-width-alt:2816;width:59pt'>
+ <col width=82 style='mso-width-source:userset;mso-width-alt:2901;width:61pt'>
+ <col width=55 style='mso-width-source:userset;mso-width-alt:1962;width:41pt'>
+ <col width=86 style='mso-width-source:userset;mso-width-alt:3072;width:65pt'>
+ <col width=94 style='mso-width-source:userset;mso-width-alt:3356;width:71pt'>
+ <col width=86 style='mso-width-source:userset;mso-width-alt:3072;width:65pt'>
+ <tr height=58 style='height:43.2pt'>
+  <td height=58 class=xl69 width=95 style='height:43.2pt;width:71pt'>Test Seed</td>
+  <td class=xl69 width=54 style='width:40pt'>#rules</td>
+  <td class=xl69 width=55 style='width:41pt'>#Alpha</td>
+  <td class=xl84 width=94 style='width:71pt'>Generate Inital Statechart Time</td>
+  <td class=xl84 width=107 style='width:80pt'>Generate Inital<br>
+    Statechart Memory</td>
+  <td class=xl84 width=89 style='width:67pt'>RETE Setup<br>
+    Time</td>
+  <td class=xl84 width=97 style='width:73pt'>Refine<br>
+    Satechart<br>
+    Time</td>
+  <td class=xl84 width=94 style='width:71pt'>Refine<br>
+    Satechart<br>
+    Memory</td>
+  <td class=xl84 width=79 style='width:59pt'>Serialize<br>
+    Statechart<br>
+    Time</td>
+  <td class=xl84 width=82 style='width:61pt'>Serialize<br>
+    Statechart<br>
+    Memory</td>
+  <td class=xl69 width=55 style='width:41pt'>#States</td>
+  <td class=xl69 width=86 style='width:65pt'>#Transitions</td>
+  <td class=xl84 width=94 style='width:71pt'>Configuration<br>
+    History<br>
+    Size</td>
+  <td class=xl84 width=86 style='width:65pt'>#Rule<br>
+    applications</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl70 style='height:14.4pt'>&nbsp;</td>
+  <td class=xl70>&nbsp;</td>
+  <td class=xl70>&nbsp;</td>
+  <td class=xl70>ms</td>
+  <td class=xl70>MB</td>
+  <td class=xl70>ms</td>
+  <td class=xl70>ms</td>
+  <td class=xl70>MB</td>
+  <td class=xl70>ms</td>
+  <td class=xl70>MB</td>
+  <td class=xl70>&nbsp;</td>
+  <td class=xl70>&nbsp;</td>
+  <td class=xl74>&nbsp;</td>
+  <td class=xl74>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>1</td>
+  <td align=right>1</td>
+  <td align=right>8</td>
+  <td class=xl67>7,866</td>
+  <td class=xl66>242,812</td>
+  <td class=xl68>78,000</td>
+  <td class=xl67>51,066</td>
+  <td class=xl66>231,735</td>
+  <td class=xl67>57,833</td>
+  <td class=xl66>221,249</td>
+  <td class=xl71>24</td>
+  <td class=xl71>0</td>
+  <td align=right>1</td>
+  <td class=xl71>0</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>2</td>
+  <td align=right>1</td>
+  <td align=right>2</td>
+  <td class=xl67>7,466</td>
+  <td class=xl66>178,258</td>
+  <td class=xl68>24,000</td>
+  <td class=xl67>33,433</td>
+  <td class=xl66>233,832</td>
+  <td class=xl67>47,466</td>
+  <td class=xl66>232,784</td>
+  <td class=xl71>24</td>
+  <td class=xl71>0</td>
+  <td align=right>1</td>
+  <td class=xl71>0</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>3</td>
+  <td align=right>1</td>
+  <td align=right>5</td>
+  <td class=xl67>8,000</td>
+  <td class=xl66>274,727</td>
+  <td class=xl68>24,000</td>
+  <td class=xl67>36,666</td>
+  <td class=xl66>276,826</td>
+  <td class=xl67>48,866</td>
+  <td class=xl66>258,507</td>
+  <td class=xl71>24</td>
+  <td class=xl71>0</td>
+  <td align=right>1</td>
+  <td class=xl71>0</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>4</td>
+  <td align=right>1</td>
+  <td align=right>4</td>
+  <td class=xl67>7,533</td>
+  <td class=xl66>211,812</td>
+  <td class=xl68>25,000</td>
+  <td class=xl67>39,233</td>
+  <td class=xl66>238,027</td>
+  <td class=xl67>49,400</td>
+  <td class=xl66>236,302</td>
+  <td class=xl71>24</td>
+  <td class=xl71>0</td>
+  <td align=right>1</td>
+  <td class=xl71>0</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>1</td>
+  <td align=right>5</td>
+  <td align=right>18</td>
+  <td class=xl67>7,600</td>
+  <td class=xl66>213,909</td>
+  <td class=xl68>42,000</td>
+  <td class=xl67>72,733</td>
+  <td class=xl66>224,395</td>
+  <td class=xl67>49,866</td>
+  <td class=xl66>232,784</td>
+  <td class=xl71>24</td>
+  <td class=xl71>0</td>
+  <td align=right>1</td>
+  <td class=xl71>0</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>2</td>
+  <td align=right>5</td>
+  <td align=right>16</td>
+  <td class=xl67>6,833</td>
+  <td class=xl66>245,366</td>
+  <td class=xl68>35,000</td>
+  <td class=xl67>137,866</td>
+  <td class=xl66>266,680</td>
+  <td class=xl67>80,366</td>
+  <td class=xl66>238,956</td>
+  <td class=xl71>29</td>
+  <td class=xl71>13</td>
+  <td align=right>3</td>
+  <td class=xl71>2</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>3</td>
+  <td align=right>5</td>
+  <td align=right>22</td>
+  <td class=xl67>7,166</td>
+  <td class=xl66>268,435</td>
+  <td class=xl68>40,000</td>
+  <td class=xl67>205,466</td>
+  <td class=xl66>279,020</td>
+  <td class=xl67>96,566</td>
+  <td class=xl66>271,581</td>
+  <td class=xl71>29</td>
+  <td class=xl71>16</td>
+  <td align=right>4</td>
+  <td class=xl71>3</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>4</td>
+  <td align=right>5</td>
+  <td align=right>23</td>
+  <td class=xl67>7,366</td>
+  <td class=xl66>220,201</td>
+  <td class=xl68>46,000</td>
+  <td class=xl67>83,166</td>
+  <td class=xl66>228,313</td>
+  <td class=xl67>50,266</td>
+  <td class=xl66>204,365</td>
+  <td class=xl71>24</td>
+  <td class=xl71>0</td>
+  <td align=right>1</td>
+  <td class=xl71>0</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>1</td>
+  <td align=right>10</td>
+  <td align=right>24</td>
+  <td class=xl67>7,600</td>
+  <td class=xl66>222,298</td>
+  <td class=xl68>58,000</td>
+  <td class=xl67>203,466</td>
+  <td class=xl66>225,275</td>
+  <td class=xl67>84,333</td>
+  <td class=xl66>243,975</td>
+  <td class=xl71>28</td>
+  <td class=xl71>16</td>
+  <td align=right>1</td>
+  <td class=xl71>3</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>2</td>
+  <td align=right>10</td>
+  <td align=right>26</td>
+  <td class=xl67>8,200</td>
+  <td class=xl66>245,367</td>
+  <td class=xl68>53,000</td>
+  <td class=xl67>144,900</td>
+  <td class=xl66>261,061</td>
+  <td class=xl67>62,966</td>
+  <td class=xl66>253,440</td>
+  <td class=xl71>26</td>
+  <td class=xl71>4</td>
+  <td align=right>2</td>
+  <td class=xl71>1</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>3</td>
+  <td align=right>10</td>
+  <td align=right>32</td>
+  <td class=xl67>7,333</td>
+  <td class=xl66>268,436</td>
+  <td class=xl68>62,000</td>
+  <td class=xl67>212,566</td>
+  <td class=xl66>281,019</td>
+  <td class=xl67>74,933</td>
+  <td class=xl66>268,435</td>
+  <td class=xl71>27</td>
+  <td class=xl71>11</td>
+  <td align=right>3</td>
+  <td class=xl71>2</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>4</td>
+  <td align=right>10</td>
+  <td align=right>22</td>
+  <td class=xl67>7,433</td>
+  <td class=xl66>195,036</td>
+  <td class=xl68>49,000</td>
+  <td class=xl67>127,066</td>
+  <td class=xl66>197,133</td>
+  <td class=xl67>64,466</td>
+  <td class=xl66>204,943</td>
+  <td class=xl71>26</td>
+  <td class=xl71>5</td>
+  <td align=right>2</td>
+  <td class=xl71>1</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>1</td>
+  <td align=right>25</td>
+  <td align=right>53</td>
+  <td class=xl67>8,033</td>
+  <td class=xl66>184,539</td>
+  <td class=xl68>125,000</td>
+  <td class=xl67>442,466</td>
+  <td class=xl66>606,295</td>
+  <td class=xl67>94,300</td>
+  <td class=xl66>269,078</td>
+  <td class=xl71>30</td>
+  <td class=xl71>16</td>
+  <td align=right>4</td>
+  <td class=xl71>3</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>2</td>
+  <td align=right>25</td>
+  <td align=right>51</td>
+  <td class=xl67>7,433</td>
+  <td class=xl66>234,881</td>
+  <td class=xl68>110,000</td>
+  <td class=xl67>224,233</td>
+  <td class=xl66>424,474</td>
+  <td class=xl67>49,500</td>
+  <td class=xl66>270,882</td>
+  <td class=xl71>24</td>
+  <td class=xl71>0</td>
+  <td align=right>1</td>
+  <td class=xl71>0</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>3</td>
+  <td align=right>25</td>
+  <td align=right>61</td>
+  <td class=xl67>7,066</td>
+  <td class=xl66>268,355</td>
+  <td class=xl68>115,000</td>
+  <td class=xl67>283,900</td>
+  <td class=xl66>517,996</td>
+  <td class=xl67>55,333</td>
+  <td class=xl66>267,387</td>
+  <td class=xl71>25</td>
+  <td class=xl71>3</td>
+  <td align=right>2</td>
+  <td class=xl71>1</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>4</td>
+  <td align=right>25</td>
+  <td align=right>43</td>
+  <td class=xl67>7,133</td>
+  <td class=xl66>199,880</td>
+  <td class=xl68>97,000</td>
+  <td class=xl67>482,366</td>
+  <td class=xl66>589,405</td>
+  <td class=xl67>118,533</td>
+  <td class=xl66>243,813</td>
+  <td class=xl71>31</td>
+  <td class=xl71>27</td>
+  <td align=right>6</td>
+  <td class=xl71>6</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>1</td>
+  <td align=right>50</td>
+  <td align=right>107</td>
+  <td class=xl67>8,266</td>
+  <td class=xl66>216,007</td>
+  <td class=xl68>269,000</td>
+  <td class=xl67>727,766</td>
+  <td class=xl66>1733,030</td>
+  <td class=xl67>81,233</td>
+  <td class=xl66>260,046</td>
+  <td class=xl71>30</td>
+  <td class=xl71>11</td>
+  <td align=right>3</td>
+  <td class=xl71>2</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>2</td>
+  <td align=right>50</td>
+  <td align=right>80</td>
+  <td class=xl67>7,700</td>
+  <td class=xl66>230,687</td>
+  <td class=xl68>196,000</td>
+  <td class=xl67>873,400</td>
+  <td class=xl66>1121,565</td>
+  <td class=xl67>118,533</td>
+  <td class=xl66>261,317</td>
+  <td class=xl71>33</td>
+  <td class=xl71>26</td>
+  <td align=right>6</td>
+  <td class=xl71>5</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>3</td>
+  <td align=right>50</td>
+  <td align=right>72</td>
+  <td class=xl67>7,000</td>
+  <td class=xl66>268,435</td>
+  <td class=xl68>181,000</td>
+  <td class=xl67>663,033</td>
+  <td class=xl66>1042,106</td>
+  <td class=xl67>148,533</td>
+  <td class=xl66>273,679</td>
+  <td class=xl71>31</td>
+  <td class=xl71>16</td>
+  <td align=right>5</td>
+  <td class=xl71>4</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>4</td>
+  <td align=right>50</td>
+  <td align=right>103</td>
+  <td class=xl67>7,500</td>
+  <td class=xl66>169,869</td>
+  <td class=xl68>265,000</td>
+  <td class=xl67>798,433</td>
+  <td class=xl66>2144,811</td>
+  <td class=xl67>95,700</td>
+  <td class=xl66>234,551</td>
+  <td class=xl71>29</td>
+  <td class=xl71>18</td>
+  <td align=right>5</td>
+  <td class=xl71>4</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>1</td>
+  <td align=right>75</td>
+  <td align=right>130</td>
+  <td class=xl67>7,433</td>
+  <td class=xl66>243,269</td>
+  <td class=xl68>363,000</td>
+  <td class=xl67>1281,300</td>
+  <td class=xl66>1812,998</td>
+  <td class=xl67>134,133</td>
+  <td class=xl66>260,111</td>
+  <td class=xl71>35</td>
+  <td class=xl71>37</td>
+  <td align=right>6</td>
+  <td class=xl71>8</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>2</td>
+  <td align=right>75</td>
+  <td align=right>118</td>
+  <td class=xl67>7,033</td>
+  <td class=xl66>257,950</td>
+  <td class=xl68>447,000</td>
+  <td class=xl67>1143,766</td>
+  <td class=xl66>1806,253</td>
+  <td class=xl67>99,300</td>
+  <td class=xl66>280,680</td>
+  <td class=xl71>33</td>
+  <td class=xl71>19</td>
+  <td align=right>5</td>
+  <td class=xl71>5</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>3</td>
+  <td align=right>75</td>
+  <td align=right>150</td>
+  <td class=xl67>10,766</td>
+  <td class=xl66>190,521</td>
+  <td class=xl68>499,000</td>
+  <td class=xl67>1007,000</td>
+  <td class=xl66>2499,956</td>
+  <td class=xl67>82,500</td>
+  <td class=xl66>246,977</td>
+  <td class=xl71>30</td>
+  <td class=xl71>10</td>
+  <td align=right>3</td>
+  <td class=xl71>2</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>4</td>
+  <td align=right>75</td>
+  <td align=right>118</td>
+  <td class=xl67>7,600</td>
+  <td class=xl66>195,036</td>
+  <td class=xl68>355,000</td>
+  <td class=xl67>963,966</td>
+  <td class=xl66>2429,489</td>
+  <td class=xl67>92,100</td>
+  <td class=xl66>246,594</td>
+  <td class=xl71>31</td>
+  <td class=xl71>17</td>
+  <td align=right>5</td>
+  <td class=xl71>4</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>1</td>
+  <td align=right>100</td>
+  <td align=right>150</td>
+  <td class=xl67>7,433</td>
+  <td class=xl66>243,269</td>
+  <td class=xl68>482,000</td>
+  <td class=xl67>2310,500</td>
+  <td class=xl66>3104,541</td>
+  <td class=xl67>195,833</td>
+  <td class=xl66>271,076</td>
+  <td class=xl71>46</td>
+  <td class=xl71>61</td>
+  <td align=right>11</td>
+  <td class=xl71>14</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>2</td>
+  <td align=right>100</td>
+  <td align=right>175</td>
+  <td class=xl67>7,533</td>
+  <td class=xl66>228,590</td>
+  <td class=xl68>647,000</td>
+  <td class=xl67>1470,566</td>
+  <td class=xl66>2716,915</td>
+  <td class=xl67>79,266</td>
+  <td class=xl66>282,069</td>
+  <td class=xl71>30</td>
+  <td class=xl71>14</td>
+  <td align=right>4</td>
+  <td class=xl71>4</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>3</td>
+  <td align=right>100</td>
+  <td align=right>168</td>
+  <td class=xl67>8,900</td>
+  <td class=xl66>230,687</td>
+  <td class=xl68>569,000</td>
+  <td class=xl67>1430,500</td>
+  <td class=xl66>2391,154</td>
+  <td class=xl67>111,200</td>
+  <td class=xl66>249,385</td>
+  <td class=xl71>29</td>
+  <td class=xl71>23</td>
+  <td align=right>4</td>
+  <td class=xl71>5</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>4</td>
+  <td align=right>100</td>
+  <td align=right>166</td>
+  <td class=xl67>7,466</td>
+  <td class=xl66>182,452</td>
+  <td class=xl68>638,000</td>
+  <td class=xl67>1533,066</td>
+  <td class=xl66>2563,357</td>
+  <td class=xl67>120,500</td>
+  <td class=xl66>226,037</td>
+  <td class=xl71>31</td>
+  <td class=xl71>30</td>
+  <td align=right>4</td>
+  <td class=xl71>7</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>1</td>
+  <td align=right>120</td>
+  <td align=right>167</td>
+  <td class=xl72 align=right>9,066</td>
+  <td class=xl65 align=right>243,270</td>
+  <td class=xl73 align=right>757,000</td>
+  <td class=xl72 align=right>2846,700</td>
+  <td class=xl65 align=right>3438,591</td>
+  <td class=xl72 align=right>220,100</td>
+  <td class=xl65 align=right>274,038</td>
+  <td align=right>44</td>
+  <td align=right>56</td>
+  <td align=right>12</td>
+  <td class=xl71>11</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>2</td>
+  <td align=right>120</td>
+  <td align=right>221</td>
+  <td class=xl72 align=right>8,866</td>
+  <td class=xl65 align=right>236,978</td>
+  <td class=xl73 align=right>902,000</td>
+  <td class=xl72 align=right>3021,933</td>
+  <td class=xl65 align=right>4323,772</td>
+  <td class=xl72 align=right>195,633</td>
+  <td class=xl65 align=right>271,178</td>
+  <td align=right>47</td>
+  <td align=right>50</td>
+  <td align=right>9</td>
+  <td class=xl71>9</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>3</td>
+  <td align=right>120</td>
+  <td align=right>195</td>
+  <td class=xl72 align=right>8,066</td>
+  <td class=xl65 align=right>224,395</td>
+  <td class=xl73 align=right>797,000</td>
+  <td class=xl72 align=right>1904,233</td>
+  <td class=xl65 align=right>3207,610</td>
+  <td class=xl72 align=right>102,233</td>
+  <td class=xl65 align=right>252,435</td>
+  <td align=right>33</td>
+  <td align=right>17</td>
+  <td align=right>5</td>
+  <td class=xl71>4</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>4</td>
+  <td align=right>120</td>
+  <td align=right>187</td>
+  <td class=xl72 align=right>7,300</td>
+  <td class=xl65 align=right>220,201</td>
+  <td class=xl73 align=right>741,000</td>
+  <td class=xl72 align=right>1930,833</td>
+  <td class=xl65 align=right>3073,280</td>
+  <td class=xl72 align=right>109,566</td>
+  <td class=xl65 align=right>241,172</td>
+  <td align=right>32</td>
+  <td align=right>21</td>
+  <td align=right>6</td>
+  <td class=xl71>5</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>1</td>
+  <td align=right>140</td>
+  <td align=right>239</td>
+  <td class=xl72 align=right>7,500</td>
+  <td class=xl65 align=right>186,647</td>
+  <td class=xl73 align=right>1130,000</td>
+  <td class=xl72 align=right>2741,233</td>
+  <td class=xl65 align=right>4322,846</td>
+  <td class=xl72 align=right>115,633</td>
+  <td class=xl65 align=right>240,365</td>
+  <td align=right>35</td>
+  <td align=right>24</td>
+  <td align=right>7</td>
+  <td class=xl71>6</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>2</td>
+  <td align=right>140</td>
+  <td align=right>215</td>
+  <td class=xl72 align=right>7,733</td>
+  <td class=xl65 align=right>205,520</td>
+  <td class=xl73 align=right>896,000</td>
+  <td class=xl72 align=right>4061,933</td>
+  <td class=xl65 align=right>5314,810</td>
+  <td class=xl72 align=right>305,233</td>
+  <td class=xl65 align=right>620,237</td>
+  <td align=right>59</td>
+  <td align=right>93</td>
+  <td align=right>17</td>
+  <td class=xl71>19</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>3</td>
+  <td align=right>140</td>
+  <td align=right>194</td>
+  <td class=xl72 align=right>7,900</td>
+  <td class=xl65 align=right>199,190</td>
+  <td class=xl73 align=right>720,000</td>
+  <td class=xl72 align=right>5140,533</td>
+  <td class=xl65 align=right>5687,476</td>
+  <td class=xl72 align=right>316,000</td>
+  <td class=xl65 align=right>622,402</td>
+  <td align=right>59</td>
+  <td align=right>107</td>
+  <td align=right>22</td>
+  <td class=xl71>23</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>4</td>
+  <td align=right>140</td>
+  <td align=right>226</td>
+  <td class=xl72 align=right>7,833</td>
+  <td class=xl65 align=right>180,355</td>
+  <td class=xl73 align=right>1018,000</td>
+  <td class=xl72 align=right>3302,433</td>
+  <td class=xl65 align=right>4873,398</td>
+  <td class=xl72 align=right>177,433</td>
+  <td class=xl65 align=right>229,874</td>
+  <td align=right>44</td>
+  <td align=right>49</td>
+  <td align=right>10</td>
+  <td class=xl71>9</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>1</td>
+  <td align=right>160</td>
+  <td align=right>256</td>
+  <td class=xl72 align=right>8,366</td>
+  <td class=xl65 align=right>234,881</td>
+  <td class=xl73 align=right>1071,000</td>
+  <td class=xl72 align=right>4268,466</td>
+  <td class=xl65 align=right>6171,919</td>
+  <td class=xl72 align=right>250,600</td>
+  <td class=xl65 align=right>630,625</td>
+  <td align=right>59</td>
+  <td align=right>71</td>
+  <td align=right>13</td>
+  <td class=xl71>14</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>2</td>
+  <td align=right>160</td>
+  <td align=right>254</td>
+  <td class=xl72 align=right>7,966</td>
+  <td class=xl65 align=right>218,104</td>
+  <td class=xl73 align=right>979,000</td>
+  <td class=xl72 align=right>3105,133</td>
+  <td class=xl65 align=right>4975,054</td>
+  <td class=xl72 align=right>154,100</td>
+  <td class=xl65 align=right>252,784</td>
+  <td align=right>41</td>
+  <td align=right>40</td>
+  <td align=right>8</td>
+  <td class=xl71>9</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>3</td>
+  <td align=right>160</td>
+  <td align=right>251</td>
+  <td class=xl72 align=right>7,000</td>
+  <td class=xl65 align=right>205,521</td>
+  <td class=xl73 align=right>1055,000</td>
+  <td class=xl72 align=right>3312,466</td>
+  <td class=xl65 align=right>5184,160</td>
+  <td class=xl72 align=right>162,700</td>
+  <td class=xl65 align=right>247,049</td>
+  <td align=right>40</td>
+  <td align=right>43</td>
+  <td align=right>10</td>
+  <td class=xl71>10</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>4</td>
+  <td align=right>160</td>
+  <td align=right>258</td>
+  <td class=xl72 align=right>7,300</td>
+  <td class=xl65 align=right>228,590</td>
+  <td class=xl73 align=right>1160,000</td>
+  <td class=xl72 align=right>2772,566</td>
+  <td class=xl65 align=right>4688,454</td>
+  <td class=xl72 align=right>121,966</td>
+  <td class=xl65 align=right>253,563</td>
+  <td align=right>36</td>
+  <td align=right>24</td>
+  <td align=right>5</td>
+  <td class=xl71>4</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>1</td>
+  <td align=right>180</td>
+  <td align=right>299</td>
+  <td class=xl72 align=right>7,866</td>
+  <td class=xl65 align=right>190,840</td>
+  <td class=xl73 align=right>1459,000</td>
+  <td class=xl72 align=right>3183,000</td>
+  <td class=xl65 align=right>6307,380</td>
+  <td class=xl72 align=right>104,700</td>
+  <td class=xl65 align=right>248,393</td>
+  <td align=right>35</td>
+  <td align=right>20</td>
+  <td align=right>5</td>
+  <td class=xl71>4</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>2</td>
+  <td align=right>180</td>
+  <td align=right>265</td>
+  <td class=xl72 align=right>6,966</td>
+  <td class=xl65 align=right>243,210</td>
+  <td class=xl73 align=right>1304,000</td>
+  <td class=xl72 align=right>5111,200</td>
+  <td class=xl65 align=right>7059,433</td>
+  <td class=xl72 align=right>268,866</td>
+  <td class=xl65 align=right>582,624</td>
+  <td align=right>57</td>
+  <td align=right>82</td>
+  <td align=right>16</td>
+  <td class=xl71>16</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>3</td>
+  <td align=right>180</td>
+  <td align=right>296</td>
+  <td class=xl72 align=right>7,500</td>
+  <td class=xl65 align=right>218,104</td>
+  <td class=xl73 align=right>1444,000</td>
+  <td class=xl72 align=right>3576,400</td>
+  <td class=xl65 align=right>6386,822</td>
+  <td class=xl72 align=right>137,300</td>
+  <td class=xl65 align=right>258,681</td>
+  <td align=right>37</td>
+  <td align=right>32</td>
+  <td align=right>7</td>
+  <td class=xl71>7</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>4</td>
+  <td align=right>180</td>
+  <td align=right>271</td>
+  <td class=xl72 align=right>7,033</td>
+  <td class=xl65 align=right>228,590</td>
+  <td class=xl73 align=right>1627,000</td>
+  <td class=xl72 align=right>3199,366</td>
+  <td class=xl65 align=right>5494,538</td>
+  <td class=xl72 align=right>127,233</td>
+  <td class=xl65 align=right>247,162</td>
+  <td align=right>34</td>
+  <td align=right>33</td>
+  <td align=right>5</td>
+  <td class=xl71>8</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>1</td>
+  <td align=right>200</td>
+  <td align=right>287</td>
+  <td class=xl67>7,566</td>
+  <td class=xl66>276,824</td>
+  <td class=xl68>1301,000</td>
+  <td class=xl67>2754,366</td>
+  <td class=xl66>5475,612</td>
+  <td class=xl67>77,433</td>
+  <td class=xl66>277,755</td>
+  <td class=xl71>29</td>
+  <td class=xl71>11</td>
+  <td align=right>4</td>
+  <td class=xl71>3</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>2</td>
+  <td align=right>200</td>
+  <td align=right>276</td>
+  <td class=xl67>7,333</td>
+  <td class=xl66>226,493</td>
+  <td class=xl68>1204,000</td>
+  <td class=xl67>7842,533</td>
+  <td class=xl66>8342,101</td>
+  <td class=xl67>87,633</td>
+  <td class=xl66>1260,389</td>
+  <td class=xl71>29</td>
+  <td class=xl71>8</td>
+  <td align=right>2</td>
+  <td class=xl71>1</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>3</td>
+  <td align=right>200</td>
+  <td align=right>294</td>
+  <td class=xl67>8,033</td>
+  <td class=xl66>216,007</td>
+  <td class=xl68>1803,000</td>
+  <td class=xl67>5432,733</td>
+  <td class=xl66>7466,131</td>
+  <td class=xl67>208,366</td>
+  <td class=xl66>287,807</td>
+  <td class=xl71>47</td>
+  <td class=xl71>59</td>
+  <td align=right>13</td>
+  <td class=xl71>13</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>4</td>
+  <td align=right>200</td>
+  <td align=right>321</td>
+  <td class=xl67>8,033</td>
+  <td class=xl66>226,492</td>
+  <td class=xl68>1566,000</td>
+  <td class=xl67>3765,266</td>
+  <td class=xl66>6795,243</td>
+  <td class=xl67>114,466</td>
+  <td class=xl66>246,550</td>
+  <td class=xl71>33</td>
+  <td class=xl71>24</td>
+  <td align=right>7</td>
+  <td class=xl71>6</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>1</td>
+  <td align=right>220</td>
+  <td align=right>332</td>
+  <td class=xl72 align=right>8,366</td>
+  <td class=xl65 align=right>232,764</td>
+  <td class=xl73 align=right>2204,000</td>
+  <td class=xl72 align=right>6221,066</td>
+  <td class=xl65 align=right>8270,159</td>
+  <td class=xl72 align=right>207,500</td>
+  <td class=xl65 align=right>1836,056</td>
+  <td align=right>45</td>
+  <td align=right>51</td>
+  <td align=right>10</td>
+  <td class=xl71>12</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>2</td>
+  <td align=right>220</td>
+  <td align=right>337</td>
+  <td class=xl72 align=right>8,133</td>
+  <td class=xl65 align=right>232,783</td>
+  <td class=xl73 align=right>1638,000</td>
+  <td class=xl72 align=right>4869,166</td>
+  <td class=xl65 align=right>8269,071</td>
+  <td class=xl72 align=right>215,166</td>
+  <td class=xl65 align=right>1882,194</td>
+  <td align=right>48</td>
+  <td align=right>47</td>
+  <td align=right>9</td>
+  <td class=xl71>8</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>3</td>
+  <td align=right>220</td>
+  <td align=right>331</td>
+  <td class=xl72 align=right>7,100</td>
+  <td class=xl65 align=right>226,492</td>
+  <td class=xl73 align=right>1992,000</td>
+  <td class=xl72 align=right>7007,733</td>
+  <td class=xl65 align=right>10500,403</td>
+  <td class=xl72 align=right>314,333</td>
+  <td class=xl65 align=right>355,845</td>
+  <td align=right>62</td>
+  <td align=right>85</td>
+  <td align=right>20</td>
+  <td class=xl71>22</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>4</td>
+  <td align=right>220</td>
+  <td align=right>332</td>
+  <td class=xl72 align=right>8,533</td>
+  <td class=xl65 align=right>232,783</td>
+  <td class=xl73 align=right>2070,000</td>
+  <td class=xl72 align=right>7603,633</td>
+  <td class=xl65 align=right>10886,497</td>
+  <td class=xl72 align=right>312,200</td>
+  <td class=xl65 align=right>680,112</td>
+  <td align=right>67</td>
+  <td align=right>97</td>
+  <td align=right>20</td>
+  <td class=xl71>21</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>1</td>
+  <td align=right>240</td>
+  <td align=right>340</td>
+  <td class=xl72 align=right>7,333</td>
+  <td class=xl65 align=right>406,848</td>
+  <td class=xl73 align=right>1794,000</td>
+  <td class=xl72 align=right>7480,466</td>
+  <td class=xl65 align=right>10647,741</td>
+  <td class=xl72 align=right>209,633</td>
+  <td class=xl65 align=right>1549,523</td>
+  <td align=right>53</td>
+  <td align=right>70</td>
+  <td align=right>15</td>
+  <td class=xl71>17</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>2</td>
+  <td align=right>240</td>
+  <td align=right>337</td>
+  <td class=xl72 align=right>7,733</td>
+  <td class=xl65 align=right>415,236</td>
+  <td class=xl73 align=right>1810,000</td>
+  <td class=xl72 align=right>3184,466</td>
+  <td class=xl65 align=right>8503,820</td>
+  <td class=xl72 align=right>74,000</td>
+  <td class=xl65 align=right>1405,091</td>
+  <td align=right>29</td>
+  <td align=right>9</td>
+  <td align=right>2</td>
+  <td class=xl71>2</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>3</td>
+  <td align=right>240</td>
+  <td align=right>371</td>
+  <td class=xl72 align=right>7,766</td>
+  <td class=xl65 align=right>423,625</td>
+  <td class=xl73 align=right>1526,000</td>
+  <td class=xl72 align=right>4891,833</td>
+  <td class=xl65 align=right>9869,869</td>
+  <td class=xl72 align=right>161,633</td>
+  <td class=xl65 align=right>1522,470</td>
+  <td align=right>47</td>
+  <td align=right>42</td>
+  <td align=right>9</td>
+  <td class=xl71>9</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>4</td>
+  <td align=right>240</td>
+  <td align=right>343</td>
+  <td class=xl72 align=right>7,700</td>
+  <td class=xl65 align=right>410,625</td>
+  <td class=xl73 align=right>1509,000</td>
+  <td class=xl72 align=right>5059,867</td>
+  <td class=xl65 align=right>9743,372</td>
+  <td class=xl72 align=right>178,733</td>
+  <td class=xl65 align=right>1614,807</td>
+  <td align=right>46</td>
+  <td align=right>55</td>
+  <td align=right>11</td>
+  <td class=xl71>12</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>1</td>
+  <td align=right>260</td>
+  <td align=right>397</td>
+  <td class=xl72 align=right>6,733</td>
+  <td class=xl65 align=right>415,236</td>
+  <td class=xl73 align=right>1774,000</td>
+  <td class=xl72 align=right>7739,066</td>
+  <td class=xl65 align=right>12400,460</td>
+  <td class=xl72 align=right>235,200</td>
+  <td class=xl65 align=right>1742,733</td>
+  <td align=right>56</td>
+  <td align=right>77</td>
+  <td align=right>16</td>
+  <td class=xl71>16</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>2</td>
+  <td align=right>260</td>
+  <td align=right>389</td>
+  <td class=xl72 align=right>7,033</td>
+  <td class=xl65 align=right>419,430</td>
+  <td class=xl73 align=right>1619,000</td>
+  <td class=xl72 align=right>5154,366</td>
+  <td class=xl65 align=right>10280,079</td>
+  <td class=xl72 align=right>130,300</td>
+  <td class=xl65 align=right>1350,565</td>
+  <td align=right>36</td>
+  <td align=right>40</td>
+  <td align=right>10</td>
+  <td class=xl71>11</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>3</td>
+  <td align=right>260</td>
+  <td align=right>425</td>
+  <td class=xl72 align=right>6,866</td>
+  <td class=xl65 align=right>415,236</td>
+  <td class=xl73 align=right>1871,000</td>
+  <td class=xl72 align=right>7403,233</td>
+  <td class=xl65 align=right>12966,691</td>
+  <td class=xl72 align=right>194,000</td>
+  <td class=xl65 align=right>1524,630</td>
+  <td align=right>55</td>
+  <td align=right>61</td>
+  <td align=right>15</td>
+  <td class=xl71>14</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>4</td>
+  <td align=right>260</td>
+  <td align=right>374</td>
+  <td class=xl72 align=right>6,966</td>
+  <td class=xl65 align=right>411,042</td>
+  <td class=xl73 align=right>1684,000</td>
+  <td class=xl72 align=right>3587,533</td>
+  <td class=xl65 align=right>9410,787</td>
+  <td class=xl72 align=right>83,500</td>
+  <td class=xl65 align=right>1388,316</td>
+  <td align=right>29</td>
+  <td align=right>17</td>
+  <td align=right>4</td>
+  <td class=xl71>6</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>1</td>
+  <td align=right>280</td>
+  <td align=right>421</td>
+  <td class=xl72 align=right>7,766</td>
+  <td class=xl65 align=right>423,624</td>
+  <td class=xl73 align=right>2654,000</td>
+  <td class=xl72 align=right>10809,433</td>
+  <td class=xl65 align=right>15044,969</td>
+  <td class=xl72 align=right>339,833</td>
+  <td class=xl65 align=right>1681,916</td>
+  <td align=right>75</td>
+  <td align=right>102</td>
+  <td align=right>22</td>
+  <td class=xl71>21</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>2</td>
+  <td align=right>280</td>
+  <td align=right>443</td>
+  <td class=xl72 align=right>7,133</td>
+  <td class=xl65 align=right>427,819</td>
+  <td class=xl73 align=right>2035,000</td>
+  <td class=xl72 align=right>8233,133</td>
+  <td class=xl65 align=right>14307,947</td>
+  <td class=xl72 align=right>242,833</td>
+  <td class=xl65 align=right>1480,589</td>
+  <td align=right>57</td>
+  <td align=right>73</td>
+  <td align=right>15</td>
+  <td class=xl71>14</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>3</td>
+  <td align=right>280</td>
+  <td align=right>423</td>
+  <td class=xl72 align=right>6,900</td>
+  <td class=xl65 align=right>415,236</td>
+  <td class=xl73 align=right>2423,000</td>
+  <td class=xl72 align=right>8772,600</td>
+  <td class=xl65 align=right>14106,082</td>
+  <td class=xl72 align=right>248,200</td>
+  <td class=xl65 align=right>1939,866</td>
+  <td align=right>67</td>
+  <td align=right>79</td>
+  <td align=right>16</td>
+  <td class=xl71>16</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>4</td>
+  <td align=right>280</td>
+  <td align=right>422</td>
+  <td class=xl72 align=right>7,033</td>
+  <td class=xl65 align=right>419,431</td>
+  <td class=xl73 align=right>2617,000</td>
+  <td class=xl72 align=right>7595,966</td>
+  <td class=xl65 align=right>13207,863</td>
+  <td class=xl72 align=right>204,466</td>
+  <td class=xl65 align=right>1717,568</td>
+  <td align=right>54</td>
+  <td align=right>61</td>
+  <td align=right>12</td>
+  <td class=xl71>13</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>1</td>
+  <td align=right>300</td>
+  <td align=right>455</td>
+  <td class=xl72 align=right>6,933</td>
+  <td class=xl65 align=right>419,430</td>
+  <td class=xl73 align=right>2479,000</td>
+  <td class=xl72 align=right>16657,533</td>
+  <td class=xl65 align=right>20422,066</td>
+  <td class=xl72 align=right>547,233</td>
+  <td class=xl65 align=right>1707,082</td>
+  <td align=right>97</td>
+  <td align=right>147</td>
+  <td align=right>30</td>
+  <td class=xl71>31</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>2</td>
+  <td align=right>300</td>
+  <td align=right>473</td>
+  <td class=xl72 align=right>8,033</td>
+  <td class=xl65 align=right>427,819</td>
+  <td class=xl73 align=right>3184,000</td>
+  <td class=xl72 align=right>10216,733</td>
+  <td class=xl65 align=right>15875,257</td>
+  <td class=xl72 align=right>202,966</td>
+  <td class=xl65 align=right>1652,556</td>
+  <td align=right>50</td>
+  <td align=right>70</td>
+  <td align=right>13</td>
+  <td class=xl71>17</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 align=right style='height:14.4pt'>3</td>
+  <td align=right>300</td>
+  <td align=right>445</td>
+  <td class=xl72 align=right>7,700</td>
+  <td class=xl65 align=right>427,819</td>
+  <td class=xl73 align=right>2193,000</td>
+  <td class=xl72 align=right>10776,633</td>
+  <td class=xl65 align=right>16523,920</td>
+  <td class=xl72 align=right>297,700</td>
+  <td class=xl65 align=right>1582,164</td>
+  <td align=right>70</td>
+  <td align=right>100</td>
+  <td align=right>18</td>
+  <td class=xl71>21</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 class=xl77 align=right style='height:14.4pt'>4</td>
+  <td class=xl77 align=right>300</td>
+  <td class=xl77 align=right>494</td>
+  <td class=xl78 align=right>7,533</td>
+  <td class=xl79 align=right>419,430</td>
+  <td class=xl80 align=right>2805,000</td>
+  <td class=xl78 align=right>9182,300</td>
+  <td class=xl79 align=right>16670,068</td>
+  <td class=xl78 align=right>198,600</td>
+  <td class=xl79 align=right>1765,802</td>
+  <td class=xl77 align=right>52</td>
+  <td class=xl77 align=right>59</td>
+  <td class=xl77 align=right>13</td>
+  <td class=xl81>13</td>
+ </tr>
+ <tr class=xl75 height=19 style='height:14.4pt'>
+  <td height=19 class=xl82 style='height:14.4pt;border-top:none'><span
+  style='mso-spacerun:yes'> </span>MAX<span style='mso-spacerun:yes'> </span></td>
+  <td class=xl83 style='border-top:none'><span style='mso-spacerun:yes'>     
+  </span>300<span style='mso-spacerun:yes'>  </span></td>
+  <td class=xl83 style='border-top:none'><span style='mso-spacerun:yes'>     
+  </span>494<span style='mso-spacerun:yes'>  </span></td>
+  <td class=xl83 style='border-top:none'><span
+  style='mso-spacerun:yes'>                     </span>11<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=xl83 style='border-top:none'><span
+  style='mso-spacerun:yes'>                       </span>428<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=xl83 style='border-top:none'><span
+  style='mso-spacerun:yes'>              </span>3 184<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=xl83 style='border-top:none'><span
+  style='mso-spacerun:yes'>              </span>16 658<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=xl83 style='border-top:none'><span
+  style='mso-spacerun:yes'>             </span>20 422<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=xl83 style='border-top:none'><span
+  style='mso-spacerun:yes'>              </span>547<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=xl83 style='border-top:none'><span
+  style='mso-spacerun:yes'>           </span>1 940<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=xl83 style='border-top:none'><span
+  style='mso-spacerun:yes'>         </span>97<span style='mso-spacerun:yes'> 
+  </span></td>
+  <td class=xl83 style='border-top:none'><span
+  style='mso-spacerun:yes'>                </span>147<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=xl83 style='border-top:none'><span
+  style='mso-spacerun:yes'>                     </span>30<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=xl83 style='border-top:none'><span
+  style='mso-spacerun:yes'>                  </span>31<span
+  style='mso-spacerun:yes'>  </span></td>
+ </tr>
+ <tr class=xl75 height=19 style='height:14.4pt'>
+  <td height=19 class=xl75 style='height:14.4pt'><span
+  style='mso-spacerun:yes'> </span>AVG<span style='mso-spacerun:yes'> </span></td>
+  <td class=xl76><span style='mso-spacerun:yes'>      </span>139<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=xl76><span style='mso-spacerun:yes'>      </span>218<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=xl76><span style='mso-spacerun:yes'>                      
+  </span>8<span style='mso-spacerun:yes'>  </span></td>
+  <td class=xl76><span style='mso-spacerun:yes'>                      
+  </span>270<span style='mso-spacerun:yes'>  </span></td>
+  <td class=xl76><span style='mso-spacerun:yes'>              </span>1 040<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=xl76><span style='mso-spacerun:yes'>                </span>3
+  569<span style='mso-spacerun:yes'>  </span></td>
+  <td class=xl76><span style='mso-spacerun:yes'>               </span>5
+  690<span style='mso-spacerun:yes'>  </span></td>
+  <td class=xl76><span style='mso-spacerun:yes'>              </span>153<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=xl76><span style='mso-spacerun:yes'>               </span>661<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=xl76><span style='mso-spacerun:yes'>         </span>40<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=xl76><span style='mso-spacerun:yes'>                 
+  </span>38<span style='mso-spacerun:yes'>  </span></td>
+  <td class=xl76><span style='mso-spacerun:yes'>                      
+  </span>8<span style='mso-spacerun:yes'>  </span></td>
+  <td class=xl76><span style='mso-spacerun:yes'>                    
+  </span>8<span style='mso-spacerun:yes'>  </span></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td></td>
+  <td></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl71></td>
+  <td class=xl71></td>
+  <td></td>
+  <td class=xl71></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td></td>
+  <td></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl71></td>
+  <td class=xl71></td>
+  <td></td>
+  <td class=xl71></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td></td>
+  <td></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl71></td>
+  <td class=xl71></td>
+  <td></td>
+  <td class=xl71></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td></td>
+  <td></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl71></td>
+  <td class=xl71></td>
+  <td></td>
+  <td class=xl71></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td></td>
+  <td></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl71></td>
+  <td class=xl71></td>
+  <td></td>
+  <td class=xl71></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td></td>
+  <td></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class=xl71></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td></td>
+  <td></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class=xl71></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td></td>
+  <td></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class=xl71></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td></td>
+  <td></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class=xl71></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td></td>
+  <td></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl71></td>
+  <td class=xl71></td>
+  <td class=xl71></td>
+  <td class=xl71></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td></td>
+  <td></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class=xl71></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td></td>
+  <td></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class=xl71></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td></td>
+  <td></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class=xl71></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td></td>
+  <td></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class=xl71></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td></td>
+  <td></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class=xl71></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td></td>
+  <td></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl71></td>
+  <td class=xl71></td>
+  <td></td>
+  <td class=xl71></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td></td>
+  <td></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td></td>
+  <td></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl71></td>
+  <td class=xl71></td>
+  <td></td>
+  <td class=xl71></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td></td>
+  <td></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td></td>
+  <td></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl71></td>
+  <td class=xl71></td>
+  <td></td>
+  <td class=xl71></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td></td>
+  <td></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl71></td>
+  <td class=xl71></td>
+  <td></td>
+  <td class=xl71></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td></td>
+  <td></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td class=xl66></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td class=xl71></td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=95 style='width:71pt'></td>
+  <td width=54 style='width:40pt'></td>
+  <td width=55 style='width:41pt'></td>
+  <td width=94 style='width:71pt'></td>
+  <td width=107 style='width:80pt'></td>
+  <td width=89 style='width:67pt'></td>
+  <td width=97 style='width:73pt'></td>
+  <td width=94 style='width:71pt'></td>
+  <td width=79 style='width:59pt'></td>
+  <td width=82 style='width:61pt'></td>
+  <td width=55 style='width:41pt'></td>
+  <td width=86 style='width:65pt'></td>
+  <td width=94 style='width:71pt'></td>
+  <td width=86 style='width:65pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>

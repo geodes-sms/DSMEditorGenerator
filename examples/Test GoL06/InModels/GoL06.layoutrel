@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layoutRel:RelLayoutDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:layoutRel="http://udem.iro.geodes.ca/layoutRel" name="GoL06">
+  <interactionStreams name="screen">
+    <layers name="toolbars" index="1" behaviour="horizontal">
+      <components>
+        <element xsi:type="layoutRel:VisualContainer" id="comonTools" name="comonTools" isDefault="true" behaviour="horizontal">
+          <elements xsi:type="layoutRel:ButtonWidget" id="playModelButton" name="playModelButton" isDefault="true" ySize="60" foregroundColour="white" backgroundColour="#818181" ref="fas fa-play"/>
+          <elements xsi:type="layoutRel:ButtonWidget" id="lightButton" name="lightButton" isDefault="true" ySize="60" foregroundColour="white" backgroundColour="#818181" ref="fas fa-sun"/>
+        </element>
+      </components>
+    </layers>
+    <layers name="propertiesTab" index="2">
+      <components>
+        <element xsi:type="layoutRel:VisualContainer" id="19" name="cellPropertiesTab" isDefault="true" behaviour="vertical">
+          <elements xsi:type="layoutRel:TextWidget" id="lightGreen" name="lightGreen" isDefault="true" ySize="40" foregroundColour="green" backgroundColour="#515151" ref=""/>
+          <elements xsi:type="layoutRel:TextWidget" id="lightBlue" name="lightBlue" isDefault="true" ySize="40" foregroundColour="blue" backgroundColour="#515151" ref=""/>
+        </element>
+      </components>
+    </layers>
+    <layers name="canvas">
+      <components>
+        <element xsi:type="layoutRel:Canvas" id="23" name="canvas" isDefault="true" gridSizeX="10" gridSizeY="10" gridScaleX="1" gridScaleY="1"/>
+      </components>
+    </layers>
+  </interactionStreams>
+</layoutRel:RelLayoutDiagram>

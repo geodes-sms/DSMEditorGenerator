@@ -1,0 +1,171 @@
+tr
+	{mso-height-source:auto;}
+col
+	{mso-width-source:auto;}
+br
+	{mso-data-placement:same-cell;}
+.style16
+	{mso-number-format:"_-* \#\,\#\#0\.00_$_-\;\\-* \#\,\#\#0\.00_$_-\;_-* \0022-\0022??_$_-\;_-\@_-";
+	mso-style-name:Milliers;
+	mso-style-id:3;}
+.style0
+	{mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	white-space:nowrap;
+	mso-rotate:0;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	border:none;
+	mso-protection:locked visible;
+	mso-style-name:Normal;
+	mso-style-id:0;}
+td
+	{mso-style-parent:style0;
+	padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-protection:locked visible;
+	white-space:nowrap;
+	mso-rotate:0;}
+.xl65
+	{mso-style-parent:style0;
+	mso-number-format:"0\.000";}
+.xl66
+	{mso-style-parent:style0;
+	mso-number-format:"0\.000";
+	text-align:right;}
+.xl67
+	{mso-style-parent:style0;
+	mso-number-format:"0\.000";
+	text-align:right;
+	background:#BFBFBF;
+	mso-pattern:black none;}
+.xl68
+	{mso-style-parent:style0;
+	mso-number-format:"0\.000";
+	text-align:right;
+	background:#FFEFEF;
+	mso-pattern:black none;}
+.xl69
+	{mso-style-parent:style0;
+	text-align:center;
+	background:#D9E1F2;
+	mso-pattern:black none;}
+.xl70
+	{mso-style-parent:style0;
+	text-align:center;
+	background:#B4C6E7;
+	mso-pattern:black none;}
+.xl71
+	{mso-style-parent:style0;
+	text-align:right;}
+.xl72
+	{mso-style-parent:style0;
+	mso-number-format:"0\.000";
+	background:#BFBFBF;
+	mso-pattern:black none;}
+.xl73
+	{mso-style-parent:style0;
+	mso-number-format:"0\.000";
+	background:#FFEFEF;
+	mso-pattern:black none;}
+.xl74
+	{mso-style-parent:style0;
+	background:#B4C6E7;
+	mso-pattern:black none;}
+.xl75
+	{mso-style-parent:style16;
+	font-weight:700;
+	mso-number-format:"_-* \#\,\#\#0_$_-\;\\-* \#\,\#\#0_$_-\;_-* \0022-\0022??_$_-\;_-\@_-";}
+.xl76
+	{mso-style-parent:style16;
+	font-weight:700;
+	mso-number-format:"_-* \#\,\#\#0_$_-\;\\-* \#\,\#\#0_$_-\;_-* \0022-\0022??_$_-\;_-\@_-";
+	text-align:right;}
+.xl77
+	{mso-style-parent:style0;
+	border-top:none;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;}
+.xl78
+	{mso-style-parent:style0;
+	mso-number-format:"0\.000";
+	border-top:none;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#BFBFBF;
+	mso-pattern:black none;}
+.xl79
+	{mso-style-parent:style0;
+	mso-number-format:"0\.000";
+	border-top:none;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;}
+.xl80
+	{mso-style-parent:style0;
+	mso-number-format:"0\.000";
+	border-top:none;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#FFEFEF;
+	mso-pattern:black none;}
+.xl81
+	{mso-style-parent:style0;
+	text-align:right;
+	border-top:none;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;}
+.xl82
+	{mso-style-parent:style16;
+	font-weight:700;
+	mso-number-format:"_-* \#\,\#\#0_$_-\;\\-* \#\,\#\#0_$_-\;_-* \0022-\0022??_$_-\;_-\@_-";
+	border-top:.5pt solid windowtext;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#D9E1F2;
+	mso-pattern:black none;}
+.xl83
+	{mso-style-parent:style16;
+	font-weight:700;
+	mso-number-format:"_-* \#\,\#\#0_$_-\;\\-* \#\,\#\#0_$_-\;_-* \0022-\0022??_$_-\;_-\@_-";
+	text-align:right;
+	border-top:.5pt solid windowtext;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#D9E1F2;
+	mso-pattern:black none;}
+.xl84
+	{mso-style-parent:style0;
+	text-align:center;
+	background:#D9E1F2;
+	mso-pattern:black none;
+	white-space:normal;}

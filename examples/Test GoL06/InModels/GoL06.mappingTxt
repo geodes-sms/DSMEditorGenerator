@@ -1,0 +1,10 @@
+I#press#document.getElementById("playModelButton").addEventListener("click", function() {GoL06.Interaction.prototype.triggerEvent(event,"playModelButton",'press');}, false);
+I#press#document.getElementById("lightButton").addEventListener("click", function() {GoL06.Interaction.prototype.triggerEvent(event,"lightButton",'press');}, false);
+I#select#document.getElementById("23").addEventListener("click",function() {GoL06.Interaction.prototype.triggerEvent(event,event.target.id,'select');}, false);
+
+O#Lifeadd#addLife.call(this,"23");
+O#Liferem#remLife.call(this,this.event.target);
+
+O#runGoL#simulateGoL.call(this);
+
+C#_#this.svg = scConstructor("23");
