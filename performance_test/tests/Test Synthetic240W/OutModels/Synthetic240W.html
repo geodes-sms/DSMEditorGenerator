@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--script defer src="https://use.fontawesome.com/releases/v5.7.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Vasco Sousa">
+
+    <title>AToMPM</title>
+    <style type="text/css">
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .vertical{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;    
+        }
+        
+        .horizontal{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;    
+        }
+        
+        .overlap *{
+            position: absolute;
+        }
+        
+        .textWidget{
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            background-color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        
+        .buttonWidget a{
+            float: left;
+            text-align: center;
+            padding: 12px 16px;
+            transition: all 0.3s ease;
+            font-size: 30px;
+        }
+                
+        .buttonWidget a:hover {
+            background-color: #000;
+        }
+        
+        .buttonWidget.active {
+            background-color: dodgerblue;
+        }
+        
+        .buttonWidget.active :hover{
+            background-color:darkblue;
+        }
+        
+        .text{
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            display: block;
+            transition: 0.3s;
+        }
+        
+        .image{
+        }
+        
+        .notVisible{
+            display: none;
+        }
+        
+    .L2{
+        z-index: 2;
+        position: fixed;                       
+        top: 0px;
+        left: 0px;
+    }
+    .E2{
+        background-color: ;
+        color: ;
+    }
+    
+    .E2 a{
+        color: ;
+    }
+    .L1{
+        z-index: 1;
+        position: fixed;                       
+        top: 0px;
+        left: 0px;
+    }
+    .E1{
+        background-color: ;
+        color: ;
+    }
+    
+    .E1 a{
+        color: ;
+    }
+    .canvas{
+        z-index: 0;
+        position: fixed;                       
+        top: 0px;
+        left: 0px;
+    }
+    
+    .L3{
+        z-index: 0;
+        position: fixed;                       
+        top: 0px;
+        left: 0px;
+    }
+    .E3{
+        background-color: ;
+        color: ;
+    }
+    
+    .E3 a{
+        color: ;
+    }
+    .L4{
+        z-index: 0;
+        position: fixed;                       
+        top: 0px;
+        left: 0px;
+    }
+    .E4{
+        background-color: ;
+        color: ;
+    }
+    
+    .E4 a{
+        color: ;
+    }
+    .L5{
+        z-index: 0;
+        position: fixed;                       
+        top: 0px;
+        left: 0px;
+    }
+    .E5{
+        background-color: ;
+        color: ;
+    }
+    
+    .E5 a{
+        color: ;
+    }
+    .L6{
+        z-index: 0;
+        position: fixed;                       
+        top: 0px;
+        left: 0px;
+    }
+    .E6{
+        background-color: ;
+        color: ;
+    }
+    
+    .E6 a{
+        color: ;
+    }
+    .L7{
+        z-index: 0;
+        position: fixed;                       
+        top: 0px;
+        left: 0px;
+    }
+    .E7{
+        background-color: ;
+        color: ;
+    }
+    
+    .E7 a{
+        color: ;
+    }
+    .L8{
+        z-index: 0;
+        position: fixed;                       
+        top: 0px;
+        left: 0px;
+    }
+    .E8{
+        background-color: ;
+        color: ;
+    }
+    
+    .E8 a{
+        color: ;
+    }
+    .L9{
+        z-index: 0;
+        position: fixed;                       
+        top: 0px;
+        left: 0px;
+    }
+    .E9{
+        background-color: ;
+        color: ;
+    }
+    
+    .E9 a{
+        color: ;
+    }
+    .L10{
+        z-index: 0;
+        position: fixed;                       
+        top: 0px;
+        left: 0px;
+    }
+    .E10{
+        background-color: ;
+        color: ;
+    }
+    
+    .E10 a{
+        color: ;
+    }
+
+        .cellPropertiesTab{
+          height: 100%;
+          width: 250px;
+          position: fixed;
+          top: 0px;
+          right: 0px;
+          background-color: #515151;
+          overflow-x: hidden;
+          transition: 0.5s;
+        }
+
+    </style>
+</head>
+
+<script src="./javascript_sccd_runtime/libs/HackTimer.js"></script>
+<script src="./javascript_sccd_runtime/statecharts_core.js"></script>
+<script src="./javascript_sccd_runtime/libs/utils.js"></script>
+<script src="./javascript_sccd_runtime/libs/svg.js"></script>
+<script src="./javascript_sccd_runtime/libs/ui.js"></script>
+<script src="./mapinglib.js"></script>
+<script src="./Synthetic240W.js"></script>
+
+<body>
+    <div id="L2" class="none L2 container">
+        <a id="E2"  " data-atompm-interface-data-source="data-TEXT" class="E2 text" href="#">TEXT</a>
+    </div>
+    <div id="L1" class="none L1 container">
+        <a id="E1"  " data-atompm-interface-data-source="data-TEXT" class="E1 text" href="#">TEXT</a>
+    </div>
+    <div id="canvas" class="none canvas container">
+        <div id="23" class="canvas container" data-gridSizeX=50 data-gridSizeY=50>
+            <script>
+                controller = new Synthetic240W.Controller(new JsEventLoop());
+                controller.start();
+                console.log('echo');
+            </script>
+        </div>
+    </div>
+    <div id="L3" class="none L3 container">
+        <a id="E3"  " data-atompm-interface-data-source="data-TEXT" class="E3 text" href="#">TEXT</a>
+    </div>
+    <div id="L4" class="none L4 container">
+        <a id="E4"  " data-atompm-interface-data-source="data-TEXT" class="E4 text" href="#">TEXT</a>
+    </div>
+    <div id="L5" class="none L5 container">
+        <a id="E5"  " data-atompm-interface-data-source="data-TEXT" class="E5 text" href="#">TEXT</a>
+    </div>
+    <div id="L6" class="none L6 container">
+        <a id="E6"  " data-atompm-interface-data-source="data-TEXT" class="E6 text" href="#">TEXT</a>
+    </div>
+    <div id="L7" class="none L7 container">
+        <a id="E7"  " data-atompm-interface-data-source="data-TEXT" class="E7 text" href="#">TEXT</a>
+    </div>
+    <div id="L8" class="none L8 container">
+        <a id="E8"  " data-atompm-interface-data-source="data-TEXT" class="E8 text" href="#">TEXT</a>
+    </div>
+    <div id="L9" class="none L9 container">
+        <a id="E9"  " data-atompm-interface-data-source="data-TEXT" class="E9 text" href="#">TEXT</a>
+    </div>
+    <div id="L10" class="none L10 container">
+        <a id="E10"  " data-atompm-interface-data-source="data-TEXT" class="E10 text" href="#">TEXT</a>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <p class="lead">Icons from Font Awesome used and colors altered under creative commons licence</p>
+        </div>
+      </div>
+    </div>
+
+<script>
+</script>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <!--script src="vendor/jquery/jquery.min.js"></script-->
+    <!--script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script-->
+
+  </body>
+
+</html>
+

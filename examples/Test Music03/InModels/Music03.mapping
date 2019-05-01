@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mapping="http://udem.iro.geodes.ca/mapping">
+  <mapping:MappingDiagram/>
+  <mapping:PlatformInputEventCode editor="/2">
+    <listnerCode line="document.getElementById(&quot;fullTime&quot;).addEventListener(&quot;click&quot;, function() {Music03.Interaction.prototype.triggerEvent(event,&quot;fullTime&quot;,'select');}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:EditorInputEvent platform="/1 /3 /4 /5 /6 /7" event="select"/>
+  <mapping:PlatformInputEventCode editor="/2">
+    <listnerCode line="document.getElementById(&quot;halfTime&quot;).addEventListener(&quot;click&quot;, function() {Music03.Interaction.prototype.triggerEvent(event,&quot;halfTime&quot;,'select');}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/2">
+    <listnerCode line="document.getElementById(&quot;quarterTime&quot;).addEventListener(&quot;click&quot;, function() {Music03.Interaction.prototype.triggerEvent(event,&quot;quarterTime&quot;,'select');}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/2">
+    <listnerCode line="document.getElementById(&quot;eighthTime&quot;).addEventListener(&quot;click&quot;, function() {Music03.Interaction.prototype.triggerEvent(event,&quot;eighthTime&quot;,'select');}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/2">
+    <listnerCode line="document.getElementById(&quot;timedMode&quot;).addEventListener(&quot;click&quot;, function() {Music03.Interaction.prototype.triggerEvent(event,&quot;timedMode&quot;,'select');}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/2">
+    <listnerCode line="document.getElementById(&quot;newModel&quot;).addEventListener(&quot;click&quot;, function() {Music03.Interaction.prototype.triggerEvent(event,&quot;newModel&quot;,'select');}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/9">
+    <listnerCode line="document.addEventListener(&quot;keydown&quot;, function() {if(event.key === &quot;1&quot; &amp;&amp; !event.repeat){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'pressDo');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:EditorInputEvent platform="/8 /22 /29 /36 /43" event="pressDo"/>
+  <mapping:PlatformInputEventCode editor="/11">
+    <listnerCode line="document.addEventListener(&quot;keydown&quot;, function() {if(event.key === &quot;2&quot; &amp;&amp; !event.repeat){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'pressRe');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:EditorInputEvent platform="/10 /23 /30 /37 /44" event="pressRe"/>
+  <mapping:PlatformInputEventCode editor="/13">
+    <listnerCode line="document.addEventListener(&quot;keydown&quot;, function() {if(event.key === &quot;3&quot; &amp;&amp; !event.repeat){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'pressMi');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:EditorInputEvent platform="/12 /24 /31 /38 /45" event="pressMi"/>
+  <mapping:PlatformInputEventCode editor="/15">
+    <listnerCode line="document.addEventListener(&quot;keydown&quot;, function() {if(event.key === &quot;4&quot; &amp;&amp; !event.repeat){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'pressFa');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:EditorInputEvent platform="/14 /25 /32 /39 /46" event="pressFa"/>
+  <mapping:PlatformInputEventCode editor="/17">
+    <listnerCode line="document.addEventListener(&quot;keydown&quot;, function() {if(event.key === &quot;5&quot; &amp;&amp; !event.repeat){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'pressSol');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:EditorInputEvent platform="/16 /26 /33 /40 /47" event="pressSol"/>
+  <mapping:PlatformInputEventCode editor="/19">
+    <listnerCode line="document.addEventListener(&quot;keydown&quot;, function() {if(event.key === &quot;6&quot; &amp;&amp; !event.repeat){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'pressLa');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:EditorInputEvent platform="/18 /27 /34 /41 /48" event="pressLa"/>
+  <mapping:PlatformInputEventCode editor="/21">
+    <listnerCode line="document.addEventListener(&quot;keydown&quot;, function() {if(event.key === &quot;7&quot; &amp;&amp; !event.repeat){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'pressSi');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:EditorInputEvent platform="/20 /28 /35 /42 /49" event="pressSi"/>
+  <mapping:PlatformInputEventCode editor="/9">
+    <listnerCode line="document.addEventListener(&quot;keydown&quot;, function() {if(event.key === &quot;a&quot; &amp;&amp; !event.repeat){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'pressC');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/11">
+    <listnerCode line="document.addEventListener(&quot;keydown&quot;, function() {if(event.key === &quot;s&quot; &amp;&amp; !event.repeat){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'pressD');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/13">
+    <listnerCode line="document.addEventListener(&quot;keydown&quot;, function() {if(event.key === &quot;d&quot; &amp;&amp; !event.repeat){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'pressE');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/15">
+    <listnerCode line="document.addEventListener(&quot;keydown&quot;, function() {if(event.key === &quot;f&quot; &amp;&amp; !event.repeat){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'pressF');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/17">
+    <listnerCode line="document.addEventListener(&quot;keydown&quot;, function() {if(event.key === &quot;g&quot; &amp;&amp; !event.repeat){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'pressG');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/19">
+    <listnerCode line="document.addEventListener(&quot;keydown&quot;, function() {if(event.key === &quot;h&quot; &amp;&amp; !event.repeat){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'pressA');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/21">
+    <listnerCode line="document.addEventListener(&quot;keydown&quot;, function() {if(event.key === &quot;j&quot; &amp;&amp; !event.repeat){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'pressB');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/9">
+    <listnerCode line="document.addEventListener(&quot;keyup&quot;, function() {if(event.key === &quot;q&quot;){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'tapC');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/11">
+    <listnerCode line="document.addEventListener(&quot;keyup&quot;, function() {if(event.key === &quot;w&quot;){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'tapD');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/13">
+    <listnerCode line="document.addEventListener(&quot;keyup&quot;, function() {if(event.key === &quot;e&quot;){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'tapE');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/15">
+    <listnerCode line="document.addEventListener(&quot;keyup&quot;, function() {if(event.key === &quot;r&quot;){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'tapF');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/17">
+    <listnerCode line="document.addEventListener(&quot;keyup&quot;, function() {if(event.key === &quot;t&quot;){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'tapG');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/19">
+    <listnerCode line="document.addEventListener(&quot;keyup&quot;, function() {if(event.key === &quot;y&quot;){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'tapA');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/21">
+    <listnerCode line="document.addEventListener(&quot;keyup&quot;, function() {if(event.key === &quot;u&quot;){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'tapB');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/9">
+    <listnerCode line="document.addEventListener(&quot;keyup&quot;, function() {if(event.key === &quot;a&quot;){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'releaseC');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/11">
+    <listnerCode line="document.addEventListener(&quot;keyup&quot;, function() {if(event.key === &quot;s&quot;){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'releaseD');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/13">
+    <listnerCode line="document.addEventListener(&quot;keyup&quot;, function() {if(event.key === &quot;d&quot;){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'releaseE');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/15">
+    <listnerCode line="document.addEventListener(&quot;keyup&quot;, function() {if(event.key === &quot;f&quot;){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'releaseF');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/17">
+    <listnerCode line="document.addEventListener(&quot;keyup&quot;, function() {if(event.key === &quot;g&quot;){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'releaseG');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/19">
+    <listnerCode line="document.addEventListener(&quot;keyup&quot;, function() {if(event.key === &quot;h&quot;){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'releaseA');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/21">
+    <listnerCode line="document.addEventListener(&quot;keyup&quot;, function() {if(event.key === &quot;j&quot;){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'releaseB');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/9">
+    <listnerCode line="document.addEventListener(&quot;keydown&quot;, function() {if(event.key === &quot;q&quot; &amp;&amp; !event.repeat){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'pat');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/11">
+    <listnerCode line="document.addEventListener(&quot;keydown&quot;, function() {if(event.key === &quot;w&quot; &amp;&amp; !event.repeat){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'pat');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/13">
+    <listnerCode line="document.addEventListener(&quot;keydown&quot;, function() {if(event.key === &quot;e&quot; &amp;&amp; !event.repeat){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'pat');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/15">
+    <listnerCode line="document.addEventListener(&quot;keydown&quot;, function() {if(event.key === &quot;r&quot; &amp;&amp; !event.repeat){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'pat');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/17">
+    <listnerCode line="document.addEventListener(&quot;keydown&quot;, function() {if(event.key === &quot;t&quot; &amp;&amp; !event.repeat){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'pat');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/19">
+    <listnerCode line="document.addEventListener(&quot;keydown&quot;, function() {if(event.key === &quot;y&quot; &amp;&amp; !event.repeat){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'pat');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/21">
+    <listnerCode line="document.addEventListener(&quot;keydown&quot;, function() {if(event.key === &quot;u&quot; &amp;&amp; !event.repeat){Music03.Interaction.prototype.triggerEvent(event,&quot;&quot;,'pat');}}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformOutputEventCode editor="/51">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;do&quot;,&quot;full&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/50" operation="fulldoadd"/>
+  <mapping:PlatformOutputEventCode editor="/53">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;re&quot;,&quot;full&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/52" operation="fullreadd"/>
+  <mapping:PlatformOutputEventCode editor="/55">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;mi&quot;,&quot;full&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/54" operation="fullmiadd"/>
+  <mapping:PlatformOutputEventCode editor="/57">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;fa&quot;,&quot;full&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/56" operation="fullfaadd"/>
+  <mapping:PlatformOutputEventCode editor="/59">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;sol&quot;,&quot;full&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/58" operation="fullsoladd"/>
+  <mapping:PlatformOutputEventCode editor="/61">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;la&quot;,&quot;full&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/60" operation="fulllaadd"/>
+  <mapping:PlatformOutputEventCode editor="/63">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;si&quot;,&quot;full&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/62" operation="fullsiadd"/>
+  <mapping:PlatformOutputEventCode editor="/65">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;do&quot;,&quot;half&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/64" operation="halfdoadd"/>
+  <mapping:PlatformOutputEventCode editor="/67">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;re&quot;,&quot;half&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/66" operation="halfreadd"/>
+  <mapping:PlatformOutputEventCode editor="/69">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;mi&quot;,&quot;half&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/68" operation="halfmiadd"/>
+  <mapping:PlatformOutputEventCode editor="/71">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;fa&quot;,&quot;half&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/70" operation="halffaadd"/>
+  <mapping:PlatformOutputEventCode editor="/73">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;sol&quot;,&quot;half&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/72" operation="halfsoladd"/>
+  <mapping:PlatformOutputEventCode editor="/75">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;la&quot;,&quot;half&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/74" operation="halflaadd"/>
+  <mapping:PlatformOutputEventCode editor="/77">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;si&quot;,&quot;half&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/76" operation="halfsiadd"/>
+  <mapping:PlatformOutputEventCode editor="/79">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;do&quot;,&quot;quarter&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/78" operation="quarterdoadd"/>
+  <mapping:PlatformOutputEventCode editor="/81">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;re&quot;,&quot;quarter&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/80" operation="quarterreadd"/>
+  <mapping:PlatformOutputEventCode editor="/83">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;mi&quot;,&quot;quarter&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/82" operation="quartermiadd"/>
+  <mapping:PlatformOutputEventCode editor="/85">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;fa&quot;,&quot;quarter&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/84" operation="quarterfaadd"/>
+  <mapping:PlatformOutputEventCode editor="/87">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;sol&quot;,&quot;quarter&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/86" operation="quartersoladd"/>
+  <mapping:PlatformOutputEventCode editor="/89">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;la&quot;,&quot;quarter&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/88" operation="quarterlaadd"/>
+  <mapping:PlatformOutputEventCode editor="/91">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;si&quot;,&quot;quarter&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/90" operation="quartersiadd"/>
+  <mapping:PlatformOutputEventCode editor="/93">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;do&quot;,&quot;eighth&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/92" operation="eighthdoadd"/>
+  <mapping:PlatformOutputEventCode editor="/95">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;re&quot;,&quot;eighth&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/94" operation="eighthreadd"/>
+  <mapping:PlatformOutputEventCode editor="/97">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;mi&quot;,&quot;eighth&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/96" operation="eighthmiadd"/>
+  <mapping:PlatformOutputEventCode editor="/99">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;fa&quot;,&quot;eighth&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/98" operation="eighthfaadd"/>
+  <mapping:PlatformOutputEventCode editor="/101">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;sol&quot;,&quot;eighth&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/100" operation="eighthsoladd"/>
+  <mapping:PlatformOutputEventCode editor="/103">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;la&quot;,&quot;eighth&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/102" operation="eighthlaadd"/>
+  <mapping:PlatformOutputEventCode editor="/105">
+    <raiseCode line="addNote.call(this,&quot;23&quot;,&quot;si&quot;,&quot;eighth&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/104" operation="eighthsiadd"/>
+  <mapping:PlatformOutputEventCode editor="/107">
+    <raiseCode line="remNote.call(this,this.event.target);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/106" operation="dorem"/>
+  <mapping:PlatformOutputEventCode editor="/109">
+    <raiseCode line="remNote.call(this,this.event.target);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/108" operation="rerem"/>
+  <mapping:PlatformOutputEventCode editor="/111">
+    <raiseCode line="remNote.call(this,this.event.target);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/110" operation="mirem"/>
+  <mapping:PlatformOutputEventCode editor="/113">
+    <raiseCode line="remNote.call(this,this.event.target);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/112" operation="farem"/>
+  <mapping:PlatformOutputEventCode editor="/115">
+    <raiseCode line="remNote.call(this,this.event.target);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/114" operation="solrem"/>
+  <mapping:PlatformOutputEventCode editor="/117">
+    <raiseCode line="remNote.call(this,this.event.target);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/116" operation="larem"/>
+  <mapping:PlatformOutputEventCode editor="/119">
+    <raiseCode line="remNote.call(this,this.event.target);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/118" operation="sirem"/>
+  <mapping:PlatformOutputEventCode editor="/121">
+    <raiseCode line="newModel.call(this,&quot;27&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/120" operation="newModel"/>
+  <mapping:PlatformOutputEventCode editor="/123">
+    <raiseCode line="playModel.call(this);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/122" operation="playModel"/>
+  <mapping:PlatformControllCode>
+    <heatherCode line="this.svg = scConstructor(&quot;23&quot;);"/>
+  </mapping:PlatformControllCode>
+</xmi:XMI>

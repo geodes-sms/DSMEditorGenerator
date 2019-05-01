@@ -1,0 +1,1433 @@
+<?xml version="1.1" ?>
+<diagram author="Vasco and Khady" name="PacMan03">
+    <description>
+        RunGhostGameofLifeEditor
+    </description>
+    <inport name="ui" />
+        <class name="Interaction" default="false">
+            <attribute name="context" type="String"/>        
+            <constructor>
+                <body>
+                    <![CDATA[
+                    this.svg = scConstructor("23");
+                    document.getElementById("pacmanButton").addEventListener("click", function() {PacMan03.Interaction.prototype.triggerEvent(event,"pacmanButton",'press');}, false);
+                    document.getElementById("ghostButton").addEventListener("click", function() {PacMan03.Interaction.prototype.triggerEvent(event,"ghostButton",'press');}, false);
+                    document.getElementById("foodButton").addEventListener("click", function() {PacMan03.Interaction.prototype.triggerEvent(event,"foodButton",'press');}, false);
+                    document.getElementById("gridButton").addEventListener("click", function() {PacMan03.Interaction.prototype.triggerEvent(event,"gridButton",'press');}, false);
+                    document.getElementById("scoreButton").addEventListener("click", function() {PacMan03.Interaction.prototype.triggerEvent(event,"scoreButton",'press');}, false);
+                    document.getElementById("newModel").addEventListener("click", function() {PacMan03.Interaction.prototype.triggerEvent(event,"newModel",'press');}, false);
+                    document.getElementById("23").addEventListener("click",function() {PacMan03.Interaction.prototype.triggerEvent(event,event.target.id,'place');}, false);
+                    document.getElementById("23").addEventListener("mousedown",function() {PacMan03.Interaction.prototype.triggerEvent(event,event.target.id,'mark');}, false);
+                    document.getElementById("23").addEventListener("mousemove",function() {if(event.buttons === 1){PacMan03.Interaction.prototype.triggerEvent(event,event.target.id,'move');}}, false);
+                    document.getElementById("23").addEventListener('contextmenu', function() {PacMan03.Interaction.prototype.triggerEvent(event,event.target.id,'context');}, false);
+                    document.addEventListener("keydown", function() {if(event.key === "Escape"){PacMan03.Interaction.prototype.triggerEvent(event,"",'escape');}}, false);
+                    document.addEventListener("keydown", function() {if(event.key === "Delete"){PacMan03.Interaction.prototype.triggerEvent(event,"",'remove');}}, false);
+                    ]]>
+                </body>
+            </constructor>
+            <method name="triggerEvent">
+                <parameter name="evt">
+                </parameter>
+                <parameter name="type">
+                </parameter>
+                <parameter name="internalEvt">
+                </parameter>
+                <body>
+                    console.log(evt);
+                    console.log(type);
+                    console.log(internalEvt);
+                    console.log(controller.object_manager.instances[0].configuration);
+                    this.event=evt;
+                    this.type = type;
+                    controller.addInput(new Event(internalEvt, "ui"), []);
+                    console.log(controller.object_manager.instances[0].configuration);
+                </body>
+            </method>
+            <method name="PacManInstanceadd">
+                <body>
+                    addPacManInstance.call(this,"23");
+                </body>
+            </method>
+            <method name="PacManInstancemark">
+                <body>
+                    markInstance.call(this,this.event.target);
+                </body>
+            </method>
+            <method name="PacManInstancemove">
+                <body>
+                    moveInstance.call(this,this.event.target,"23");
+                </body>
+            </method>
+            <method name="PacManInstancerem">
+                <body>
+                    remInstance.call(this,this.event.target);
+                </body>
+            </method>
+            <method name="GhostInstanceadd">
+                <body>
+                    addGhostInstance.call(this,"23");
+                </body>
+            </method>
+            <method name="GhostInstancemark">
+                <body>
+                    markInstance.call(this,this.event.target);
+                </body>
+            </method>
+            <method name="GhostInstancemove">
+                <body>
+                    moveInstance.call(this,this.event.target,"23");
+                </body>
+            </method>
+            <method name="GhostInstancerem">
+                <body>
+                    remInstance.call(this,this.event.target);
+                </body>
+            </method>
+            <method name="FoodInstanceadd">
+                <body>
+                    addFoodInstance.call(this,"23");
+                </body>
+            </method>
+            <method name="FoodInstancemark">
+                <body>
+                    markInstance.call(this,this.event.target);
+                </body>
+            </method>
+            <method name="FoodInstancemove">
+                <body>
+                    moveInstance.call(this,this.event.target,"23");
+                </body>
+            </method>
+            <method name="FoodInstancerem">
+                <body>
+                    remInstance.call(this,this.event.target);
+                </body>
+            </method>
+            <method name="GridInstanceadd">
+                <body>
+                    addGridInstance.call(this,"23");
+                </body>
+            </method>
+            <method name="GridInstancemark">
+                <body>
+                    markInstance.call(this,this.event.target);
+                </body>
+            </method>
+            <method name="GridInstancemove">
+                <body>
+                    moveInstance.call(this,this.event.target,"23");
+                </body>
+            </method>
+            <method name="GridInstancerem">
+                <body>
+                    remInstance.call(this,this.event.target);
+                </body>
+            </method>
+            <method name="ScoreInstanceadd">
+                <body>
+                    addScoreInstance.call(this,"23");
+                </body>
+            </method>
+            <method name="ScoreInstancemark">
+                <body>
+                    markInstance.call(this,this.event.target);
+                </body>
+            </method>
+            <method name="ScoreInstancemove">
+                <body>
+                    moveInstance.call(this,this.event.target,"23");
+                </body>
+            </method>
+            <method name="ScoreInstancerem">
+                <body>
+                    remInstance.call(this,this.event.target);
+                </body>
+            </method>
+            <method name="newModel">
+                <body>
+                    newPacManModel.call(this);
+                </body>
+            </method>
+            <method name="pressCall">
+            	<parameter name="evt">
+            	</parameter>
+                <body>
+                </body>
+            </method>
+            <method name="placeCall">
+            	<parameter name="evt">
+            	</parameter>
+                <body>
+                </body>
+            </method>
+            <method name="markCall">
+            	<parameter name="evt">
+            	</parameter>
+                <body>
+                </body>
+            </method>
+            <method name="moveCall">
+            	<parameter name="evt">
+            	</parameter>
+                <body>
+                </body>
+            </method>
+            <method name="contextCall">
+            	<parameter name="evt">
+            	</parameter>
+                <body>
+                </body>
+            </method>
+            <method name="escapeCall">
+            	<parameter name="evt">
+            	</parameter>
+                <body>
+                </body>
+            </method>
+            <method name="removeCall">
+            	<parameter name="evt">
+            	</parameter>
+                <body>
+                </body>
+            </method>
+            <scxml initial="System">
+                <parallel id="System">
+                    
+                    
+                    
+                    <state id="LayercommonTools" initial="s0" >
+                        
+                        
+                        
+                        <state id="s0" >
+                            
+                            
+                            
+                            
+                            <transition event="press22" target="." >
+                                
+                                
+                                
+                            </transition>
+                        </state>
+                        
+                    </state>
+                    <state id="LayerlanguageBar" initial="s1" >
+                        
+                        
+                        
+                        <state id="s1" >
+                            
+                            
+                            
+                            
+                            <transition event="press0" target="../s5" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'gridButton',1);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="press2" target="../s6" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'ghostButton',1);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="press8" target="../s7" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'pacmanButton',1);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="press15" target="../s9" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'foodButton',1);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="press18" target="../s10" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'scoreButton',1);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                        </state>
+                        <state id="s5" >
+                            
+                            
+                            
+                            
+                            <transition event="place26" target="." >
+                                
+                                
+                                
+                            </transition>
+                            <transition event="press27" target="../s1" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'gridButton',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="press28" target="../s10" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'scoreButton',1);
+                                    screenActive.call(this,'gridButton',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="press29" target="../s7" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'pacmanButton',1);
+                                    screenActive.call(this,'gridButton',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="press30" target="../s6" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'ghostButton',1);
+                                    screenActive.call(this,'gridButton',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="press31" target="../s9" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'foodButton',1);
+                                    screenActive.call(this,'gridButton',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                        </state>
+                        <state id="s6" >
+                            
+                            
+                            
+                            
+                            <transition event="place32" target="." >
+                                
+                                
+                                
+                            </transition>
+                            <transition event="press33" target="../s9" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'foodButton',1);
+                                    screenActive.call(this,'ghostButton',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="press34" target="../s5" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'gridButton',1);
+                                    screenActive.call(this,'ghostButton',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="press35" target="../s10" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'scoreButton',1);
+                                    screenActive.call(this,'ghostButton',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="press36" target="../s7" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'pacmanButton',1);
+                                    screenActive.call(this,'ghostButton',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="press37" target="../s1" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'ghostButton',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                        </state>
+                        <state id="s7" >
+                            
+                            
+                            
+                            
+                            <transition event="place38" target="." >
+                                
+                                
+                                
+                            </transition>
+                            <transition event="press39" target="../s1" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'pacmanButton',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="press40" target="../s6" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'ghostButton',1);
+                                    screenActive.call(this,'pacmanButton',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="press41" target="../s10" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'scoreButton',1);
+                                    screenActive.call(this,'pacmanButton',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="press42" target="../s9" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'foodButton',1);
+                                    screenActive.call(this,'pacmanButton',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="press43" target="../s5" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'gridButton',1);
+                                    screenActive.call(this,'pacmanButton',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                        </state>
+                        <state id="s9" >
+                            
+                            
+                            
+                            
+                            <transition event="press45" target="../s7" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'pacmanButton',1);
+                                    screenActive.call(this,'foodButton',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="press46" target="../s10" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'scoreButton',1);
+                                    screenActive.call(this,'foodButton',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="press47" target="../s1" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'foodButton',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="press48" target="../s6" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'ghostButton',1);
+                                    screenActive.call(this,'foodButton',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="press49" target="../s5" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'gridButton',1);
+                                    screenActive.call(this,'foodButton',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="place50" target="." >
+                                
+                                
+                                
+                            </transition>
+                        </state>
+                        <state id="s10" >
+                            
+                            
+                            
+                            
+                            <transition event="press51" target="../s6" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'ghostButton',1);
+                                    screenActive.call(this,'scoreButton',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="place52" target="." >
+                                
+                                
+                                
+                            </transition>
+                            <transition event="press53" target="../s5" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'gridButton',1);
+                                    screenActive.call(this,'scoreButton',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="press54" target="../s1" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'scoreButton',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="press55" target="../s9" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'foodButton',1);
+                                    screenActive.call(this,'scoreButton',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="press56" target="../s7" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'pacmanButton',1);
+                                    screenActive.call(this,'scoreButton',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                        </state>
+                        
+                    </state>
+                    <state id="LayercellPropertiesTab" initial="s2" >
+                        
+                        
+                        
+                        <state id="s2" >
+                            
+                            
+                            
+                            
+                            <transition event="context10" target="../s8" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenSetter.call(this,'cellPropertiesTab',1);
+                                    screenUpdater.call(this,'namePropertie');
+                                    screenUpdater.call(this,'xPos');
+                                    screenUpdater.call(this,'yPos');
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="context14" target="../s8" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenSetter.call(this,'cellPropertiesTab',1);
+                                    screenUpdater.call(this,'namePropertie');
+                                    screenUpdater.call(this,'xPos');
+                                    screenUpdater.call(this,'yPos');
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="context17" target="../s8" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenSetter.call(this,'cellPropertiesTab',1);
+                                    screenUpdater.call(this,'namePropertie');
+                                    screenUpdater.call(this,'xPos');
+                                    screenUpdater.call(this,'yPos');
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="context23" target="../s8" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenSetter.call(this,'cellPropertiesTab',1);
+                                    screenUpdater.call(this,'namePropertie');
+                                    screenUpdater.call(this,'xPos');
+                                    screenUpdater.call(this,'yPos');
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="context24" target="../s8" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenSetter.call(this,'cellPropertiesTab',1);
+                                    screenUpdater.call(this,'namePropertie');
+                                    screenUpdater.call(this,'xPos');
+                                    screenUpdater.call(this,'yPos');
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                        </state>
+                        <state id="s8" >
+                            
+                            
+                            
+                            
+                            <transition event="escape44" target="../s11" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenSetter.call(this,'cellPropertiesTab',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="context10" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenSetter.call(this,'cellPropertiesTab',1);
+                                    screenUpdater.call(this,'namePropertie');
+                                    screenUpdater.call(this,'xPos');
+                                    screenUpdater.call(this,'yPos');
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="context14" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenSetter.call(this,'cellPropertiesTab',1);
+                                    screenUpdater.call(this,'namePropertie');
+                                    screenUpdater.call(this,'xPos');
+                                    screenUpdater.call(this,'yPos');
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="context17" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenSetter.call(this,'cellPropertiesTab',1);
+                                    screenUpdater.call(this,'namePropertie');
+                                    screenUpdater.call(this,'xPos');
+                                    screenUpdater.call(this,'yPos');
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="context23" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenSetter.call(this,'cellPropertiesTab',1);
+                                    screenUpdater.call(this,'namePropertie');
+                                    screenUpdater.call(this,'xPos');
+                                    screenUpdater.call(this,'yPos');
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="context24" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenSetter.call(this,'cellPropertiesTab',1);
+                                    screenUpdater.call(this,'namePropertie');
+                                    screenUpdater.call(this,'xPos');
+                                    screenUpdater.call(this,'yPos');
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                        </state>
+                        <state id="s11" >
+                            
+                            
+                            
+                            
+                            <transition event="context10" target="../s8" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenSetter.call(this,'cellPropertiesTab',1);
+                                    screenUpdater.call(this,'namePropertie');
+                                    screenUpdater.call(this,'xPos');
+                                    screenUpdater.call(this,'yPos');
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="context14" target="../s8" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenSetter.call(this,'cellPropertiesTab',1);
+                                    screenUpdater.call(this,'namePropertie');
+                                    screenUpdater.call(this,'xPos');
+                                    screenUpdater.call(this,'yPos');
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="context17" target="../s8" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenSetter.call(this,'cellPropertiesTab',1);
+                                    screenUpdater.call(this,'namePropertie');
+                                    screenUpdater.call(this,'xPos');
+                                    screenUpdater.call(this,'yPos');
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="context23" target="../s8" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenSetter.call(this,'cellPropertiesTab',1);
+                                    screenUpdater.call(this,'namePropertie');
+                                    screenUpdater.call(this,'xPos');
+                                    screenUpdater.call(this,'yPos');
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="context24" target="../s8" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenSetter.call(this,'cellPropertiesTab',1);
+                                    screenUpdater.call(this,'namePropertie');
+                                    screenUpdater.call(this,'xPos');
+                                    screenUpdater.call(this,'yPos');
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                        </state>
+                        
+                    </state>
+                    <state id="Layercanvas" initial="s3" >
+                        
+                        
+                        
+                        <state id="s3" >
+                            
+                            
+                            
+                            
+                            <transition event="move1" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.PacManInstancemove();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="move3" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.GhostInstancemove();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="mark4" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.GhostInstancemark();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="remove5" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.ScoreInstancerem();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="remove6" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.GhostInstancerem();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="mark7" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.PacManInstancemark();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="remove9" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.GridInstancerem();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="context10" target="." >
+                                
+                                
+                                
+                            </transition>
+                            <transition event="remove11" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.FoodInstancerem();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="mark12" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.GridInstancemark();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="move13" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.FoodInstancemove();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="context14" target="." >
+                                
+                                
+                                
+                            </transition>
+                            <transition event="mark16" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.FoodInstancemark();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="context17" target="." >
+                                
+                                
+                                
+                            </transition>
+                            <transition event="remove19" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.PacManInstancerem();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="move20" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.GridInstancemove();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="mark21" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.ScoreInstancemark();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="context23" target="." >
+                                
+                                
+                                
+                            </transition>
+                            <transition event="context24" target="." >
+                                
+                                
+                                
+                            </transition>
+                            <transition event="move25" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.ScoreInstancemove();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="place26" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.GridInstanceadd();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="place32" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.GhostInstanceadd();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="place38" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.PacManInstanceadd();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="place50" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.FoodInstanceadd();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="place52" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.ScoreInstanceadd();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="press22" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.newModel();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                        </state>
+                        
+                    </state>
+                    <state id="LayerControler" initial="h00" >
+                        
+                        
+                        
+                        <state id="h00" >
+                            
+                            
+                            
+                            
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s1') and this.type == 'gridButton'" >
+                                
+                                
+                                <raise event='press0'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="move" target="." cond="INSTATE('/System/Layercanvas/s3')" >
+                                
+                                
+                                <raise event='move1'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s1') and this.type == 'ghostButton'" >
+                                
+                                
+                                <raise event='press2'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="move" target="." cond="INSTATE('/System/Layercanvas/s3')" >
+                                
+                                
+                                <raise event='move3'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="mark" target="." cond="INSTATE('/System/Layercanvas/s3') and this.type == 'GhostInstance'" >
+                                
+                                
+                                <raise event='mark4'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="remove" target="." cond="INSTATE('/System/Layercanvas/s3')" >
+                                
+                                
+                                <raise event='remove5'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="remove" target="." cond="INSTATE('/System/Layercanvas/s3')" >
+                                
+                                
+                                <raise event='remove6'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="mark" target="." cond="INSTATE('/System/Layercanvas/s3') and this.type == 'PacManInstance'" >
+                                
+                                
+                                <raise event='mark7'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s1') and this.type == 'pacmanButton'" >
+                                
+                                
+                                <raise event='press8'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="remove" target="." cond="INSTATE('/System/Layercanvas/s3')" >
+                                
+                                
+                                <raise event='remove9'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="context" target="." cond="INSTATE('/System/Layercanvas/s3') and this.type == 'GhostInstance'" >
+                                
+                                
+                                <raise event='context10'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="remove" target="." cond="INSTATE('/System/Layercanvas/s3')" >
+                                
+                                
+                                <raise event='remove11'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="mark" target="." cond="INSTATE('/System/Layercanvas/s3') and this.type == 'GridInstance'" >
+                                
+                                
+                                <raise event='mark12'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="move" target="." cond="INSTATE('/System/Layercanvas/s3')" >
+                                
+                                
+                                <raise event='move13'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="context" target="." cond="INSTATE('/System/Layercanvas/s3') and this.type == 'GridInstance'" >
+                                
+                                
+                                <raise event='context14'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s1') and this.type == 'foodButton'" >
+                                
+                                
+                                <raise event='press15'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="mark" target="." cond="INSTATE('/System/Layercanvas/s3') and this.type == 'FoodInstance'" >
+                                
+                                
+                                <raise event='mark16'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="context" target="." cond="INSTATE('/System/Layercanvas/s3') and this.type == 'PacManInstance'" >
+                                
+                                
+                                <raise event='context17'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s1') and this.type == 'scoreButton'" >
+                                
+                                
+                                <raise event='press18'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="remove" target="." cond="INSTATE('/System/Layercanvas/s3')" >
+                                
+                                
+                                <raise event='remove19'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="move" target="." cond="INSTATE('/System/Layercanvas/s3')" >
+                                
+                                
+                                <raise event='move20'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="mark" target="." cond="INSTATE('/System/Layercanvas/s3') and this.type == 'ScoreInstance'" >
+                                
+                                
+                                <raise event='mark21'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayercommonTools/s0') and this.type == 'newModel'" >
+                                
+                                
+                                <raise event='press22'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="context" target="." cond="INSTATE('/System/Layercanvas/s3') and this.type == 'FoodInstance'" >
+                                
+                                
+                                <raise event='context23'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="context" target="." cond="INSTATE('/System/Layercanvas/s3') and this.type == 'ScoreInstance'" >
+                                
+                                
+                                <raise event='context24'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="move" target="." cond="INSTATE('/System/Layercanvas/s3')" >
+                                
+                                
+                                <raise event='move25'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="place" target="." cond="INSTATE('/System/Layercanvas/s3') and INSTATE('/System/LayerlanguageBar/s5') and this.type == 'svgCanvas'" >
+                                
+                                
+                                <raise event='place26'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s5') and this.type == 'gridButton'" >
+                                
+                                
+                                <raise event='press27'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s5') and this.type == 'scoreButton'" >
+                                
+                                
+                                <raise event='press28'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s5') and this.type == 'pacmanButton'" >
+                                
+                                
+                                <raise event='press29'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s5') and this.type == 'ghostButton'" >
+                                
+                                
+                                <raise event='press30'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s5') and this.type == 'foodButton'" >
+                                
+                                
+                                <raise event='press31'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="place" target="." cond="INSTATE('/System/Layercanvas/s3') and INSTATE('/System/LayerlanguageBar/s6') and this.type == 'GridInstance'" >
+                                
+                                
+                                <raise event='place32'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s6') and this.type == 'foodButton'" >
+                                
+                                
+                                <raise event='press33'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s6') and this.type == 'gridButton'" >
+                                
+                                
+                                <raise event='press34'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s6') and this.type == 'scoreButton'" >
+                                
+                                
+                                <raise event='press35'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s6') and this.type == 'pacmanButton'" >
+                                
+                                
+                                <raise event='press36'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s6') and this.type == 'ghostButton'" >
+                                
+                                
+                                <raise event='press37'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="place" target="." cond="INSTATE('/System/Layercanvas/s3') and INSTATE('/System/LayerlanguageBar/s7') and this.type == 'GridInstance'" >
+                                
+                                
+                                <raise event='place38'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s7') and this.type == 'pacmanButton'" >
+                                
+                                
+                                <raise event='press39'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s7') and this.type == 'ghostButton'" >
+                                
+                                
+                                <raise event='press40'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s7') and this.type == 'scoreButton'" >
+                                
+                                
+                                <raise event='press41'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s7') and this.type == 'foodButton'" >
+                                
+                                
+                                <raise event='press42'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s7') and this.type == 'gridButton'" >
+                                
+                                
+                                <raise event='press43'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="escape" target="." cond="INSTATE('/System/LayercellPropertiesTab/s8')" >
+                                
+                                
+                                <raise event='escape44'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s9') and this.type == 'pacmanButton'" >
+                                
+                                
+                                <raise event='press45'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s9') and this.type == 'scoreButton'" >
+                                
+                                
+                                <raise event='press46'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s9') and this.type == 'foodButton'" >
+                                
+                                
+                                <raise event='press47'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s9') and this.type == 'ghostButton'" >
+                                
+                                
+                                <raise event='press48'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s9') and this.type == 'gridButton'" >
+                                
+                                
+                                <raise event='press49'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="place" target="." cond="INSTATE('/System/Layercanvas/s3') and INSTATE('/System/LayerlanguageBar/s9') and this.type == 'GridInstance'" >
+                                
+                                
+                                <raise event='place50'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s10') and this.type == 'ghostButton'" >
+                                
+                                
+                                <raise event='press51'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="place" target="." cond="INSTATE('/System/Layercanvas/s3') and INSTATE('/System/LayerlanguageBar/s10') and this.type == 'svgCanvas'" >
+                                
+                                
+                                <raise event='place52'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s10') and this.type == 'gridButton'" >
+                                
+                                
+                                <raise event='press53'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s10') and this.type == 'scoreButton'" >
+                                
+                                
+                                <raise event='press54'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s10') and this.type == 'foodButton'" >
+                                
+                                
+                                <raise event='press55'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="INSTATE('/System/LayerlanguageBar/s10') and this.type == 'pacmanButton'" >
+                                
+                                
+                                <raise event='press56'>
+                                    
+                                </raise>
+                            </transition>
+                        </state>
+                        
+                    </state>
+                    <state id="LayerController" initial="controller" >
+                        <state id="controller">
+                        </state>
+                    </state>
+                    
+                </parallel>
+                
+            </scxml>
+        </class>
+</diagram>
+
+

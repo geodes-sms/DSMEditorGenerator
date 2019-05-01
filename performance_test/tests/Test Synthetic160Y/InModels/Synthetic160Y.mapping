@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mapping="http://udem.iro.geodes.ca/mapping">
+  <mapping:MappingDiagram/>
+  <mapping:PlatformInputEventCode editor="/2">
+    <listnerCode line="document.getElementById(&quot;E1&quot;).addEventListener(&quot;click&quot;, function() {Synthetic160Y.Interaction.prototype.triggerEvent(event,&quot;E1&quot;,'event');}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:EditorInputEvent platform="/1 /3 /4 /5 /6 /7 /8 /9 /10 /11 /12" event="event"/>
+  <mapping:PlatformInputEventCode editor="/2">
+    <listnerCode line="document.getElementById(&quot;E2&quot;).addEventListener(&quot;click&quot;, function() {Synthetic160Y.Interaction.prototype.triggerEvent(event,&quot;E2&quot;,'event');}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/2">
+    <listnerCode line="document.getElementById(&quot;E3&quot;).addEventListener(&quot;click&quot;, function() {Synthetic160Y.Interaction.prototype.triggerEvent(event,&quot;E3&quot;,'event');}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/2">
+    <listnerCode line="document.getElementById(&quot;E4&quot;).addEventListener(&quot;click&quot;, function() {Synthetic160Y.Interaction.prototype.triggerEvent(event,&quot;E4&quot;,'event');}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/2">
+    <listnerCode line="document.getElementById(&quot;E5&quot;).addEventListener(&quot;click&quot;, function() {Synthetic160Y.Interaction.prototype.triggerEvent(event,&quot;E5&quot;,'event');}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/2">
+    <listnerCode line="document.getElementById(&quot;E6&quot;).addEventListener(&quot;click&quot;, function() {Synthetic160Y.Interaction.prototype.triggerEvent(event,&quot;E6&quot;,'event');}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/2">
+    <listnerCode line="document.getElementById(&quot;E7&quot;).addEventListener(&quot;click&quot;, function() {Synthetic160Y.Interaction.prototype.triggerEvent(event,&quot;E7&quot;,'event');}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/2">
+    <listnerCode line="document.getElementById(&quot;E8&quot;).addEventListener(&quot;click&quot;, function() {Synthetic160Y.Interaction.prototype.triggerEvent(event,&quot;E8&quot;,'event');}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/2">
+    <listnerCode line="document.getElementById(&quot;E9&quot;).addEventListener(&quot;click&quot;, function() {Synthetic160Y.Interaction.prototype.triggerEvent(event,&quot;E9&quot;,'event');}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/2">
+    <listnerCode line="document.getElementById(&quot;E10&quot;).addEventListener(&quot;click&quot;, function() {Synthetic160Y.Interaction.prototype.triggerEvent(event,&quot;E10&quot;,'event');}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformInputEventCode editor="/2">
+    <listnerCode line="document.getElementById(&quot;23&quot;).addEventListener(&quot;click&quot;,function() {Synthetic160Y.Interaction.prototype.triggerEvent(event,event.target.id,'select');}, false);"/>
+  </mapping:PlatformInputEventCode>
+  <mapping:PlatformOutputEventCode editor="/14">
+    <raiseCode line="addE.call(this,&quot;23&quot;,&quot;1&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/13" operation="E1add"/>
+  <mapping:PlatformOutputEventCode editor="/16">
+    <raiseCode line="addE.call(this,&quot;23&quot;,&quot;2&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/15" operation="E2add"/>
+  <mapping:PlatformOutputEventCode editor="/18">
+    <raiseCode line="addE.call(this,&quot;23&quot;,&quot;3&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/17" operation="E3add"/>
+  <mapping:PlatformOutputEventCode editor="/20">
+    <raiseCode line="addE.call(this,&quot;23&quot;,&quot;4&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/19" operation="E4add"/>
+  <mapping:PlatformOutputEventCode editor="/22">
+    <raiseCode line="addE.call(this,&quot;23&quot;,&quot;5&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/21" operation="E5add"/>
+  <mapping:PlatformOutputEventCode editor="/24">
+    <raiseCode line="addE.call(this,&quot;23&quot;,&quot;6&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/23" operation="E6add"/>
+  <mapping:PlatformOutputEventCode editor="/26">
+    <raiseCode line="addE.call(this,&quot;23&quot;,&quot;7&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/25" operation="E7add"/>
+  <mapping:PlatformOutputEventCode editor="/28">
+    <raiseCode line="addE.call(this,&quot;23&quot;,&quot;8&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/27" operation="E8add"/>
+  <mapping:PlatformOutputEventCode editor="/30">
+    <raiseCode line="addE.call(this,&quot;23&quot;,&quot;9&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/29" operation="E9add"/>
+  <mapping:PlatformOutputEventCode editor="/32">
+    <raiseCode line="addE.call(this,&quot;23&quot;,&quot;10&quot;);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/31" operation="E10add"/>
+  <mapping:PlatformOutputEventCode editor="/34">
+    <raiseCode line="remE.call(this,this.event.target);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/33" operation="E1rem"/>
+  <mapping:PlatformOutputEventCode editor="/36">
+    <raiseCode line="remE.call(this,this.event.target);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/35" operation="E2rem"/>
+  <mapping:PlatformOutputEventCode editor="/38">
+    <raiseCode line="remE.call(this,this.event.target);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/37" operation="E3rem"/>
+  <mapping:PlatformOutputEventCode editor="/40">
+    <raiseCode line="remE.call(this,this.event.target);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/39" operation="E4rem"/>
+  <mapping:PlatformOutputEventCode editor="/42">
+    <raiseCode line="remE.call(this,this.event.target);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/41" operation="E5rem"/>
+  <mapping:PlatformOutputEventCode editor="/44">
+    <raiseCode line="remE.call(this,this.event.target);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/43" operation="E6rem"/>
+  <mapping:PlatformOutputEventCode editor="/46">
+    <raiseCode line="remE.call(this,this.event.target);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/45" operation="E7rem"/>
+  <mapping:PlatformOutputEventCode editor="/48">
+    <raiseCode line="remE.call(this,this.event.target);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/47" operation="E8rem"/>
+  <mapping:PlatformOutputEventCode editor="/50">
+    <raiseCode line="remE.call(this,this.event.target);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/49" operation="E9rem"/>
+  <mapping:PlatformOutputEventCode editor="/52">
+    <raiseCode line="remE.call(this,this.event.target);"/>
+  </mapping:PlatformOutputEventCode>
+  <mapping:EditorOutputEvent platform="/51" operation="E10rem"/>
+  <mapping:PlatformControllCode>
+    <heatherCode line="this.svg = scConstructor(&quot;23&quot;);"/>
+  </mapping:PlatformControllCode>
+</xmi:XMI>

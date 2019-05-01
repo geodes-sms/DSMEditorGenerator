@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ASCII"?>
+<interaction:Interactions xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:interaction="http://udem.iro.geodes.ca/interaction">
+  <interactions preCondition="//@interactions.0/@hasStates.0" goal="//@interactions.0/@hasStates.1" name="R1">
+    <hasStates to="//@interactions.0/@hasTransitions.0" id="C1">
+      <conditions xsi:type="interaction:IElement" id="E3" isFocus="true" value="1"/>
+    </hasStates>
+    <hasStates from="//@interactions.0/@hasTransitions.0" id="E1">
+      <conditions xsi:type="interaction:LElement" id="E10" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="E7" value="1"/>
+      <conditions xsi:type="interaction:LElement" id="E9" value="rem"/>
+      <conditions xsi:type="interaction:LElement" id="E2" value="rem"/>
+      <conditions xsi:type="interaction:LElement" id="E6" value="rem"/>
+    </hasStates>
+    <hasTransitions Event="event" source="//@interactions.0/@hasStates.0" target="//@interactions.0/@hasStates.1"/>
+  </interactions>
+</interaction:Interactions>

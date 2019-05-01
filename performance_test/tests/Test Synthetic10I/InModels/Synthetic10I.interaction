@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="ASCII"?>
+<interaction:Interactions xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:interaction="http://udem.iro.geodes.ca/interaction">
+  <interactions preCondition="//@interactions.0/@hasStates.0" goal="//@interactions.0/@hasStates.1" name="R1">
+    <hasStates to="//@interactions.0/@hasTransitions.0" id="C1">
+      <conditions xsi:type="interaction:IElement" id="E8" isFocus="true"/>
+      <conditions xsi:type="interaction:IElement" id="E10" value="1"/>
+      <conditions xsi:type="interaction:LElement" id="E1"/>
+      <conditions xsi:type="interaction:IElement" id="E10" value="1"/>
+      <conditions xsi:type="interaction:LElement" id="E2"/>
+      <conditions xsi:type="interaction:LElement" id="E3"/>
+      <conditions xsi:type="interaction:LElement" id="E4"/>
+      <conditions xsi:type="interaction:IElement" id="E3"/>
+      <conditions xsi:type="interaction:IElement" id="E1" value="1"/>
+      <conditions xsi:type="interaction:IElement" id="E2"/>
+    </hasStates>
+    <hasStates from="//@interactions.0/@hasTransitions.0" id="E1">
+      <conditions xsi:type="interaction:IElement" id="E10"/>
+      <conditions xsi:type="interaction:LElement" id="E2" value="add"/>
+      <conditions xsi:type="interaction:LElement" id="E4" value="update"/>
+    </hasStates>
+    <hasTransitions Event="event" source="//@interactions.0/@hasStates.0" target="//@interactions.0/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.1/@hasStates.0" goal="//@interactions.1/@hasStates.1" name="R2">
+    <hasStates to="//@interactions.1/@hasTransitions.0" id="C2">
+      <conditions xsi:type="interaction:LElement" id="E10" isFocus="true"/>
+      <conditions xsi:type="interaction:IElement" id="E4" value="1"/>
+      <conditions xsi:type="interaction:IElement" id="E9"/>
+      <conditions xsi:type="interaction:LElement" id="E5"/>
+      <conditions xsi:type="interaction:IElement" id="E5"/>
+    </hasStates>
+    <hasStates from="//@interactions.1/@hasTransitions.0" id="E2">
+      <conditions xsi:type="interaction:IElement" id="E9" value="1"/>
+      <conditions xsi:type="interaction:IElement" id="E6"/>
+      <conditions xsi:type="interaction:LElement" id="E3" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="E6"/>
+      <conditions xsi:type="interaction:LElement" id="E8" value="add"/>
+      <conditions xsi:type="interaction:LElement" id="E6" value="update"/>
+      <conditions xsi:type="interaction:LElement" id="E7" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="E1" value="2"/>
+      <conditions xsi:type="interaction:IElement" id="E10" value="1"/>
+      <conditions xsi:type="interaction:IElement" id="E2" value="1"/>
+    </hasStates>
+    <hasTransitions Event="event" source="//@interactions.1/@hasStates.0" target="//@interactions.1/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.2/@hasStates.0" goal="//@interactions.2/@hasStates.1" name="R3">
+    <hasStates to="//@interactions.2/@hasTransitions.0" id="C3">
+      <conditions xsi:type="interaction:IElement" id="E2" isFocus="true" value="2"/>
+      <conditions xsi:type="interaction:IElement" id="E5"/>
+      <conditions xsi:type="interaction:LElement" id="E3"/>
+      <conditions xsi:type="interaction:LElement" id="E9"/>
+    </hasStates>
+    <hasStates from="//@interactions.2/@hasTransitions.0" id="E3">
+      <conditions xsi:type="interaction:LElement" id="E9" value="add"/>
+      <conditions xsi:type="interaction:LElement" id="E8" value="rem"/>
+      <conditions xsi:type="interaction:IElement" id="E3" value="1"/>
+      <conditions xsi:type="interaction:IElement" id="E9" value="1"/>
+      <conditions xsi:type="interaction:LElement" id="E9" value="rem"/>
+      <conditions xsi:type="interaction:IElement" id="E7" value="1"/>
+    </hasStates>
+    <hasTransitions Event="event" source="//@interactions.2/@hasStates.0" target="//@interactions.2/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.3/@hasStates.0" goal="//@interactions.3/@hasStates.1" name="R4">
+    <hasStates to="//@interactions.3/@hasTransitions.0" id="C4">
+      <conditions xsi:type="interaction:IElement" id="E5" isFocus="true"/>
+    </hasStates>
+    <hasStates from="//@interactions.3/@hasTransitions.0" id="E4">
+      <conditions xsi:type="interaction:IElement" id="E1"/>
+      <conditions xsi:type="interaction:IElement" id="E9" value="2"/>
+      <conditions xsi:type="interaction:IElement" id="E7" value="1"/>
+    </hasStates>
+    <hasTransitions Event="event" source="//@interactions.3/@hasStates.0" target="//@interactions.3/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.4/@hasStates.0" goal="//@interactions.4/@hasStates.1" name="R5">
+    <hasStates to="//@interactions.4/@hasTransitions.0" id="C5">
+      <conditions xsi:type="interaction:LElement" id="E2" isFocus="true"/>
+      <conditions xsi:type="interaction:IElement" id="E6"/>
+      <conditions xsi:type="interaction:LElement" id="E10"/>
+    </hasStates>
+    <hasStates from="//@interactions.4/@hasTransitions.0" id="E5">
+      <conditions xsi:type="interaction:IElement" id="E10" value="1"/>
+      <conditions xsi:type="interaction:LElement" id="E6" value="add"/>
+      <conditions xsi:type="interaction:LElement" id="E2" value="update"/>
+      <conditions xsi:type="interaction:LElement" id="E6" value="update"/>
+    </hasStates>
+    <hasTransitions Event="event" source="//@interactions.4/@hasStates.0" target="//@interactions.4/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.5/@hasStates.0" goal="//@interactions.5/@hasStates.1" name="R6">
+    <hasStates to="//@interactions.5/@hasTransitions.0" id="C6">
+      <conditions xsi:type="interaction:LElement" id="E2" isFocus="true"/>
+      <conditions xsi:type="interaction:IElement" id="E9" value="3"/>
+      <conditions xsi:type="interaction:LElement" id="E1"/>
+      <conditions xsi:type="interaction:IElement" id="E10" value="1"/>
+      <conditions xsi:type="interaction:IElement" id="E9"/>
+      <conditions xsi:type="interaction:LElement" id="E10"/>
+      <conditions xsi:type="interaction:LElement" id="E1"/>
+      <conditions xsi:type="interaction:IElement" id="E4"/>
+    </hasStates>
+    <hasStates from="//@interactions.5/@hasTransitions.0" id="E6">
+      <conditions xsi:type="interaction:LElement" id="E7" value="update"/>
+      <conditions xsi:type="interaction:LElement" id="E7" value="rem"/>
+      <conditions xsi:type="interaction:LElement" id="E9" value="rem"/>
+      <conditions xsi:type="interaction:LElement" id="E4" value="update"/>
+      <conditions xsi:type="interaction:LElement" id="E4" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="E5" value="1"/>
+    </hasStates>
+    <hasTransitions Event="event" source="//@interactions.5/@hasStates.0" target="//@interactions.5/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.6/@hasStates.0" goal="//@interactions.6/@hasStates.1" name="R7">
+    <hasStates to="//@interactions.6/@hasTransitions.0" id="C7">
+      <conditions xsi:type="interaction:LElement" id="E7" isFocus="true"/>
+      <conditions xsi:type="interaction:IElement" id="E5"/>
+      <conditions xsi:type="interaction:IElement" id="E5" value="1"/>
+      <conditions xsi:type="interaction:IElement" id="E3"/>
+      <conditions xsi:type="interaction:LElement" id="E5"/>
+      <conditions xsi:type="interaction:LElement" id="E8"/>
+    </hasStates>
+    <hasStates from="//@interactions.6/@hasTransitions.0" id="E7">
+      <conditions xsi:type="interaction:LElement" id="E10" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="E2" value="3"/>
+    </hasStates>
+    <hasTransitions Event="event" source="//@interactions.6/@hasStates.0" target="//@interactions.6/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.7/@hasStates.0" goal="//@interactions.7/@hasStates.1" name="R8">
+    <hasStates to="//@interactions.7/@hasTransitions.0" id="C8">
+      <conditions xsi:type="interaction:LElement" id="E10" isFocus="true"/>
+      <conditions xsi:type="interaction:LElement" id="E2"/>
+    </hasStates>
+    <hasStates from="//@interactions.7/@hasTransitions.0" id="E8">
+      <conditions xsi:type="interaction:LElement" id="E3" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="E6" value="1"/>
+      <conditions xsi:type="interaction:LElement" id="E10" value="rem"/>
+    </hasStates>
+    <hasTransitions Event="event" source="//@interactions.7/@hasStates.0" target="//@interactions.7/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.8/@hasStates.0" goal="//@interactions.8/@hasStates.1" name="R9">
+    <hasStates to="//@interactions.8/@hasTransitions.0" id="C9">
+      <conditions xsi:type="interaction:IElement" id="E1" isFocus="true" value="2"/>
+      <conditions xsi:type="interaction:LElement" id="E5"/>
+      <conditions xsi:type="interaction:LElement" id="E8"/>
+    </hasStates>
+    <hasStates from="//@interactions.8/@hasTransitions.0" id="E9">
+      <conditions xsi:type="interaction:LElement" id="E7" value="rem"/>
+      <conditions xsi:type="interaction:LElement" id="E6" value="rem"/>
+    </hasStates>
+    <hasTransitions Event="event" source="//@interactions.8/@hasStates.0" target="//@interactions.8/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.9/@hasStates.0" goal="//@interactions.9/@hasStates.1" name="R10">
+    <hasStates to="//@interactions.9/@hasTransitions.0" id="C10">
+      <conditions xsi:type="interaction:LElement" id="E1" isFocus="true"/>
+      <conditions xsi:type="interaction:IElement" id="E5" value="1"/>
+      <conditions xsi:type="interaction:LElement" id="E10"/>
+      <conditions xsi:type="interaction:LElement" id="E9"/>
+      <conditions xsi:type="interaction:LElement" id="E4"/>
+      <conditions xsi:type="interaction:LElement" id="E9"/>
+      <conditions xsi:type="interaction:IElement" id="E4" value="2"/>
+    </hasStates>
+    <hasStates from="//@interactions.9/@hasTransitions.0" id="E10">
+      <conditions xsi:type="interaction:LElement" id="E1" value="rem"/>
+      <conditions xsi:type="interaction:LElement" id="E3" value="add"/>
+      <conditions xsi:type="interaction:LElement" id="E6" value="rem"/>
+      <conditions xsi:type="interaction:IElement" id="E8"/>
+      <conditions xsi:type="interaction:LElement" id="E7" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="E9" value="4"/>
+    </hasStates>
+    <hasTransitions Event="event" source="//@interactions.9/@hasStates.0" target="//@interactions.9/@hasStates.1"/>
+  </interactions>
+</interaction:Interactions>

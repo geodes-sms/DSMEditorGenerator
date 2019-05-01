@@ -1,0 +1,1219 @@
+<?xml version="1.1" ?>
+<diagram author="Vasco and Khady" name="Synthetic260Z">
+    <description>
+        RunGhostGameofLifeEditor
+    </description>
+    <inport name="ui" />
+        <class name="Interaction" default="false">
+            <attribute name="context" type="String"/>        
+            <constructor>
+                <body>
+                    <![CDATA[
+                    this.svg = scConstructor("23");
+                    document.getElementById("E1").addEventListener("click", function() {Synthetic260Z.Interaction.prototype.triggerEvent(event,"E1",'event');}, false);
+                    document.getElementById("E2").addEventListener("click", function() {Synthetic260Z.Interaction.prototype.triggerEvent(event,"E2",'event');}, false);
+                    document.getElementById("E3").addEventListener("click", function() {Synthetic260Z.Interaction.prototype.triggerEvent(event,"E3",'event');}, false);
+                    document.getElementById("E4").addEventListener("click", function() {Synthetic260Z.Interaction.prototype.triggerEvent(event,"E4",'event');}, false);
+                    document.getElementById("E5").addEventListener("click", function() {Synthetic260Z.Interaction.prototype.triggerEvent(event,"E5",'event');}, false);
+                    document.getElementById("E6").addEventListener("click", function() {Synthetic260Z.Interaction.prototype.triggerEvent(event,"E6",'event');}, false);
+                    document.getElementById("E7").addEventListener("click", function() {Synthetic260Z.Interaction.prototype.triggerEvent(event,"E7",'event');}, false);
+                    document.getElementById("E8").addEventListener("click", function() {Synthetic260Z.Interaction.prototype.triggerEvent(event,"E8",'event');}, false);
+                    document.getElementById("E9").addEventListener("click", function() {Synthetic260Z.Interaction.prototype.triggerEvent(event,"E9",'event');}, false);
+                    document.getElementById("E10").addEventListener("click", function() {Synthetic260Z.Interaction.prototype.triggerEvent(event,"E10",'event');}, false);
+                    document.getElementById("23").addEventListener("click",function() {Synthetic260Z.Interaction.prototype.triggerEvent(event,event.target.id,'select');}, false);
+                    ]]>
+                </body>
+            </constructor>
+            <method name="triggerEvent">
+                <parameter name="evt">
+                </parameter>
+                <parameter name="type">
+                </parameter>
+                <parameter name="internalEvt">
+                </parameter>
+                <body>
+                    console.log(evt);
+                    console.log(type);
+                    console.log(internalEvt);
+                    console.log(controller.object_manager.instances[0].configuration);
+                    this.event=evt;
+                    this.type = type;
+                    controller.addInput(new Event(internalEvt, "ui"), []);
+                    console.log(controller.object_manager.instances[0].configuration);
+                </body>
+            </method>
+            <method name="E1add">
+                <body>
+                    addE.call(this,"23","1");
+                </body>
+            </method>
+            <method name="E2add">
+                <body>
+                    addE.call(this,"23","2");
+                </body>
+            </method>
+            <method name="E3add">
+                <body>
+                    addE.call(this,"23","3");
+                </body>
+            </method>
+            <method name="E4add">
+                <body>
+                    addE.call(this,"23","4");
+                </body>
+            </method>
+            <method name="E5add">
+                <body>
+                    addE.call(this,"23","5");
+                </body>
+            </method>
+            <method name="E6add">
+                <body>
+                    addE.call(this,"23","6");
+                </body>
+            </method>
+            <method name="E7add">
+                <body>
+                    addE.call(this,"23","7");
+                </body>
+            </method>
+            <method name="E8add">
+                <body>
+                    addE.call(this,"23","8");
+                </body>
+            </method>
+            <method name="E9add">
+                <body>
+                    addE.call(this,"23","9");
+                </body>
+            </method>
+            <method name="E10add">
+                <body>
+                    addE.call(this,"23","10");
+                </body>
+            </method>
+            <method name="E1rem">
+                <body>
+                    remE.call(this,this.event.target);
+                </body>
+            </method>
+            <method name="E2rem">
+                <body>
+                    remE.call(this,this.event.target);
+                </body>
+            </method>
+            <method name="E3rem">
+                <body>
+                    remE.call(this,this.event.target);
+                </body>
+            </method>
+            <method name="E4rem">
+                <body>
+                    remE.call(this,this.event.target);
+                </body>
+            </method>
+            <method name="E5rem">
+                <body>
+                    remE.call(this,this.event.target);
+                </body>
+            </method>
+            <method name="E6rem">
+                <body>
+                    remE.call(this,this.event.target);
+                </body>
+            </method>
+            <method name="E7rem">
+                <body>
+                    remE.call(this,this.event.target);
+                </body>
+            </method>
+            <method name="E8rem">
+                <body>
+                    remE.call(this,this.event.target);
+                </body>
+            </method>
+            <method name="E9rem">
+                <body>
+                    remE.call(this,this.event.target);
+                </body>
+            </method>
+            <method name="E10rem">
+                <body>
+                    remE.call(this,this.event.target);
+                </body>
+            </method>
+            <method name="eventCall">
+            	<parameter name="evt">
+            	</parameter>
+                <body>
+                </body>
+            </method>
+            <scxml initial="System">
+                <parallel id="System">
+                    
+                    
+                    
+                    <state id="LayerE2" initial="s0" >
+                        
+                        
+                        
+                        <state id="s0" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s13" >
+                            
+                            
+                            
+                            
+                            <transition event="event9" target="../s31" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'E2',0);
+                                    screenActive.call(this,'E2',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                        </state>
+                        <state id="s25" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s31" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <transition event="event1" target="s13" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E2',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event7" target="s25" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E2',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event10" target="s25" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E2',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                    </state>
+                    <state id="LayerE1" initial="s1" >
+                        
+                        
+                        
+                        <state id="s1" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s18" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s34" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s42" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <transition event="event3" target="s18" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E1',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event10" target="s34" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E1',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event13" target="s42" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E1',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event15" target="s42" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E1',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                    </state>
+                    <state id="Layercanvas" initial="s2" >
+                        
+                        
+                        
+                        <state id="s2" >
+                            
+                            
+                            
+                            
+                            <transition event="event0" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.E6add();
+                                    this.E3update();
+                                    this.E4update();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="event2" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.E1rem();
+                                    this.E7add();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="event3" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.E2update();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="event4" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.E5update();
+                                    this.E7add();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="event5" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.E9update();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="event6" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.E2rem();
+                                    this.E10update();
+                                    this.E4add();
+                                    this.E10add();
+                                    this.E3add();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="event7" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.E8rem();
+                                    this.E6add();
+                                    this.E9rem();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="event8" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.E3update();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="event11" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.E4add();
+                                    this.E3update();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="event12" target="." >
+                                
+                                
+                                
+                            </transition>
+                            <transition event="event13" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.E3rem();
+                                    this.E4rem();
+                                    this.E5add();
+                                    this.E2update();
+                                    this.E2rem();
+                                    this.E2rem();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="event14" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.E4add();
+                                    this.E3update();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                            <transition event="event15" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.E3rem();
+                                    this.E4rem();
+                                    this.E5add();
+                                    this.E2update();
+                                    this.E2rem();
+                                    this.E2rem();
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                        </state>
+                        <transition event="event1" target="s2" >
+                            
+                            <script>
+                                <![CDATA[
+                                this.E8rem();
+                                this.E7rem();
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event9" target="s2" >
+                            
+                            <script>
+                                <![CDATA[
+                                this.E2add();
+                                this.E8add();
+                                this.E2rem();
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event10" target="s2" >
+                            
+                            <script>
+                                <![CDATA[
+                                this.E10add();
+                                this.E1update();
+                                this.E10add();
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                    </state>
+                    <state id="LayerE3" initial="s3" >
+                        
+                        
+                        
+                        <state id="s3" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s21" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s22" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s24" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s30" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s40" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <transition event="event3" target="s21" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E3',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event5" target="s22" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E3',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event6" target="s24" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E3',0);
+                                screenActive.call(this,'E3',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event9" target="s30" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E3',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event10" target="s30" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E3',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event13" target="s40" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E3',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event15" target="s40" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E3',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                    </state>
+                    <state id="LayerE4" initial="s4" >
+                        
+                        
+                        
+                        <state id="s4" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s27" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s29" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <transition event="event1" target="s4" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E4',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event7" target="s4" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E4',0);
+                                screenActive.call(this,'E4',0);
+                                screenActive.call(this,'E4',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event8" target="s27" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E4',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event9" target="s29" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E4',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                    </state>
+                    <state id="LayerE5" initial="s5" >
+                        
+                        
+                        
+                        <state id="s5" >
+                            
+                            
+                            
+                            
+                            <transition event="event1" target="../s16" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'E5',0);
+                                    screenActive.call(this,'E5',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                        </state>
+                        <state id="s16" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s19" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s33" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s39" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <transition event="event3" target="s19" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E5',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event9" target="s33" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E5',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event12" target="s39" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E5',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                    </state>
+                    <state id="LayerE6" initial="s6" >
+                        
+                        
+                        
+                        <state id="s6" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s15" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s35" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <transition event="event1" target="s15" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E6',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event10" target="s35" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E6',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                    </state>
+                    <state id="LayerE7" initial="s7" >
+                        
+                        
+                        
+                        <state id="s7" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s20" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s26" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s43" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <transition event="event3" target="s20" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E7',0);
+                                screenActive.call(this,'E7',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event7" target="s26" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E7',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event10" target="s7" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E7',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event11" target="s26" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E7',0);
+                                screenActive.call(this,'E7',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event13" target="s43" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E7',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event14" target="s26" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E7',0);
+                                screenActive.call(this,'E7',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event15" target="s43" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E7',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                    </state>
+                    <state id="LayerE8" initial="s8" >
+                        
+                        
+                        
+                        <state id="s8" >
+                            
+                            
+                            
+                            
+                            <transition event="event1" target="." >
+                                
+                                
+                                
+                            </transition>
+                        </state>
+                        <state id="s17" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s23" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s32" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s37" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s41" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <transition event="event2" target="s17" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E8',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event5" target="s23" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E8',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event9" target="s32" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E8',0);
+                                screenActive.call(this,'E8',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event11" target="s37" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E8',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event13" target="s41" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E8',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event14" target="s37" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E8',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event15" target="s41" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E8',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                    </state>
+                    <state id="LayerE9" initial="s9" >
+                        
+                        
+                        
+                        <state id="s9" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s28" >
+                            
+                            
+                            
+                            
+                            <transition event="event10" target="../s36" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenActive.call(this,'E9',0);
+                                    ]]>
+                                </script>
+                                
+                            </transition>
+                        </state>
+                        <state id="s36" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s38" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <transition event="event8" target="s28" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E9',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event12" target="s38" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E9',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                    </state>
+                    <state id="LayerE10" initial="s10" >
+                        
+                        
+                        
+                        <state id="s10" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s12" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <state id="s14" >
+                            
+                            
+                            
+                            
+                            
+                        </state>
+                        <transition event="event0" target="s12" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E10',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                        <transition event="event1" target="s14" >
+                            
+                            <script>
+                                <![CDATA[
+                                screenActive.call(this,'E10',0);
+                                ]]>
+                            </script>
+                            
+                        </transition>
+                    </state>
+                    <state id="LayerControler" initial="h00" >
+                        
+                        
+                        
+                        <state id="h00" >
+                            
+                            
+                            
+                            
+                            <transition event="event" target="." cond="INSTATE('/System/Layercanvas/s2') and this.type == 'E9'" >
+                                
+                                
+                                <raise event='event0'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="event" target="." cond="INSTATE('/System/LayerE5/s5') and INSTATE('/System/LayerE8/s8') and this.type == 'E5'" >
+                                
+                                
+                                <raise event='event1'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="event" target="." cond="INSTATE('/System/Layercanvas/s2') and this.type == 'E9'" >
+                                
+                                
+                                <raise event='event2'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="event" target="." cond="INSTATE('/System/Layercanvas/s2') and this.type == 'E10'" >
+                                
+                                
+                                <raise event='event3'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="event" target="." cond="INSTATE('/System/Layercanvas/s2') and this.type == 'E10'" >
+                                
+                                
+                                <raise event='event4'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="event" target="." cond="INSTATE('/System/Layercanvas/s2') and this.type == 'E8'" >
+                                
+                                
+                                <raise event='event5'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="event" target="." cond="INSTATE('/System/Layercanvas/s2') and this.type == 'E8'" >
+                                
+                                
+                                <raise event='event6'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="event" target="." cond="INSTATE('/System/Layercanvas/s2') and this.type == 'E1'" >
+                                
+                                
+                                <raise event='event7'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="event" target="." cond="INSTATE('/System/Layercanvas/s2') and this.type == 'E2'" >
+                                
+                                
+                                <raise event='event8'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="event" target="." cond="INSTATE('/System/LayerE2/s13') and this.type == 'E2'" >
+                                
+                                
+                                <raise event='event9'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="event" target="." cond="INSTATE('/System/LayerE9/s28') and this.type == 'E9'" >
+                                
+                                
+                                <raise event='event10'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="event" target="." cond="INSTATE('/System/Layercanvas/s2') and this.type == 'E3'" >
+                                
+                                
+                                <raise event='event11'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="event" target="." cond="INSTATE('/System/Layercanvas/s2') and this.type == 'E1'" >
+                                
+                                
+                                <raise event='event12'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="event" target="." cond="INSTATE('/System/Layercanvas/s2') and this.type == 'E3'" >
+                                
+                                
+                                <raise event='event13'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="event" target="." cond="INSTATE('/System/Layercanvas/s2') and this.type == 'E3'" >
+                                
+                                
+                                <raise event='event14'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="event" target="." cond="INSTATE('/System/Layercanvas/s2') and this.type == 'E3'" >
+                                
+                                
+                                <raise event='event15'>
+                                    
+                                </raise>
+                            </transition>
+                        </state>
+                        
+                    </state>
+                    <state id="LayerController" initial="controller" >
+                        <state id="controller">
+                        </state>
+                    </state>
+                    
+                </parallel>
+                
+            </scxml>
+        </class>
+</diagram>
+
+

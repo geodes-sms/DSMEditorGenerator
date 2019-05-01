@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sccd:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:sccd="http://www.example.org/sccd" name="PacMan03" description="RunGhostGameofLifeEditor">
+  <class name="Interaction">
+    <attributes name="context" type="String"/>
+    <scxml initialState="//@class.0/@scxml.0/@parallel.0">
+      <parallel id="System">
+        <states id="LayercommonTools" initial="//@class.0/@scxml.0/@parallel.0/@states.0/@states.0">
+          <states id="s0">
+            <transition event="press22" name="press22" target="//@class.0/@scxml.0/@parallel.0/@states.0/@states.0"/>
+            <ielement id="commonTools" value="0"/>
+            <ielement id="newModel"/>
+          </states>
+        </states>
+        <states id="LayerlanguageBar" initial="//@class.0/@scxml.0/@parallel.0/@states.1/@states.0">
+          <states id="s1">
+            <transition event="press0" name="press0" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.1">
+              <script script="screenActive.call(this,'gridButton',1);"/>
+            </transition>
+            <transition event="press2" name="press2" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.2">
+              <script script="screenActive.call(this,'ghostButton',1);"/>
+            </transition>
+            <transition event="press8" name="press8" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.3">
+              <script script="screenActive.call(this,'pacmanButton',1);"/>
+            </transition>
+            <transition event="press15" name="press15" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.4">
+              <script script="screenActive.call(this,'foodButton',1);"/>
+            </transition>
+            <transition event="press18" name="press18" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.5">
+              <script script="screenActive.call(this,'scoreButton',1);"/>
+            </transition>
+            <ielement id="languageBar" value="0"/>
+            <ielement id="pacmanButton"/>
+            <ielement id="ghostButton"/>
+            <ielement id="foodButton"/>
+            <ielement id="gridButton"/>
+            <ielement id="scoreButton"/>
+          </states>
+          <states id="s5">
+            <transition event="place26" name="place26" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.1"/>
+            <transition event="press27" name="press27" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.0">
+              <script script="screenActive.call(this,'gridButton',0);"/>
+            </transition>
+            <transition event="press28" name="press28" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.5">
+              <script script="screenActive.call(this,'scoreButton',1);"/>
+              <script script="screenActive.call(this,'gridButton',0);"/>
+            </transition>
+            <transition event="press29" name="press29" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.3">
+              <script script="screenActive.call(this,'pacmanButton',1);"/>
+              <script script="screenActive.call(this,'gridButton',0);"/>
+            </transition>
+            <transition event="press30" name="press30" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.2">
+              <script script="screenActive.call(this,'ghostButton',1);"/>
+              <script script="screenActive.call(this,'gridButton',0);"/>
+            </transition>
+            <transition event="press31" name="press31" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.4">
+              <script script="screenActive.call(this,'foodButton',1);"/>
+              <script script="screenActive.call(this,'gridButton',0);"/>
+            </transition>
+            <ielement id="languageBar" value="0"/>
+            <ielement id="pacmanButton"/>
+            <ielement id="ghostButton"/>
+            <ielement id="foodButton"/>
+            <ielement id="gridButton" value="active"/>
+            <ielement id="scoreButton"/>
+          </states>
+          <states id="s6">
+            <transition event="place32" name="place32" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.2"/>
+            <transition event="press33" name="press33" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.4">
+              <script script="screenActive.call(this,'foodButton',1);"/>
+              <script script="screenActive.call(this,'ghostButton',0);"/>
+            </transition>
+            <transition event="press34" name="press34" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.1">
+              <script script="screenActive.call(this,'gridButton',1);"/>
+              <script script="screenActive.call(this,'ghostButton',0);"/>
+            </transition>
+            <transition event="press35" name="press35" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.5">
+              <script script="screenActive.call(this,'scoreButton',1);"/>
+              <script script="screenActive.call(this,'ghostButton',0);"/>
+            </transition>
+            <transition event="press36" name="press36" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.3">
+              <script script="screenActive.call(this,'pacmanButton',1);"/>
+              <script script="screenActive.call(this,'ghostButton',0);"/>
+            </transition>
+            <transition event="press37" name="press37" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.0">
+              <script script="screenActive.call(this,'ghostButton',0);"/>
+            </transition>
+            <ielement id="languageBar" value="0"/>
+            <ielement id="pacmanButton"/>
+            <ielement id="ghostButton" value="active"/>
+            <ielement id="foodButton"/>
+            <ielement id="gridButton"/>
+            <ielement id="scoreButton"/>
+          </states>
+          <states id="s7">
+            <transition event="place38" name="place38" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.3"/>
+            <transition event="press39" name="press39" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.0">
+              <script script="screenActive.call(this,'pacmanButton',0);"/>
+            </transition>
+            <transition event="press40" name="press40" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.2">
+              <script script="screenActive.call(this,'ghostButton',1);"/>
+              <script script="screenActive.call(this,'pacmanButton',0);"/>
+            </transition>
+            <transition event="press41" name="press41" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.5">
+              <script script="screenActive.call(this,'scoreButton',1);"/>
+              <script script="screenActive.call(this,'pacmanButton',0);"/>
+            </transition>
+            <transition event="press42" name="press42" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.4">
+              <script script="screenActive.call(this,'foodButton',1);"/>
+              <script script="screenActive.call(this,'pacmanButton',0);"/>
+            </transition>
+            <transition event="press43" name="press43" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.1">
+              <script script="screenActive.call(this,'gridButton',1);"/>
+              <script script="screenActive.call(this,'pacmanButton',0);"/>
+            </transition>
+            <ielement id="languageBar" value="0"/>
+            <ielement id="pacmanButton" value="active"/>
+            <ielement id="ghostButton"/>
+            <ielement id="foodButton"/>
+            <ielement id="gridButton"/>
+            <ielement id="scoreButton"/>
+          </states>
+          <states id="s9">
+            <transition event="press45" name="press45" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.3">
+              <script script="screenActive.call(this,'pacmanButton',1);"/>
+              <script script="screenActive.call(this,'foodButton',0);"/>
+            </transition>
+            <transition event="press46" name="press46" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.5">
+              <script script="screenActive.call(this,'scoreButton',1);"/>
+              <script script="screenActive.call(this,'foodButton',0);"/>
+            </transition>
+            <transition event="press47" name="press47" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.0">
+              <script script="screenActive.call(this,'foodButton',0);"/>
+            </transition>
+            <transition event="press48" name="press48" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.2">
+              <script script="screenActive.call(this,'ghostButton',1);"/>
+              <script script="screenActive.call(this,'foodButton',0);"/>
+            </transition>
+            <transition event="press49" name="press49" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.1">
+              <script script="screenActive.call(this,'gridButton',1);"/>
+              <script script="screenActive.call(this,'foodButton',0);"/>
+            </transition>
+            <transition event="place50" name="place50" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.4"/>
+            <ielement id="languageBar" value="0"/>
+            <ielement id="pacmanButton"/>
+            <ielement id="ghostButton"/>
+            <ielement id="foodButton" value="active"/>
+            <ielement id="gridButton"/>
+            <ielement id="scoreButton"/>
+          </states>
+          <states id="s10">
+            <transition event="press51" name="press51" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.2">
+              <script script="screenActive.call(this,'ghostButton',1);"/>
+              <script script="screenActive.call(this,'scoreButton',0);"/>
+            </transition>
+            <transition event="place52" name="place52" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.5"/>
+            <transition event="press53" name="press53" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.1">
+              <script script="screenActive.call(this,'gridButton',1);"/>
+              <script script="screenActive.call(this,'scoreButton',0);"/>
+            </transition>
+            <transition event="press54" name="press54" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.0">
+              <script script="screenActive.call(this,'scoreButton',0);"/>
+            </transition>
+            <transition event="press55" name="press55" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.4">
+              <script script="screenActive.call(this,'foodButton',1);"/>
+              <script script="screenActive.call(this,'scoreButton',0);"/>
+            </transition>
+            <transition event="press56" name="press56" target="//@class.0/@scxml.0/@parallel.0/@states.1/@states.3">
+              <script script="screenActive.call(this,'pacmanButton',1);"/>
+              <script script="screenActive.call(this,'scoreButton',0);"/>
+            </transition>
+            <ielement id="languageBar" value="0"/>
+            <ielement id="pacmanButton"/>
+            <ielement id="ghostButton"/>
+            <ielement id="foodButton"/>
+            <ielement id="gridButton"/>
+            <ielement id="scoreButton" value="active"/>
+          </states>
+        </states>
+        <states id="LayercellPropertiesTab" initial="//@class.0/@scxml.0/@parallel.0/@states.2/@states.0">
+          <states id="s2">
+            <transition event="context10" name="context10" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.1">
+              <script script="screenSetter.call(this,'cellPropertiesTab',1);"/>
+              <script script="screenUpdater.call(this,'namePropertie');"/>
+              <script script="screenUpdater.call(this,'xPos');"/>
+              <script script="screenUpdater.call(this,'yPos');"/>
+            </transition>
+            <transition event="context14" name="context14" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.1">
+              <script script="screenSetter.call(this,'cellPropertiesTab',1);"/>
+              <script script="screenUpdater.call(this,'namePropertie');"/>
+              <script script="screenUpdater.call(this,'xPos');"/>
+              <script script="screenUpdater.call(this,'yPos');"/>
+            </transition>
+            <transition event="context17" name="context17" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.1">
+              <script script="screenSetter.call(this,'cellPropertiesTab',1);"/>
+              <script script="screenUpdater.call(this,'namePropertie');"/>
+              <script script="screenUpdater.call(this,'xPos');"/>
+              <script script="screenUpdater.call(this,'yPos');"/>
+            </transition>
+            <transition event="context23" name="context23" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.1">
+              <script script="screenSetter.call(this,'cellPropertiesTab',1);"/>
+              <script script="screenUpdater.call(this,'namePropertie');"/>
+              <script script="screenUpdater.call(this,'xPos');"/>
+              <script script="screenUpdater.call(this,'yPos');"/>
+            </transition>
+            <transition event="context24" name="context24" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.1">
+              <script script="screenSetter.call(this,'cellPropertiesTab',1);"/>
+              <script script="screenUpdater.call(this,'namePropertie');"/>
+              <script script="screenUpdater.call(this,'xPos');"/>
+              <script script="screenUpdater.call(this,'yPos');"/>
+            </transition>
+            <ielement id="cellPropertiesTab" value="0"/>
+            <ielement id="namePropertie"/>
+            <ielement id="xPos"/>
+            <ielement id="yPos"/>
+          </states>
+          <states id="s8">
+            <transition event="escape44" name="escape44" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.2">
+              <script script="screenSetter.call(this,'cellPropertiesTab',0);"/>
+            </transition>
+            <transition event="context10" name="context10" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.1">
+              <script script="screenSetter.call(this,'cellPropertiesTab',1);"/>
+              <script script="screenUpdater.call(this,'namePropertie');"/>
+              <script script="screenUpdater.call(this,'xPos');"/>
+              <script script="screenUpdater.call(this,'yPos');"/>
+            </transition>
+            <transition event="context14" name="context14" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.1">
+              <script script="screenSetter.call(this,'cellPropertiesTab',1);"/>
+              <script script="screenUpdater.call(this,'namePropertie');"/>
+              <script script="screenUpdater.call(this,'xPos');"/>
+              <script script="screenUpdater.call(this,'yPos');"/>
+            </transition>
+            <transition event="context17" name="context17" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.1">
+              <script script="screenSetter.call(this,'cellPropertiesTab',1);"/>
+              <script script="screenUpdater.call(this,'namePropertie');"/>
+              <script script="screenUpdater.call(this,'xPos');"/>
+              <script script="screenUpdater.call(this,'yPos');"/>
+            </transition>
+            <transition event="context23" name="context23" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.1">
+              <script script="screenSetter.call(this,'cellPropertiesTab',1);"/>
+              <script script="screenUpdater.call(this,'namePropertie');"/>
+              <script script="screenUpdater.call(this,'xPos');"/>
+              <script script="screenUpdater.call(this,'yPos');"/>
+            </transition>
+            <transition event="context24" name="context24" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.1">
+              <script script="screenSetter.call(this,'cellPropertiesTab',1);"/>
+              <script script="screenUpdater.call(this,'namePropertie');"/>
+              <script script="screenUpdater.call(this,'xPos');"/>
+              <script script="screenUpdater.call(this,'yPos');"/>
+            </transition>
+            <ielement id="cellPropertiesTab" value="visible"/>
+            <ielement id="namePropertie" value="update"/>
+            <ielement id="xPos" value="update"/>
+            <ielement id="yPos" value="update"/>
+          </states>
+          <states id="s11">
+            <transition event="context10" name="context10" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.1">
+              <script script="screenSetter.call(this,'cellPropertiesTab',1);"/>
+              <script script="screenUpdater.call(this,'namePropertie');"/>
+              <script script="screenUpdater.call(this,'xPos');"/>
+              <script script="screenUpdater.call(this,'yPos');"/>
+            </transition>
+            <transition event="context14" name="context14" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.1">
+              <script script="screenSetter.call(this,'cellPropertiesTab',1);"/>
+              <script script="screenUpdater.call(this,'namePropertie');"/>
+              <script script="screenUpdater.call(this,'xPos');"/>
+              <script script="screenUpdater.call(this,'yPos');"/>
+            </transition>
+            <transition event="context17" name="context17" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.1">
+              <script script="screenSetter.call(this,'cellPropertiesTab',1);"/>
+              <script script="screenUpdater.call(this,'namePropertie');"/>
+              <script script="screenUpdater.call(this,'xPos');"/>
+              <script script="screenUpdater.call(this,'yPos');"/>
+            </transition>
+            <transition event="context23" name="context23" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.1">
+              <script script="screenSetter.call(this,'cellPropertiesTab',1);"/>
+              <script script="screenUpdater.call(this,'namePropertie');"/>
+              <script script="screenUpdater.call(this,'xPos');"/>
+              <script script="screenUpdater.call(this,'yPos');"/>
+            </transition>
+            <transition event="context24" name="context24" target="//@class.0/@scxml.0/@parallel.0/@states.2/@states.1">
+              <script script="screenSetter.call(this,'cellPropertiesTab',1);"/>
+              <script script="screenUpdater.call(this,'namePropertie');"/>
+              <script script="screenUpdater.call(this,'xPos');"/>
+              <script script="screenUpdater.call(this,'yPos');"/>
+            </transition>
+            <ielement id="cellPropertiesTab" value="notvisible"/>
+            <ielement id="namePropertie" value="update"/>
+            <ielement id="xPos" value="update"/>
+            <ielement id="yPos" value="update"/>
+          </states>
+        </states>
+        <states id="Layercanvas" initial="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0">
+          <states id="s3">
+            <transition event="move1" name="move1" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0">
+              <script script="this.PacManInstancemove();"/>
+            </transition>
+            <transition event="move3" name="move3" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0">
+              <script script="this.GhostInstancemove();"/>
+            </transition>
+            <transition event="mark4" name="mark4" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0">
+              <script script="this.GhostInstancemark();"/>
+            </transition>
+            <transition event="remove5" name="remove5" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0">
+              <script script="this.ScoreInstancerem();"/>
+            </transition>
+            <transition event="remove6" name="remove6" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0">
+              <script script="this.GhostInstancerem();"/>
+            </transition>
+            <transition event="mark7" name="mark7" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0">
+              <script script="this.PacManInstancemark();"/>
+            </transition>
+            <transition event="remove9" name="remove9" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0">
+              <script script="this.GridInstancerem();"/>
+            </transition>
+            <transition event="context10" name="context10" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0"/>
+            <transition event="remove11" name="remove11" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0">
+              <script script="this.FoodInstancerem();"/>
+            </transition>
+            <transition event="mark12" name="mark12" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0">
+              <script script="this.GridInstancemark();"/>
+            </transition>
+            <transition event="move13" name="move13" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0">
+              <script script="this.FoodInstancemove();"/>
+            </transition>
+            <transition event="context14" name="context14" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0"/>
+            <transition event="mark16" name="mark16" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0">
+              <script script="this.FoodInstancemark();"/>
+            </transition>
+            <transition event="context17" name="context17" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0"/>
+            <transition event="remove19" name="remove19" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0">
+              <script script="this.PacManInstancerem();"/>
+            </transition>
+            <transition event="move20" name="move20" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0">
+              <script script="this.GridInstancemove();"/>
+            </transition>
+            <transition event="mark21" name="mark21" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0">
+              <script script="this.ScoreInstancemark();"/>
+            </transition>
+            <transition event="context23" name="context23" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0"/>
+            <transition event="context24" name="context24" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0"/>
+            <transition event="move25" name="move25" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0">
+              <script script="this.ScoreInstancemove();"/>
+            </transition>
+            <transition event="place26" name="place26" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0">
+              <script script="this.GridInstanceadd();"/>
+            </transition>
+            <transition event="place32" name="place32" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0">
+              <script script="this.GhostInstanceadd();"/>
+            </transition>
+            <transition event="place38" name="place38" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0">
+              <script script="this.PacManInstanceadd();"/>
+            </transition>
+            <transition event="place50" name="place50" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0">
+              <script script="this.FoodInstanceadd();"/>
+            </transition>
+            <transition event="place52" name="place52" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0">
+              <script script="this.ScoreInstanceadd();"/>
+            </transition>
+            <transition event="press22" name="press22" target="//@class.0/@scxml.0/@parallel.0/@states.3/@states.0">
+              <script script="this.newModel();"/>
+            </transition>
+            <ielement id="23"/>
+          </states>
+        </states>
+        <states id="LayerControler" initial="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+          <states id="h00">
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s1') and this.type == 'gridButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press0"/>
+            </transition>
+            <transition event="move" cond="INSTATE('/System/Layercanvas/s3')" name="move" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="move1"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s1') and this.type == 'ghostButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press2"/>
+            </transition>
+            <transition event="move" cond="INSTATE('/System/Layercanvas/s3')" name="move" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="move3"/>
+            </transition>
+            <transition event="mark" cond="INSTATE('/System/Layercanvas/s3') and this.type == 'GhostInstance'" name="mark" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="mark4"/>
+            </transition>
+            <transition event="remove" cond="INSTATE('/System/Layercanvas/s3')" name="remove" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="remove5"/>
+            </transition>
+            <transition event="remove" cond="INSTATE('/System/Layercanvas/s3')" name="remove" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="remove6"/>
+            </transition>
+            <transition event="mark" cond="INSTATE('/System/Layercanvas/s3') and this.type == 'PacManInstance'" name="mark" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="mark7"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s1') and this.type == 'pacmanButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press8"/>
+            </transition>
+            <transition event="remove" cond="INSTATE('/System/Layercanvas/s3')" name="remove" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="remove9"/>
+            </transition>
+            <transition event="context" cond="INSTATE('/System/Layercanvas/s3') and this.type == 'GhostInstance'" name="context" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="context10"/>
+            </transition>
+            <transition event="remove" cond="INSTATE('/System/Layercanvas/s3')" name="remove" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="remove11"/>
+            </transition>
+            <transition event="mark" cond="INSTATE('/System/Layercanvas/s3') and this.type == 'GridInstance'" name="mark" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="mark12"/>
+            </transition>
+            <transition event="move" cond="INSTATE('/System/Layercanvas/s3')" name="move" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="move13"/>
+            </transition>
+            <transition event="context" cond="INSTATE('/System/Layercanvas/s3') and this.type == 'GridInstance'" name="context" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="context14"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s1') and this.type == 'foodButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press15"/>
+            </transition>
+            <transition event="mark" cond="INSTATE('/System/Layercanvas/s3') and this.type == 'FoodInstance'" name="mark" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="mark16"/>
+            </transition>
+            <transition event="context" cond="INSTATE('/System/Layercanvas/s3') and this.type == 'PacManInstance'" name="context" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="context17"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s1') and this.type == 'scoreButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press18"/>
+            </transition>
+            <transition event="remove" cond="INSTATE('/System/Layercanvas/s3')" name="remove" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="remove19"/>
+            </transition>
+            <transition event="move" cond="INSTATE('/System/Layercanvas/s3')" name="move" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="move20"/>
+            </transition>
+            <transition event="mark" cond="INSTATE('/System/Layercanvas/s3') and this.type == 'ScoreInstance'" name="mark" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="mark21"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayercommonTools/s0') and this.type == 'newModel'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press22"/>
+            </transition>
+            <transition event="context" cond="INSTATE('/System/Layercanvas/s3') and this.type == 'FoodInstance'" name="context" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="context23"/>
+            </transition>
+            <transition event="context" cond="INSTATE('/System/Layercanvas/s3') and this.type == 'ScoreInstance'" name="context" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="context24"/>
+            </transition>
+            <transition event="move" cond="INSTATE('/System/Layercanvas/s3')" name="move" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="move25"/>
+            </transition>
+            <transition event="place" cond="INSTATE('/System/Layercanvas/s3') and INSTATE('/System/LayerlanguageBar/s5') and this.type == 'svgCanvas'" name="place" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="place26"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s5') and this.type == 'gridButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press27"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s5') and this.type == 'scoreButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press28"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s5') and this.type == 'pacmanButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press29"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s5') and this.type == 'ghostButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press30"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s5') and this.type == 'foodButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press31"/>
+            </transition>
+            <transition event="place" cond="INSTATE('/System/Layercanvas/s3') and INSTATE('/System/LayerlanguageBar/s6') and this.type == 'GridInstance'" name="place" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="place32"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s6') and this.type == 'foodButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press33"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s6') and this.type == 'gridButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press34"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s6') and this.type == 'scoreButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press35"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s6') and this.type == 'pacmanButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press36"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s6') and this.type == 'ghostButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press37"/>
+            </transition>
+            <transition event="place" cond="INSTATE('/System/Layercanvas/s3') and INSTATE('/System/LayerlanguageBar/s7') and this.type == 'GridInstance'" name="place" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="place38"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s7') and this.type == 'pacmanButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press39"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s7') and this.type == 'ghostButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press40"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s7') and this.type == 'scoreButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press41"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s7') and this.type == 'foodButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press42"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s7') and this.type == 'gridButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press43"/>
+            </transition>
+            <transition event="escape" cond="INSTATE('/System/LayercellPropertiesTab/s8')" name="escape" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="escape44"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s9') and this.type == 'pacmanButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press45"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s9') and this.type == 'scoreButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press46"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s9') and this.type == 'foodButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press47"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s9') and this.type == 'ghostButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press48"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s9') and this.type == 'gridButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press49"/>
+            </transition>
+            <transition event="place" cond="INSTATE('/System/Layercanvas/s3') and INSTATE('/System/LayerlanguageBar/s9') and this.type == 'GridInstance'" name="place" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="place50"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s10') and this.type == 'ghostButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press51"/>
+            </transition>
+            <transition event="place" cond="INSTATE('/System/Layercanvas/s3') and INSTATE('/System/LayerlanguageBar/s10') and this.type == 'svgCanvas'" name="place" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="place52"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s10') and this.type == 'gridButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press53"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s10') and this.type == 'scoreButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press54"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s10') and this.type == 'foodButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press55"/>
+            </transition>
+            <transition event="press" cond="INSTATE('/System/LayerlanguageBar/s10') and this.type == 'pacmanButton'" name="press" target="//@class.0/@scxml.0/@parallel.0/@states.4/@states.0">
+              <raise event="press56"/>
+            </transition>
+          </states>
+        </states>
+      </parallel>
+    </scxml>
+  </class>
+</sccd:Diagram>
