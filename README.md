@@ -30,7 +30,7 @@ This repository contains the source code of the DSM editor generator. It also co
 * Import transformation2scd project into your workspace
 * Import example into workspace
 * Inside `/Test <Example_Name>/` run `<Example_Name>Run.launch`
-* Find and replace in `/Test <Example_Name>/OutModels/<Example_Name>.js` instances of `and` for `&&`
+* Find and replace in `/Test <Example_Name>/OutModels/<Example_Name>.js` all instances of `and` for `&&`
 * Open `/Test <Example_Name>/OutModels/<Example_Name>.html` in a browser
 
 ## Example requirements
