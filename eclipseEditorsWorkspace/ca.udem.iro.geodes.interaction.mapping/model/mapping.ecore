@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mapping" nsURI="http://udem.iro.geodes.ca/mapping" nsPrefix="mapping">
+  <eClassifiers xsi:type="ecore:EClass" name="MappingDiagram">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="editorInputEvents" upperBound="-1"
+        eType="#//EditorInputEvent" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="editorOutputEvents" upperBound="-1"
+        eType="#//EditorOutputEvent" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="platformInputEvents" upperBound="-1"
+        eType="#//PlatformInputEventCode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="platformOutputEvents" upperBound="-1"
+        eType="#//PlatformOutputEventCode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="platformIElementSetters"
+        upperBound="-1" eType="#//PlatformIElementCode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="platformLElementOperations"
+        upperBound="-1" eType="#//PlatformLElementCode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="platformOutputControll"
+        eType="#//PlatformOutputControllCode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="platformInputControll"
+        eType="#//PlatformInputControllCode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="platformBaseCode" eType="#//PlatformControllCode"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EditorInputEvent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="platform" upperBound="-1"
+        eType="#//PlatformInputEventCode" eOpposite="#//PlatformInputEventCode/editor"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="event" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PlatformInputEventCode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="editor" upperBound="-1"
+        eType="#//EditorInputEvent" eOpposite="#//EditorInputEvent/platform"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listnerCode" upperBound="-1"
+        eType="#//CodeLine" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EditorOutputEvent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="platform" upperBound="-1"
+        eType="#//PlatformOutputEventCode" eOpposite="#//PlatformOutputEventCode/editor"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PlatformOutputEventCode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="editor" upperBound="-1"
+        eType="#//EditorOutputEvent" eOpposite="#//EditorOutputEvent/platform"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="raiseCode" upperBound="-1"
+        eType="#//CodeLine" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PlatformIElementCode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="setterCode" upperBound="-1"
+        eType="#//CodeLine"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PlatformLElementCode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="createCode" upperBound="-1"
+        eType="#//CodeLine" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="updateCode" upperBound="-1"
+        eType="#//CodeLine" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deleteCode" upperBound="-1"
+        eType="#//CodeLine" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PlatformControllCode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="heatherCode" upperBound="-1"
+        eType="#//CodeLine" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="footerCode" upperBound="-1"
+        eType="#//CodeLine" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="codeSeperator" eType="#//CodeLine"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PlatformOutputControllCode" eSuperTypes="#//PlatformControllCode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PlatformInputControllCode" eSuperTypes="#//PlatformControllCode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CodeLine">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="line" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

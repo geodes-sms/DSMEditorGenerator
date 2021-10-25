@@ -1,0 +1,97 @@
+pre {
+	var counter = 0;
+}
+
+rule LayoutDiagram2SCD
+	transform sD : Layout!LayoutDiagram
+	to tD : SCCD!Diagram, tC : SCCD!Class, tSC : SCCD!Scxml, tSt : SCCD!Parallel,tAt : SCCD!Attribute , hackBaseState : SCCD!State, hackInitState : SCCD!State {
+	tD.class.add(tC);
+	tD.name = sD.name;
+	tD.description = "RunGhostGameofLifeEditor";
+	tC.name = "Interaction";
+	tC.attributes.add(tAt);
+	tAt.name = "context";
+	tAt.type = "String";
+	tC.scxml.add(tSC);
+	tSC.parallel.add(tSt);
+	tSt.id = "System";
+	tSC.initialState = tSt;
+//	tSt.states.addAll(sD.hasLayers.equivalents());
+	for (i in sD.hasLayers) { 
+		tSt.states.add(i.equivalent());
+	}
+// hack for parallel transitions
+	tSt.states.add(hackBaseState);
+	hackBaseState.states.add(hackInitState);
+	hackBaseState.id = "LayerControler";
+	hackBaseState.initial = hackInitState;
+	hackInitState.id ="h00";
+}
+
+rule Layer2State 
+	transform sL : Layout!Layer
+	to tBS : SCCD!State, tIS : SCCD!State {
+	tBS.id = "Layer"+sL.name;
+	tBS.states.add(tIS);
+	tBS.initial = tIS;
+	tIS.id = "s" + counter.toString();
+	counter++;
+	tIS.ielement = sL.closure();
+}
+
+rule Element2IElement
+	transform sE : Layout!Element
+	to tIE : SCCD!IElement {
+	tIE.id = sE.id;
+	tIE.value = "default";
+}
+
+rule Group2IElement
+	transform sE : Layout!Group
+	to tIE : SCCD!IElement {
+	tIE.id = sE.id;
+	tIE.value = sE.visible.asString();
+}
+
+rule GraphicalElement2IElement
+	transform sE : Layout!GraphicalElement
+	to tIE : SCCD!IElement {
+	tIE.id = sE.id;
+	tIE.value = "default";
+}
+
+rule Image2IElement
+	transform sE : Layout!Image
+	to tIE : SCCD!IElement {
+	tIE.id = sE.id;
+	tIE.value = "default";
+}
+
+rule Canvas2IElement
+	transform sE : Layout!Canvas
+	to tIE : SCCD!IElement {
+	tIE.id = sE.id;
+	tIE.value = sE.active;
+}
+
+operation Layout!Layer closure() : List {
+	var c = new List(SCCD!IElement);
+	self.hasElements.println();
+	for (e in self.hasElements) {
+		c = e.closure(c);
+	}
+	return c;
+}
+
+operation Layout!Group closure (c : List(SCCD!IElement)) : List {
+	c.add(self.equivalent());
+	for (e in self.groups){
+		c = e.closure(c);
+	}
+	return c;
+}
+
+operation Layout!Element closure (c : List(SCCD!IElement)) : List {
+	c.add(self.equivalent());
+	return c;
+}

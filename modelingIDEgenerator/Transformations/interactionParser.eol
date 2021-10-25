@@ -1,0 +1,85 @@
+// csv version
+//var interactions = Row.all;
+var acumulate = "";
+var controll = "";
+
+var sequenceControll = 3;
+var state;
+
+var transition;
+
+var interactionRoot =  new INTERACTION!Interactions;
+var interactionRule;
+
+var rawFile = new Native("java.io.File")(inputFile);
+var file = new Native("java.util.Scanner")(rawFile);
+
+while (file.hasNextLine()) {
+	var field = file.nextLine().split("#");
+// csv version
+//for (i in interactions) {
+	if (field.size() == 1) {
+		continue ;
+	}
+	interactionRule = new INTERACTION!AtomicInteraction;
+	interactionRoot.interactions.add(interactionRule);
+	for (c2 in field) {
+		var c = c2.replace(" ","");
+		if (sequenceControll == 0) {
+			state = new INTERACTION!State;
+			var index = c.toCharSequence().indexOf('|');
+			state.id = c.substring(0,index);
+			for(p in c.substring(index+1,c.length()).split(",")){
+				var cond = p.split(":");
+				if (p="") {
+					continue ;
+				}
+				var element;
+				switch (cond.at(1)){
+					case "L" : element = new INTERACTION!LElement;
+					case "O" : element = new INTERACTION!OElement;
+					case "V" : element = new INTERACTION!VElement;
+					case "I" : element = new INTERACTION!IElement;
+				}
+				
+				element.id = cond.at(2);
+				if(cond.at(3) <> "_"){
+					element.value = cond.at(3);
+				}else{
+					element.value = "default";
+				}
+				element.`operation` = "set";
+				switch (cond.at(0)){
+					case "f" : element.isFocus=true;
+					case "n" : element.isNegative=true;
+				}
+				state.conditions.add(element);
+			}
+			state.from=transition;
+			interactionRule.hasStates.add(state);
+			if(interactionRule.preCondition == null){
+				interactionRule.preCondition = state;
+			}
+			interactionRule.goal = state;
+			sequenceControll = 1;
+		}else if (sequenceControll == 1) {
+			transition = new INTERACTION!Transition;
+			transition.Event = c.replace("-","").replace(">","");
+			transition.source = state;
+			interactionRule.hasTransitions.add(transition);
+			sequenceControll = 0;
+		}else{
+			interactionRule.name = c;
+			sequenceControll =0;
+		}
+		
+
+	}
+//	interactionRule.println();
+//	interactionRule.hasStates.println();
+	sequenceControll = 3;
+	state= null;
+	transition =null;
+}
+
+file.close();

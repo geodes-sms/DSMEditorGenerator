@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interactiontxt:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:interactiontxt="http://www.udem.ca/iro/geodes/interaction/Interactiontxt">
+  <interactions name="RunTransfromation">
+    <condition>
+      <elements xsi:type="interactiontxt:CIElement" isFocus="true" id="playModelButton"/>
+      <transition event="press">
+        <action>
+          <elements xsi:type="interactiontxt:AIElement" id="playModelButton" value="active"/>
+          <elements xsi:type="interactiontxt:AOElement" operation="runGoL"/>
+        </action>
+      </transition>
+    </condition>
+  </interactions>
+  <interactions name="CSSetAddInstance">
+    <condition>
+      <elements xsi:type="interactiontxt:CCanvas" isFocus="true"/>
+      <transition event="select">
+        <action>
+          <elements xsi:type="interactiontxt:AVElement" id="LifeMode" operation="&quot;" value="adding"/>
+        </action>
+      </transition>
+    </condition>
+  </interactions>
+  <interactions name="CSAddInstance">
+    <condition>
+      <elements xsi:type="interactiontxt:CCanvas" isFocus="true"/>
+      <elements xsi:type="interactiontxt:CVElement" value="adding" id="LifeMode"/>
+      <transition event="place">
+        <action>
+          <elements xsi:type="interactiontxt:ALElement" id="Life" operation="add"/>
+        </action>
+      </transition>
+    </condition>
+  </interactions>
+  <interactions name="CSAddInstance">
+    <condition>
+      <elements xsi:type="interactiontxt:CCanvas" isFocus="true"/>
+      <elements xsi:type="interactiontxt:CVElement" value="adding" id="LifeMode"/>
+      <transition event="release">
+        <action>
+          <elements xsi:type="interactiontxt:ALElement" id="Life" operation="add"/>
+          <elements xsi:type="interactiontxt:AVElement" id="LifeMode" operation="&quot;" value="null"/>
+        </action>
+      </transition>
+    </condition>
+  </interactions>
+  <interactions name="CSDef">
+    <condition>
+      <elements xsi:type="interactiontxt:CLElement" isFocus="true" id="Life"/>
+      <elements xsi:type="interactiontxt:CVElement" value="adding" id="LifeMode"/>
+      <transition event="release">
+        <action>
+          <elements xsi:type="interactiontxt:AVElement" id="LifeMode" operation="&quot;" value="null"/>
+        </action>
+      </transition>
+    </condition>
+  </interactions>
+  <interactions name="CSSetRemInstance">
+    <condition>
+      <elements xsi:type="interactiontxt:CLElement" isFocus="true" id="Life"/>
+      <transition event="select">
+        <action>
+          <elements xsi:type="interactiontxt:AVElement" id="LifeMode" operation="&quot;" value="remove"/>
+        </action>
+      </transition>
+    </condition>
+  </interactions>
+  <interactions name="CSRemInstance">
+    <condition>
+      <elements xsi:type="interactiontxt:CLElement" isFocus="true" id="Life"/>
+      <elements xsi:type="interactiontxt:CVElement" value="remove" id="LifeMode"/>
+      <transition event="place">
+        <action>
+          <elements xsi:type="interactiontxt:ALElement" id="Life" operation="rem"/>
+        </action>
+      </transition>
+    </condition>
+  </interactions>
+  <interactions name="CSRemInstance">
+    <condition>
+      <elements xsi:type="interactiontxt:CLElement" isFocus="true" id="Life"/>
+      <elements xsi:type="interactiontxt:CVElement" value="remove" id="LifeMode"/>
+      <transition event="release">
+        <action>
+          <elements xsi:type="interactiontxt:ALElement" id="Life" operation="rem"/>
+          <elements xsi:type="interactiontxt:AVElement" id="LifeMode" operation="&quot;" value="null"/>
+        </action>
+      </transition>
+    </condition>
+  </interactions>
+  <interactions name="CSDef">
+    <condition>
+      <elements xsi:type="interactiontxt:CCanvas" isFocus="true"/>
+      <elements xsi:type="interactiontxt:CVElement" value="remove" id="LifeMode"/>
+      <transition event="release">
+        <action>
+          <elements xsi:type="interactiontxt:AVElement" id="LifeMode" operation="&quot;" value="null"/>
+        </action>
+      </transition>
+    </condition>
+  </interactions>
+  <interactions name="EndTransformation">
+    <condition>
+      <elements xsi:type="interactiontxt:CIElement" value="active" id="playModelButton" operation="&quot;"/>
+      <transition event="_finish">
+        <action>
+          <elements xsi:type="interactiontxt:AIElement" id="playModelButton" value="default"/>
+        </action>
+      </transition>
+    </condition>
+  </interactions>
+</interactiontxt:Model>

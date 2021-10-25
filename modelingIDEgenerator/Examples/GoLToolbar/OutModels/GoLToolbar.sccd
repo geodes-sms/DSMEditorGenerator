@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sccd:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sccd="http://www.example.org/sccd" xsi:schemaLocation="http://www.example.org/sccd ../../../Models/sccd.ecore" name="GoLToolbar" description="RunGhostGameofLifeEditor">
+  <class name="Interaction">
+    <attributes name="context" type="String"/>
+    <scxml initialState="System">
+      <parallel id="System">
+        <states id="LayercomonTools" initial="s0">
+          <states id="s0">
+            <transition event="press2" name="tpress23" target="s5">
+              <script script="screenset.call(this, 'playModelButton','active');"/>
+              <script script="this.runGoL();"/>
+              <raise event="_step"/>
+            </transition>
+            <ielement id="comonTools" value="0"/>
+            <ielement id="playModelButton" value="default"/>
+          </states>
+          <states id="s5">
+            <transition event="_finish13" name="t_finish1314" target="s0">
+              <script script="screenset.call(this, 'playModelButton','default');"/>
+              <raise event="_step"/>
+            </transition>
+            <ielement id="comonTools" value="0"/>
+            <ielement id="playModelButton" value="active"/>
+          </states>
+        </states>
+        <states id="LayerlanguageBar" initial="s1">
+          <states id="s1">
+            <transition event="press0" name="tpress01" target="s4">
+              <script script="screenset.call(this, 'liveCellButton','default');"/>
+              <script script="screenset.call(this, 'deadCellButton','active');"/>
+              <raise event="_step"/>
+            </transition>
+            <transition event="press4" name="tpress45" target="s6">
+              <script script="screenset.call(this, 'liveCellButton','active');"/>
+              <script script="screenset.call(this, 'deadCellButton','default');"/>
+              <raise event="_step"/>
+            </transition>
+            <ielement id="languageBar" value="0"/>
+            <ielement id="liveCellButton" value="default"/>
+            <ielement id="deadCellButton" value="default"/>
+          </states>
+          <states id="s4">
+            <transition event="select6" name="tselect68" target="s4">
+              <raise event="_step"/>
+            </transition>
+            <transition event="press9" name="tpress910" target="s6">
+              <script script="screenset.call(this, 'liveCellButton','active');"/>
+              <script script="screenset.call(this, 'deadCellButton','default');"/>
+              <raise event="_step"/>
+            </transition>
+            <transition event="press11" name="tpress1112" target="s1">
+              <script script="screenset.call(this, 'deadCellButton','default');"/>
+              <raise event="_step"/>
+            </transition>
+            <ielement id="languageBar" value="0"/>
+            <ielement id="liveCellButton" value="default"/>
+            <ielement id="deadCellButton" value="active"/>
+          </states>
+          <states id="s6">
+            <transition event="press15" name="tpress1516" target="s1">
+              <script script="screenset.call(this, 'liveCellButton','default');"/>
+              <raise event="_step"/>
+            </transition>
+            <transition event="press17" name="tpress1718" target="s4">
+              <script script="screenset.call(this, 'liveCellButton','default');"/>
+              <script script="screenset.call(this, 'deadCellButton','active');"/>
+              <raise event="_step"/>
+            </transition>
+            <transition event="select19" name="tselect1921" target="s6">
+              <raise event="_step"/>
+            </transition>
+            <ielement id="languageBar" value="0"/>
+            <ielement id="liveCellButton" value="active"/>
+            <ielement id="deadCellButton" value="default"/>
+          </states>
+        </states>
+        <states id="Layercanvas" initial="s2">
+          <states id="s2">
+            <transition event="select6" name="tselect67" target="s2">
+              <script script="this.Liferem(&quot;&quot;);"/>
+              <raise event="_step"/>
+            </transition>
+            <transition event="select19" name="tselect1920" target="s2">
+              <script script="this.Lifeadd(&quot;&quot;);"/>
+              <raise event="_step"/>
+            </transition>
+            <ielement id="23" value="default"/>
+          </states>
+        </states>
+        <states id="LayerControler" initial="h00">
+          <states id="h00">
+            <transition event="press" cond="this.type == 'deadCellButton' and INSTATE('/System/LayerlanguageBar/s1')" name="press" target="h00">
+              <script script="console.log( &quot;RULE : SelectDeadCellButton&quot; );"/>
+              <raise event="press0"/>
+            </transition>
+            <transition event="press" cond="this.type == 'playModelButton' and INSTATE('/System/LayercomonTools/s0')" name="press" target="h00">
+              <script script="console.log( &quot;RULE : RunTransfromation&quot; );"/>
+              <raise event="press2"/>
+            </transition>
+            <transition event="press" cond="this.type == 'liveCellButton' and INSTATE('/System/LayerlanguageBar/s1')" name="press" target="h00">
+              <script script="console.log( &quot;RULE : SelectLiveCellButton&quot; );"/>
+              <raise event="press4"/>
+            </transition>
+            <transition event="select" cond="this.type == 'Life' and INSTATE('/System/Layercanvas/s2') and INSTATE('/System/LayerlanguageBar/s4')" name="select" target="h00">
+              <script script="console.log( &quot;RULE : CSRemInstance&quot; );"/>
+              <raise event="select6"/>
+            </transition>
+            <transition event="press" cond="this.type == 'liveCellButton' and INSTATE('/System/LayerlanguageBar/s4')" name="press" target="h00">
+              <script script="console.log( &quot;RULE : SelectLiveCellButton&quot; );"/>
+              <raise event="press9"/>
+            </transition>
+            <transition event="press" cond="this.type == 'deadCellButton' and INSTATE('/System/LayerlanguageBar/s4')" name="press" target="h00">
+              <script script="console.log( &quot;RULE : DeselectDeadCellButton&quot; );"/>
+              <raise event="press11"/>
+            </transition>
+            <transition event="_finish" cond="INSTATE('/System/LayercomonTools/s5')" name="_finish" target="h00">
+              <script script="console.log( &quot;RULE : EndTransformation&quot; );"/>
+              <raise event="_finish13"/>
+            </transition>
+            <transition event="press" cond="this.type == 'liveCellButton' and INSTATE('/System/LayerlanguageBar/s6')" name="press" target="h00">
+              <script script="console.log( &quot;RULE : DeselectLiveCellButton&quot; );"/>
+              <raise event="press15"/>
+            </transition>
+            <transition event="press" cond="this.type == 'deadCellButton' and INSTATE('/System/LayerlanguageBar/s6')" name="press" target="h00">
+              <script script="console.log( &quot;RULE : SelectDeadCellButton&quot; );"/>
+              <raise event="press17"/>
+            </transition>
+            <transition event="select" cond="this.type == 'svgCanvas' and INSTATE('/System/Layercanvas/s2') and INSTATE('/System/LayerlanguageBar/s6')" name="select" target="h00">
+              <script script="console.log( &quot;RULE : CSAddInstance&quot; );"/>
+              <raise event="select19"/>
+            </transition>
+          </states>
+        </states>
+      </parallel>
+    </scxml>
+  </class>
+</sccd:Diagram>

@@ -1,0 +1,221 @@
+pre {
+	var counter = 0;
+    var opCounter = 0;
+}
+
+rule Model2Interactions
+	transform sM : Intertxt!Model
+	to tM : Inter!Interactions {
+	for (i in sM.interactions) { 
+		tM.interactions.add(i.equivalent());
+	}
+}
+
+rule Interaction2Interaction
+    transform sI : Intertxt!Interaction
+    to tI : Inter!AtomicInteraction {
+    tI.name = sI.name;
+    tI.preCondition = sI.condition.equivalent();
+    tI.hasStates = sI.condition.stateClosure();
+    tI.hasTransitions = sI.condition.transitionClosure();
+    tI.goal = tI.hasStates.first();
+}
+
+rule Condition2State
+    transform sC : Intertxt!Condition
+    to tS : Inter!State {
+    if(sC.id.isDefined()){
+        tS.id = sC.id;
+    }else{
+        tS.id = 'S' + counter.toString();
+	    counter++;
+    }
+    tS.`to` = sC.transition.equivalent();
+    for (i in sC.elements) { 
+		tS.conditions.add(i.equivalent());
+	}
+}
+
+rule Action2State
+    transform sA : Intertxt!Action
+    to tS : Inter!State {
+    if(sA.id.isDefined()){
+        tS.id = sA.id;
+    }else{
+        tS.id = 'S' + counter.toString();
+     counter++;
+    }
+    tS.`to` = sA.transition.equivalent();
+    for (i in sA.elements) { 
+      tS.conditions.add(i.equivalent());
+    }
+}
+
+
+rule StartTransition2Transition
+    transform sT : Intertxt!StartTransition
+    to tT : Inter!Transition {
+    tT.Event = sT.event;
+    tT.target = sT.action.first().equivalent();
+}
+
+rule Transition2Transition
+    transform sT : Intertxt!Transition
+    to tT : Inter!Transition {
+//    tT.Event = sT.event;
+    tT.target = sT.action.first().equivalent();
+}
+
+
+rule CIElement2IElement
+    transform sIE : Intertxt!CIElement
+    to tIE : Inter!IElement{
+    tIE.id = sIE.id;
+    tIE.isNegative = sIE.isNegative;
+    tIE.isFocus = sIE.isFocus;
+    tIE.value = sIE.value;
+}
+
+rule CLElement2LElement
+    transform sLE : Intertxt!CLElement
+    to tLE : Inter!LElement{
+    tLE.id = sLE.id;
+    tLE.isNegative = sLE.isNegative;
+    tLE.isFocus = sLE.isFocus;
+    tLE.value = sLE.value;
+    if(sLE.`operation` <> '"' and sLE.value.isDefined() and sLE.value <> ''){
+        tLE.`operation` = "equalsVElement";
+    }
+}
+
+rule CCanvas2LElement
+    transform sLE : Intertxt!CCanvas
+    to tLE : Inter!LElement{
+    tLE.id = "svgCanvas";
+    tLE.isNegative = sLE.isNegative;
+    tLE.isFocus = sLE.isFocus;
+    tLE.value = sLE.value;
+}
+
+rule CVElement2VElement
+    transform sVE : Intertxt!CVElement
+    to tVE : Inter!VElement{
+    tVE.id = sVE.id;
+    tVE.isNegative = sVE.isNegative;
+    tVE.isFocus = sVE.isFocus;
+    tVE.value = sVE.value;
+    tVE.element = sVE.element.equivalent();
+}
+
+
+rule AIElement2IElement
+    transform sIE : Intertxt!AIElement
+    to tIE : Inter!IElement{
+    tIE.id = sIE.id;
+    tIE.value = sIE.value;
+}
+
+rule ALElement2LElement
+    transform sLE : Intertxt!ALElement
+    to tLE : Inter!LElement{
+    tLE.id = sLE.id;
+    var mid = false;
+    tLE.value+='"';
+    for (i in sLE.value) {
+      if (mid){
+        tLE.value+=",";
+      }else{
+        mid = true;
+      }
+      tLE.value+=i;
+    }
+    tLE.value+='"';
+    tLE.`operation` = sLE.`operation`;
+}
+
+rule ACanvas2LElement
+    transform sLE : Intertxt!ACanvas
+    to tLE : Inter!LElement{
+    tLE.id = "svgCanvas";
+    tLE.value = sLE.value;
+}
+
+rule AVElement2VElement
+    transform sVE : Intertxt!AVElement
+    to tVE : Inter!VElement{
+    tVE.id = sVE.id;
+    tVE.value = sVE.value;
+    tVE.element = sVE.element.equivalent();
+    if(sVE.`operation`<>'"'){
+      if(sVE.`operation`.isDefined()){
+        tVE.`operation` = sVE.`operation`; 
+      }else{
+        tVE.`operation` = "copy";
+      }     
+    }
+}
+
+rule AOElement2OElement
+    transform sOE : Intertxt!AOElement
+    to tOE : Inter!OElement{
+    tOE.id = 'O' + opCounter.toString();
+    opCounter++;
+    tOE.value = sOE.value;
+    tOE.`operation` = sOE.`operation`;
+}
+
+operation Intertxt!Condition stateClosure() : List {
+   var c = new List(Inter!State);
+    c = self.transition.stateClosure();
+    c.add(self.equivalent());
+    return c;
+}
+
+operation Intertxt!StartTransition stateClosure() : List {
+    var c = new List(Inter!State);
+    if (self.action.first().transition.isDefined()) {
+////        self.action.first().transition.errln();
+//        c = self.action.first().transition.first().stateClosure();
+        c = self.action.first().transition.stateClosure();
+    }
+    c.add(self.action.first().equivalent());
+    return c;
+}
+
+operation Intertxt!Transition stateClosure() : List {
+    var c = new List(Inter!State);
+    if (self.action.first().transition.isDefined()) {
+////        self.action.first().transition.errln();
+//        c = self.action.first().transition.first().stateClosure();
+        c = self.action.first().transition.stateClosure();
+    }
+    c.add(self.action.first().equivalent());
+    return c;
+}
+
+
+operation Intertxt!Condition transitionClosure() : List {
+    var c = new List(Inter!Transition);
+    c = self.transition.transitionClosure();
+    return c;
+}
+
+operation Intertxt!StartTransition transitionClosure() : List {
+    var c = new List(Inter!Transition);
+    if (self.action.first().transition.isDefined()) {
+//        c = self.action.first().transition.first().transitionClosure();
+        c = self.action.first().transition.transitionClosure();
+    }
+    c.add(self.equivalent());
+    return c;
+}
+
+operation Intertxt!Transition transitionClosure() : List {
+    var c = new List(Inter!Transition);
+    if (self.action.first().transition.isDefined()) {
+//        c = self.action.first().transition.first().transitionClosure();
+        c = self.action.first().transition.transitionClosure();
+    }
+    c.add(self.equivalent());
+    return c;
+}

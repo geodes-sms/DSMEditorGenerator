@@ -1,0 +1,11 @@
+I#press#document.getElementById("playModelButton").addEventListener("click", function() {GoLSingleV.Interaction.prototype.triggerEvent(event,"playModelButton",'press');}, false);
+I#select#document.getElementById("23").addEventListener("click",function() {GoLSingleV.Interaction.prototype.triggerEvent(event,event.target.id,'select');}, false);
+I#undo#document.addEventListener("keydown", function() {if(event.keyCode == 27 && !event.repeat){GoLSingleV.Interaction.prototype.triggerEvent(event,"",'undo');}}, false);
+
+O#Celladd#addCell.call(this,"23");
+O#Cellrem#remCell.call(this,this.event.target);
+
+O#runGoL#simulateGoL.call(this);
+
+C#_#vElement = {};
+C#_#this.svg = scConstructor("23");

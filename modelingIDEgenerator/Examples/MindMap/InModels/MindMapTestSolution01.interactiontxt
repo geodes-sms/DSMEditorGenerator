@@ -1,0 +1,178 @@
+InteractionRule addMainTopic
+	Condition {
+		focus Canvas {}
+		not VElement topicCount { value = one }
+	}
+	--- select -->
+	Effect {
+		LElement Topic { value = add }
+		VElement topicCount { value = one }
+	}
+	
+InteractionRule addSubTopic
+	Condition {
+		focus Canvas {}
+		VElement topicCount { value = one }
+	}
+	--- select -->
+	Effect {
+		LElement SubTopic { value = add }
+	}
+	
+InteractionRule removeTopic
+	Condition {
+		LElement Topic { value = selected }
+	}
+	--- delete -->
+	Effect {
+		LElement Topic { value = rem }
+		VElement topicCount { value = null }
+	}
+	
+InteractionRule removeSubTopic
+	Condition {
+		LElement SubTopic { value = selected }
+	}
+	--- delete -->
+	Effect {
+		LElement SubTopic { value = rem }
+	}
+
+InteractionRule removeLink
+	Condition {
+		LElement Link { value = selected }
+	}
+	--- delete -->
+	Effect {
+		LElement Link { value = rem }
+	}
+
+InteractionRule selectTopic
+	Condition {
+		focus LElement Topic {}
+	}
+	--- select -->
+	Effect {
+		LElement Topic { value = selected }
+	}
+	
+InteractionRule selectSubTopic
+	Condition {
+		focus LElement SubTopic {}
+	}
+	--- select -->
+	Effect {
+		LElement SubTopic { value = selected }
+	}
+
+InteractionRule selectLink
+	Condition {
+		focus LElement Link {}
+	}
+	--- select -->
+	Effect {
+		LElement Link { value = selected }
+	}
+	
+InteractionRule connectTopicStartPoint
+	Condition {
+		focus LElement Topic {}
+	}
+	--- start -->
+	Effect {
+		LElement Topic {value = selected}
+		VElement link { value = Conecting }
+	}
+	
+InteractionRule connectSubTopicStartPoint
+	Condition {
+		focus LElement SubTopic {}
+	}
+	--- start -->
+	Effect {
+		LElement SubTopic {value = selected}
+		VElement link { value = Conecting }
+	}
+	
+InteractionRule connectTopicEndPoint
+	Condition {
+		focus LElement Topic {}
+		VElement link { value = Conecting }
+	}
+	--- end -->
+	Effect {
+		LElement Link {value = add}
+		VElement link { value = null }
+	}
+	
+InteractionRule connectSubTopicEndPoint
+	Condition {
+		focus LElement SubTopic {}
+		VElement link { value = Conecting }
+	}
+	--- end -->
+	Effect {
+		LElement Link {value = add}
+		VElement link { value = null }
+	}
+
+InteractionRule connectFailEndPoint
+	Condition {
+		focus Canvas {}
+		VElement link { value = Conecting }
+	}
+	--- end -->
+	Effect {
+		VElement link { value = null }
+	}
+
+InteractionRule moveTopicStart
+	Condition {
+		focus LElement Topic {}
+	}
+	--- movestart -->
+	Effect {
+		LElement Topic { value = mark }
+		VElement move { value = moving }
+	}
+	
+InteractionRule moveSubTopicStart
+	Condition {
+		focus LElement SubTopic {}		
+	}
+	--- movestart -->
+	Effect {
+		LElement SubTopic { value = mark }
+		VElement move { value = moving }
+	}
+
+InteractionRule moveTopic
+	Condition {
+		LElement Topic { value = mark }
+		VElement move { value = moving }
+	}
+	--- move -->
+	Effect {
+		LElement Topic { value = move }
+	}
+	
+InteractionRule moveSubTopic
+	Condition {
+		LElement SubTopic { value = mark }
+		VElement move { value = moving }
+	}
+	--- move -->
+	Effect {
+		LElement SubTopic { value = move }
+	}
+
+InteractionRule moveRelease
+	Condition {
+		VElement move { value = moving }
+		LElement SubTopic { value = mark }
+	}
+	--- stopmove -->
+	Effect {
+		VElement move { value = null }
+		LElement SubTopic { value = mark }
+	}

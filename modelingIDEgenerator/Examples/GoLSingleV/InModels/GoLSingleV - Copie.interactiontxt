@@ -1,0 +1,54 @@
+InteractionRule CSAddInstance
+	Condition {
+		focus Canvas {}
+	}
+	--- select -->
+	Effect {
+		Lang Cell {op = add}
+	}
+	----->
+	Effect {
+		Var LastAction {value = "added"}
+		Var addedCell {value = focusElement}
+	}
+	
+InteractionRule CSRemInstance
+	Condition {
+		focus Lang Cell {}
+	}
+	--- select -->
+	Effect {
+		Lang Cell {op = rem}
+	}
+
+InteractionRule RunTrafo
+	Condition {
+		focus Interface playModelButton {}
+		not Var Simulate {value = "running"}
+	}
+	--- press -->
+	Effect {
+		Operation runGoL {}
+		Interface playModelButton {value = "active"}
+		Var Simulate {value = "running"}
+	}
+
+InteractionRule EndTrafo
+	Condition {	}
+	--- _finish -->
+	Effect {
+		Interface playModelButton {value = "default"}
+		Var Simulate {value = "null"}
+	}
+	
+InteractionRule UndoAdd
+	Condition {
+		Var LastAction {value = "added"}
+		Lang Cell {value = addedCell}
+	}
+	--- undo -->
+	Effect {
+		Lang Cell {op = rem}
+		Var LastAction {value = "undo"}
+		Var addedCell {value = "null"}
+	}

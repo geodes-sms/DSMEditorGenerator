@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--script defer src="https://use.fontawesome.com/releases/v5.7.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Vasco Sousa">
+
+    <title>AToMPM</title>
+    <style type="text/css">
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .vertical{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;    
+        }
+        
+        .horizontal{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;    
+        }
+        
+        .overlap *{
+            position: absolute;
+        }
+        
+        .textWidget{
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            background-color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        
+        .buttonWidget a{
+            float: left;
+            text-align: center;
+            padding: 12px 16px;
+            transition: all 0.3s ease;
+            font-size: 30px;
+        }
+                
+        .buttonWidget a:hover {
+            background-color: #000;
+        }
+        
+        .buttonWidget.active {
+            background-color: dodgerblue;
+        }
+        
+        .buttonWidget.active :hover{
+            background-color:darkblue;
+        }
+        
+        .text{
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            display: block;
+            transition: 0.3s;
+        }
+        
+        .image{
+        }
+        
+        .notVisible{
+            display: none;
+        }
+        
+    .toolbars{
+        z-index: 20;
+        position: fixed;                       
+        top: 0px;
+        left: 0px;
+    }
+    .newModel{
+        background-color: #818181;
+        color: white;
+        height: 60px;
+    }
+    
+    .newModel a{
+        color: white;
+    }
+    .commonTools{
+    
+    }
+    .fullTime{
+        background-color: #818181;
+        color: white;
+        height: 60px;
+    }
+    
+    .fullTime a{
+        color: white;
+    }
+    .halfTime{
+        background-color: #818181;
+        color: white;
+        height: 60px;
+    }
+    
+    .halfTime a{
+        color: white;
+    }
+    .quarterTime{
+        background-color: #818181;
+        color: white;
+        height: 60px;
+    }
+    
+    .quarterTime a{
+        color: white;
+    }
+    .eighthTime{
+        background-color: #818181;
+        color: white;
+        height: 60px;
+    }
+    
+    .eighthTime a{
+        color: white;
+    }
+    .timedMode{
+        background-color: #818181;
+        color: white;
+        height: 60px;
+    }
+    
+    .timedMode a{
+        color: white;
+    }
+    .timeBar{
+    
+    }
+    .canvas{
+        z-index: 10;
+        position: fixed;                       
+        top: 0px;
+        left: 0px;
+    }
+    
+    .cursorLayer{
+        z-index: 5;
+        position: fixed;                       
+        top: 0px;
+        left: 0px;
+    }
+    .cursor{
+        background-color: ;
+        color: Red;
+    }
+    
+    .cursor a{
+        color: Red;
+    }
+    .tabs{
+        z-index: 1;
+        position: fixed;                       
+        top: 0px;
+        left: 0px;
+    }
+    .line0101{
+        background-color: ;
+        color: black;
+    	width: 800px;
+    }
+    
+    .line0101 a{
+        color: black;
+    }
+    .line0102{
+        background-color: ;
+        color: black;
+    	width: 800px;
+    }
+    
+    .line0102 a{
+        color: black;
+    }
+    .line0103{
+        background-color: ;
+        color: black;
+    	width: 800px;
+    }
+    
+    .line0103 a{
+        color: black;
+    }
+    .line0104{
+        background-color: ;
+        color: black;
+    	width: 800px;
+    }
+    
+    .line0104 a{
+        color: black;
+    }
+    .line0105{
+        background-color: ;
+        color: black;
+    	width: 800px;
+    }
+    
+    .line0105 a{
+        color: black;
+    }
+    .line0201{
+        background-color: ;
+        color: black;
+    	width: 800px;
+    }
+    
+    .line0201 a{
+        color: black;
+    }
+    .line0202{
+        background-color: ;
+        color: black;
+    	width: 800px;
+    }
+    
+    .line0202 a{
+        color: black;
+    }
+    .line0203{
+        background-color: ;
+        color: black;
+    	width: 800px;
+    }
+    
+    .line0203 a{
+        color: black;
+    }
+    .line0204{
+        background-color: ;
+        color: black;
+    	width: 800px;
+    }
+    
+    .line0204 a{
+        color: black;
+    }
+    .line0205{
+        background-color: ;
+        color: black;
+    	width: 800px;
+    }
+    
+    .line0205 a{
+        color: black;
+    }
+    .line0301{
+        background-color: ;
+        color: black;
+    	width: 800px;
+    }
+    
+    .line0301 a{
+        color: black;
+    }
+    .line0302{
+        background-color: ;
+        color: black;
+    	width: 800px;
+    }
+    
+    .line0302 a{
+        color: black;
+    }
+    .line0303{
+        background-color: ;
+        color: black;
+    	width: 800px;
+    }
+    
+    .line0303 a{
+        color: black;
+    }
+    .line0304{
+        background-color: ;
+        color: black;
+    	width: 800px;
+    }
+    
+    .line0304 a{
+        color: black;
+    }
+    .line0305{
+        background-color: ;
+        color: black;
+    	width: 800px;
+    }
+    
+    .line0305 a{
+        color: black;
+    }
+    .line0401{
+        background-color: ;
+        color: black;
+    	width: 800px;
+    }
+    
+    .line0401 a{
+        color: black;
+    }
+    .line0402{
+        background-color: ;
+        color: black;
+    	width: 800px;
+    }
+    
+    .line0402 a{
+        color: black;
+    }
+    .line0403{
+        background-color: ;
+        color: black;
+    	width: 800px;
+    }
+    
+    .line0403 a{
+        color: black;
+    }
+    .line0404{
+        background-color: ;
+        color: black;
+    	width: 800px;
+    }
+    
+    .line0404 a{
+        color: black;
+    }
+    .line0405{
+        background-color: ;
+        color: black;
+    	width: 800px;
+    }
+    
+    .line0405 a{
+        color: black;
+    }
+    .tab01{
+    }
+
+        .cellPropertiesTab{
+          height: 100%;
+          width: 250px;
+          position: fixed;
+          top: 0px;
+          right: 0px;
+          background-color: #515151;
+          overflow-x: hidden;
+          transition: 0.5s;
+        }
+
+    </style>
+</head>
+
+<script src="./javascript_sccd_runtime/libs/HackTimer.js"></script>
+<script src="./javascript_sccd_runtime/statecharts_core.js"></script>
+<script src="./javascript_sccd_runtime/libs/utils.js"></script>
+<script src="./javascript_sccd_runtime/libs/svg.js"></script>
+<script src="./javascript_sccd_runtime/libs/ui.js"></script>
+<script src="./mapinglib.js"></script>
+<script src="./Music04.js"></script>
+
+<body>
+    <div id="toolbars" class="horizontal toolbars container">
+        <div id="commonTools" class="commonTools horizontal container">
+            <div id="newModel" class="newModel buttonWidget">
+                <a href="#"><i class="far fa-file"></i></a>
+            </div>
+        </div>
+        <div id="timeBar" class="timeBar horizontal container">
+            <div id="fullTime" class="fullTime buttonWidget">
+                <a href="#"><i class="fas fa-thermometer-full"></i></a>
+            </div>
+            <div id="halfTime" class="halfTime buttonWidget">
+                <a href="#"><i class="fas fa-thermometer-half"></i></a>
+            </div>
+            <div id="quarterTime" class="quarterTime buttonWidget">
+                <a href="#"><i class="fas fa-thermometer-quarter"></i></a>
+            </div>
+            <div id="eighthTime" class="eighthTime buttonWidget">
+                <a href="#"><i class="fas fa-thermometer-empty"></i></a>
+            </div>
+            <div id="timedMode" class="timedMode buttonWidget">
+                <a href="#"><i class="fas fa-stopwatch"></i></a>
+            </div>
+        </div>
+    </div>
+    <div id="canvas" class="none canvas container">
+        <div id="23" class="canvas container" data-gridSizeX=10 data-gridSizeY=10>
+            <script>
+                controller = new Music04.Controller(new JsEventLoop());
+                controller.start();
+                console.log('echo');
+            </script>
+        </div>
+    </div>
+    <div id="cursorLayer" class="overlap cursorLayer container">
+        <a id="27" style=" left:70px; top:150px;" class="cursor image" href="#"><i class="fas fa-i-cursor"></i></a>
+    </div>
+    <div id="tabs" class="vertical tabs container">
+        <div id="tab01" class="tab01 overlap container">
+            <a id="line0101"  style=" top:110px;" data-atompm-interface-data-source="data-_________________________________________________________" class="line0101 text" href="#">_________________________________________________________</a>
+            <a id="line0102"  style=" top:120px;" data-atompm-interface-data-source="data-_________________________________________________________" class="line0102 text" href="#">_________________________________________________________</a>
+            <a id="line0103"  style=" top:130px;" data-atompm-interface-data-source="data-_________________________________________________________" class="line0103 text" href="#">_________________________________________________________</a>
+            <a id="line0104"  style=" top:140px;" data-atompm-interface-data-source="data-_________________________________________________________" class="line0104 text" href="#">_________________________________________________________</a>
+            <a id="line0105"  style=" top:150px;" data-atompm-interface-data-source="data-_________________________________________________________" class="line0105 text" href="#">_________________________________________________________</a>
+            <a id="line0201"  style=" top:260px;" data-atompm-interface-data-source="data-_________________________________________________________" class="line0201 text" href="#">_________________________________________________________</a>
+            <a id="line0202"  style=" top:270px;" data-atompm-interface-data-source="data-_________________________________________________________" class="line0202 text" href="#">_________________________________________________________</a>
+            <a id="line0203"  style=" top:280px;" data-atompm-interface-data-source="data-_________________________________________________________" class="line0203 text" href="#">_________________________________________________________</a>
+            <a id="line0204"  style=" top:290px;" data-atompm-interface-data-source="data-_________________________________________________________" class="line0204 text" href="#">_________________________________________________________</a>
+            <a id="line0205"  style=" top:300px;" data-atompm-interface-data-source="data-_________________________________________________________" class="line0205 text" href="#">_________________________________________________________</a>
+            <a id="line0301"  style=" top:410px;" data-atompm-interface-data-source="data-_________________________________________________________" class="line0301 text" href="#">_________________________________________________________</a>
+            <a id="line0302"  style=" top:420px;" data-atompm-interface-data-source="data-_________________________________________________________" class="line0302 text" href="#">_________________________________________________________</a>
+            <a id="line0303"  style=" top:430px;" data-atompm-interface-data-source="data-_________________________________________________________" class="line0303 text" href="#">_________________________________________________________</a>
+            <a id="line0304"  style=" top:440px;" data-atompm-interface-data-source="data-_________________________________________________________" class="line0304 text" href="#">_________________________________________________________</a>
+            <a id="line0305"  style=" top:450px;" data-atompm-interface-data-source="data-_________________________________________________________" class="line0305 text" href="#">_________________________________________________________</a>
+            <a id="line0401"  style=" top:560px;" data-atompm-interface-data-source="data-_________________________________________________________" class="line0401 text" href="#">_________________________________________________________</a>
+            <a id="line0402"  style=" top:570px;" data-atompm-interface-data-source="data-_________________________________________________________" class="line0402 text" href="#">_________________________________________________________</a>
+            <a id="line0403"  style=" top:580px;" data-atompm-interface-data-source="data-_________________________________________________________" class="line0403 text" href="#">_________________________________________________________</a>
+            <a id="line0404"  style=" top:590px;" data-atompm-interface-data-source="data-_________________________________________________________" class="line0404 text" href="#">_________________________________________________________</a>
+            <a id="line0405"  style=" top:600px;" data-atompm-interface-data-source="data-_________________________________________________________" class="line0405 text" href="#">_________________________________________________________</a>
+        </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <p class="lead">Icons from Font Awesome used and colors altered under creative commons licence</p>
+        </div>
+      </div>
+    </div>
+
+<script>
+</script>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <!--script src="vendor/jquery/jquery.min.js"></script-->
+    <!--script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script-->
+
+  </body>
+
+</html>
+

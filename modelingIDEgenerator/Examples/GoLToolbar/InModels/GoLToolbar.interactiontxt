@@ -1,0 +1,76 @@
+InteractionRule SelectLiveCellButton
+	Condition {
+		focus Interface liveCellButton {}
+	}
+	--- press -->
+	Effect {
+		Interface liveCellButton {value = "active"}
+		Interface deadCellButton {value = "default"}
+	}
+
+InteractionRule SelectDeadCellButton
+	Condition {
+		focus Interface deadCellButton {}
+	}
+	--- press -->
+	Effect {
+		Interface liveCellButton {value = "default"}
+		Interface deadCellButton {value = "active"}
+	}
+	
+InteractionRule DeselectLiveCellButton
+	Condition {
+		focus Interface liveCellButton {value = "active"}
+	}
+	--- press -->
+	Effect {
+		Interface liveCellButton {value = "default"}
+	}
+
+InteractionRule DeselectDeadCellButton
+	Condition {
+		focus Interface deadCellButton {value = "active"}
+	}
+	--- press -->
+	Effect {
+		Interface deadCellButton {value = "default"}
+	}
+
+InteractionRule RunTransfromation
+	Condition {
+		focus Interface playModelButton{}
+	}
+	--- press -->
+	Effect {
+		Interface playModelButton {value = "active"}
+		Operation runGoL {}
+	}
+
+InteractionRule CSAddInstance
+	Condition {
+		focus Canvas {}
+		Interface liveCellButton {value = "active"}
+	}
+	--- select -->
+	Effect {
+		Lang Life {op = add}
+	}
+
+InteractionRule CSRemInstance
+	Condition {
+		focus Lang Life{}
+		Interface deadCellButton {value = "active"}
+	}
+	--- select -->
+	Effect {
+		Lang Life {op = rem}
+	}
+
+InteractionRule EndTransformation
+	Condition {
+		Interface playModelButton {value = "active"}
+	}
+	--- _finish -->
+	Effect {
+		Interface playModelButton{value = "default"}
+	}

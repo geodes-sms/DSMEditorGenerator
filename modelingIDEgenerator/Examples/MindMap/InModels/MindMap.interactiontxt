@@ -1,0 +1,368 @@
+InteractionRule TopicButtonActivation
+	Condition {
+		focus Interface button01 {}
+	}
+	--- leftmousedown -->
+	Effect {
+		Interface button01 {value = "active"}
+		Interface button02 {value = "default"}
+		Interface button03 {value = "default"}
+		Interface button04 {value = "default"}
+		Interface button05 {value = "default"}
+		Var mode {value = "topic"}
+	}
+	
+InteractionRule TopicButtonDeactivation
+	Condition {
+		focus Interface button01 {value = "active"}
+	}
+	--- leftmousedown -->
+	Effect {
+		Interface button01 {value = "default"}
+		Var mode {value = "null"}
+	}
+	
+InteractionRule SubTopicButtonActivation
+	Condition {
+		focus Interface button02 {}
+	}
+	--- leftmousedown -->
+	Effect {
+		Interface button02 {value = "active"}
+		Interface button01 {value = "default"}
+		Interface button03 {value = "default"}
+		Interface button04 {value = "default"}
+		Interface button05 {value = "default"}
+		Var mode {value = "subtopic"}
+	}
+	
+InteractionRule SubTopicButtonDeactivation
+	Condition {
+		focus Interface button02 {value = "active"}
+	}
+	--- leftmousedown -->
+	Effect {
+		Interface button02 {value = "default"}
+		Var mode {value = "null"}
+	}
+	
+InteractionRule LinkButtonActivation
+	Condition {
+		focus Interface button03 {}
+	}
+	--- leftmousedown -->
+	Effect {
+		Interface button03 {value = "active"}
+		Interface button01 {value = "default"}
+		Interface button02 {value = "default"}
+		Interface button04 {value = "default"}
+		Interface button05 {value = "default"}
+		Var mode {value = "link"}
+	}
+	
+InteractionRule LinkButtonDeactivation
+	Condition {
+		focus Interface button03 {value = "active"}
+	}
+	--- leftmousedown -->
+	Effect {
+		Interface button03 {value = "default"}
+		Var mode {value = "null"}
+	}
+	
+InteractionRule MoveButtonActivation
+	Condition {
+		focus Interface button04 {}
+	}
+	--- leftmousedown -->
+	Effect {
+		Interface button04 {value = "active"}
+		Interface button01 {value = "default"}
+		Interface button02 {value = "default"}
+		Interface button03 {value = "default"}
+		Interface button05 {value = "default"}
+		Var mode {value = "move"}
+	}
+	
+InteractionRule MoveButtonDeactivation
+	Condition {
+		focus Interface button04 {value = "active"}
+	}
+	--- leftmousedown -->
+	Effect {
+		Interface button04 {value = "default"}
+		Var mode {value = "null"}
+	}
+	
+InteractionRule DeleteButtonActivation
+	Condition {
+		focus Interface button05 {}
+	}
+	--- leftmousedown -->
+	Effect {
+		Interface button05 {value = "active"}
+		Interface button01 {value = "default"}
+		Interface button02 {value = "default"}
+		Interface button03 {value = "default"}
+		Interface button04 {value = "default"}
+		Var mode {value = "delete"}
+	}
+	
+InteractionRule DeleteButtonDeactivation
+	Condition {
+		focus Interface button05 {value = "active"}
+	}
+	--- leftmousedown -->
+	Effect {
+		Interface button05 {value = "default"}
+		Var mode {value = "null"}
+	}
+
+InteractionRule AddCentralTopic
+	Condition {
+		Interface button01 {value = "active"}
+		focus Canvas {}
+		not Var has_topic {value="true"}
+	}
+	--- leftmousedown -->
+	Effect {
+		Lang Topic {op = add}
+		Var has_topic {value="true"}
+	}
+
+InteractionRule AddSubTopic
+	Condition {
+		Interface button02 {value = "active"}
+		focus Canvas {}
+	}
+	--- leftmousedown -->
+	Effect {
+		Lang SubTopic {op = add}
+	}
+
+InteractionRule StartLink
+	Condition {
+		Interface button03 {value = "active"}
+		focus Lang Topic {}
+		not Var linking {value = "true"}
+	}
+	--- leftmousedown -->
+	Effect {
+		Var linking {value = "true"}
+		Var source {op=copy, from=focusElement}
+	}
+
+InteractionRule StartSubLink
+	Condition {
+		Interface button03 {value = "active"}
+		focus Lang SubTopic {}
+		not Var linking {value = "true"}
+	}
+	--- leftmousedown -->
+	Effect {
+		Var linking {value = "true"}
+		Var source {value=focusElement}
+	}
+	
+InteractionRule EndLinkOnSubTopic
+	Condition {
+		focus Lang SubTopic {}
+		Var linking {value = "true"}
+	}
+	--- leftmouseup -->
+	Effect {
+		Var linking {value = "false"}
+		Lang Link {op = add, value=[source,focusElement]}
+	}
+
+InteractionRule EndLinkOnCanvas
+	Condition {
+		focus Canvas {}
+		Var linking {value = "true"}
+	}
+	--- leftmouseup -->
+	Effect {
+		Var linking {value = "false"}
+	}
+	
+InteractionRule EndLinkOnTopic
+	Condition {
+		focus Lang Topic {}
+		Var linking {value = "true"}
+	}
+	--- leftmouseup -->
+	Effect {
+		Var linking {value = "false"}
+	}
+
+InteractionRule StartMoveMode
+	Condition {
+		not Interface button04 {value = "active"}
+	}
+	--- ctrlkey -->
+	Effect {
+		Var temp {value = mode}
+		Var key {value = "true"}
+		Interface button04 {value = "active"}
+		Interface button01 {value = "default"}
+		Interface button02 {value = "default"}
+		Interface button03 {value = "default"}
+		Interface button05 {value = "default"}
+	}
+	----->
+	Effect {
+		Var mode {value = "move"}
+	}
+	
+InteractionRule EndMoveModeNull
+	Condition {
+		Var mode {value = "move"}
+		Var key {value = "true"}
+		Var temp {value = "null"}
+	}
+	--- keyrelease -->
+	Effect {
+		Var mode {value = temp}
+		Interface button04 {value = "default"}
+		Var key {value = "false"}
+	}
+
+InteractionRule EndMoveModeTopic
+	Condition {
+		Var mode {value = "move"}
+		Var key {value = "true"}
+		Var temp {value = "topic"}
+	}
+	--- keyrelease -->
+	Effect {
+		Var mode {value = temp}
+		Interface button04 {value = "default"}
+		Interface button01 {value = "active"}
+		Var key {value = "false"}
+	}
+	
+InteractionRule EndMoveModeSubTopic
+	Condition {
+		Var mode {value = "move"}
+		Var key {value = "true"}
+		Var temp {value = "subtopic"}
+	}
+	--- keyrelease -->
+	Effect {
+		Var mode {value = temp}
+		Interface button04 {value = "default"}
+		Interface button02 {value = "active"}
+		Var key {value = "false"}
+	}
+	
+InteractionRule EndMoveModeLink
+	Condition {
+		Var mode {value = "move"}
+		Var key {value = "true"}
+		Var temp {value = "link"}
+	}
+	--- keyrelease -->
+	Effect {
+		Var mode {value = temp}
+		Interface button04 {value = "default"}
+		Interface button03 {value = "active"}
+		Var key {value = "false"}
+	}
+	
+InteractionRule EndMoveModeMove
+	Condition {
+		Var mode {value = "move"}
+		Var key {value = "true"}
+		Var temp {value = "move"}
+	}
+	--- keyrelease -->
+	Effect {
+		Var mode {value = temp}
+		Var key {value = "false"}
+	}
+	
+InteractionRule EndMoveModeDelete
+	Condition {
+		Var mode {value = "move"}
+		Var key {value = "true"}
+		Var temp {value = "delete"}
+	}
+	--- keyrelease -->
+	Effect {
+		Var mode {value = temp}
+		Interface button04 {value = "default"}
+		Interface button05 {value = "active"}
+		Var key {value = "false"}
+	}
+	
+InteractionRule StartMoveSubTopic
+	Condition {
+		Interface button04 {value = "active"}
+		focus Lang SubTopic {}
+	}
+	--- leftmousedown -->
+	Effect {
+		Var mark {value=focusElement}
+		Var moving {value = "true"}
+	}
+InteractionRule MoveSubTopic
+	Condition {
+		Interface button04 {value = "active"}
+		Lang SubTopic {value=mark} 
+		Var moving {value = "true"}
+	}
+	--- leftmousemove -->
+	Effect {
+		Lang SubTopic {op=move}
+	}
+InteractionRule StopMoveSubTopic
+	Condition {
+		Interface button04 {value = "active"}
+//		Lang SubTopic {value=mark}
+		Var moving {value = "true"}
+	}
+	--- leftmouseup -->
+	Effect {
+		Var mark {value="null"}
+		Var moving {value = "false"}
+	}
+	
+InteractionRule DeleteTopic
+	Condition {
+		Interface button05 {value = "active"}
+		focus Lang Topic {}
+	}
+	--- leftmousedown -->
+	Effect {
+		Lang Topic {op=rem}
+		Var has_topic {value="false"}
+	}
+	
+InteractionRule DeleteSubTopic
+	Condition {
+		Interface button05 {value = "active"}
+		focus Lang SubTopic {}
+	}
+	--- leftmousedown -->
+	Effect {
+		Lang SubTopic {op=rem}
+	}
+	
+InteractionRule DeleteLink
+	Condition {
+		Interface button05 {value = "active"}
+		focus Lang Link {}
+	}
+	--- leftmousedown -->
+	Effect {
+		Lang Link {op=rem}
+		Var has_topic {value="false"}
+	}
+/*InteractionRule SelectTopic
+	Condition {
+		focus Lang Topic {}
+	}
+	--- select -->
+	Effect {
+		Lang Topic {op = select}
+	}*/

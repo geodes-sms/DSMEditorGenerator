@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: ca.udem.iro.geodes.interaction.interaction.textualsyntax.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: ca.udem.iro.geodes.interaction.interaction.textualsyntax.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: ca.udem.iro.geodes.interaction.interaction.textualsyntax.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: ca.udem.iro.geodes.interaction.interaction.textualsyntax,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: ca.udem.iro.geodes.interaction.ide.contentassist.antlr.internal,
+ ca.udem.iro.geodes.interaction.ide.contentassist.antlr

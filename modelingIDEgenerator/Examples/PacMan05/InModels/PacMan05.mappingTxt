@@ -1,0 +1,46 @@
+I#press#document.getElementById("pacmanButton").addEventListener("click", function() {PacMan05.Interaction.prototype.triggerEvent(event,"pacmanButton",'press');}, false);
+I#press#document.getElementById("ghostButton").addEventListener("click", function() {PacMan05.Interaction.prototype.triggerEvent(event,"ghostButton",'press');}, false);
+I#press#document.getElementById("foodButton").addEventListener("click", function() {PacMan05.Interaction.prototype.triggerEvent(event,"foodButton",'press');}, false);
+I#press#document.getElementById("gridButton").addEventListener("click", function() {PacMan05.Interaction.prototype.triggerEvent(event,"gridButton",'press');}, false);
+I#press#document.getElementById("scoreButton").addEventListener("click", function() {PacMan05.Interaction.prototype.triggerEvent(event,"scoreButton",'press');}, false);
+I#press#document.getElementById("newModel").addEventListener("click", function() {PacMan05.Interaction.prototype.triggerEvent(event,"newModel",'press');}, false);
+I#place#document.getElementById("23").addEventListener("click",function() {PacMan05.Interaction.prototype.triggerEvent(event,event.target.id,'place');}, false);
+
+I#mark#document.getElementById("23").addEventListener("mousedown",function() {PacMan05.Interaction.prototype.triggerEvent(event,event.target.id,'mark');}, false);
+I#move#document.getElementById("23").addEventListener("mousemove",function() {if(event.buttons === 1){PacMan05.Interaction.prototype.triggerEvent(event,event.target.id,'move');}}, false);
+
+I#context#document.getElementById("23").addEventListener('contextmenu', function() {PacMan05.Interaction.prototype.triggerEvent(event,event.target.id,'context');}, false);
+
+I#escape#document.addEventListener("keydown", function() {if(event.key === "Escape"){PacMan05.Interaction.prototype.triggerEvent(event,"",'escape');}}, false);
+
+I#remove#document.addEventListener("keydown", function() {if(event.key === "Delete"){PacMan05.Interaction.prototype.triggerEvent(event,"",'remove');}}, false);
+
+
+O#PacManInstanceadd#addPacManInstance.call(this,"23");
+O#PacManInstancemark#markInstance.call(this,this.event.target);
+O#PacManInstancemove#moveInstance.call(this,this.event.target,"23");
+O#PacManInstancerem#remInstance.call(this,this.event.target);
+
+O#GhostInstanceadd#addGhostInstance.call(this,"23");
+O#GhostInstancemark#markInstance.call(this,this.event.target);
+O#GhostInstancemove#moveInstance.call(this,this.event.target,"23");
+O#GhostInstancerem#remInstance.call(this,this.event.target);
+
+O#FoodInstanceadd#addFoodInstance.call(this,"23");
+O#FoodInstancemark#markInstance.call(this,this.event.target);
+O#FoodInstancemove#moveInstance.call(this,this.event.target,"23");
+O#FoodInstancerem#remInstance.call(this,this.event.target);
+
+O#GridInstanceadd#addGridInstance.call(this,"23");
+O#GridInstancemark#markInstance.call(this,this.event.target);
+O#GridInstancemove#moveInstance.call(this,this.event.target,"23");
+O#GridInstancerem#remInstance.call(this,this.event.target);
+
+O#ScoreInstanceadd#addScoreInstance.call(this,"23");
+O#ScoreInstancemark#markInstance.call(this,this.event.target);
+O#ScoreInstancemove#moveInstance.call(this,this.event.target,"23");
+O#ScoreInstancerem#remInstance.call(this,this.event.target);
+
+O#newModel#newPacManModel.call(this);
+
+C#_#this.svg = scConstructor("23");

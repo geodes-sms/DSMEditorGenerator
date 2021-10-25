@@ -1,0 +1,91 @@
+I#select#document.getElementById("fullTime").addEventListener("click", function() {Music04.Interaction.prototype.triggerEvent(event,"fullTime",'select');}, false);
+I#select#document.getElementById("halfTime").addEventListener("click", function() {Music04.Interaction.prototype.triggerEvent(event,"halfTime",'select');}, false);
+I#select#document.getElementById("quarterTime").addEventListener("click", function() {Music04.Interaction.prototype.triggerEvent(event,"quarterTime",'select');}, false);
+I#select#document.getElementById("eighthTime").addEventListener("click", function() {Music04.Interaction.prototype.triggerEvent(event,"eighthTime",'select');}, false);
+I#select#document.getElementById("timedMode").addEventListener("click", function() {Music04.Interaction.prototype.triggerEvent(event,"timedMode",'select');}, false);
+I#select#document.getElementById("newModel").addEventListener("click", function() {Music04.Interaction.prototype.triggerEvent(event,"newModel",'select');}, false);
+
+I#pressDo#document.addEventListener("keydown", function() {if(event.key === "1" && !event.repeat){Music04.Interaction.prototype.triggerEvent(event,"",'pressDo');}}, false);
+I#pressRe#document.addEventListener("keydown", function() {if(event.key === "2" && !event.repeat){Music04.Interaction.prototype.triggerEvent(event,"",'pressRe');}}, false);
+I#pressMi#document.addEventListener("keydown", function() {if(event.key === "3" && !event.repeat){Music04.Interaction.prototype.triggerEvent(event,"",'pressMi');}}, false);
+I#pressFa#document.addEventListener("keydown", function() {if(event.key === "4" && !event.repeat){Music04.Interaction.prototype.triggerEvent(event,"",'pressFa');}}, false);
+I#pressSol#document.addEventListener("keydown", function() {if(event.key === "5" && !event.repeat){Music04.Interaction.prototype.triggerEvent(event,"",'pressSol');}}, false);
+I#pressLa#document.addEventListener("keydown", function() {if(event.key === "6" && !event.repeat){Music04.Interaction.prototype.triggerEvent(event,"",'pressLa');}}, false);
+I#pressSi#document.addEventListener("keydown", function() {if(event.key === "7" && !event.repeat){Music04.Interaction.prototype.triggerEvent(event,"",'pressSi');}}, false);
+
+I#pressDo#document.addEventListener("keydown", function() {if(event.key === "a" && !event.repeat){Music04.Interaction.prototype.triggerEvent(event,"",'pressC');}}, false);
+I#pressRe#document.addEventListener("keydown", function() {if(event.key === "s" && !event.repeat){Music04.Interaction.prototype.triggerEvent(event,"",'pressD');}}, false);
+I#pressMi#document.addEventListener("keydown", function() {if(event.key === "d" && !event.repeat){Music04.Interaction.prototype.triggerEvent(event,"",'pressE');}}, false);
+I#pressFa#document.addEventListener("keydown", function() {if(event.key === "f" && !event.repeat){Music04.Interaction.prototype.triggerEvent(event,"",'pressF');}}, false);
+I#pressSol#document.addEventListener("keydown", function() {if(event.key === "g" && !event.repeat){Music04.Interaction.prototype.triggerEvent(event,"",'pressG');}}, false);
+I#pressLa#document.addEventListener("keydown", function() {if(event.key === "h" && !event.repeat){Music04.Interaction.prototype.triggerEvent(event,"",'pressA');}}, false);
+I#pressSi#document.addEventListener("keydown", function() {if(event.key === "j" && !event.repeat){Music04.Interaction.prototype.triggerEvent(event,"",'pressB');}}, false);
+
+I#pressDo#document.addEventListener("keyup", function() {if(event.key === "q"){Music04.Interaction.prototype.triggerEvent(event,"",'tapC');}}, false);
+I#pressRe#document.addEventListener("keyup", function() {if(event.key === "w"){Music04.Interaction.prototype.triggerEvent(event,"",'tapD');}}, false);
+I#pressMi#document.addEventListener("keyup", function() {if(event.key === "e"){Music04.Interaction.prototype.triggerEvent(event,"",'tapE');}}, false);
+I#pressFa#document.addEventListener("keyup", function() {if(event.key === "r"){Music04.Interaction.prototype.triggerEvent(event,"",'tapF');}}, false);
+I#pressSol#document.addEventListener("keyup", function() {if(event.key === "t"){Music04.Interaction.prototype.triggerEvent(event,"",'tapG');}}, false);
+I#pressLa#document.addEventListener("keyup", function() {if(event.key === "y"){Music04.Interaction.prototype.triggerEvent(event,"",'tapA');}}, false);
+I#pressSi#document.addEventListener("keyup", function() {if(event.key === "u"){Music04.Interaction.prototype.triggerEvent(event,"",'tapB');}}, false);
+
+I#pressDo#document.addEventListener("keyup", function() {if(event.key === "a"){Music04.Interaction.prototype.triggerEvent(event,"",'releaseC');}}, false);
+I#pressRe#document.addEventListener("keyup", function() {if(event.key === "s"){Music04.Interaction.prototype.triggerEvent(event,"",'releaseD');}}, false);
+I#pressMi#document.addEventListener("keyup", function() {if(event.key === "d"){Music04.Interaction.prototype.triggerEvent(event,"",'releaseE');}}, false);
+I#pressFa#document.addEventListener("keyup", function() {if(event.key === "f"){Music04.Interaction.prototype.triggerEvent(event,"",'releaseF');}}, false);
+I#pressSol#document.addEventListener("keyup", function() {if(event.key === "g"){Music04.Interaction.prototype.triggerEvent(event,"",'releaseG');}}, false);
+I#pressLa#document.addEventListener("keyup", function() {if(event.key === "h"){Music04.Interaction.prototype.triggerEvent(event,"",'releaseA');}}, false);
+I#pressSi#document.addEventListener("keyup", function() {if(event.key === "j"){Music04.Interaction.prototype.triggerEvent(event,"",'releaseB');}}, false);
+
+I#pressDo#document.addEventListener("keydown", function() {if(event.key === "q" && !event.repeat){Music04.Interaction.prototype.triggerEvent(event,"",'pat');}}, false);
+I#pressRe#document.addEventListener("keydown", function() {if(event.key === "w" && !event.repeat){Music04.Interaction.prototype.triggerEvent(event,"",'pat');}}, false);
+I#pressMi#document.addEventListener("keydown", function() {if(event.key === "e" && !event.repeat){Music04.Interaction.prototype.triggerEvent(event,"",'pat');}}, false);
+I#pressFa#document.addEventListener("keydown", function() {if(event.key === "r" && !event.repeat){Music04.Interaction.prototype.triggerEvent(event,"",'pat');}}, false);
+I#pressSol#document.addEventListener("keydown", function() {if(event.key === "t" && !event.repeat){Music04.Interaction.prototype.triggerEvent(event,"",'pat');}}, false);
+I#pressLa#document.addEventListener("keydown", function() {if(event.key === "y" && !event.repeat){Music04.Interaction.prototype.triggerEvent(event,"",'pat');}}, false);
+I#pressSi#document.addEventListener("keydown", function() {if(event.key === "u" && !event.repeat){Music04.Interaction.prototype.triggerEvent(event,"",'pat');}}, false);
+
+O#fulldoadd#addNote.call(this,"23","do","full");
+O#fullreadd#addNote.call(this,"23","re","full");
+O#fullmiadd#addNote.call(this,"23","mi","full");
+O#fullfaadd#addNote.call(this,"23","fa","full");
+O#fullsoladd#addNote.call(this,"23","sol","full");
+O#fulllaadd#addNote.call(this,"23","la","full");
+O#fullsiadd#addNote.call(this,"23","si","full");
+
+O#halfdoadd#addNote.call(this,"23","do","half");
+O#halfreadd#addNote.call(this,"23","re","half");
+O#halfmiadd#addNote.call(this,"23","mi","half");
+O#halffaadd#addNote.call(this,"23","fa","half");
+O#halfsoladd#addNote.call(this,"23","sol","half");
+O#halflaadd#addNote.call(this,"23","la","half");
+O#halfsiadd#addNote.call(this,"23","si","half");
+
+O#quarterdoadd#addNote.call(this,"23","do","quarter");
+O#quarterreadd#addNote.call(this,"23","re","quarter");
+O#quartermiadd#addNote.call(this,"23","mi","quarter");
+O#quarterfaadd#addNote.call(this,"23","fa","quarter");
+O#quartersoladd#addNote.call(this,"23","sol","quarter");
+O#quarterlaadd#addNote.call(this,"23","la","quarter");
+O#quartersiadd#addNote.call(this,"23","si","quarter");
+
+O#eighthdoadd#addNote.call(this,"23","do","eighth");
+O#eighthreadd#addNote.call(this,"23","re","eighth");
+O#eighthmiadd#addNote.call(this,"23","mi","eighth");
+O#eighthfaadd#addNote.call(this,"23","fa","eighth");
+O#eighthsoladd#addNote.call(this,"23","sol","eighth");
+O#eighthlaadd#addNote.call(this,"23","la","eighth");
+O#eighthsiadd#addNote.call(this,"23","si","eighth");
+
+O#dorem#remNote.call(this,this.event.target);
+O#rerem#remNote.call(this,this.event.target);
+O#mirem#remNote.call(this,this.event.target);
+O#farem#remNote.call(this,this.event.target);
+O#solrem#remNote.call(this,this.event.target);
+O#larem#remNote.call(this,this.event.target);
+O#sirem#remNote.call(this,this.event.target);
+
+O#newModel#newModel.call(this,"27");
+O#playModel#playModel.call(this);
+
+C#_#this.svg = scConstructor("23");

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layoutRel:RelLayoutDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:layoutRel="http://udem.iro.geodes.ca/layoutRel" name="Music04">
+  <interactionStreams name="screen">
+    <layers name="toolbars" index="20" behaviour="horizontal">
+      <components>
+        <element xsi:type="layoutRel:VisualContainer" id="commonTools" name="commonTools" isDefault="true" behaviour="horizontal">
+          <elements xsi:type="layoutRel:ButtonWidget" id="newModel" name="newModel" isDefault="true" ySize="60" foregroundColour="white" backgroundColour="#818181" ref="far fa-file"/>
+        </element>
+      </components>
+      <components>
+        <element xsi:type="layoutRel:VisualContainer" id="timeBar" name="timeBar" isDefault="true" behaviour="horizontal">
+          <elements xsi:type="layoutRel:ButtonWidget" id="fullTime" name="fullTime" isDefault="true" ySize="60" foregroundColour="white" backgroundColour="#818181" ref="fas fa-thermometer-full"/>
+          <elements xsi:type="layoutRel:ButtonWidget" id="halfTime" name="halfTime" isDefault="true" ySize="60" foregroundColour="white" backgroundColour="#818181" ref="fas fa-thermometer-half"/>
+          <elements xsi:type="layoutRel:ButtonWidget" id="quarterTime" name="quarterTime" isDefault="true" ySize="60" foregroundColour="white" backgroundColour="#818181" ref="fas fa-thermometer-quarter"/>
+          <elements xsi:type="layoutRel:ButtonWidget" id="eighthTime" name="eighthTime" isDefault="true" ySize="60" foregroundColour="white" backgroundColour="#818181" ref="fas fa-thermometer-empty"/>
+          <elements xsi:type="layoutRel:ButtonWidget" id="timedMode" name="timedMode" isDefault="true" ySize="60" foregroundColour="white" backgroundColour="#818181" ref="fas fa-stopwatch"/>
+        </element>
+      </components>
+    </layers>
+    <layers name="canvas" index="10">
+      <components>
+        <element xsi:type="layoutRel:Canvas" id="23" name="canvas" isDefault="true" gridSizeX="10" gridSizeY="10" gridScaleX="1" gridScaleY="1"/>
+      </components>
+    </layers>
+    <layers name="cursorLayer" index="5" behaviour="overlap">
+      <components>
+        <element xsi:type="layoutRel:Image" id="27" name="cursor" xPos="70" yPos="150" isDefault="true" foregroundColour="Red" ref="fas fa-i-cursor"/>
+      </components>
+    </layers>
+    <layers name="tabs" index="1" behaviour="vertical">
+      <components>
+        <element xsi:type="layoutRel:VisualContainer" id="tab01" name="tab01" xPos="-32" yPos="150" isDefault="true" behaviour="overlap">
+          <elements xsi:type="layoutRel:Text" id="line0101" name="line0101" yPos="110" isDefault="true" xSize="800" foregroundColour="black" backgroundColour="" ref="_________________________________________________________"/>
+          <elements xsi:type="layoutRel:Text" id="line0102" name="line0102" yPos="120" isDefault="true" xSize="800" foregroundColour="black" backgroundColour="" ref="_________________________________________________________"/>
+          <elements xsi:type="layoutRel:Text" id="line0103" name="line0103" yPos="130" isDefault="true" xSize="800" foregroundColour="black" backgroundColour="" ref="_________________________________________________________"/>
+          <elements xsi:type="layoutRel:Text" id="line0104" name="line0104" yPos="140" isDefault="true" xSize="800" foregroundColour="black" backgroundColour="" ref="_________________________________________________________"/>
+          <elements xsi:type="layoutRel:Text" id="line0105" name="line0105" yPos="150" isDefault="true" xSize="800" foregroundColour="black" backgroundColour="" ref="_________________________________________________________"/>
+          <elements xsi:type="layoutRel:Text" id="line0201" name="line0201" yPos="260" isDefault="true" xSize="800" foregroundColour="black" backgroundColour="" ref="_________________________________________________________"/>
+          <elements xsi:type="layoutRel:Text" id="line0202" name="line0202" yPos="270" isDefault="true" xSize="800" foregroundColour="black" backgroundColour="" ref="_________________________________________________________"/>
+          <elements xsi:type="layoutRel:Text" id="line0203" name="line0203" yPos="280" isDefault="true" xSize="800" foregroundColour="black" backgroundColour="" ref="_________________________________________________________"/>
+          <elements xsi:type="layoutRel:Text" id="line0204" name="line0204" yPos="290" isDefault="true" xSize="800" foregroundColour="black" backgroundColour="" ref="_________________________________________________________"/>
+          <elements xsi:type="layoutRel:Text" id="line0205" name="line0205" yPos="300" isDefault="true" xSize="800" foregroundColour="black" backgroundColour="" ref="_________________________________________________________"/>
+          <elements xsi:type="layoutRel:Text" id="line0301" name="line0301" yPos="410" isDefault="true" xSize="800" foregroundColour="black" backgroundColour="" ref="_________________________________________________________"/>
+          <elements xsi:type="layoutRel:Text" id="line0302" name="line0302" yPos="420" isDefault="true" xSize="800" foregroundColour="black" backgroundColour="" ref="_________________________________________________________"/>
+          <elements xsi:type="layoutRel:Text" id="line0303" name="line0303" yPos="430" isDefault="true" xSize="800" foregroundColour="black" backgroundColour="" ref="_________________________________________________________"/>
+          <elements xsi:type="layoutRel:Text" id="line0304" name="line0304" yPos="440" isDefault="true" xSize="800" foregroundColour="black" backgroundColour="" ref="_________________________________________________________"/>
+          <elements xsi:type="layoutRel:Text" id="line0305" name="line0305" yPos="450" isDefault="true" xSize="800" foregroundColour="black" backgroundColour="" ref="_________________________________________________________"/>
+          <elements xsi:type="layoutRel:Text" id="line0401" name="line0401" yPos="560" isDefault="true" xSize="800" foregroundColour="black" backgroundColour="" ref="_________________________________________________________"/>
+          <elements xsi:type="layoutRel:Text" id="line0402" name="line0402" yPos="570" isDefault="true" xSize="800" foregroundColour="black" backgroundColour="" ref="_________________________________________________________"/>
+          <elements xsi:type="layoutRel:Text" id="line0403" name="line0403" yPos="580" isDefault="true" xSize="800" foregroundColour="black" backgroundColour="" ref="_________________________________________________________"/>
+          <elements xsi:type="layoutRel:Text" id="line0404" name="line0404" yPos="590" isDefault="true" xSize="800" foregroundColour="black" backgroundColour="" ref="_________________________________________________________"/>
+          <elements xsi:type="layoutRel:Text" id="line0405" name="line0405" yPos="600" isDefault="true" xSize="800" foregroundColour="black" backgroundColour="" ref="_________________________________________________________"/>
+        </element>
+      </components>
+    </layers>
+  </interactionStreams>
+</layoutRel:RelLayoutDiagram>

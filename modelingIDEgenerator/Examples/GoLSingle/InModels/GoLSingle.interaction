@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ASCII"?>
+<interaction:Interactions xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:interaction="http://udem.iro.geodes.ca/interaction" xsi:schemaLocation="http://udem.iro.geodes.ca/interaction ../../../Models/interaction.ecore">
+  <interactions preCondition="//@interactions.0/@hasStates.1" goal="//@interactions.0/@hasStates.0" name="RunTransfromation">
+    <hasStates from="//@interactions.0/@hasTransitions.0" id="S1">
+      <conditions xsi:type="interaction:IElement" id="playModelButton" value="active"/>
+      <conditions xsi:type="interaction:OElement" id="O0" operation="runGoL"/>
+    </hasStates>
+    <hasStates to="//@interactions.0/@hasTransitions.0" id="S0">
+      <conditions xsi:type="interaction:IElement" id="playModelButton" isFocus="true"/>
+    </hasStates>
+    <hasTransitions Event="press" source="//@interactions.0/@hasStates.1" target="//@interactions.0/@hasStates.0"/>
+  </interactions>
+  <interactions preCondition="//@interactions.1/@hasStates.1" goal="//@interactions.1/@hasStates.0" name="CSAddInstance">
+    <hasStates from="//@interactions.1/@hasTransitions.0" id="S3">
+      <conditions xsi:type="interaction:LElement" id="Life" value="&quot;&quot;" operation="add"/>
+    </hasStates>
+    <hasStates to="//@interactions.1/@hasTransitions.0" id="S2">
+      <conditions xsi:type="interaction:LElement" id="svgCanvas" isFocus="true"/>
+    </hasStates>
+    <hasTransitions Event="select" source="//@interactions.1/@hasStates.1" target="//@interactions.1/@hasStates.0"/>
+  </interactions>
+  <interactions preCondition="//@interactions.2/@hasStates.1" goal="//@interactions.2/@hasStates.0" name="CSRemInstance">
+    <hasStates from="//@interactions.2/@hasTransitions.0" id="S5">
+      <conditions xsi:type="interaction:LElement" id="Life" value="&quot;&quot;" operation="rem"/>
+    </hasStates>
+    <hasStates to="//@interactions.2/@hasTransitions.0" id="S4">
+      <conditions xsi:type="interaction:LElement" id="Life" isFocus="true"/>
+    </hasStates>
+    <hasTransitions Event="select" source="//@interactions.2/@hasStates.1" target="//@interactions.2/@hasStates.0"/>
+  </interactions>
+  <interactions preCondition="//@interactions.3/@hasStates.1" goal="//@interactions.3/@hasStates.0" name="EndTransformation">
+    <hasStates from="//@interactions.3/@hasTransitions.0" id="S7">
+      <conditions xsi:type="interaction:IElement" id="playModelButton" value="default"/>
+    </hasStates>
+    <hasStates to="//@interactions.3/@hasTransitions.0" id="S6">
+      <conditions xsi:type="interaction:IElement" id="playModelButton" value="active"/>
+    </hasStates>
+    <hasTransitions Event="_finish" source="//@interactions.3/@hasStates.1" target="//@interactions.3/@hasStates.0"/>
+  </interactions>
+</interaction:Interactions>

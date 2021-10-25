@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated layoutRel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="layoutRel.presentation.LayoutRelModelWizardID"
+            name="%_UI_LayoutRelModelWizard_label"
+            class="layoutRel.presentation.LayoutRelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/LayoutRelModelFile.gif">
+         <description>%_UI_LayoutRelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated layoutRel -->
+      <editor
+            id="layoutRel.presentation.LayoutRelEditorID"
+            name="%_UI_LayoutRelEditor_label"
+            icon="icons/full/obj16/LayoutRelModelFile.gif"
+            extensions="layoutrel"
+            class="layoutRel.presentation.LayoutRelEditor"
+            contributorClass="layoutRel.presentation.LayoutRelActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

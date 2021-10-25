@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ca.udem.iro.geodes.interaction.layoutRel/src"
+    modelPluginID="ca.udem.iro.geodes.interaction.layoutRel" modelName="LayoutRel"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>layoutRel.ecore</foreignModel>
+  <genPackages prefix="LayoutRel" disposableProviderFactory="true" ecorePackage="layoutRel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="layoutRel.ecore#//ContainmentBehaviour">
+      <genEnumLiterals ecoreEnumLiteral="layoutRel.ecore#//ContainmentBehaviour/none"/>
+      <genEnumLiterals ecoreEnumLiteral="layoutRel.ecore#//ContainmentBehaviour/overlap"/>
+      <genEnumLiterals ecoreEnumLiteral="layoutRel.ecore#//ContainmentBehaviour/horizontal"/>
+      <genEnumLiterals ecoreEnumLiteral="layoutRel.ecore#//ContainmentBehaviour/vertical"/>
+    </genEnums>
+    <genClasses ecoreClass="layoutRel.ecore#//RelLayoutDiagram">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute layoutRel.ecore#//RelLayoutDiagram/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference layoutRel.ecore#//RelLayoutDiagram/interactionStreams"/>
+    </genClasses>
+    <genClasses ecoreClass="layoutRel.ecore#//InteractionStream">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute layoutRel.ecore#//InteractionStream/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference layoutRel.ecore#//InteractionStream/layers"/>
+    </genClasses>
+    <genClasses ecoreClass="layoutRel.ecore#//Layer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute layoutRel.ecore#//Layer/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute layoutRel.ecore#//Layer/index"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference layoutRel.ecore#//Layer/components"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute layoutRel.ecore#//Layer/behaviour"/>
+    </genClasses>
+    <genClasses ecoreClass="layoutRel.ecore#//Component">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference layoutRel.ecore#//Component/element"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="layoutRel.ecore#//Element">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute layoutRel.ecore#//Element/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute layoutRel.ecore#//Element/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute layoutRel.ecore#//Element/xPos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute layoutRel.ecore#//Element/yPos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute layoutRel.ecore#//Element/isDefault"/>
+    </genClasses>
+    <genClasses ecoreClass="layoutRel.ecore#//ContainerElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference layoutRel.ecore#//ContainerElement/elements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute layoutRel.ecore#//ContainerElement/visibility"/>
+    </genClasses>
+    <genClasses ecoreClass="layoutRel.ecore#//ElemSequence"/>
+    <genClasses ecoreClass="layoutRel.ecore#//ElemSelector"/>
+    <genClasses ecoreClass="layoutRel.ecore#//VisualContainer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute layoutRel.ecore#//VisualContainer/behaviour"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="layoutRel.ecore#//VisualElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute layoutRel.ecore#//VisualElement/xSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute layoutRel.ecore#//VisualElement/ySize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute layoutRel.ecore#//VisualElement/foregroundColour"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute layoutRel.ecore#//VisualElement/backgroundColour"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute layoutRel.ecore#//VisualElement/ref"/>
+    </genClasses>
+    <genClasses ecoreClass="layoutRel.ecore#//Image"/>
+    <genClasses ecoreClass="layoutRel.ecore#//Text"/>
+    <genClasses ecoreClass="layoutRel.ecore#//Widget"/>
+    <genClasses ecoreClass="layoutRel.ecore#//TextWidget"/>
+    <genClasses ecoreClass="layoutRel.ecore#//ButtonWidget"/>
+    <genClasses ecoreClass="layoutRel.ecore#//Canvas">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute layoutRel.ecore#//Canvas/active"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute layoutRel.ecore#//Canvas/gridSizeX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute layoutRel.ecore#//Canvas/gridSizeY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute layoutRel.ecore#//Canvas/gridScaleX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute layoutRel.ecore#//Canvas/gridScaleY"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

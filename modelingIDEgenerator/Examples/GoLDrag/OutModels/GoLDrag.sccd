@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sccd:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sccd="http://www.example.org/sccd" xsi:schemaLocation="http://www.example.org/sccd ../../../Models/sccd.ecore" name="GoLDrag" description="RunGhostGameofLifeEditor">
+  <class name="Interaction">
+    <attributes name="context" type="String"/>
+    <scxml initialState="System">
+      <parallel id="System">
+        <states id="LayercomonTools" initial="s0">
+          <states id="s0">
+            <transition event="press6" name="tpress67" target="s3">
+              <script script="screenset.call(this, 'playModelButton','active');"/>
+              <script script="this.runGoL();"/>
+              <raise event="_step"/>
+            </transition>
+            <ielement id="comonTools" value="0"/>
+            <ielement id="playModelButton" value="default"/>
+          </states>
+          <states id="s3">
+            <transition event="_finish18" name="t_finish1819" target="s0">
+              <script script="screenset.call(this, 'playModelButton','default');"/>
+              <raise event="_step"/>
+            </transition>
+            <ielement id="comonTools" value="0"/>
+            <ielement id="playModelButton" value="active"/>
+          </states>
+        </states>
+        <states id="Layercanvas" initial="s1">
+          <states id="s1">
+            <transition event="select0" name="tselect01" target="s1">
+              <script script="vElement[&quot;LifeMode&quot;] = &quot;remove&quot;"/>
+              <raise event="_step"/>
+            </transition>
+            <transition event="place2" name="tplace23" target="s1">
+              <script script="this.Liferem(&quot;&quot;);"/>
+              <raise event="_step"/>
+            </transition>
+            <transition event="place4" name="tplace45" target="s1">
+              <script script="this.Lifeadd(&quot;&quot;);"/>
+              <raise event="_step"/>
+            </transition>
+            <transition event="select8" name="tselect89" target="s1">
+              <script script="vElement[&quot;LifeMode&quot;] = &quot;adding&quot;"/>
+              <raise event="_step"/>
+            </transition>
+            <transition event="release10" name="trelease1011" target="s1">
+              <script script="vElement[&quot;LifeMode&quot;] = &quot;null&quot;"/>
+              <raise event="_step"/>
+            </transition>
+            <transition event="release12" name="trelease1213" target="s1">
+              <script script="this.Liferem(&quot;&quot;);"/>
+              <script script="vElement[&quot;LifeMode&quot;] = &quot;null&quot;"/>
+              <raise event="_step"/>
+            </transition>
+            <transition event="release14" name="trelease1415" target="s1">
+              <script script="this.Lifeadd(&quot;&quot;);"/>
+              <script script="vElement[&quot;LifeMode&quot;] = &quot;null&quot;"/>
+              <raise event="_step"/>
+            </transition>
+            <transition event="release16" name="trelease1617" target="s1">
+              <script script="vElement[&quot;LifeMode&quot;] = &quot;null&quot;"/>
+              <raise event="_step"/>
+            </transition>
+            <ielement id="23" value="default"/>
+          </states>
+        </states>
+        <states id="LayerControler" initial="h00">
+          <states id="h00">
+            <transition event="select" cond="this.type == 'Life' and INSTATE('/System/Layercanvas/s1')" name="select" target="h00">
+              <script script="console.log( &quot;RULE : CSSetRemInstance&quot; );"/>
+              <raise event="select0"/>
+            </transition>
+            <transition event="place" cond="this.type == 'Life' and vElement['LifeMode'] == 'remove' and INSTATE('/System/Layercanvas/s1')" name="place" target="h00">
+              <script script="console.log( &quot;RULE : CSRemInstance&quot; );"/>
+              <raise event="place2"/>
+            </transition>
+            <transition event="place" cond="this.type == 'svgCanvas' and vElement['LifeMode'] == 'adding' and INSTATE('/System/Layercanvas/s1')" name="place" target="h00">
+              <script script="console.log( &quot;RULE : CSAddInstance&quot; );"/>
+              <raise event="place4"/>
+            </transition>
+            <transition event="press" cond="this.type == 'playModelButton' and INSTATE('/System/LayercomonTools/s0')" name="press" target="h00">
+              <script script="console.log( &quot;RULE : RunTransfromation&quot; );"/>
+              <raise event="press6"/>
+            </transition>
+            <transition event="select" cond="this.type == 'svgCanvas' and INSTATE('/System/Layercanvas/s1')" name="select" target="h00">
+              <script script="console.log( &quot;RULE : CSSetAddInstance&quot; );"/>
+              <raise event="select8"/>
+            </transition>
+            <transition event="release" cond="this.type == 'Life' and vElement['LifeMode'] == 'adding' and INSTATE('/System/Layercanvas/s1')" name="release" target="h00">
+              <script script="console.log( &quot;RULE : CSDef&quot; );"/>
+              <raise event="release10"/>
+            </transition>
+            <transition event="release" cond="this.type == 'Life' and vElement['LifeMode'] == 'remove' and INSTATE('/System/Layercanvas/s1')" name="release" target="h00">
+              <script script="console.log( &quot;RULE : CSRemInstance&quot; );"/>
+              <raise event="release12"/>
+            </transition>
+            <transition event="release" cond="this.type == 'svgCanvas' and vElement['LifeMode'] == 'adding' and INSTATE('/System/Layercanvas/s1')" name="release" target="h00">
+              <script script="console.log( &quot;RULE : CSAddInstance&quot; );"/>
+              <raise event="release14"/>
+            </transition>
+            <transition event="release" cond="this.type == 'svgCanvas' and vElement['LifeMode'] == 'remove' and INSTATE('/System/Layercanvas/s1')" name="release" target="h00">
+              <script script="console.log( &quot;RULE : CSDef&quot; );"/>
+              <raise event="release16"/>
+            </transition>
+            <transition event="_finish" cond="INSTATE('/System/LayercomonTools/s3')" name="_finish" target="h00">
+              <script script="console.log( &quot;RULE : EndTransformation&quot; );"/>
+              <raise event="_finish18"/>
+            </transition>
+          </states>
+        </states>
+      </parallel>
+    </scxml>
+  </class>
+</sccd:Diagram>

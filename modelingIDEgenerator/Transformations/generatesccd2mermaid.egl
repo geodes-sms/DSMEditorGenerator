@@ -1,0 +1,79 @@
+[*comment @main*]
+```mermaid
+graph LR
+[%for (aDiagram: SC!Diagram in SC!Diagram.all) {%]
+[*%loopClass(aDiagram.class);%*]
+[%=aDiagram.class.loopClass()%]
+[%}%]
+```
+
+[* Class Templates*]
+[% @template
+operation OrderedSet<SC!Class> loopClass() {
+for (aClass in self) {%]
+[%for (aSCXML : SC!Scxml in aClass.scxml){%]
+    [%=loopParallel(aSCXML.parallel)%]
+    [%=loopState(aSCXML.states)%]
+[%}%]
+[%}
+}%]
+
+[*Parallel Templates*]
+
+[% @template
+operation loopParallel(parallels : OrderedSet<SC!Parallel>) {
+for (bParallel in parallels) {%]
+[%=defParallel(bParallel)%]
+[%}
+}%]
+
+[% @template
+operation defParallel(aParallel : SC!Parallel) {%]
+[%=loopParallel(aParallel.parallel)%]
+[%=loopState(aParallel.states)%]
+[%=loopTransition(aParallel.transition)%]
+[%}%]
+
+[*State Templates*]
+
+[% @template
+operation loopState(states : OrderedSet<SC!State>) {
+for (bState : SC!State in states) {%]
+[%=defState(bState)%]
+[%}
+}%]
+
+[% @template
+operation defState(aState : SC!State) {%]
+[%if (not aState.states.isEmpty()) {%]
+subgraph [%=aState.id%]
+    [%=loopState(aState.states)%]
+    [%=loopTransition(aState.transition)%]
+end
+[%}%][%else {%]
+[%=loopTransition(aState.transition)%]
+[%}%]
+[%}%]
+
+[*Transition Templates*]
+
+[% @template
+operation loopTransition(transitions : OrderedSet<SC!Transition>) {
+for (bTransition : SC!Transition in transitions) {%]
+[%=defTransition(bTransition)%]
+[%}
+}%]
+
+[% @template
+operation defTransition(aTransition : SC!Transition){%]
+[%=aTransition.eContainer().id%] -- "[%if (aTransition.event.asString() = "") {
+    %]autoStep[%}%][%else {%][%if (aTransition.event.asString().startsWith("_")) {
+        %][%=aTransition.event.asString().substring(1)%][%}%][%else {%][%=aTransition.event.asString()%][%
+        }%]
+    [%}%]" --> [%=aTransition.target.id%]
+[%}%]
+
+
+
+
+

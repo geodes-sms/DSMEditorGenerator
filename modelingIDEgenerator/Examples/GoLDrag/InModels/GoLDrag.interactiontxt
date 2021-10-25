@@ -1,0 +1,100 @@
+InteractionRule RunTransfromation
+	Condition {
+		focus Interface playModelButton{}
+	}
+	--- press -->
+	Effect {
+		Interface playModelButton {value = "active"}
+		Operation runGoL {}
+	}
+
+InteractionRule CSSetAddInstance
+	Condition {
+		focus Canvas {}
+	}
+	--- select -->
+	Effect {
+		Var LifeMode {value = "adding"}
+	}
+
+InteractionRule CSAddInstance
+	Condition {
+		focus Canvas {}
+		Var LifeMode {value = "adding"}
+	}
+	--- place -->
+	Effect {
+		Lang Life {op = add}
+	}
+
+InteractionRule CSAddInstance
+	Condition {
+		focus Canvas {}
+		Var LifeMode {value = "adding"}
+	}
+	--- release -->
+	Effect {
+		Lang Life {op = add}
+		Var LifeMode {value = "null"}
+	}
+
+InteractionRule CSDef
+	Condition {
+		focus Lang Life {}
+		Var LifeMode {value = "adding"}
+	}
+	--- release -->
+	Effect {
+		Var LifeMode {value = "null"}
+	}
+
+InteractionRule CSSetRemInstance
+	Condition {
+		focus Lang Life{}
+	}
+	--- select -->
+	Effect {
+		Var LifeMode {value = "remove"}
+	}
+
+InteractionRule CSRemInstance
+	Condition {
+		focus Lang Life{}
+		Var LifeMode {value = "remove"}
+	}
+	--- place -->
+	Effect {
+		Lang Life {op = rem}
+	}
+	
+InteractionRule CSRemInstance
+	Condition {
+		focus Lang Life{}
+		Var LifeMode {value = "remove"}
+	}
+	--- release -->
+	Effect {
+		Lang Life {op = rem}
+		Var LifeMode {value = "null"}
+	}
+
+InteractionRule CSDef
+	Condition {
+		focus Canvas {}
+		Var LifeMode {value = "remove"}
+	}
+	--- release -->
+	Effect {
+		Var LifeMode {value = "null"}
+	}
+
+InteractionRule EndTransformation
+	Condition {
+		Interface playModelButton {value = "active"}
+	}
+	--- _finish -->
+	Effect {
+		Interface playModelButton{value = "default"}
+	}
+layModelButton{value = default}
+	}
