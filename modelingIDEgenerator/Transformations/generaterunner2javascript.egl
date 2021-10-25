@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<script src="./javascript_sccd_runtime/libs/HackTimer.js"></script>
+<script src="./javascript_sccd_runtime/statecharts_core.js"></script>
+<script src="./javascript_sccd_runtime/libs/utils.js"></script>
+<script src="./javascript_sccd_runtime/libs/svg.js"></script>
+<script src="./javascript_sccd_runtime/libs/ui.js"></script>
+<script src="./[%=run.name%].js"></script>
+<body>
+<script>
+controller = new [%=run.name%].Controller(new JsEventLoop());
+controller.start();
+console.log('echo');
+</script>
+</body>
+</html>

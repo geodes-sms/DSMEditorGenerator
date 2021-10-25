@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sccd:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sccd="http://www.example.org/sccd" xsi:schemaLocation="http://www.example.org/sccd ../../../Models/sccd.ecore" name="PacMan04" description="RunGhostGameofLifeEditor">
+  <class name="Interaction">
+    <attributes name="context" type="String"/>
+    <scxml initialState="System">
+      <parallel id="System">
+        <states id="LayercommonTools" initial="s0">
+          <states id="s0">
+            <transition event="press65" name="tpress6566" target="s0">
+              <script script="this.newModel();"/>
+            </transition>
+            <ielement id="commonTools" value="0"/>
+            <ielement id="newModel" value="default"/>
+          </states>
+        </states>
+        <states id="LayerlanguageBar" initial="s1">
+          <states id="s1">
+            <transition event="press5" name="tpress56" target="s6">
+              <script script="screenset.call(this, 'scoreButton','active');"/>
+              <script script="screenset.call(this, 'pacmanButton','default');"/>
+              <script script="screenset.call(this, 'ghostButton','default');"/>
+              <script script="screenset.call(this, 'foodButton','default');"/>
+              <script script="screenset.call(this, 'gridButton','default');"/>
+            </transition>
+            <transition event="press13" name="tpress1314" target="s7">
+              <script script="screenset.call(this, 'gridButton','active');"/>
+              <script script="screenset.call(this, 'pacmanButton','default');"/>
+              <script script="screenset.call(this, 'ghostButton','default');"/>
+              <script script="screenset.call(this, 'foodButton','default');"/>
+              <script script="screenset.call(this, 'scoreButton','default');"/>
+            </transition>
+            <transition event="press23" name="tpress2324" target="s8">
+              <script script="screenset.call(this, 'ghostButton','active');"/>
+              <script script="screenset.call(this, 'pacmanButton','default');"/>
+              <script script="screenset.call(this, 'foodButton','default');"/>
+              <script script="screenset.call(this, 'gridButton','default');"/>
+              <script script="screenset.call(this, 'scoreButton','default');"/>
+            </transition>
+            <transition event="press32" name="tpress3233" target="s9">
+              <script script="screenset.call(this, 'foodButton','active');"/>
+              <script script="screenset.call(this, 'pacmanButton','default');"/>
+              <script script="screenset.call(this, 'ghostButton','default');"/>
+              <script script="screenset.call(this, 'gridButton','default');"/>
+              <script script="screenset.call(this, 'scoreButton','default');"/>
+            </transition>
+            <transition event="press36" name="tpress3637" target="s10">
+              <script script="screenset.call(this, 'pacmanButton','active');"/>
+              <script script="screenset.call(this, 'ghostButton','default');"/>
+              <script script="screenset.call(this, 'foodButton','default');"/>
+              <script script="screenset.call(this, 'gridButton','default');"/>
+              <script script="screenset.call(this, 'scoreButton','default');"/>
+            </transition>
+            <ielement id="languageBar" value="0"/>
+            <ielement id="pacmanButton" value="default"/>
+            <ielement id="ghostButton" value="default"/>
+            <ielement id="foodButton" value="default"/>
+            <ielement id="gridButton" value="default"/>
+            <ielement id="scoreButton" value="default"/>
+          </states>
+          <states id="s6">
+            <transition event="place69" name="tplace6971" target="s6"/>
+            <transition event="press72" name="tpress7273" target="s7">
+              <script script="screenset.call(this, 'gridButton','active');"/>
+              <script script="screenset.call(this, 'pacmanButton','default');"/>
+              <script script="screenset.call(this, 'ghostButton','default');"/>
+              <script script="screenset.call(this, 'foodButton','default');"/>
+              <script script="screenset.call(this, 'scoreButton','default');"/>
+            </transition>
+            <transition event="press74" name="tpress7475" target="s8">
+              <script script="screenset.call(this, 'ghostButton','active');"/>
+              <script script="screenset.call(this, 'pacmanButton','default');"/>
+              <script script="screenset.call(this, 'foodButton','default');"/>
+              <script script="screenset.call(this, 'gridButton','default');"/>
+              <script script="screenset.call(this, 'scoreButton','default');"/>
+            </transition>
+            <transition event="press76" name="tpress7677" target="s1">
+              <script script="screenset.call(this, 'scoreButton','default');"/>
+            </transition>
+            <transition event="press78" name="tpress7879" target="s9">
+              <script script="screenset.call(this, 'foodButton','active');"/>
+              <script script="screenset.call(this, 'pacmanButton','default');"/>
+              <script script="screenset.call(this, 'ghostButton','default');"/>
+              <script script="screenset.call(this, 'gridButton','default');"/>
+              <script script="screenset.call(this, 'scoreButton','default');"/>
+            </transition>
+            <transition event="press80" name="tpress8081" target="s10">
+              <script script="screenset.call(this, 'pacmanButton','active');"/>
+              <script script="screenset.call(this, 'ghostButton','default');"/>
+              <script script="screenset.call(this, 'foodButton','default');"/>
+              <script script="screenset.call(this, 'gridButton','default');"/>
+              <script script="screenset.call(this, 'scoreButton','default');"/>
+            </transition>
+            <ielement id="languageBar" value="0"/>
+            <ielement id="pacmanButton" value="default"/>
+            <ielement id="ghostButton" value="default"/>
+            <ielement id="foodButton" value="default"/>
+            <ielement id="gridButton" value="default"/>
+            <ielement id="scoreButton" value="active"/>
+          </states>
+          <states id="s7">
+            <transition event="press82" name="tpress8283" target="s6">
+              <script script="screenset.call(this, 'scoreButton','active');"/>
+              <script script="screenset.call(this, 'pacmanButton','default');"/>
+              <script script="screenset.call(this, 'ghostButton','default');"/>
+              <script script="screenset.call(this, 'foodButton','default');"/>
+              <script script="screenset.call(this, 'gridButton','default');"/>
+            </transition>
+            <transition event="press84" name="tpress8485" target="s8">
+              <script script="screenset.call(this, 'ghostButton','active');"/>
+              <script script="screenset.call(this, 'pacmanButton','default');"/>
+              <script script="screenset.call(this, 'foodButton','default');"/>
+              <script script="screenset.call(this, 'gridButton','default');"/>
+              <script script="screenset.call(this, 'scoreButton','default');"/>
+            </transition>
+            <transition event="press86" name="tpress8687" target="s9">
+              <script script="screenset.call(this, 'foodButton','active');"/>
+              <script script="screenset.call(this, 'pacmanButton','default');"/>
+              <script script="screenset.call(this, 'ghostButton','default');"/>
+              <script script="screenset.call(this, 'gridButton','default');"/>
+              <script script="screenset.call(this, 'scoreButton','default');"/>
+            </transition>
+            <transition event="press88" name="tpress8889" target="s10">
+              <script script="screenset.call(this, 'pacmanButton','active');"/>
+              <script script="screenset.call(this, 'ghostButton','default');"/>
+              <script script="screenset.call(this, 'foodButton','default');"/>
+              <script script="screenset.call(this, 'gridButton','default');"/>
+              <script script="screenset.call(this, 'scoreButton','default');"/>
+            </transition>
+            <transition event="place90" name="tplace9092" target="s7"/>
+            <transition event="press93" name="tpress9394" target="s1">
+              <script script="screenset.call(this, 'gridButton','default');"/>
+            </transition>
+            <ielement id="languageBar" value="0"/>
+            <ielement id="pacmanButton" value="default"/>
+            <ielement id="ghostButton" value="default"/>
+            <ielement id="foodButton" value="default"/>
+            <ielement id="gridButton" value="active"/>
+            <ielement id="scoreButton" value="default"/>
+          </states>
+          <states id="s8">
+            <transition event="press95" name="tpress9596" target="s6">
+              <script script="screenset.call(this, 'scoreButton','active');"/>
+              <script script="screenset.call(this, 'pacmanButton','default');"/>
+              <script script="screenset.call(this, 'ghostButton','default');"/>
+              <script script="screenset.call(this, 'foodButton','default');"/>
+              <script script="screenset.call(this, 'gridButton','default');"/>
+            </transition>
+            <transition event="place97" name="tplace9799" target="s8"/>
+            <transition event="press100" name="tpress100101" target="s7">
+              <script script="screenset.call(this, 'gridButton','active');"/>
+              <script script="screenset.call(this, 'pacmanButton','default');"/>
+              <script script="screenset.call(this, 'ghostButton','default');"/>
+              <script script="screenset.call(this, 'foodButton','default');"/>
+              <script script="screenset.call(this, 'scoreButton','default');"/>
+            </transition>
+            <transition event="press102" name="tpress102103" target="s9">
+              <script script="screenset.call(this, 'foodButton','active');"/>
+              <script script="screenset.call(this, 'pacmanButton','default');"/>
+              <script script="screenset.call(this, 'ghostButton','default');"/>
+              <script script="screenset.call(this, 'gridButton','default');"/>
+              <script script="screenset.call(this, 'scoreButton','default');"/>
+            </transition>
+            <transition event="press104" name="tpress104105" target="s10">
+              <script script="screenset.call(this, 'pacmanButton','active');"/>
+              <script script="screenset.call(this, 'ghostButton','default');"/>
+              <script script="screenset.call(this, 'foodButton','default');"/>
+              <script script="screenset.call(this, 'gridButton','default');"/>
+              <script script="screenset.call(this, 'scoreButton','default');"/>
+            </transition>
+            <transition event="press106" name="tpress106107" target="s1">
+              <script script="screenset.call(this, 'ghostButton','default');"/>
+            </transition>
+            <ielement id="languageBar" value="0"/>
+            <ielement id="pacmanButton" value="default"/>
+            <ielement id="ghostButton" value="active"/>
+            <ielement id="foodButton" value="default"/>
+            <ielement id="gridButton" value="default"/>
+            <ielement id="scoreButton" value="default"/>
+          </states>
+          <states id="s9">
+            <transition event="press108" name="tpress108109" target="s6">
+              <script script="screenset.call(this, 'scoreButton','active');"/>
+              <script script="screenset.call(this, 'pacmanButton','default');"/>
+              <script script="screenset.call(this, 'ghostButton','default');"/>
+              <script script="screenset.call(this, 'foodButton','default');"/>
+              <script script="screenset.call(this, 'gridButton','default');"/>
+            </transition>
+            <transition event="press110" name="tpress110111" target="s7">
+              <script script="screenset.call(this, 'gridButton','active');"/>
+              <script script="screenset.call(this, 'pacmanButton','default');"/>
+              <script script="screenset.call(this, 'ghostButton','default');"/>
+              <script script="screenset.call(this, 'foodButton','default');"/>
+              <script script="screenset.call(this, 'scoreButton','default');"/>
+            </transition>
+            <transition event="press112" name="tpress112113" target="s8">
+              <script script="screenset.call(this, 'ghostButton','active');"/>
+              <script script="screenset.call(this, 'pacmanButton','default');"/>
+              <script script="screenset.call(this, 'foodButton','default');"/>
+              <script script="screenset.call(this, 'gridButton','default');"/>
+              <script script="screenset.call(this, 'scoreButton','default');"/>
+            </transition>
+            <transition event="place114" name="tplace114116" target="s9"/>
+            <transition event="press117" name="tpress117118" target="s10">
+              <script script="screenset.call(this, 'pacmanButton','active');"/>
+              <script script="screenset.call(this, 'ghostButton','default');"/>
+              <script script="screenset.call(this, 'foodButton','default');"/>
+              <script script="screenset.call(this, 'gridButton','default');"/>
+              <script script="screenset.call(this, 'scoreButton','default');"/>
+            </transition>
+            <transition event="press119" name="tpress119120" target="s1">
+              <script script="screenset.call(this, 'foodButton','default');"/>
+            </transition>
+            <ielement id="languageBar" value="0"/>
+            <ielement id="pacmanButton" value="default"/>
+            <ielement id="ghostButton" value="default"/>
+            <ielement id="foodButton" value="active"/>
+            <ielement id="gridButton" value="default"/>
+            <ielement id="scoreButton" value="default"/>
+          </states>
+          <states id="s10">
+            <transition event="press121" name="tpress121122" target="s6">
+              <script script="screenset.call(this, 'scoreButton','active');"/>
+              <script script="screenset.call(this, 'pacmanButton','default');"/>
+              <script script="screenset.call(this, 'ghostButton','default');"/>
+              <script script="screenset.call(this, 'foodButton','default');"/>
+              <script script="screenset.call(this, 'gridButton','default');"/>
+            </transition>
+            <transition event="press123" name="tpress123124" target="s7">
+              <script script="screenset.call(this, 'gridButton','active');"/>
+              <script script="screenset.call(this, 'pacmanButton','default');"/>
+              <script script="screenset.call(this, 'ghostButton','default');"/>
+              <script script="screenset.call(this, 'foodButton','default');"/>
+              <script script="screenset.call(this, 'scoreButton','default');"/>
+            </transition>
+            <transition event="press125" name="tpress125126" target="s8">
+              <script script="screenset.call(this, 'ghostButton','active');"/>
+              <script script="screenset.call(this, 'pacmanButton','default');"/>
+              <script script="screenset.call(this, 'foodButton','default');"/>
+              <script script="screenset.call(this, 'gridButton','default');"/>
+              <script script="screenset.call(this, 'scoreButton','default');"/>
+            </transition>
+            <transition event="place127" name="tplace127129" target="s10"/>
+            <transition event="press130" name="tpress130131" target="s9">
+              <script script="screenset.call(this, 'foodButton','active');"/>
+              <script script="screenset.call(this, 'pacmanButton','default');"/>
+              <script script="screenset.call(this, 'ghostButton','default');"/>
+              <script script="screenset.call(this, 'gridButton','default');"/>
+              <script script="screenset.call(this, 'scoreButton','default');"/>
+            </transition>
+            <transition event="press132" name="tpress132133" target="s1">
+              <script script="screenset.call(this, 'pacmanButton','default');"/>
+            </transition>
+            <ielement id="languageBar" value="0"/>
+            <ielement id="pacmanButton" value="active"/>
+            <ielement id="ghostButton" value="default"/>
+            <ielement id="foodButton" value="default"/>
+            <ielement id="gridButton" value="default"/>
+            <ielement id="scoreButton" value="default"/>
+          </states>
+        </states>
+        <states id="LayercellPropertiesTab" initial="s2">
+          <states id="s2">
+            <transition event="context2" name="tcontext24" target="s5">
+              <script script="screenset.call(this, 'cellPropertiesTab','visible');"/>
+              <script script="screenset.call(this, 'namePropertie','update');"/>
+              <script script="screenset.call(this, 'xPos','update');"/>
+              <script script="screenset.call(this, 'yPos','update');"/>
+            </transition>
+            <transition event="context29" name="tcontext2931" target="s5">
+              <script script="screenset.call(this, 'cellPropertiesTab','visible');"/>
+              <script script="screenset.call(this, 'namePropertie','update');"/>
+              <script script="screenset.call(this, 'xPos','update');"/>
+              <script script="screenset.call(this, 'yPos','update');"/>
+            </transition>
+            <transition event="context38" name="tcontext3840" target="s5">
+              <script script="screenset.call(this, 'cellPropertiesTab','visible');"/>
+              <script script="screenset.call(this, 'namePropertie','update');"/>
+              <script script="screenset.call(this, 'xPos','update');"/>
+              <script script="screenset.call(this, 'yPos','update');"/>
+            </transition>
+            <transition event="context47" name="tcontext4749" target="s5">
+              <script script="screenset.call(this, 'cellPropertiesTab','visible');"/>
+              <script script="screenset.call(this, 'namePropertie','update');"/>
+              <script script="screenset.call(this, 'xPos','update');"/>
+              <script script="screenset.call(this, 'yPos','update');"/>
+            </transition>
+            <transition event="context52" name="tcontext5254" target="s5">
+              <script script="screenset.call(this, 'cellPropertiesTab','visible');"/>
+              <script script="screenset.call(this, 'namePropertie','update');"/>
+              <script script="screenset.call(this, 'xPos','update');"/>
+              <script script="screenset.call(this, 'yPos','update');"/>
+            </transition>
+            <ielement id="cellPropertiesTab" value="0"/>
+            <ielement id="namePropertie" value="default"/>
+            <ielement id="xPos" value="default"/>
+            <ielement id="yPos" value="default"/>
+          </states>
+          <states id="s5">
+            <transition event="escape67" name="tescape6768" target="s11">
+              <script script="screenset.call(this, 'cellPropertiesTab','notvisible');"/>
+            </transition>
+            <transition event="context2" name="tcontext24" target="s5">
+              <script script="screenset.call(this, 'cellPropertiesTab','visible');"/>
+              <script script="screenset.call(this, 'namePropertie','update');"/>
+              <script script="screenset.call(this, 'xPos','update');"/>
+              <script script="screenset.call(this, 'yPos','update');"/>
+            </transition>
+            <transition event="context29" name="tcontext2931" target="s5">
+              <script script="screenset.call(this, 'cellPropertiesTab','visible');"/>
+              <script script="screenset.call(this, 'namePropertie','update');"/>
+              <script script="screenset.call(this, 'xPos','update');"/>
+              <script script="screenset.call(this, 'yPos','update');"/>
+            </transition>
+            <transition event="context38" name="tcontext3840" target="s5">
+              <script script="screenset.call(this, 'cellPropertiesTab','visible');"/>
+              <script script="screenset.call(this, 'namePropertie','update');"/>
+              <script script="screenset.call(this, 'xPos','update');"/>
+              <script script="screenset.call(this, 'yPos','update');"/>
+            </transition>
+            <transition event="context47" name="tcontext4749" target="s5">
+              <script script="screenset.call(this, 'cellPropertiesTab','visible');"/>
+              <script script="screenset.call(this, 'namePropertie','update');"/>
+              <script script="screenset.call(this, 'xPos','update');"/>
+              <script script="screenset.call(this, 'yPos','update');"/>
+            </transition>
+            <transition event="context52" name="tcontext5254" target="s5">
+              <script script="screenset.call(this, 'cellPropertiesTab','visible');"/>
+              <script script="screenset.call(this, 'namePropertie','update');"/>
+              <script script="screenset.call(this, 'xPos','update');"/>
+              <script script="screenset.call(this, 'yPos','update');"/>
+            </transition>
+            <ielement id="cellPropertiesTab" value="visible"/>
+            <ielement id="namePropertie" value="update"/>
+            <ielement id="xPos" value="update"/>
+            <ielement id="yPos" value="update"/>
+          </states>
+          <states id="s11">
+            <transition event="context2" name="tcontext24" target="s5">
+              <script script="screenset.call(this, 'cellPropertiesTab','visible');"/>
+              <script script="screenset.call(this, 'namePropertie','update');"/>
+              <script script="screenset.call(this, 'xPos','update');"/>
+              <script script="screenset.call(this, 'yPos','update');"/>
+            </transition>
+            <transition event="context29" name="tcontext2931" target="s5">
+              <script script="screenset.call(this, 'cellPropertiesTab','visible');"/>
+              <script script="screenset.call(this, 'namePropertie','update');"/>
+              <script script="screenset.call(this, 'xPos','update');"/>
+              <script script="screenset.call(this, 'yPos','update');"/>
+            </transition>
+            <transition event="context38" name="tcontext3840" target="s5">
+              <script script="screenset.call(this, 'cellPropertiesTab','visible');"/>
+              <script script="screenset.call(this, 'namePropertie','update');"/>
+              <script script="screenset.call(this, 'xPos','update');"/>
+              <script script="screenset.call(this, 'yPos','update');"/>
+            </transition>
+            <transition event="context47" name="tcontext4749" target="s5">
+              <script script="screenset.call(this, 'cellPropertiesTab','visible');"/>
+              <script script="screenset.call(this, 'namePropertie','update');"/>
+              <script script="screenset.call(this, 'xPos','update');"/>
+              <script script="screenset.call(this, 'yPos','update');"/>
+            </transition>
+            <transition event="context52" name="tcontext5254" target="s5">
+              <script script="screenset.call(this, 'cellPropertiesTab','visible');"/>
+              <script script="screenset.call(this, 'namePropertie','update');"/>
+              <script script="screenset.call(this, 'xPos','update');"/>
+              <script script="screenset.call(this, 'yPos','update');"/>
+            </transition>
+            <ielement id="cellPropertiesTab" value="notvisible"/>
+            <ielement id="namePropertie" value="update"/>
+            <ielement id="xPos" value="update"/>
+            <ielement id="yPos" value="update"/>
+          </states>
+        </states>
+        <states id="Layercanvas" initial="s3">
+          <states id="s3">
+            <transition event="move0" name="tmove01" target="s3">
+              <script script="this.GridInstancemove();"/>
+              <script script="this.vElement[&quot;MLock&quot;] = &quot;true&quot;"/>
+            </transition>
+            <transition event="context2" name="tcontext23" target="s3"/>
+            <transition event="release7" name="trelease78" target="s3">
+              <script script="this.FoodInstancemark();"/>
+              <script script="this.vElement[&quot;MLock&quot;] = &quot;false&quot;"/>
+            </transition>
+            <transition event="release9" name="trelease910" target="s3">
+              <script script="this.PacManInstancemark();"/>
+              <script script="this.vElement[&quot;MLock&quot;] = &quot;false&quot;"/>
+            </transition>
+            <transition event="remove11" name="tremove1112" target="s3">
+              <script script="this.FoodInstancerem();"/>
+            </transition>
+            <transition event="release15" name="trelease1516" target="s3">
+              <script script="this.GhostInstancemark();"/>
+              <script script="this.vElement[&quot;MLock&quot;] = &quot;false&quot;"/>
+            </transition>
+            <transition event="mark17" name="tmark1718" target="s3">
+              <script script="this.GhostInstancemark();"/>
+              <script script="this.vElement[&quot;Tset&quot;] = &quot;Ghost&quot;"/>
+            </transition>
+            <transition event="mark19" name="tmark1920" target="s3">
+              <script script="this.ScoreInstancemark();"/>
+              <script script="this.vElement[&quot;Tset&quot;] = &quot;Score&quot;"/>
+            </transition>
+            <transition event="remove21" name="tremove2122" target="s3">
+              <script script="this.GridInstancerem();"/>
+            </transition>
+            <transition event="remove25" name="tremove2526" target="s3">
+              <script script="this.PacManInstancerem();"/>
+            </transition>
+            <transition event="move27" name="tmove2728" target="s3">
+              <script script="this.GhostInstancemove();"/>
+              <script script="this.vElement[&quot;MLock&quot;] = &quot;true&quot;"/>
+            </transition>
+            <transition event="context29" name="tcontext2930" target="s3"/>
+            <transition event="mark34" name="tmark3435" target="s3">
+              <script script="this.GridInstancemark();"/>
+              <script script="this.vElement[&quot;Tset&quot;] = &quot;Grid&quot;"/>
+            </transition>
+            <transition event="context38" name="tcontext3839" target="s3"/>
+            <transition event="mark41" name="tmark4142" target="s3">
+              <script script="this.FoodInstancemark();"/>
+              <script script="this.vElement[&quot;Tset&quot;] = &quot;Food&quot;"/>
+            </transition>
+            <transition event="remove43" name="tremove4344" target="s3">
+              <script script="this.ScoreInstancerem();"/>
+            </transition>
+            <transition event="move45" name="tmove4546" target="s3">
+              <script script="this.FoodInstancemove();"/>
+              <script script="this.vElement[&quot;MLock&quot;] = &quot;true&quot;"/>
+            </transition>
+            <transition event="context47" name="tcontext4748" target="s3"/>
+            <transition event="release50" name="trelease5051" target="s3">
+              <script script="this.GridInstancemark();"/>
+              <script script="this.vElement[&quot;MLock&quot;] = &quot;false&quot;"/>
+            </transition>
+            <transition event="context52" name="tcontext5253" target="s3"/>
+            <transition event="release55" name="trelease5556" target="s3">
+              <script script="this.ScoreInstancemark();"/>
+              <script script="this.vElement[&quot;MLock&quot;] = &quot;false&quot;"/>
+            </transition>
+            <transition event="move57" name="tmove5758" target="s3">
+              <script script="this.ScoreInstancemove();"/>
+              <script script="this.vElement[&quot;MLock&quot;] = &quot;true&quot;"/>
+            </transition>
+            <transition event="move59" name="tmove5960" target="s3">
+              <script script="this.PacManInstancemove();"/>
+              <script script="this.vElement[&quot;MLock&quot;] = &quot;true&quot;"/>
+            </transition>
+            <transition event="mark61" name="tmark6162" target="s3">
+              <script script="this.PacManInstancemark();"/>
+              <script script="this.vElement[&quot;Tset&quot;] = &quot;PacMan&quot;"/>
+            </transition>
+            <transition event="remove63" name="tremove6364" target="s3">
+              <script script="this.GhostInstancerem();"/>
+            </transition>
+            <transition event="place69" name="tplace6970" target="s3">
+              <script script="this.ScoreInstanceadd();"/>
+            </transition>
+            <transition event="place90" name="tplace9091" target="s3">
+              <script script="this.GridInstanceadd();"/>
+            </transition>
+            <transition event="place97" name="tplace9798" target="s3">
+              <script script="this.GhostInstanceadd();"/>
+            </transition>
+            <transition event="place114" name="tplace114115" target="s3">
+              <script script="this.FoodInstanceadd();"/>
+            </transition>
+            <transition event="place127" name="tplace127128" target="s3">
+              <script script="this.PacManInstanceadd();"/>
+            </transition>
+            <ielement id="23" value="default"/>
+          </states>
+        </states>
+        <states id="LayerControler" initial="h00">
+          <states id="h00">
+            <transition event="move" cond="INSTATE('/System/Layercanvas/s3')" name="move" target="h00">
+              <raise event="move0"/>
+            </transition>
+            <transition event="context" cond="this.type == 'GridInstance' and INSTATE('/System/Layercanvas/s3') and INSTATE('/System/LayercellPropertiesTab')" name="context" target="h00">
+              <raise event="context2"/>
+            </transition>
+            <transition event="press" cond="this.type == 'scoreButton' and INSTATE('/System/LayerlanguageBar/s1')" name="press" target="h00">
+              <raise event="press5"/>
+            </transition>
+            <transition event="release" cond="this.type == 'FoodInstance' and INSTATE('/System/Layercanvas/s3')" name="release" target="h00">
+              <raise event="release7"/>
+            </transition>
+            <transition event="release" cond="this.type == 'PacManInstance' and INSTATE('/System/Layercanvas/s3')" name="release" target="h00">
+              <raise event="release9"/>
+            </transition>
+            <transition event="remove" cond="INSTATE('/System/Layercanvas/s3')" name="remove" target="h00">
+              <raise event="remove11"/>
+            </transition>
+            <transition event="press" cond="this.type == 'gridButton' and INSTATE('/System/LayerlanguageBar/s1')" name="press" target="h00">
+              <raise event="press13"/>
+            </transition>
+            <transition event="release" cond="this.type == 'GhostInstance' and INSTATE('/System/Layercanvas/s3')" name="release" target="h00">
+              <raise event="release15"/>
+            </transition>
+            <transition event="mark" cond="this.type == 'GhostInstance' and INSTATE('/System/Layercanvas/s3')" name="mark" target="h00">
+              <raise event="mark17"/>
+            </transition>
+            <transition event="mark" cond="this.type == 'ScoreInstance' and INSTATE('/System/Layercanvas/s3')" name="mark" target="h00">
+              <raise event="mark19"/>
+            </transition>
+            <transition event="remove" cond="INSTATE('/System/Layercanvas/s3')" name="remove" target="h00">
+              <raise event="remove21"/>
+            </transition>
+            <transition event="press" cond="this.type == 'ghostButton' and INSTATE('/System/LayerlanguageBar/s1')" name="press" target="h00">
+              <raise event="press23"/>
+            </transition>
+            <transition event="remove" cond="INSTATE('/System/Layercanvas/s3')" name="remove" target="h00">
+              <raise event="remove25"/>
+            </transition>
+            <transition event="move" cond="INSTATE('/System/Layercanvas/s3')" name="move" target="h00">
+              <raise event="move27"/>
+            </transition>
+            <transition event="context" cond="this.type == 'FoodInstance' and INSTATE('/System/Layercanvas/s3') and INSTATE('/System/LayercellPropertiesTab')" name="context" target="h00">
+              <raise event="context29"/>
+            </transition>
+            <transition event="press" cond="this.type == 'foodButton' and INSTATE('/System/LayerlanguageBar/s1')" name="press" target="h00">
+              <raise event="press32"/>
+            </transition>
+            <transition event="mark" cond="this.type == 'GridInstance' and INSTATE('/System/Layercanvas/s3')" name="mark" target="h00">
+              <raise event="mark34"/>
+            </transition>
+            <transition event="press" cond="this.type == 'pacmanButton' and INSTATE('/System/LayerlanguageBar/s1')" name="press" target="h00">
+              <raise event="press36"/>
+            </transition>
+            <transition event="context" cond="this.type == 'GhostInstance' and INSTATE('/System/Layercanvas/s3') and INSTATE('/System/LayercellPropertiesTab')" name="context" target="h00">
+              <raise event="context38"/>
+            </transition>
+            <transition event="mark" cond="this.type == 'FoodInstance' and INSTATE('/System/Layercanvas/s3')" name="mark" target="h00">
+              <raise event="mark41"/>
+            </transition>
+            <transition event="remove" cond="INSTATE('/System/Layercanvas/s3')" name="remove" target="h00">
+              <raise event="remove43"/>
+            </transition>
+            <transition event="move" cond="INSTATE('/System/Layercanvas/s3')" name="move" target="h00">
+              <raise event="move45"/>
+            </transition>
+            <transition event="context" cond="this.type == 'ScoreInstance' and INSTATE('/System/Layercanvas/s3') and INSTATE('/System/LayercellPropertiesTab')" name="context" target="h00">
+              <raise event="context47"/>
+            </transition>
+            <transition event="release" cond="this.type == 'GridInstance' and INSTATE('/System/Layercanvas/s3')" name="release" target="h00">
+              <raise event="release50"/>
+            </transition>
+            <transition event="context" cond="this.type == 'PacManInstance' and INSTATE('/System/Layercanvas/s3') and INSTATE('/System/LayercellPropertiesTab')" name="context" target="h00">
+              <raise event="context52"/>
+            </transition>
+            <transition event="release" cond="this.type == 'ScoreInstance' and INSTATE('/System/Layercanvas/s3')" name="release" target="h00">
+              <raise event="release55"/>
+            </transition>
+            <transition event="move" cond="INSTATE('/System/Layercanvas/s3')" name="move" target="h00">
+              <raise event="move57"/>
+            </transition>
+            <transition event="move" cond="INSTATE('/System/Layercanvas/s3')" name="move" target="h00">
+              <raise event="move59"/>
+            </transition>
+            <transition event="mark" cond="this.type == 'PacManInstance' and INSTATE('/System/Layercanvas/s3')" name="mark" target="h00">
+              <raise event="mark61"/>
+            </transition>
+            <transition event="remove" cond="INSTATE('/System/Layercanvas/s3')" name="remove" target="h00">
+              <raise event="remove63"/>
+            </transition>
+            <transition event="press" cond="this.type == 'newModel' and INSTATE('/System/LayercommonTools/s0')" name="press" target="h00">
+              <raise event="press65"/>
+            </transition>
+            <transition event="escape" cond="INSTATE('/System/LayercellPropertiesTab/s5')" name="escape" target="h00">
+              <raise event="escape67"/>
+            </transition>
+            <transition event="place" cond="this.type == 'svgCanvas' and this.vElement['MLock'] != 'true' and INSTATE('/System/Layercanvas/s3') and INSTATE('/System/LayerlanguageBar/s6')" name="place" target="h00">
+              <raise event="place69"/>
+            </transition>
+            <transition event="press" cond="this.type == 'gridButton' and INSTATE('/System/LayerlanguageBar/s6')" name="press" target="h00">
+              <raise event="press72"/>
+            </transition>
+            <transition event="press" cond="this.type == 'ghostButton' and INSTATE('/System/LayerlanguageBar/s6')" name="press" target="h00">
+              <raise event="press74"/>
+            </transition>
+            <transition event="press" cond="this.type == 'scoreButton' and INSTATE('/System/LayerlanguageBar/s6')" name="press" target="h00">
+              <raise event="press76"/>
+            </transition>
+            <transition event="press" cond="this.type == 'foodButton' and INSTATE('/System/LayerlanguageBar/s6')" name="press" target="h00">
+              <raise event="press78"/>
+            </transition>
+            <transition event="press" cond="this.type == 'pacmanButton' and INSTATE('/System/LayerlanguageBar/s6')" name="press" target="h00">
+              <raise event="press80"/>
+            </transition>
+            <transition event="press" cond="this.type == 'scoreButton' and INSTATE('/System/LayerlanguageBar/s7')" name="press" target="h00">
+              <raise event="press82"/>
+            </transition>
+            <transition event="press" cond="this.type == 'ghostButton' and INSTATE('/System/LayerlanguageBar/s7')" name="press" target="h00">
+              <raise event="press84"/>
+            </transition>
+            <transition event="press" cond="this.type == 'foodButton' and INSTATE('/System/LayerlanguageBar/s7')" name="press" target="h00">
+              <raise event="press86"/>
+            </transition>
+            <transition event="press" cond="this.type == 'pacmanButton' and INSTATE('/System/LayerlanguageBar/s7')" name="press" target="h00">
+              <raise event="press88"/>
+            </transition>
+            <transition event="place" cond="this.type == 'svgCanvas' and this.vElement['MLock'] != 'true' and INSTATE('/System/Layercanvas/s3') and INSTATE('/System/LayerlanguageBar/s7')" name="place" target="h00">
+              <raise event="place90"/>
+            </transition>
+            <transition event="press" cond="this.type == 'gridButton' and INSTATE('/System/LayerlanguageBar/s7')" name="press" target="h00">
+              <raise event="press93"/>
+            </transition>
+            <transition event="press" cond="this.type == 'scoreButton' and INSTATE('/System/LayerlanguageBar/s8')" name="press" target="h00">
+              <raise event="press95"/>
+            </transition>
+            <transition event="place" cond="this.type == 'GridInstance' and this.vElement['MLock'] != 'true' and INSTATE('/System/Layercanvas/s3') and INSTATE('/System/LayerlanguageBar/s8')" name="place" target="h00">
+              <raise event="place97"/>
+            </transition>
+            <transition event="press" cond="this.type == 'gridButton' and INSTATE('/System/LayerlanguageBar/s8')" name="press" target="h00">
+              <raise event="press100"/>
+            </transition>
+            <transition event="press" cond="this.type == 'foodButton' and INSTATE('/System/LayerlanguageBar/s8')" name="press" target="h00">
+              <raise event="press102"/>
+            </transition>
+            <transition event="press" cond="this.type == 'pacmanButton' and INSTATE('/System/LayerlanguageBar/s8')" name="press" target="h00">
+              <raise event="press104"/>
+            </transition>
+            <transition event="press" cond="this.type == 'ghostButton' and INSTATE('/System/LayerlanguageBar/s8')" name="press" target="h00">
+              <raise event="press106"/>
+            </transition>
+            <transition event="press" cond="this.type == 'scoreButton' and INSTATE('/System/LayerlanguageBar/s9')" name="press" target="h00">
+              <raise event="press108"/>
+            </transition>
+            <transition event="press" cond="this.type == 'gridButton' and INSTATE('/System/LayerlanguageBar/s9')" name="press" target="h00">
+              <raise event="press110"/>
+            </transition>
+            <transition event="press" cond="this.type == 'ghostButton' and INSTATE('/System/LayerlanguageBar/s9')" name="press" target="h00">
+              <raise event="press112"/>
+            </transition>
+            <transition event="place" cond="this.type == 'GridInstance' and this.vElement['MLock'] != 'true' and INSTATE('/System/Layercanvas/s3') and INSTATE('/System/LayerlanguageBar/s9')" name="place" target="h00">
+              <raise event="place114"/>
+            </transition>
+            <transition event="press" cond="this.type == 'pacmanButton' and INSTATE('/System/LayerlanguageBar/s9')" name="press" target="h00">
+              <raise event="press117"/>
+            </transition>
+            <transition event="press" cond="this.type == 'foodButton' and INSTATE('/System/LayerlanguageBar/s9')" name="press" target="h00">
+              <raise event="press119"/>
+            </transition>
+            <transition event="press" cond="this.type == 'scoreButton' and INSTATE('/System/LayerlanguageBar/s10')" name="press" target="h00">
+              <raise event="press121"/>
+            </transition>
+            <transition event="press" cond="this.type == 'gridButton' and INSTATE('/System/LayerlanguageBar/s10')" name="press" target="h00">
+              <raise event="press123"/>
+            </transition>
+            <transition event="press" cond="this.type == 'ghostButton' and INSTATE('/System/LayerlanguageBar/s10')" name="press" target="h00">
+              <raise event="press125"/>
+            </transition>
+            <transition event="place" cond="this.type == 'GridInstance' and this.vElement['MLock'] != 'true' and INSTATE('/System/Layercanvas/s3') and INSTATE('/System/LayerlanguageBar/s10')" name="place" target="h00">
+              <raise event="place127"/>
+            </transition>
+            <transition event="press" cond="this.type == 'foodButton' and INSTATE('/System/LayerlanguageBar/s10')" name="press" target="h00">
+              <raise event="press130"/>
+            </transition>
+            <transition event="press" cond="this.type == 'pacmanButton' and INSTATE('/System/LayerlanguageBar/s10')" name="press" target="h00">
+              <raise event="press132"/>
+            </transition>
+          </states>
+        </states>
+      </parallel>
+    </scxml>
+  </class>
+</sccd:Diagram>

@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="ASCII"?>
+<interaction:Interactions xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:interaction="http://udem.iro.geodes.ca/interaction" xsi:schemaLocation="http://udem.iro.geodes.ca/interaction ../../../Models/interaction.ecore">
+  <interactions preCondition="//@interactions.0/@hasStates.0" goal="//@interactions.0/@hasStates.1" name="SelectfullTime01">
+    <hasStates to="//@interactions.0/@hasTransitions.0" id="S101">
+      <conditions xsi:type="interaction:IElement" id="fullTime" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.0/@hasTransitions.0" id="S102">
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasTransitions Event="select" source="//@interactions.0/@hasStates.0" target="//@interactions.0/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.1/@hasStates.0" goal="//@interactions.1/@hasStates.1" name="SelecthalfTime01">
+    <hasStates to="//@interactions.1/@hasTransitions.0" id="S201">
+      <conditions xsi:type="interaction:IElement" id="halfTime" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.1/@hasTransitions.0" id="S202">
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasTransitions Event="select" source="//@interactions.1/@hasStates.0" target="//@interactions.1/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.2/@hasStates.0" goal="//@interactions.2/@hasStates.1" name="SelectquarterTime01">
+    <hasStates to="//@interactions.2/@hasTransitions.0" id="S301">
+      <conditions xsi:type="interaction:IElement" id="quarterTime" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.2/@hasTransitions.0" id="S302">
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasTransitions Event="select" source="//@interactions.2/@hasStates.0" target="//@interactions.2/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.3/@hasStates.0" goal="//@interactions.3/@hasStates.1" name="SelecteighthTime01">
+    <hasStates to="//@interactions.3/@hasTransitions.0" id="S401">
+      <conditions xsi:type="interaction:IElement" id="eighthTime" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.3/@hasTransitions.0" id="S402">
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasTransitions Event="select" source="//@interactions.3/@hasStates.0" target="//@interactions.3/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.4/@hasStates.0" goal="//@interactions.4/@hasStates.1" name="SelecttimedMode01">
+    <hasStates to="//@interactions.4/@hasTransitions.0" id="S501">
+      <conditions xsi:type="interaction:IElement" id="timedMode" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.4/@hasTransitions.0" id="S502">
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="select" source="//@interactions.4/@hasStates.0" target="//@interactions.4/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.5/@hasStates.0" goal="//@interactions.5/@hasStates.1" name="CSAddDoInstance03">
+    <hasStates to="//@interactions.5/@hasTransitions.0" id="B1F">
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.5/@hasTransitions.0" id="B2F">
+      <conditions xsi:type="interaction:LElement" id="fulldo" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapC" source="//@interactions.5/@hasStates.0" target="//@interactions.5/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.6/@hasStates.0" goal="//@interactions.6/@hasStates.1" name="CSAddReInstance03">
+    <hasStates to="//@interactions.6/@hasTransitions.0" id="B3F">
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.6/@hasTransitions.0" id="B4F">
+      <conditions xsi:type="interaction:LElement" id="fullre" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapD" source="//@interactions.6/@hasStates.0" target="//@interactions.6/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.7/@hasStates.0" goal="//@interactions.7/@hasStates.1" name="CSAddMiInstance03">
+    <hasStates to="//@interactions.7/@hasTransitions.0" id="B5F">
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.7/@hasTransitions.0" id="B6F">
+      <conditions xsi:type="interaction:LElement" id="fullmi" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapE" source="//@interactions.7/@hasStates.0" target="//@interactions.7/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.8/@hasStates.0" goal="//@interactions.8/@hasStates.1" name="CSAddFaInstance03">
+    <hasStates to="//@interactions.8/@hasTransitions.0" id="B7F">
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.8/@hasTransitions.0" id="B8F">
+      <conditions xsi:type="interaction:LElement" id="fullfa" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapF" source="//@interactions.8/@hasStates.0" target="//@interactions.8/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.9/@hasStates.0" goal="//@interactions.9/@hasStates.1" name="CSAddSolInstance03">
+    <hasStates to="//@interactions.9/@hasTransitions.0" id="B9F">
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.9/@hasTransitions.0" id="B10F">
+      <conditions xsi:type="interaction:LElement" id="fullsol" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapG" source="//@interactions.9/@hasStates.0" target="//@interactions.9/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.10/@hasStates.0" goal="//@interactions.10/@hasStates.1" name="CSAddLaInstance03">
+    <hasStates to="//@interactions.10/@hasTransitions.0" id="B11F">
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.10/@hasTransitions.0" id="B12F">
+      <conditions xsi:type="interaction:LElement" id="fullla" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapA" source="//@interactions.10/@hasStates.0" target="//@interactions.10/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.11/@hasStates.0" goal="//@interactions.11/@hasStates.1" name="CSAddSiInstance03">
+    <hasStates to="//@interactions.11/@hasTransitions.0" id="B13F">
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.11/@hasTransitions.0" id="B14F">
+      <conditions xsi:type="interaction:LElement" id="fullsi" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapB" source="//@interactions.11/@hasStates.0" target="//@interactions.11/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.12/@hasStates.0" goal="//@interactions.12/@hasStates.1" name="CSAddDoInstance03">
+    <hasStates to="//@interactions.12/@hasTransitions.0" id="B1H">
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.12/@hasTransitions.0" id="B2H">
+      <conditions xsi:type="interaction:LElement" id="halfdo" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapC" source="//@interactions.12/@hasStates.0" target="//@interactions.12/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.13/@hasStates.0" goal="//@interactions.13/@hasStates.1" name="CSAddReInstance03">
+    <hasStates to="//@interactions.13/@hasTransitions.0" id="B3H">
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.13/@hasTransitions.0" id="B4H">
+      <conditions xsi:type="interaction:LElement" id="halfre" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapD" source="//@interactions.13/@hasStates.0" target="//@interactions.13/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.14/@hasStates.0" goal="//@interactions.14/@hasStates.1" name="CSAddMiInstance03">
+    <hasStates to="//@interactions.14/@hasTransitions.0" id="B5H">
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.14/@hasTransitions.0" id="B6H">
+      <conditions xsi:type="interaction:LElement" id="halfmi" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapE" source="//@interactions.14/@hasStates.0" target="//@interactions.14/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.15/@hasStates.0" goal="//@interactions.15/@hasStates.1" name="CSAddFaInstance03">
+    <hasStates to="//@interactions.15/@hasTransitions.0" id="B7H">
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.15/@hasTransitions.0" id="B8H">
+      <conditions xsi:type="interaction:LElement" id="halffa" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapF" source="//@interactions.15/@hasStates.0" target="//@interactions.15/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.16/@hasStates.0" goal="//@interactions.16/@hasStates.1" name="CSAddSolInstance03">
+    <hasStates to="//@interactions.16/@hasTransitions.0" id="B9H">
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.16/@hasTransitions.0" id="B10H">
+      <conditions xsi:type="interaction:LElement" id="halfsol" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapG" source="//@interactions.16/@hasStates.0" target="//@interactions.16/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.17/@hasStates.0" goal="//@interactions.17/@hasStates.1" name="CSAddLaInstance03">
+    <hasStates to="//@interactions.17/@hasTransitions.0" id="B11H">
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.17/@hasTransitions.0" id="B12H">
+      <conditions xsi:type="interaction:LElement" id="halfla" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapA" source="//@interactions.17/@hasStates.0" target="//@interactions.17/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.18/@hasStates.0" goal="//@interactions.18/@hasStates.1" name="CSAddSiInstance03">
+    <hasStates to="//@interactions.18/@hasTransitions.0" id="B13H">
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.18/@hasTransitions.0" id="B14H">
+      <conditions xsi:type="interaction:LElement" id="halfsi" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapB" source="//@interactions.18/@hasStates.0" target="//@interactions.18/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.19/@hasStates.0" goal="//@interactions.19/@hasStates.1" name="CSAddDoInstance03">
+    <hasStates to="//@interactions.19/@hasTransitions.0" id="B1Q">
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.19/@hasTransitions.0" id="B2Q">
+      <conditions xsi:type="interaction:LElement" id="quarterdo" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapC" source="//@interactions.19/@hasStates.0" target="//@interactions.19/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.20/@hasStates.0" goal="//@interactions.20/@hasStates.1" name="CSAddReInstance03">
+    <hasStates to="//@interactions.20/@hasTransitions.0" id="B3Q">
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.20/@hasTransitions.0" id="B4Q">
+      <conditions xsi:type="interaction:LElement" id="quarterre" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapD" source="//@interactions.20/@hasStates.0" target="//@interactions.20/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.21/@hasStates.0" goal="//@interactions.21/@hasStates.1" name="CSAddMiInstance03">
+    <hasStates to="//@interactions.21/@hasTransitions.0" id="B5Q">
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.21/@hasTransitions.0" id="B6Q">
+      <conditions xsi:type="interaction:LElement" id="quartermi" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapE" source="//@interactions.21/@hasStates.0" target="//@interactions.21/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.22/@hasStates.0" goal="//@interactions.22/@hasStates.1" name="CSAddFaInstance03">
+    <hasStates to="//@interactions.22/@hasTransitions.0" id="B7Q">
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.22/@hasTransitions.0" id="B8Q">
+      <conditions xsi:type="interaction:LElement" id="quarterfa" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapF" source="//@interactions.22/@hasStates.0" target="//@interactions.22/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.23/@hasStates.0" goal="//@interactions.23/@hasStates.1" name="CSAddSolInstance03">
+    <hasStates to="//@interactions.23/@hasTransitions.0" id="B9Q">
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.23/@hasTransitions.0" id="B10Q">
+      <conditions xsi:type="interaction:LElement" id="quartersol" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapG" source="//@interactions.23/@hasStates.0" target="//@interactions.23/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.24/@hasStates.0" goal="//@interactions.24/@hasStates.1" name="CSAddLaInstance03">
+    <hasStates to="//@interactions.24/@hasTransitions.0" id="B11Q">
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.24/@hasTransitions.0" id="B12Q">
+      <conditions xsi:type="interaction:LElement" id="quarterla" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapA" source="//@interactions.24/@hasStates.0" target="//@interactions.24/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.25/@hasStates.0" goal="//@interactions.25/@hasStates.1" name="CSAddSiInstance03">
+    <hasStates to="//@interactions.25/@hasTransitions.0" id="B13Q">
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.25/@hasTransitions.0" id="B14Q">
+      <conditions xsi:type="interaction:LElement" id="quartersi" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapB" source="//@interactions.25/@hasStates.0" target="//@interactions.25/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.26/@hasStates.0" goal="//@interactions.26/@hasStates.1" name="CSAddDoInstance03">
+    <hasStates to="//@interactions.26/@hasTransitions.0" id="B1E">
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.26/@hasTransitions.0" id="B2E">
+      <conditions xsi:type="interaction:LElement" id="eighthdo" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapC" source="//@interactions.26/@hasStates.0" target="//@interactions.26/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.27/@hasStates.0" goal="//@interactions.27/@hasStates.1" name="CSAddReInstance03">
+    <hasStates to="//@interactions.27/@hasTransitions.0" id="B3E">
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.27/@hasTransitions.0" id="B4E">
+      <conditions xsi:type="interaction:LElement" id="eighthre" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapD" source="//@interactions.27/@hasStates.0" target="//@interactions.27/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.28/@hasStates.0" goal="//@interactions.28/@hasStates.1" name="CSAddMiInstance03">
+    <hasStates to="//@interactions.28/@hasTransitions.0" id="B5E">
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.28/@hasTransitions.0" id="B6E">
+      <conditions xsi:type="interaction:LElement" id="eighthmi" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapE" source="//@interactions.28/@hasStates.0" target="//@interactions.28/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.29/@hasStates.0" goal="//@interactions.29/@hasStates.1" name="CSAddFaInstance03">
+    <hasStates to="//@interactions.29/@hasTransitions.0" id="B7E">
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.29/@hasTransitions.0" id="B8E">
+      <conditions xsi:type="interaction:LElement" id="eighthfa" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapF" source="//@interactions.29/@hasStates.0" target="//@interactions.29/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.30/@hasStates.0" goal="//@interactions.30/@hasStates.1" name="CSAddSolInstance03">
+    <hasStates to="//@interactions.30/@hasTransitions.0" id="B9E">
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.30/@hasTransitions.0" id="B10E">
+      <conditions xsi:type="interaction:LElement" id="eighthsol" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapG" source="//@interactions.30/@hasStates.0" target="//@interactions.30/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.31/@hasStates.0" goal="//@interactions.31/@hasStates.1" name="CSAddLaInstance03">
+    <hasStates to="//@interactions.31/@hasTransitions.0" id="B11E">
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.31/@hasTransitions.0" id="B12E">
+      <conditions xsi:type="interaction:LElement" id="eighthla" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapA" source="//@interactions.31/@hasStates.0" target="//@interactions.31/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.32/@hasStates.0" goal="//@interactions.32/@hasStates.1" name="CSAddSiInstance03">
+    <hasStates to="//@interactions.32/@hasTransitions.0" id="B13E">
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.32/@hasTransitions.0" id="B14E">
+      <conditions xsi:type="interaction:LElement" id="eighthsi" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+    </hasStates>
+    <hasTransitions Event="tapB" source="//@interactions.32/@hasStates.0" target="//@interactions.32/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.33/@hasStates.0" goal="//@interactions.33/@hasStates.1" name="CSAddDoInstance04">
+    <hasStates to="//@interactions.33/@hasTransitions.0" id="B1F">
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.33/@hasTransitions.0" id="B2F">
+      <conditions xsi:type="interaction:LElement" id="fulldo" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapC" source="//@interactions.33/@hasStates.0" target="//@interactions.33/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.34/@hasStates.0" goal="//@interactions.34/@hasStates.1" name="CSAddReInstance04">
+    <hasStates to="//@interactions.34/@hasTransitions.0" id="B3F">
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.34/@hasTransitions.0" id="B4F">
+      <conditions xsi:type="interaction:LElement" id="fullre" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapD" source="//@interactions.34/@hasStates.0" target="//@interactions.34/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.35/@hasStates.0" goal="//@interactions.35/@hasStates.1" name="CSAddMiInstance04">
+    <hasStates to="//@interactions.35/@hasTransitions.0" id="B5F">
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.35/@hasTransitions.0" id="B6F">
+      <conditions xsi:type="interaction:LElement" id="fullmi" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapE" source="//@interactions.35/@hasStates.0" target="//@interactions.35/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.36/@hasStates.0" goal="//@interactions.36/@hasStates.1" name="CSAddFaInstance04">
+    <hasStates to="//@interactions.36/@hasTransitions.0" id="B7F">
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.36/@hasTransitions.0" id="B8F">
+      <conditions xsi:type="interaction:LElement" id="fullfa" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapF" source="//@interactions.36/@hasStates.0" target="//@interactions.36/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.37/@hasStates.0" goal="//@interactions.37/@hasStates.1" name="CSAddSolInstance04">
+    <hasStates to="//@interactions.37/@hasTransitions.0" id="B9F">
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.37/@hasTransitions.0" id="B10F">
+      <conditions xsi:type="interaction:LElement" id="fullsol" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapG" source="//@interactions.37/@hasStates.0" target="//@interactions.37/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.38/@hasStates.0" goal="//@interactions.38/@hasStates.1" name="CSAddLaInstance04">
+    <hasStates to="//@interactions.38/@hasTransitions.0" id="B11F">
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.38/@hasTransitions.0" id="B12F">
+      <conditions xsi:type="interaction:LElement" id="fullla" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapA" source="//@interactions.38/@hasStates.0" target="//@interactions.38/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.39/@hasStates.0" goal="//@interactions.39/@hasStates.1" name="CSAddSiInstance04">
+    <hasStates to="//@interactions.39/@hasTransitions.0" id="B13F">
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.39/@hasTransitions.0" id="B14F">
+      <conditions xsi:type="interaction:LElement" id="fullsi" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapB" source="//@interactions.39/@hasStates.0" target="//@interactions.39/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.40/@hasStates.0" goal="//@interactions.40/@hasStates.1" name="CSAddDoInstance04">
+    <hasStates to="//@interactions.40/@hasTransitions.0" id="B1H">
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.40/@hasTransitions.0" id="B2H">
+      <conditions xsi:type="interaction:LElement" id="halfdo" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapC" source="//@interactions.40/@hasStates.0" target="//@interactions.40/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.41/@hasStates.0" goal="//@interactions.41/@hasStates.1" name="CSAddReInstance04">
+    <hasStates to="//@interactions.41/@hasTransitions.0" id="B3H">
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.41/@hasTransitions.0" id="B4H">
+      <conditions xsi:type="interaction:LElement" id="halfre" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapD" source="//@interactions.41/@hasStates.0" target="//@interactions.41/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.42/@hasStates.0" goal="//@interactions.42/@hasStates.1" name="CSAddMiInstance04">
+    <hasStates to="//@interactions.42/@hasTransitions.0" id="B5H">
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.42/@hasTransitions.0" id="B6H">
+      <conditions xsi:type="interaction:LElement" id="halfmi" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapE" source="//@interactions.42/@hasStates.0" target="//@interactions.42/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.43/@hasStates.0" goal="//@interactions.43/@hasStates.1" name="CSAddFaInstance04">
+    <hasStates to="//@interactions.43/@hasTransitions.0" id="B7H">
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.43/@hasTransitions.0" id="B8H">
+      <conditions xsi:type="interaction:LElement" id="halffa" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapF" source="//@interactions.43/@hasStates.0" target="//@interactions.43/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.44/@hasStates.0" goal="//@interactions.44/@hasStates.1" name="CSAddSolInstance04">
+    <hasStates to="//@interactions.44/@hasTransitions.0" id="B9H">
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.44/@hasTransitions.0" id="B10H">
+      <conditions xsi:type="interaction:LElement" id="halfsol" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapG" source="//@interactions.44/@hasStates.0" target="//@interactions.44/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.45/@hasStates.0" goal="//@interactions.45/@hasStates.1" name="CSAddLaInstance04">
+    <hasStates to="//@interactions.45/@hasTransitions.0" id="B11H">
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.45/@hasTransitions.0" id="B12H">
+      <conditions xsi:type="interaction:LElement" id="halfla" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapA" source="//@interactions.45/@hasStates.0" target="//@interactions.45/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.46/@hasStates.0" goal="//@interactions.46/@hasStates.1" name="CSAddSiInstance04">
+    <hasStates to="//@interactions.46/@hasTransitions.0" id="B13H">
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.46/@hasTransitions.0" id="B14H">
+      <conditions xsi:type="interaction:LElement" id="halfsi" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapB" source="//@interactions.46/@hasStates.0" target="//@interactions.46/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.47/@hasStates.0" goal="//@interactions.47/@hasStates.1" name="CSAddDoInstance04">
+    <hasStates to="//@interactions.47/@hasTransitions.0" id="B1Q">
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.47/@hasTransitions.0" id="B2Q">
+      <conditions xsi:type="interaction:LElement" id="quarterdo" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapC" source="//@interactions.47/@hasStates.0" target="//@interactions.47/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.48/@hasStates.0" goal="//@interactions.48/@hasStates.1" name="CSAddReInstance04">
+    <hasStates to="//@interactions.48/@hasTransitions.0" id="B3Q">
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.48/@hasTransitions.0" id="B4Q">
+      <conditions xsi:type="interaction:LElement" id="quarterre" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapD" source="//@interactions.48/@hasStates.0" target="//@interactions.48/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.49/@hasStates.0" goal="//@interactions.49/@hasStates.1" name="CSAddMiInstance04">
+    <hasStates to="//@interactions.49/@hasTransitions.0" id="B5Q">
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.49/@hasTransitions.0" id="B6Q">
+      <conditions xsi:type="interaction:LElement" id="quartermi" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapE" source="//@interactions.49/@hasStates.0" target="//@interactions.49/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.50/@hasStates.0" goal="//@interactions.50/@hasStates.1" name="CSAddFaInstance04">
+    <hasStates to="//@interactions.50/@hasTransitions.0" id="B7Q">
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.50/@hasTransitions.0" id="B8Q">
+      <conditions xsi:type="interaction:LElement" id="quarterfa" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapF" source="//@interactions.50/@hasStates.0" target="//@interactions.50/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.51/@hasStates.0" goal="//@interactions.51/@hasStates.1" name="CSAddSolInstance04">
+    <hasStates to="//@interactions.51/@hasTransitions.0" id="B9Q">
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.51/@hasTransitions.0" id="B10Q">
+      <conditions xsi:type="interaction:LElement" id="quartersol" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapG" source="//@interactions.51/@hasStates.0" target="//@interactions.51/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.52/@hasStates.0" goal="//@interactions.52/@hasStates.1" name="CSAddLaInstance04">
+    <hasStates to="//@interactions.52/@hasTransitions.0" id="B11Q">
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.52/@hasTransitions.0" id="B12Q">
+      <conditions xsi:type="interaction:LElement" id="quarterla" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapA" source="//@interactions.52/@hasStates.0" target="//@interactions.52/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.53/@hasStates.0" goal="//@interactions.53/@hasStates.1" name="CSAddSiInstance04">
+    <hasStates to="//@interactions.53/@hasTransitions.0" id="B13Q">
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.53/@hasTransitions.0" id="B14Q">
+      <conditions xsi:type="interaction:LElement" id="quartersi" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapB" source="//@interactions.53/@hasStates.0" target="//@interactions.53/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.54/@hasStates.0" goal="//@interactions.54/@hasStates.1" name="CSAddDoInstance04">
+    <hasStates to="//@interactions.54/@hasTransitions.0" id="B1E">
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.54/@hasTransitions.0" id="B2E">
+      <conditions xsi:type="interaction:LElement" id="eighthdo" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapC" source="//@interactions.54/@hasStates.0" target="//@interactions.54/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.55/@hasStates.0" goal="//@interactions.55/@hasStates.1" name="CSAddReInstance04">
+    <hasStates to="//@interactions.55/@hasTransitions.0" id="B3E">
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.55/@hasTransitions.0" id="B4E">
+      <conditions xsi:type="interaction:LElement" id="eighthre" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapD" source="//@interactions.55/@hasStates.0" target="//@interactions.55/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.56/@hasStates.0" goal="//@interactions.56/@hasStates.1" name="CSAddMiInstance04">
+    <hasStates to="//@interactions.56/@hasTransitions.0" id="B5E">
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.56/@hasTransitions.0" id="B6E">
+      <conditions xsi:type="interaction:LElement" id="eighthmi" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapE" source="//@interactions.56/@hasStates.0" target="//@interactions.56/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.57/@hasStates.0" goal="//@interactions.57/@hasStates.1" name="CSAddFaInstance04">
+    <hasStates to="//@interactions.57/@hasTransitions.0" id="B7E">
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.57/@hasTransitions.0" id="B8E">
+      <conditions xsi:type="interaction:LElement" id="eighthfa" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapF" source="//@interactions.57/@hasStates.0" target="//@interactions.57/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.58/@hasStates.0" goal="//@interactions.58/@hasStates.1" name="CSAddSolInstance04">
+    <hasStates to="//@interactions.58/@hasTransitions.0" id="B9E">
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.58/@hasTransitions.0" id="B10E">
+      <conditions xsi:type="interaction:LElement" id="eighthsol" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapG" source="//@interactions.58/@hasStates.0" target="//@interactions.58/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.59/@hasStates.0" goal="//@interactions.59/@hasStates.1" name="CSAddLaInstance04">
+    <hasStates to="//@interactions.59/@hasTransitions.0" id="B11E">
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.59/@hasTransitions.0" id="B12E">
+      <conditions xsi:type="interaction:LElement" id="eighthla" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapA" source="//@interactions.59/@hasStates.0" target="//@interactions.59/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.60/@hasStates.0" goal="//@interactions.60/@hasStates.1" name="CSAddSiInstance04">
+    <hasStates to="//@interactions.60/@hasTransitions.0" id="B13E">
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.60/@hasTransitions.0" id="B14E">
+      <conditions xsi:type="interaction:LElement" id="eighthsi" value="add"/>
+      <conditions xsi:type="interaction:IElement" id="27" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="tapB" source="//@interactions.60/@hasStates.0" target="//@interactions.60/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.61/@hasStates.0" goal="//@interactions.61/@hasStates.1" name="CSsetuptiming04b">
+    <hasStates to="//@interactions.61/@hasTransitions.0" id="B1E">
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.61/@hasTransitions.0" id="B2E">
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="default"/>
+    </hasStates>
+    <hasTransitions Event="pat" source="//@interactions.61/@hasStates.0" target="//@interactions.61/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.62/@hasStates.0" goal="//@interactions.62/@hasStates.1" name="CSincreasetiming0104c">
+    <hasStates to="//@interactions.62/@hasTransitions.0" id="B1E">
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.62/@hasTransitions.0" id="B2E">
+      <conditions xsi:type="interaction:IElement" id="eighthTime" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="active"/>
+    </hasStates>
+    <hasTransitions Event="_after2" source="//@interactions.62/@hasStates.0" target="//@interactions.62/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.63/@hasStates.0" goal="//@interactions.63/@hasStates.1" name="CSincreasetiming0204c">
+    <hasStates to="//@interactions.63/@hasTransitions.0" id="B1E">
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.63/@hasTransitions.0" id="B2E">
+      <conditions xsi:type="interaction:IElement" id="quarterTime" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="active"/>
+    </hasStates>
+    <hasTransitions Event="_after2" source="//@interactions.63/@hasStates.0" target="//@interactions.63/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.64/@hasStates.0" goal="//@interactions.64/@hasStates.1" name="CSincreasetiming0304c">
+    <hasStates to="//@interactions.64/@hasTransitions.0" id="B1E">
+      <conditions xsi:type="interaction:IElement" id="timedMode" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.64/@hasTransitions.0" id="B2E">
+      <conditions xsi:type="interaction:IElement" id="halfTime" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="fullTime" value="active"/>
+    </hasStates>
+    <hasTransitions Event="_after4" source="//@interactions.64/@hasStates.0" target="//@interactions.64/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.65/@hasStates.0" goal="//@interactions.65/@hasStates.1" name="NewModel">
+    <hasStates to="//@interactions.65/@hasTransitions.0" id="E1">
+      <conditions xsi:type="interaction:IElement" id="newModel" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.65/@hasTransitions.0" id="E2">
+      <conditions xsi:type="interaction:OElement" id="3001" value="newModel"/>
+    </hasStates>
+    <hasTransitions Event="select" source="//@interactions.65/@hasStates.0" target="//@interactions.65/@hasStates.1"/>
+  </interactions>
+</interaction:Interactions>

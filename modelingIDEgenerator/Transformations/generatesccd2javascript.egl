@@ -1,0 +1,386 @@
+[*comment @main*]
+<?xml version="1.1" ?>
+[%for (aDiagram: SC!Diagram in SC!Diagram.all) {%]
+<diagram author="Vasco and Khady" name="[%=aDiagram.name%]">
+    [%if (not aDiagram.description.isUndefined()) {%]
+    <description>
+        [%=aDiagram.description%]
+    </description>
+    [%}%]
+    <inport name="ui" />
+    [*%loopClass(aDiagram.class);%*]
+    [%=aDiagram.class.loopClass()%]
+</diagram>
+[%}%]
+
+[* Class Templates *]
+
+[% @template
+operation OrderedSet<SC!Class> loopClass() {
+for (aClass in self) {%]
+    <class name="[%=aClass.name%]" default="[%=aClass.isDefault%]">
+        [%for (aAttribute in aClass.attributes) {%]
+        <attribute name="[%=aAttribute.name%]" type="[%=aAttribute.type%]"/>[%}%]
+        [%=loopRelationship(aClass.relationships)%]
+        <constructor>
+            <body>
+                <![CDATA[
+                [%var buffer : Integer = 100;
+                var size : Integer = 20;
+                var bezel : Integer = 30;%]
+                [* If super default *]
+                [* this.vElement = {}; *]
+                [%for (platform : MAP!PlatformControllCode in MAP!PlatformControllCode.all) {%]
+                [%for (code in platform.heatherCode) {%]
+                [%=code.line%]
+                [%}%]
+                [%}%]
+                [%for (pMethod : MAP!EditorInputEvent in MAP!EditorInputEvent.all) {
+            	for (platform in pMethod.platform) {%]
+                [%=platform.listnerCode.first().line%]
+                [%}%]
+                [%}%]
+                [%for (platform : MAP!PlatformControllCode in MAP!PlatformControllCode.all) {%]
+                [%for (code in platform.footerCode) {%]
+                [%=code.line%]
+                [%}%]
+                [%}%]
+                [%if (aClass.constructor <> null) {
+                for (aBody : Body in aClass.constructor._body) {%]
+                [%=aBody._body%]
+                [%}%]
+                [%}%]
+                ]]>
+            </body>
+        </constructor>
+        [%if (aClass.destructor <> null) {%]
+        <destructor>
+            <body>
+                [%=aClass.destructor._body._body%]
+            </body>
+        </destructor>
+        [%}%]
+        <method name="triggerEvent">
+            <parameter name="evt">
+            </parameter>
+            <parameter name="type">
+            </parameter>
+            <parameter name="internalEvt">
+            </parameter>
+            <body>
+                console.log(evt);
+                var target = evt.target;
+                // this is wrong but compiler gives error on ampersand, hack module corrects this
+                if(type == null and evt.type != "message") {
+//                    if(evt.target.nodeName.toLowerCase() === "div"){
+//                        target = evt.target;
+//                    }else{
+                    if(evt.target.nodeName.toLowerCase() === "a"){
+                            target = evt.target.parentElement;
+                        }else{if(evt.target.nodeName.toLowerCase() === "i"){
+                                target = evt.target.parentElement.parentElement;
+                            }
+                        }
+                    }
+                    // this is wrong but compiler gives error on ampersand, hack module corrects this
+                    if(target != null and target.hasAttribute("id")){
+                        type = target.getAttribute("id");
+                    }
+                }
+                console.log(target.nodeName);
+                console.log(type);
+                console.log(internalEvt);
+                console.log(controller.object_manager.instances[0].configuration);
+                this.event=evt;
+                vElement["focusEvent"] = evt;
+                this.type = type;
+                vElement["focusElement"] = evt.target;
+                controller.addInput(new Event(internalEvt, "ui"), []);
+                console.log(controller.object_manager.instances[0].configuration);
+            </body>
+        </method>
+        [%for (aMethod : SC!Method in aClass.method) {%]
+        <method name="[%=aMethod.name%]">
+            <body>
+                [%=aMethod._body._body%]
+            </body>
+        </method>
+        [%}%]
+        [%for (pMethod : MAP!EditorOutputEvent in MAP!EditorOutputEvent.all) {%]
+        <method name="[%=pMethod.`operation`%]">
+        [*parameter hack // remove this as soon as possible*]
+        	<parameter name="parOne">
+        	</parameter>
+        	<parameter name="parTwo">
+        	</parameter>
+            <body>
+            	[%for (platform in pMethod.platform) {
+            	for (code in platform.raiseCode) {%]
+                [%=code.line%]
+                [%}
+                }%]
+            </body>
+        </method>
+        [%}%]
+  [*      [%for (pMethod : MAP!EditorInputEvent in MAP!EditorInputEvent.all) {%]
+        <method name="[%=pMethod.event%]Call">
+        	<parameter name="evt">
+        	</parameter>
+            <body>
+            	[%for (platform in pMethod.platform) {
+            	for (code in platform.listnerCode.excluding(platform.listnerCode.first())) {%]
+                [%=code.line%]
+                [%}
+                }%]
+            </body>
+        </method>
+        [%}%]*]
+        [%for (aSCXML : SC!Scxml in aClass.scxml){%]
+        <scxml initial="[%=aSCXML.initialState.id%]">
+            [%=loopParallel(aSCXML.parallel)%]
+            [%=loopState(aSCXML.states)%]
+        </scxml>
+        [%}%]
+    </class>
+[%}
+}%]
+
+
+[* Hack Away Broadcast *]
+
+[% @template
+operation makeBroadcast(transitions : OrderedSet(SC!Transition)) {%]
+<state id="LayerController" initial="controller" >
+    <state id="controller">
+[%for (transition : SC!Transition in transitions) {
+if (not transition.event.isUndefined()) {
+if (transition.event <> '' and transition = transitions->any(t|t.event = transition.event)) {%]
+        <transition event="[%=transition.event%]b" target=".">
+            <raise scope='broad' event='[%=transition.event%]'>
+            </raise>
+        </transition>
+[%}%]
+[%}%]
+[%}%]
+    </state>
+</state>
+[%}%]
+
+[* Relationships Templates *]
+
+[% @template
+operation loopRelationship(relationships : OrderedSet<SC!Relationship>) {
+if (not relationships->isEmpty()) {%]
+<relationships>
+[%for (aRelationship : SC!Association in relationships->filter(SC!Association)) {%]
+    [%=defRelationship(aRelationship)%][%}%]
+</relationships>
+[%}%]
+[%}%]
+
+[* Association Template *]
+
+[% @template
+operation defRelationship(aRelationship : SC!Association) {%]
+<association 
+[%if (not aRelationship.name.isUndefined()) {%]
+name="[%=aRelationship.name%]" 
+[%}%]
+[%if (not aRelationship.class.isUndefined()) {%]
+class="[%=aRelationship.class.name%]" 
+[%}%]
+[%if (not aRelationship.min.isUndefined() and aRelationship.min <> 0) {%]
+min="[%=aRelationship.min%]" 
+[%}%]
+[%if (not aRelationship.max.isUndefined() and aRelationship.max <> -1) {%]
+max="[%=aRelationship.max%]" 
+[%}%]
+/>
+[%}%]
+
+[* State Templates *]
+
+[% @template
+operation loopState(states : OrderedSet<SC!State>) {
+for (bState : SC!State in states) {%]
+[%=defState(bState)%]
+[%}
+}%]
+
+[% @template
+operation defState(aState : SC!State) {%]
+<state id="[%=aState.id%]" [%if (not aState.initial.isUndefined()) {%]
+initial="[%=aState.initial.id%]" [%}%]>
+    [%=defOnentry(aState.onentry, aState)%]
+    [%=defOnexit(aState.onexit, aState)%]
+    [%=loopParallel(aState.parallel)%]
+    [%=loopState(aState.states)%]
+    [%=loopTransition(aState.transition)%]
+</state>
+[%}%]
+
+[* Parallel Templates *]
+
+[% @template
+operation loopParallel(parallels : OrderedSet<SC!Parallel>) {
+for (bParallel in parallels) {%]
+[%=defParallel(bParallel)%]
+[%}
+}%]
+
+[% @template
+operation defParallel(aParallel : SC!Parallel) {%]
+<parallel id="[%=aParallel.id%]">
+    [%=defOnentry(aParallel.onentry, aParallel)%]
+    [%=defOnexit(aParallel.onexit, aParallel)%]
+    [%=loopParallel(aParallel.parallel)%]
+    [%=loopState(aParallel.states)%]
+    [%=makeBroadcast(aParallel.transition)%]
+    [%=loopTransition(aParallel.transition)%]
+</parallel>
+[%}%]
+
+[* On Entry Template *]
+
+[% @template
+operation defOnentry(aOnentry : SC!OnEntry, aState : SC!SCElem){
+if (aOnentry <> null){%]
+<onentry>
+    [%=loopScript(aOnentry.script)%]
+    [%=loopRaise(aOnentry.raise)%]    
+</onentry>
+[%}%]
+[%}%]
+
+[* On Exit Template *]
+
+[% @template
+operation defOnexit(aOnexit : SC!OnExit, aState : SC!SCElem) {
+if ((aOnexit <> null)) {%]
+<onexit>
+    [%=loopScript(aOnexit.script)%]
+    [%=loopRaise(aOnexit.raise)%]
+</onexit>
+[%}%]
+[%}%]
+
+[* Transition Templates *]
+
+[% @template
+operation loopTransition(transitions : OrderedSet<SC!Transition>) {
+for (bTransition : SC!Transition in transitions) {%]
+[%=defTransition(bTransition)%]
+[%}
+}%]
+
+[% @template
+operation defTransition(aTransition : SC!Transition){%]
+<transition [%if (not aTransition.event.isUndefined()) {%]
+event="[%=aTransition.event%]" [%}%]
+[%if (not aTransition.target.isUndefined()) {%]
+target="[%if (aTransition.target <> aTransition.eContainer()) {%]
+[%var ancestors = aTransition.closure(it|it.eContainer()).select(e|e.isKindOf(SC!SCElem));
+ancestors.removeAll(aTransition.target.closure(it|it.eContainer()).select(e|e.isKindOf(SC!SCElem)));
+ancestors.invert();
+for (ancestor : SC!SCElem in ancestors) {%]
+../[%}%]
+[%var ancestors2 = aTransition.target.closure(it|it.eContainer()).select(e|e.isKindOf(SC!SCElem));
+ancestors2.removeAll(aTransition.closure(it|it.eContainer()).select(e|e.isKindOf(SC!SCElem)));
+ancestors2.invert();
+for (ancestor : SC!SCElem in ancestors2) {%]
+[%=ancestor.id%]/[%}%][%=aTransition.target.id%][%}%][%else {%].[%}%]" [%}%]
+[%if (not aTransition.cond.isUndefined()) {%]
+cond="[%=aTransition.cond%]" [%}%]
+[%if (not aTransition.after.isUndefined() and ( aTransition.event.isUndefined() or aTransition.event = '') ) {%]
+after="[%=aTransition.after*0.1%]" [%}%]>
+    [%=loopParameter(aTransition.parameter)%]
+    [%=loopScript(aTransition.script)%]
+    [%=loopRaise(aTransition.raise)%]
+</transition>
+[%}%]
+
+[* Script Templates *]
+
+[% @template
+operation loopScript(scripts : OrderedSet(SC!Script)) {
+if (not scripts->isEmpty()) {%]
+<script>
+    <![CDATA[
+[%for (bScript : SC!Script in scripts) {%]
+    [%=defScript(bScript)%]
+    [%}%]
+    ]]>
+</script>
+[%}%]
+[%}%]
+
+[% @template 
+operation defScript(aScript : SC!Script) {%]
+[%=aScript.script%]
+[%}%]
+
+[* Raise Templates *]
+
+[% @template
+operation loopRaise(raises : OrderedSet(SC!Raise)) {
+for (bRaise : SC!Raise in raises) {%]
+[%=defRaise(bRaise)%]
+[%}
+}%]
+
+[% @template
+operation defRaise(aRaise : SC!Raise) {%]
+<raise[%if (not aRaise.scope.isUndefined()) {%]
+ scope='[%=aRaise.scope%]'[%}%]
+[%if (not aRaise.event.isUndefined()) {%]
+ event='[%=aRaise.event%]'[%}%]>
+    [%=loopParameter(aRaise.parameter)%]
+</raise>
+[%}%]
+
+[* Parameter Templates *]
+
+[% @template
+operation loopParameter(parameters : OrderedSet(SC!Parameter)) {
+for (bParameter : SC!Parameter in parameters) {%]
+[%=defParameter(bParameter)%]
+[%}
+}%]
+
+
+[% @template
+operation defParameter(aParameter : SC!Parameter) {%]
+<parameter 
+[%if (not aParameter.name.isUndefined()) {%]
+name="[%=aParameter.name%]" 
+[%}%]
+[%if (not aParameter.expr.isUndefined()) {%]
+expr="[%=aParameter.expr%]" 
+[%}%]
+[%if (not aParameter.type.isUndefined()) {%]
+type="[%=aParameter.type%]" 
+[%}%]
+/>
+[%}%]
+
+[* comment Queries *]
+
+[%operation SC!Class getStates() : Sequence(State) {
+    return self.scxml.states->asSet()->sortBy(oState:State|oState.id);
+}%]
+
+[%operation SC!Class getInerStates() : Set(State) {
+    return self.scxml.states->excludesAll(self.scxml.parallel.states)->asSet();
+}%]
+
+[%operation SC!Class getLayers() : Sequence(SC!State) {
+    return self.scxml.first().parallel.first().states->sortBy(oState:State|oState.id);
+}%]
+
+[%operation SC!State getLayerInerStates() : Sequence(State) {
+    return self.states->asSet()->sortBy(oState:State|oState.id);
+}%]
+
+[%operation SC!Class getEvents() : OrderedSet(String) {
+    return aClass.scxml.transition->collect(aTransition|aTransition.event)->asOrderedSet();
+}%]

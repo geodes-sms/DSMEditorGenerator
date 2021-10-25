@@ -1,0 +1,4 @@
+@echo off
+[*python -m sccd.compiler.sccdc -p eventloop -l python [%= bat.name %].xml*]
+[*c:\softiro\Python\python.exe -m sccd.compiler.sccdc -p eventloop -l python [%= bat.name %].xml*]
+python -m sccd.compiler.sccdc -p eventloop -l javascript [%= bat.name %].xml

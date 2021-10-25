@@ -1,0 +1,37 @@
+InteractionRule RunTransfromation
+	Condition {
+		focus Interface playModelButton{}
+	}
+	--- press -->
+	Effect {
+		Interface playModelButton {value = "active"}
+		Operation runGoL {}
+	}
+
+InteractionRule CSAddInstance
+	Condition {
+		focus Canvas {}
+	}
+	--- select -->
+	Effect {
+		Lang Life {op = add}
+	}
+
+InteractionRule CSRemInstance
+	Condition {
+		focus Lang Life{}
+	}
+	--- select -->
+	Effect {
+		Lang Life {op = rem}
+	}
+
+InteractionRule EndTransformation
+	Condition {
+		Interface playModelButton {value = "active"}
+	}
+	--- _finish -->
+	Effect {
+		Interface playModelButton {value = "default"}
+	}
+	}

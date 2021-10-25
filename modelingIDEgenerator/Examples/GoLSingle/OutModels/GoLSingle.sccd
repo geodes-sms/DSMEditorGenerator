@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sccd:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sccd="http://www.example.org/sccd" xsi:schemaLocation="http://www.example.org/sccd ../../../Models/sccd.ecore" name="GoLSingle" description="RunGhostGameofLifeEditor">
+  <class name="Interaction">
+    <attributes name="context" type="String"/>
+    <scxml initialState="System">
+      <parallel id="System">
+        <states id="LayercomonTools" initial="s0">
+          <states id="s0">
+            <transition event="press2" name="tpress23" target="s3">
+              <script script="screenset.call(this, 'playModelButton','active');"/>
+              <script script="this.runGoL();"/>
+              <raise event="_step"/>
+            </transition>
+            <ielement id="comonTools" value="0"/>
+            <ielement id="playModelButton" value="default"/>
+          </states>
+          <states id="s3">
+            <transition event="_finish6" name="t_finish67" target="s0">
+              <script script="screenset.call(this, 'playModelButton','default');"/>
+              <raise event="_step"/>
+            </transition>
+            <ielement id="comonTools" value="0"/>
+            <ielement id="playModelButton" value="active"/>
+          </states>
+        </states>
+        <states id="Layercanvas" initial="s1">
+          <states id="s1">
+            <transition event="select0" name="tselect01" target="s1">
+              <script script="this.Lifeadd(&quot;&quot;);"/>
+              <raise event="_step"/>
+            </transition>
+            <transition event="select4" name="tselect45" target="s1">
+              <script script="this.Liferem(&quot;&quot;);"/>
+              <raise event="_step"/>
+            </transition>
+            <ielement id="23" value="default"/>
+          </states>
+        </states>
+        <states id="LayerControler" initial="h00">
+          <states id="h00">
+            <transition event="select" cond="this.type == 'svgCanvas' and INSTATE('/System/Layercanvas/s1')" name="select" target="h00">
+              <script script="console.log( &quot;RULE : CSAddInstance&quot; );"/>
+              <raise event="select0"/>
+            </transition>
+            <transition event="press" cond="this.type == 'playModelButton' and INSTATE('/System/LayercomonTools/s0')" name="press" target="h00">
+              <script script="console.log( &quot;RULE : RunTransfromation&quot; );"/>
+              <raise event="press2"/>
+            </transition>
+            <transition event="select" cond="this.type == 'Life' and INSTATE('/System/Layercanvas/s1')" name="select" target="h00">
+              <script script="console.log( &quot;RULE : CSRemInstance&quot; );"/>
+              <raise event="select4"/>
+            </transition>
+            <transition event="_finish" cond="INSTATE('/System/LayercomonTools/s3')" name="_finish" target="h00">
+              <script script="console.log( &quot;RULE : EndTransformation&quot; );"/>
+              <raise event="_finish6"/>
+            </transition>
+          </states>
+        </states>
+      </parallel>
+    </scxml>
+  </class>
+</sccd:Diagram>

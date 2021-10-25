@@ -1,0 +1,45 @@
+Select Pacman Button 01# S101 | f:I:pacmanButton:_ # --- press --> # S102 | _:I:pacmanButton:active,_:I:ghostButton:_,_:I:foodButton:_,_:I:gridButton:_,_:I:scoreButton:_ #
+Select Ghost Button 01 # S201 | f:I:ghostButton:_  # --- press --> # S202 | _:I:ghostButton:active,_:I:pacmanButton:_,_:I:foodButton:_,_:I:gridButton:_,_:I:scoreButton:_ #
+Select Food Button 01  # S301 | f:I:foodButton:_   # --- press --> # S302 | _:I:foodButton:active,_:I:pacmanButton:_,_:I:ghostButton:_,_:I:gridButton:_,_:I:scoreButton:_ #
+Select Grid Button 01  # S401 | f:I:gridButton:_   # --- press --> # S402 | _:I:gridButton:active,_:I:pacmanButton:_,_:I:ghostButton:_,_:I:foodButton:_,_:I:scoreButton:_ #
+Select Score Button 01 # S501 | f:I:scoreButton:_  # --- press --> # S502 | _:I:scoreButton:active,_:I:pacmanButton:_,_:I:ghostButton:_,_:I:foodButton:_,_:I:gridButton:_ #
+
+Deselect Pacman Button  # D1 | f:I:pacmanButton:active # --- press --> # D2 | _:I:pacmanButton:_ #
+Deselect Ghost Button	# D3 | f:I:ghostButton:active  # --- press --> # D4 | _:I:ghostButton:_ #
+Deselect Food Button	# D5 | f:I:foodButton:active   # --- press --> # D6 | _:I:foodButton:_ #
+Deselect Grid Button	# D7 | f:I:gridButton:active   # --- press --> # D8 | _:I:gridButton:_ #
+Deselect Score Button	# D9 | f:I:scoreButton:active  # --- press --> # D10 | _:I:scoreButton:_ #
+
+CS Mark PacMan Instance  # R101 | f:L:PacManInstance:_ # --- mark --> # R102 | _:L:PacManInstance:mark #
+CS Mark Ghost Instance   # R103 | f:L:GhostInstance:_  # --- mark --> # R104 | _:L:GhostInstance:mark #
+CS Mark Food Instance    # R105 | f:L:FoodInstance:_   # --- mark --> # R106 | _:L:FoodInstance:mark #
+CS Mark Grid Instance    # R107 | f:L:GridInstance:_   # --- mark --> # R108 | _:L:GridInstance:mark #
+CS Mark Score Instance   # R109 | f:L:ScoreInstance:_  # --- mark --> # R110 | _:L:ScoreInstance:mark #
+
+CS Move PacMan Instance  # R101 | _:L:PacManInstance:mark # --- move --> # R102 | _:L:PacManInstance:move  #
+CS Move Ghost Instance   # R103 | _:L:GhostInstance:mark  # --- move --> # R104 | _:L:GhostInstance:move  #
+CS Move Food Instance    # R105 | _:L:FoodInstance:mark   # --- move --> # R106 | _:L:FoodInstance:move  #
+CS Move Grid Instance    # R107 | _:L:GridInstance:mark   # --- move --> # R108 | _:L:GridInstance:move  #
+CS Move Score Instance   # R109 | _:L:ScoreInstance:mark  # --- move --> # R110 | _:L:ScoreInstance:move  #
+
+CS Add PacMan # S901 | f:L:GridInstance:_,_:I:pacmanButton:active # --- place --> # S902 | _:L:PacManInstance:add #
+CS Add Ghost  # S903 | f:L:GridInstance:_,_:I:ghostButton:active  # --- place --> # S904 | _:L:GhostInstance:add #
+CS Add Food   # S901 | f:L:GridInstance:_,_:I:foodButton:active   # --- place --> # S902 | _:L:FoodInstance:add #
+CS Add Grid   # S903 | f:L:svgCanvas:_,_:I:gridButton:active      # --- place --> # S904 | _:L:GridInstance:add #
+CS Add Score  # S901 | f:L:svgCanvas:_,_:I:scoreButton:active     # --- place --> # S902 | _:L:ScoreInstance:add #
+
+CS Delete PacMan # S901 | _:L:PacManInstance:mark # --- remove --> # S902 | _:L:PacManInstance:rem #
+CS Delete Ghost  # S903 | _:L:GhostInstance:mark  # --- remove --> # S904 | _:L:GhostInstance:rem #
+CS Delete Food   # S901 | _:L:FoodInstance:mark   # --- remove --> # S902 | _:L:FoodInstance:rem #
+CS Delete Grid   # S903 | _:L:GridInstance:mark   # --- remove --> # S904 | _:L:GridInstance:rem #
+CS Delete Score  # S901 | _:L:ScoreInstance:mark  # --- remove --> # S902 | _:L:ScoreInstance:rem #
+
+Open PacMan Properties # P101 | f:L:PacManInstance:_ # --- context --> # P102 | _:I:cellPropertiesTab:visible , _:I:namePropertie:update , _:I:xPos:update , _:I:yPos:update #
+Open Ghost Properties  # P103 | f:L:GhostInstance:_  # --- context --> # P104 | _:I:cellPropertiesTab:visible , _:I:namePropertie:update , _:I:xPos:update , _:I:yPos:update #
+Open Food Properties   # P105 | f:L:FoodInstance:_   # --- context --> # P106 | _:I:cellPropertiesTab:visible , _:I:namePropertie:update , _:I:xPos:update , _:I:yPos:update #
+Open Grid Properties   # P107 | f:L:GridInstance:_   # --- context --> # P108 | _:I:cellPropertiesTab:visible , _:I:namePropertie:update , _:I:xPos:update , _:I:yPos:update #
+Open Score Properties  # P109 | f:L:ScoreInstance:_  # --- context --> # P110 | _:I:cellPropertiesTab:visible , _:I:namePropertie:update , _:I:xPos:update , _:I:yPos:update #
+
+CloseProperties  # P5 | _:I:cellPropertiesTab:visible # --- escape --> # P6 | _:I:cellPropertiesTab:notvisible #
+
+NewModel # E1 | f:I:newModel:_ # --- press --> # E2 | _:O:3001:newModel #

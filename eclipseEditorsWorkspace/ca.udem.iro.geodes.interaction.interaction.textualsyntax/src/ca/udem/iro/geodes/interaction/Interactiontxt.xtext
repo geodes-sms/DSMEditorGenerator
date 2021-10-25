@@ -1,0 +1,152 @@
+grammar ca.udem.iro.geodes.interaction.Interactiontxt hidden(WS, ML_COMMENT, SL_COMMENT) // with org.eclipse.xtext.common.Terminals
+
+generate interactiontxt "http://www.udem.ca/iro/geodes/interaction/Interactiontxt"
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+Model:
+	interactions+=Interaction*;
+
+CAElement returns CAElement:
+	CElement | AElement;
+
+CElement returns CElement:
+	CIElement | CLElement | CVElement | CCanvas;
+	
+AElement returns AElement:
+	AIElement | AOElement | ALElement | AVElement | ACanvas;
+
+Interaction:
+	'InteractionRule' name=EString 
+	condition = Condition;
+
+EString returns ecore::EString:
+	STRING | ID;
+		
+Condition returns Condition:
+	{Condition}
+	'Condition' (id=EString)? '{'
+		elements+=CElement*
+	'}'
+	transition=StartTransition
+;
+
+StartTransition:
+	'---' event=EString '-->'
+	action += Action
+;
+
+Transition:
+	'----->'
+	action += Action
+;
+
+Action returns Action:
+	{Action}
+	'Effect' (id=EString)? '{'
+		elements+=AElement*
+	'}'
+	transition=Transition?
+;
+
+CIElement returns CIElement:
+	{CIElement}
+	(isNegative?='not' | isFocus?='focus')?
+	'Interface' id=EString
+	'{'
+		('value' '=' ( '"' value=EString operation='"'|value=('focusElement'|EString)))?
+	'}';
+
+CLElement returns CLElement:
+	{CLElement}
+	(isNegative?='not' | isFocus?='focus')?
+	'Lang' id=EString
+	'{'
+		('value' '=' ( '"' value=EString operation='"'|value=('focusElement'|EString)))?
+	'}';
+	
+/*CLElement returns CLElement:
+	{CLElement}
+	(isNegative?='not' | isFocus?='focus')?
+	'LElement' id=EString
+	'{'
+		('value' '=' value=EString | 'equals' '=' value=EString)?
+	'}';*/
+	
+CCanvas returns CCanvas:
+	{CCanvas}
+	(isNegative?='not' | isFocus?='focus')?
+	'Canvas'
+	'{'
+		('value' '=' value=EString)?
+	'}';
+
+CVElement returns CVElement:
+	{CVElement}
+	(isNegative?='not' | isFocus?='focus')?
+	'Var' id=EString
+	'{'
+		('value' '=' (value=('focusElement'|EString)  | '"'value=EString'"') ( ',' 'element' '=' element=[CAElement|EString])? | 
+		 'element' '=' element=[CAElement|EString]
+		)?
+	'}';
+	
+AIElement returns AIElement:
+	{AIElement}
+	'Interface' id=EString
+	'{'
+		('value' '=' '"'value=EString'"')?
+	'}';
+
+AOElement returns AOElement:
+	{AOElement}
+	'Operation' operation=EString
+	'{'
+		('value' '=' (value=('focusElement'|EString)|'"'value=EString'"')? )?
+	'}';
+
+ALElement returns ALElement:
+	{ALElement}
+	'Lang' id=EString
+	'{'
+		('op' '=' operation=('add'|'rem'|EString) ( ',' 'value' '=' ('[' value+=('focusElement'|EString) (',' value+=('focusElement'|EString)) ']'| value+=('focusElement'|EString)) )? |
+		'value' '=' '"'value+=EString'"')?
+	'}';
+	
+ACanvas returns ACanvas:
+	{ACanvas}
+	'Canvas'
+	'{'
+		('value' '=' '"'value=EString'"')?
+	'}';
+
+AVElement returns AVElement:
+	{AVElement}
+	'Var' id=EString
+	'{'
+		('op' '=' operation=('copy'|EString) ',' 'from' '=' value=('focusElement'|EString)  |
+		'value' '=' ( '"' value=EString operation='"'| value=('focusElement'|EString)) | 'element' '=' element=[CAElement|EString])?
+	'}';
+
+
+// CUSTOM TERMINAL RULES
+
+terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+//terminal INT returns ecore::EInt: ('0'..'9')+;
+terminal STRING:
+			('a'..'z'|'A'..'Z'|'_'|'0'..'9') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*
+//			'"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+//			"'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+		;
+terminal ML_COMMENT : '/*' -> '*/';
+terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')?;
+
+terminal WS         : (' '|'\t'|'\r'|'\n')+;
+
+terminal ANY_OTHER: .;
+
+//('focusElement'|EString)
+//PARAMETERVALUE returns ESting :
+//	( //'_focusElement' |
+//		('a'|'..'|'z'|'A'..'Z'|'0'..'9') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*
+//	)
+//;

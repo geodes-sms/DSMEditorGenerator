@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layoutRel:RelLayoutDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:layoutRel="http://udem.iro.geodes.ca/layoutRel" name="PacMan04">
+  <interactionStreams name="screen">
+    <layers name="toolbars" index="1" behaviour="horizontal">
+      <components>
+        <element xsi:type="layoutRel:VisualContainer" id="commonTools" name="commonTools" isDefault="true" behaviour="horizontal">
+          <elements xsi:type="layoutRel:ButtonWidget" id="newModel" name="newModel" isDefault="true" ySize="60" foregroundColour="white" backgroundColour="#818181" ref="far fa-file"/>
+        </element>
+      </components>
+      <components>
+        <element xsi:type="layoutRel:VisualContainer" id="languageBar" name="languageBar" isDefault="true" behaviour="horizontal">
+          <elements xsi:type="layoutRel:ButtonWidget" id="pacmanButton" name="pacmanButton" isDefault="true" ySize="60" foregroundColour="yellow" backgroundColour="#818181" ref="fas fa-circle"/>
+          <elements xsi:type="layoutRel:ButtonWidget" id="ghostButton" name="ghostButton" isDefault="true" ySize="60" foregroundColour="white" backgroundColour="#818181" ref="fas fa-ghost"/>
+          <elements xsi:type="layoutRel:ButtonWidget" id="foodButton" name="foodButton" isDefault="true" ySize="60" foregroundColour="white" backgroundColour="#818181" ref="fas fa-carrot"/>
+          <elements xsi:type="layoutRel:ButtonWidget" id="gridButton" name="gridButton" isDefault="true" ySize="60" foregroundColour="white" backgroundColour="#818181" ref="fas fa-compress"/>
+          <elements xsi:type="layoutRel:ButtonWidget" id="scoreButton" name="scoreButton" isDefault="true" ySize="60" foregroundColour="white" backgroundColour="#818181" ref="fas fa-hashtag"/>
+        </element>
+      </components>
+    </layers>
+    <layers name="propertiesTab" index="2">
+      <components>
+        <element xsi:type="layoutRel:VisualContainer" id="cellPropertiesTab" name="cellPropertiesTab" behaviour="vertical">
+          <elements xsi:type="layoutRel:TextWidget" id="namePropertie" name="name" isDefault="true" ySize="40" foregroundColour="white" backgroundColour="#515151" ref="name"/>
+          <elements xsi:type="layoutRel:TextWidget" id="xPos" name="xPos" isDefault="true" ySize="40" foregroundColour="white" backgroundColour="#515151" ref="xPos"/>
+          <elements xsi:type="layoutRel:TextWidget" id="yPos" name="yPos" isDefault="true" ySize="40" foregroundColour="white" backgroundColour="#515151" ref="yPos"/>
+        </element>
+      </components>
+    </layers>
+    <layers name="canvas">
+      <components>
+        <element xsi:type="layoutRel:Canvas" id="23" name="canvas" isDefault="true" gridSizeX="50" gridSizeY="50" gridScaleX="1" gridScaleY="1"/>
+      </components>
+    </layers>
+  </interactionStreams>
+</layoutRel:RelLayoutDiagram>

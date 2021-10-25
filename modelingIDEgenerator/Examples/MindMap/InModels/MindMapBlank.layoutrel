@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layoutRel:RelLayoutDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:layoutRel="http://udem.iro.geodes.ca/layoutRel" name="MindMap">
+  <interactionStreams name="screen">
+    <layers name="canvas">
+      <components>
+        <element xsi:type="layoutRel:Canvas" id="23" name="canvas" isDefault="true" gridSizeX="5" gridSizeY="5" gridScaleX="1" gridScaleY="1"/>
+      </components>
+    </layers>
+  </interactionStreams>
+</layoutRel:RelLayoutDiagram>

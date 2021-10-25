@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: ca.udem.iro.geodes.interaction.interaction.textualsyntax
+Bundle-ManifestVersion: 2
+Bundle-Name: ca.udem.iro.geodes.interaction.interaction.textualsyntax
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: ca.udem.iro.geodes.interaction.interaction.textualsyntax; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.eclipse.xtend.lib;bundle-version="2.14.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: ca.udem.iro.geodes.interaction.interactiontxt,
+ ca.udem.iro.geodes.interaction.interactiontxt.util,
+ ca.udem.iro.geodes.interaction.generator,
+ ca.udem.iro.geodes.interaction.parser.antlr.internal,
+ ca.udem.iro.geodes.interaction.interactiontxt.impl,
+ ca.udem.iro.geodes.interaction,
+ ca.udem.iro.geodes.interaction.scoping,
+ ca.udem.iro.geodes.interaction.serializer,
+ ca.udem.iro.geodes.interaction.services,
+ ca.udem.iro.geodes.interaction.parser.antlr,
+ ca.udem.iro.geodes.interaction.validation
+Import-Package: org.apache.log4j

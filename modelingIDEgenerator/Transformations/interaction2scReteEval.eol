@@ -1,0 +1,99 @@
+//
+//  ooooooooo.   oooooooooooo ooooooooooooo oooooooooooo
+//  `888   `Y88. `888'     `8 8'   888   `8 `888'     `8
+//   888   .d88'  888              888       888
+//   888ooo88P'   888oooo8         888       888oooo8
+//   888`88b.     888    "         888       888    "
+//   888  `88b.   888       o      888       888       o
+//  o888o  o888o o888ooooood8     o888o     o888ooooood8
+//
+//                                         oooo
+//                                         `888
+//          .ooooo.  oooo    ooo  .oooo.    888
+//         d88' `88b  `88.  .8'  `P  )88b   888
+//         888ooo888   `88..8'    .oP"888   888
+//         888    .o    `888'    d8(  888   888
+//         `Y8bod8P'     `8'     `Y888""8o o888o
+//
+
+operation AUX!QueueElem RETERun(controll:AUX!Controll) : Sequence<AUX!Rule> {
+	var tokenConfig = self.tokenConfiguration;
+	var list : Sequence<AUX!Rule>;
+	//Alphas to Betas
+
+	var listOfAlphas : Set<AUX!AlphaNodeParam> = new Set<AUX!AlphaNodeParam>;	
+
+	for (ap in controll.alphaParents) {
+		if(self.dirtyElements.exists(e|ap.ruleParameterID = e.id)){
+			listOfAlphas.addAll(ap.alphas);
+		}
+	}
+
+	var listOfBetas : Set<AUX!AlphaNodeParam> = new Set<AUX!AlphaNodeParam>;
+	
+	if(nullRun){
+		listOfBetas.addAll(nullAlpha.toBeta);
+		nullRun = false;
+	}
+	
+//	for(a in controll.parameters.select(p : AUX!AlphaNodeParam | true)){
+	for(a in listOfAlphas){
+		// if NAC is true the comparison should be false and if false the comparison should be true
+		var value = (a.isNegative xor (a.value.asString() = self.dirtyElements.selectOne(r| r.id = a.ruleParameterID).value.asString()));
+		////because var value = a.visible = r.value; does not feel right
+		token = tokenConfig.tokens[a.tokenIndex];
+		var oldTokenValue = token.PrevValue;
+		token.tokenValue = value;
+		token.isDirty = true; //might not need this on alphas, not here anyway
+		//propagate token to betas
+		var isDirty = false;
+		if(value){
+			if (not oldTokenValue) {
+				isDirty = true;
+				for(b in a.toBeta){
+					var btoken = tokenConfig.tokens[b.tokenIndex];
+					btoken.numberOfTokens++;
+					btoken.isDirty = true;
+					listOfBetas.add(b);
+					btoken.tokenValue = value; //not necessary ?
+				}
+			}
+		}else{
+			if (oldTokenValue) {
+				isDirty = true;
+				for(b in a.toBeta){
+					var btoken = tokenConfig.tokens[b.tokenIndex];
+					btoken.numberOfTokens-=1;
+					btoken.isDirty = true;
+					listOfBetas.add(b);
+					btoken.tokenValue = value; //not necessary ?
+				}					
+			}
+		}
+		
+		if(isDirty){
+			var a2 = a.inLayer;
+			//propagate token to layer alpha
+			token = tokenConfig.tokens[a2.tokenIndex];
+			oldTokenValue = token.PrevValue;
+			token.isDirty = true;
+			//propagate token to layer dependent betas
+			for(b in a2.toBeta){
+				token = tokenConfig.tokens[b.tokenIndex];
+				token.isDirty = true;
+				listOfBetas.add(b);
+			}
+		}	
+	}
+	//Evaluate Betas
+//	for(b in controll.desisions){
+//		if(tokenConfig.tokens[b.tokenIndex].numberOfTokens = b.positiveValue and tokenConfig.tokens[b.tokenIndex].isDirty){
+	for(b in listOfBetas){
+		if(tokenConfig.tokens[b.tokenIndex].numberOfTokens = b.positiveValue){
+			list.add(b.rule);
+			b.rule.queue.add(tokenConfig.tokenID);
+		}
+	}
+	
+	return list;
+}

@@ -1,0 +1,42 @@
+//hack away
+
+//"Start hack".println();
+
+for (p in SC!Parallel){
+    for (s in p.states) {
+    	for (t in s.transition){
+    		for (s2 in s.states.reject(i|i.ielement.isEmpty())){
+                var newT = new SC!Transition;
+                newT.after = t.after;
+                newT.event = t.event;
+                newT.cond = t.cond;
+                newT.name = t.name;
+                newT.port = t.port;
+                newT.target = t.target;
+                //newT.parameter = t.parameter.clone();
+                for (parameter in t.parameter){
+                   newT.parameter.add(parameter.clone());
+                }
+                //newT.log = t.log.clone();
+                for (log in t.log){
+                   newT.log.add(log.clone());
+                }
+                //newT.script = t.script.clone();
+                var temp;
+                for (script in t.script){
+                   temp = new SC!Script;
+                   temp.script = script.script;
+                   newT.script.add(temp);
+                }
+                //newT.raise = t.raise.clone();
+                for (raise in t.raise){
+                   var newRaise = new SC!Raise;
+                   newRaise.event = raise.event;
+                   newT.raise.add(newRaise);
+                }
+                s2.transition.add(newT);
+    		}
+    	}
+    	s.transition = Set {};
+    }
+}

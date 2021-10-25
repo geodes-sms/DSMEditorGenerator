@@ -1,0 +1,2017 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sccd:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sccd="http://www.example.org/sccd" xsi:schemaLocation="http://www.example.org/sccd ../../../Models/sccd.ecore" name="Music04" description="RunGhostGameofLifeEditor">
+  <class name="Interaction">
+    <attributes name="context" type="String"/>
+    <scxml initialState="System">
+      <parallel id="System">
+        <states id="LayercommonTools" initial="s0">
+          <states id="s0">
+            <transition event="select0" name="tselect01" target="s0">
+              <script script="this.newModel();"/>
+            </transition>
+            <ielement id="commonTools" value="0"/>
+            <ielement id="newModel" value="default"/>
+          </states>
+        </states>
+        <states id="LayertimeBar" initial="s1">
+          <states id="s1">
+            <transition event="select2" name="tselect23" target="s6">
+              <script script="screenset.call(this, 'quarterTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="select4" name="tselect45" target="s7">
+              <script script="screenset.call(this, 'timedMode','active');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+            </transition>
+            <transition event="select6" name="tselect67" target="s8">
+              <script script="screenset.call(this, 'halfTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="select8" name="tselect89" target="s9">
+              <script script="screenset.call(this, 'fullTime','active');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="select10" name="tselect1011" target="s10">
+              <script script="screenset.call(this, 'eighthTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <ielement id="timeBar" value="0"/>
+            <ielement id="fullTime" value="default"/>
+            <ielement id="halfTime" value="default"/>
+            <ielement id="quarterTime" value="default"/>
+            <ielement id="eighthTime" value="default"/>
+            <ielement id="timedMode" value="default"/>
+          </states>
+          <states id="s6">
+            <transition event="tapG12" name="ttapG1215" target="s6"/>
+            <transition event="tapF16" name="ttapF1619" target="s6"/>
+            <transition event="select20" name="tselect2021" target="s7">
+              <script script="screenset.call(this, 'timedMode','active');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+            </transition>
+            <transition event="select22" name="tselect2223" target="s8">
+              <script script="screenset.call(this, 'halfTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="select24" name="tselect2425" target="s9">
+              <script script="screenset.call(this, 'fullTime','active');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapA26" name="ttapA2629" target="s6"/>
+            <transition event="tapD30" name="ttapD3033" target="s6"/>
+            <transition event="tapE34" name="ttapE3437" target="s6"/>
+            <transition event="tapB38" name="ttapB3841" target="s6"/>
+            <transition event="tapC42" name="ttapC4245" target="s6"/>
+            <transition event="select46" name="tselect4647" target="s10">
+              <script script="screenset.call(this, 'eighthTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <ielement id="timeBar" value="0"/>
+            <ielement id="fullTime" value="default"/>
+            <ielement id="halfTime" value="default"/>
+            <ielement id="quarterTime" value="active"/>
+            <ielement id="eighthTime" value="default"/>
+            <ielement id="timedMode" value="default"/>
+          </states>
+          <states id="s7">
+            <transition event="select48" name="tselect4849" target="s6">
+              <script script="screenset.call(this, 'quarterTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="select50" name="tselect5051" target="s8">
+              <script script="screenset.call(this, 'halfTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="select52" name="tselect5253" target="s9">
+              <script script="screenset.call(this, 'fullTime','active');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="pat54" name="tpat5455" target="s12">
+              <script script="screenset.call(this, 'eighthTime','active');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+            </transition>
+            <transition event="select56" name="tselect5657" target="s10">
+              <script script="screenset.call(this, 'eighthTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="select204" name="tselect204205" target="s6">
+              <script script="screenset.call(this, 'quarterTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="select206" name="tselect206207" target="s8">
+              <script script="screenset.call(this, 'halfTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="select208" name="tselect208209" target="s9">
+              <script script="screenset.call(this, 'fullTime','active');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="pat210" name="tpat210211" target="s12">
+              <script script="screenset.call(this, 'eighthTime','active');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+            </transition>
+            <transition event="select212" name="tselect212213" target="s10">
+              <script script="screenset.call(this, 'eighthTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <ielement id="timeBar" value="0"/>
+            <ielement id="fullTime" value="default"/>
+            <ielement id="halfTime" value="default"/>
+            <ielement id="quarterTime" value="default"/>
+            <ielement id="eighthTime" value="default"/>
+            <ielement id="timedMode" value="active"/>
+          </states>
+          <states id="s8">
+            <transition event="tapD58" name="ttapD5861" target="s8"/>
+            <transition event="tapF62" name="ttapF6265" target="s8"/>
+            <transition event="select66" name="tselect6667" target="s6">
+              <script script="screenset.call(this, 'quarterTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapA68" name="ttapA6871" target="s8"/>
+            <transition event="tapC72" name="ttapC7275" target="s8"/>
+            <transition event="select76" name="tselect7677" target="s7">
+              <script script="screenset.call(this, 'timedMode','active');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+            </transition>
+            <transition event="tapB78" name="ttapB7881" target="s8"/>
+            <transition event="tapE82" name="ttapE8285" target="s8"/>
+            <transition event="select86" name="tselect8687" target="s9">
+              <script script="screenset.call(this, 'fullTime','active');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapG88" name="ttapG8891" target="s8"/>
+            <transition event="select92" name="tselect9293" target="s10">
+              <script script="screenset.call(this, 'eighthTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <ielement id="timeBar" value="0"/>
+            <ielement id="fullTime" value="default"/>
+            <ielement id="halfTime" value="active"/>
+            <ielement id="quarterTime" value="default"/>
+            <ielement id="eighthTime" value="default"/>
+            <ielement id="timedMode" value="default"/>
+          </states>
+          <states id="s9">
+            <transition event="select94" name="tselect9495" target="s6">
+              <script script="screenset.call(this, 'quarterTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapF96" name="ttapF9699" target="s9"/>
+            <transition event="select100" name="tselect100101" target="s7">
+              <script script="screenset.call(this, 'timedMode','active');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+            </transition>
+            <transition event="select102" name="tselect102103" target="s8">
+              <script script="screenset.call(this, 'halfTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapC104" name="ttapC104107" target="s9"/>
+            <transition event="tapG108" name="ttapG108111" target="s9"/>
+            <transition event="tapA112" name="ttapA112115" target="s9"/>
+            <transition event="tapD116" name="ttapD116119" target="s9"/>
+            <transition event="tapE120" name="ttapE120123" target="s9"/>
+            <transition event="tapB124" name="ttapB124127" target="s9"/>
+            <transition event="select128" name="tselect128129" target="s10">
+              <script script="screenset.call(this, 'eighthTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <ielement id="timeBar" value="0"/>
+            <ielement id="fullTime" value="active"/>
+            <ielement id="halfTime" value="default"/>
+            <ielement id="quarterTime" value="default"/>
+            <ielement id="eighthTime" value="default"/>
+            <ielement id="timedMode" value="default"/>
+          </states>
+          <states id="s10">
+            <transition event="select130" name="tselect130131" target="s6">
+              <script script="screenset.call(this, 'quarterTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapD132" name="ttapD132135" target="s10"/>
+            <transition event="select136" name="tselect136137" target="s7">
+              <script script="screenset.call(this, 'timedMode','active');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+            </transition>
+            <transition event="tapC138" name="ttapC138141" target="s10"/>
+            <transition event="select142" name="tselect142143" target="s8">
+              <script script="screenset.call(this, 'halfTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapE144" name="ttapE144147" target="s10"/>
+            <transition event="select148" name="tselect148149" target="s9">
+              <script script="screenset.call(this, 'fullTime','active');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapA150" name="ttapA150153" target="s10"/>
+            <transition event="tapF154" name="ttapF154157" target="s10"/>
+            <transition event="tapB158" name="ttapB158161" target="s10"/>
+            <transition event="tapG162" name="ttapG162165" target="s10"/>
+            <ielement id="timeBar" value="0"/>
+            <ielement id="fullTime" value="default"/>
+            <ielement id="halfTime" value="default"/>
+            <ielement id="quarterTime" value="default"/>
+            <ielement id="eighthTime" value="active"/>
+            <ielement id="timedMode" value="default"/>
+          </states>
+          <states id="s12">
+            <transition event="tapF166" name="ttapF166169" target="s7">
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+            </transition>
+            <transition event="select170" name="tselect170171" target="s6">
+              <script script="screenset.call(this, 'quarterTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapB172" name="ttapB172175" target="s7">
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+            </transition>
+            <transition event="_after2176" name="t_after2176177" target="s13">
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','active');"/>
+            </transition>
+            <transition event="tapD178" name="ttapD178181" target="s7">
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+            </transition>
+            <transition event="select182" name="tselect182183" target="s8">
+              <script script="screenset.call(this, 'halfTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapC184" name="ttapC184187" target="s7">
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+            </transition>
+            <transition event="tapA188" name="ttapA188191" target="s7">
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+            </transition>
+            <transition event="select192" name="tselect192193" target="s9">
+              <script script="screenset.call(this, 'fullTime','active');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapE194" name="ttapE194197" target="s7">
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+            </transition>
+            <transition event="pat198" name="tpat198199" target="s12">
+              <script script="screenset.call(this, 'eighthTime','active');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+            </transition>
+            <transition event="tapG200" name="ttapG200203" target="s7">
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+            </transition>
+            <transition event="tapF252" name="ttapF252255" target="s7">
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+            </transition>
+            <transition event="select256" name="tselect256257" target="s6">
+              <script script="screenset.call(this, 'quarterTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapB258" name="ttapB258261" target="s7">
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+            </transition>
+            <transition event="_after2262" name="t_after2262263" target="s13">
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','active');"/>
+            </transition>
+            <transition event="tapD264" name="ttapD264267" target="s7">
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+            </transition>
+            <transition event="select268" name="tselect268269" target="s8">
+              <script script="screenset.call(this, 'halfTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapC270" name="ttapC270273" target="s7">
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+            </transition>
+            <transition event="tapA274" name="ttapA274277" target="s7">
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+            </transition>
+            <transition event="select278" name="tselect278279" target="s9">
+              <script script="screenset.call(this, 'fullTime','active');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapE280" name="ttapE280283" target="s7">
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+            </transition>
+            <transition event="pat284" name="tpat284285" target="s12">
+              <script script="screenset.call(this, 'eighthTime','active');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+            </transition>
+            <transition event="tapG286" name="ttapG286289" target="s7">
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+            </transition>
+            <ielement id="timeBar" value="0"/>
+            <ielement id="fullTime" value="default"/>
+            <ielement id="halfTime" value="default"/>
+            <ielement id="quarterTime" value="default"/>
+            <ielement id="eighthTime" value="active"/>
+            <ielement id="timedMode" value="active"/>
+          </states>
+          <states id="s13">
+            <transition event="tapA214" name="ttapA214217" target="s7">
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+            </transition>
+            <transition event="tapD218" name="ttapD218221" target="s7">
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+            </transition>
+            <transition event="_after2222" name="t_after2222223" target="s14">
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','active');"/>
+            </transition>
+            <transition event="tapB224" name="ttapB224227" target="s7">
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+            </transition>
+            <transition event="tapE228" name="ttapE228231" target="s7">
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+            </transition>
+            <transition event="select232" name="tselect232233" target="s8">
+              <script script="screenset.call(this, 'halfTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapF234" name="ttapF234237" target="s7">
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+            </transition>
+            <transition event="select238" name="tselect238239" target="s9">
+              <script script="screenset.call(this, 'fullTime','active');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapG240" name="ttapG240243" target="s7">
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+            </transition>
+            <transition event="pat244" name="tpat244245" target="s12">
+              <script script="screenset.call(this, 'eighthTime','active');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+            </transition>
+            <transition event="tapC246" name="ttapC246249" target="s7">
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+            </transition>
+            <transition event="select250" name="tselect250251" target="s10">
+              <script script="screenset.call(this, 'eighthTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapA328" name="ttapA328331" target="s7">
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+            </transition>
+            <transition event="tapD332" name="ttapD332335" target="s7">
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+            </transition>
+            <transition event="_after2336" name="t_after2336337" target="s14">
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','active');"/>
+            </transition>
+            <transition event="tapB338" name="ttapB338341" target="s7">
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+            </transition>
+            <transition event="tapE342" name="ttapE342345" target="s7">
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+            </transition>
+            <transition event="select346" name="tselect346347" target="s8">
+              <script script="screenset.call(this, 'halfTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapF348" name="ttapF348351" target="s7">
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+            </transition>
+            <transition event="select352" name="tselect352353" target="s9">
+              <script script="screenset.call(this, 'fullTime','active');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapG354" name="ttapG354357" target="s7">
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+            </transition>
+            <transition event="pat358" name="tpat358359" target="s12">
+              <script script="screenset.call(this, 'eighthTime','active');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+            </transition>
+            <transition event="tapC360" name="ttapC360363" target="s7">
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+            </transition>
+            <transition event="select364" name="tselect364365" target="s10">
+              <script script="screenset.call(this, 'eighthTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <ielement id="timeBar" value="0"/>
+            <ielement id="fullTime" value="default"/>
+            <ielement id="halfTime" value="default"/>
+            <ielement id="quarterTime" value="active"/>
+            <ielement id="eighthTime" value="default"/>
+            <ielement id="timedMode" value="active"/>
+          </states>
+          <states id="s14">
+            <transition event="tapC290" name="ttapC290293" target="s7">
+              <script script="screenset.call(this, 'halfTime','default');"/>
+            </transition>
+            <transition event="_after4294" name="t_after4294295" target="s15">
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'fullTime','active');"/>
+            </transition>
+            <transition event="select296" name="tselect296297" target="s6">
+              <script script="screenset.call(this, 'quarterTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapG298" name="ttapG298301" target="s7">
+              <script script="screenset.call(this, 'halfTime','default');"/>
+            </transition>
+            <transition event="tapD302" name="ttapD302305" target="s7">
+              <script script="screenset.call(this, 'halfTime','default');"/>
+            </transition>
+            <transition event="select306" name="tselect306307" target="s9">
+              <script script="screenset.call(this, 'fullTime','active');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapA308" name="ttapA308311" target="s7">
+              <script script="screenset.call(this, 'halfTime','default');"/>
+            </transition>
+            <transition event="tapF312" name="ttapF312315" target="s7">
+              <script script="screenset.call(this, 'halfTime','default');"/>
+            </transition>
+            <transition event="pat316" name="tpat316317" target="s12">
+              <script script="screenset.call(this, 'eighthTime','active');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+            </transition>
+            <transition event="tapE318" name="ttapE318321" target="s7">
+              <script script="screenset.call(this, 'halfTime','default');"/>
+            </transition>
+            <transition event="select322" name="tselect322323" target="s10">
+              <script script="screenset.call(this, 'eighthTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapB324" name="ttapB324327" target="s7">
+              <script script="screenset.call(this, 'halfTime','default');"/>
+            </transition>
+            <transition event="tapC402" name="ttapC402405" target="s7">
+              <script script="screenset.call(this, 'halfTime','default');"/>
+            </transition>
+            <transition event="_after4406" name="t_after4406407" target="s15">
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'fullTime','active');"/>
+            </transition>
+            <transition event="select408" name="tselect408409" target="s6">
+              <script script="screenset.call(this, 'quarterTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapG410" name="ttapG410413" target="s7">
+              <script script="screenset.call(this, 'halfTime','default');"/>
+            </transition>
+            <transition event="tapD414" name="ttapD414417" target="s7">
+              <script script="screenset.call(this, 'halfTime','default');"/>
+            </transition>
+            <transition event="select418" name="tselect418419" target="s9">
+              <script script="screenset.call(this, 'fullTime','active');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapA420" name="ttapA420423" target="s7">
+              <script script="screenset.call(this, 'halfTime','default');"/>
+            </transition>
+            <transition event="tapF424" name="ttapF424427" target="s7">
+              <script script="screenset.call(this, 'halfTime','default');"/>
+            </transition>
+            <transition event="pat428" name="tpat428429" target="s12">
+              <script script="screenset.call(this, 'eighthTime','active');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+            </transition>
+            <transition event="tapE430" name="ttapE430433" target="s7">
+              <script script="screenset.call(this, 'halfTime','default');"/>
+            </transition>
+            <transition event="select434" name="tselect434435" target="s10">
+              <script script="screenset.call(this, 'eighthTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapB436" name="ttapB436439" target="s7">
+              <script script="screenset.call(this, 'halfTime','default');"/>
+            </transition>
+            <ielement id="timeBar" value="0"/>
+            <ielement id="fullTime" value="default"/>
+            <ielement id="halfTime" value="active"/>
+            <ielement id="quarterTime" value="default"/>
+            <ielement id="eighthTime" value="default"/>
+            <ielement id="timedMode" value="active"/>
+          </states>
+          <states id="s15">
+            <transition event="select366" name="tselect366367" target="s6">
+              <script script="screenset.call(this, 'quarterTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="select368" name="tselect368369" target="s8">
+              <script script="screenset.call(this, 'halfTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapB370" name="ttapB370373" target="s7">
+              <script script="screenset.call(this, 'fullTime','default');"/>
+            </transition>
+            <transition event="tapA374" name="ttapA374377" target="s7">
+              <script script="screenset.call(this, 'fullTime','default');"/>
+            </transition>
+            <transition event="pat378" name="tpat378379" target="s12">
+              <script script="screenset.call(this, 'eighthTime','active');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+            </transition>
+            <transition event="tapD380" name="ttapD380383" target="s7">
+              <script script="screenset.call(this, 'fullTime','default');"/>
+            </transition>
+            <transition event="tapF384" name="ttapF384387" target="s7">
+              <script script="screenset.call(this, 'fullTime','default');"/>
+            </transition>
+            <transition event="tapC388" name="ttapC388391" target="s7">
+              <script script="screenset.call(this, 'fullTime','default');"/>
+            </transition>
+            <transition event="tapE392" name="ttapE392395" target="s7">
+              <script script="screenset.call(this, 'fullTime','default');"/>
+            </transition>
+            <transition event="tapG396" name="ttapG396399" target="s7">
+              <script script="screenset.call(this, 'fullTime','default');"/>
+            </transition>
+            <transition event="select400" name="tselect400401" target="s10">
+              <script script="screenset.call(this, 'eighthTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="select440" name="tselect440441" target="s6">
+              <script script="screenset.call(this, 'quarterTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="select442" name="tselect442443" target="s8">
+              <script script="screenset.call(this, 'halfTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'eighthTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <transition event="tapB444" name="ttapB444447" target="s7">
+              <script script="screenset.call(this, 'fullTime','default');"/>
+            </transition>
+            <transition event="tapA448" name="ttapA448451" target="s7">
+              <script script="screenset.call(this, 'fullTime','default');"/>
+            </transition>
+            <transition event="pat452" name="tpat452453" target="s12">
+              <script script="screenset.call(this, 'eighthTime','active');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+            </transition>
+            <transition event="tapD454" name="ttapD454457" target="s7">
+              <script script="screenset.call(this, 'fullTime','default');"/>
+            </transition>
+            <transition event="tapF458" name="ttapF458461" target="s7">
+              <script script="screenset.call(this, 'fullTime','default');"/>
+            </transition>
+            <transition event="tapC462" name="ttapC462465" target="s7">
+              <script script="screenset.call(this, 'fullTime','default');"/>
+            </transition>
+            <transition event="tapE466" name="ttapE466469" target="s7">
+              <script script="screenset.call(this, 'fullTime','default');"/>
+            </transition>
+            <transition event="tapG470" name="ttapG470473" target="s7">
+              <script script="screenset.call(this, 'fullTime','default');"/>
+            </transition>
+            <transition event="select474" name="tselect474475" target="s10">
+              <script script="screenset.call(this, 'eighthTime','active');"/>
+              <script script="screenset.call(this, 'fullTime','default');"/>
+              <script script="screenset.call(this, 'halfTime','default');"/>
+              <script script="screenset.call(this, 'quarterTime','default');"/>
+              <script script="screenset.call(this, 'timedMode','default');"/>
+            </transition>
+            <ielement id="timeBar" value="0"/>
+            <ielement id="fullTime" value="active"/>
+            <ielement id="halfTime" value="default"/>
+            <ielement id="quarterTime" value="default"/>
+            <ielement id="eighthTime" value="default"/>
+            <ielement id="timedMode" value="active"/>
+          </states>
+        </states>
+        <states id="Layercanvas" initial="s2">
+          <states id="s2">
+            <transition event="tapG12" name="ttapG1213" target="s2">
+              <script script="this.quartersoladd();"/>
+            </transition>
+            <transition event="tapF16" name="ttapF1617" target="s2">
+              <script script="this.quarterfaadd();"/>
+            </transition>
+            <transition event="tapA26" name="ttapA2627" target="s2">
+              <script script="this.quarterlaadd();"/>
+            </transition>
+            <transition event="tapD30" name="ttapD3031" target="s2">
+              <script script="this.quarterreadd();"/>
+            </transition>
+            <transition event="tapE34" name="ttapE3435" target="s2">
+              <script script="this.quartermiadd();"/>
+            </transition>
+            <transition event="tapB38" name="ttapB3839" target="s2">
+              <script script="this.quartersiadd();"/>
+            </transition>
+            <transition event="tapC42" name="ttapC4243" target="s2">
+              <script script="this.quarterdoadd();"/>
+            </transition>
+            <transition event="tapD58" name="ttapD5859" target="s2">
+              <script script="this.halfreadd();"/>
+            </transition>
+            <transition event="tapF62" name="ttapF6263" target="s2">
+              <script script="this.halffaadd();"/>
+            </transition>
+            <transition event="tapA68" name="ttapA6869" target="s2">
+              <script script="this.halflaadd();"/>
+            </transition>
+            <transition event="tapC72" name="ttapC7273" target="s2">
+              <script script="this.halfdoadd();"/>
+            </transition>
+            <transition event="tapB78" name="ttapB7879" target="s2">
+              <script script="this.halfsiadd();"/>
+            </transition>
+            <transition event="tapE82" name="ttapE8283" target="s2">
+              <script script="this.halfmiadd();"/>
+            </transition>
+            <transition event="tapG88" name="ttapG8889" target="s2">
+              <script script="this.halfsoladd();"/>
+            </transition>
+            <transition event="tapF96" name="ttapF9697" target="s2">
+              <script script="this.fullfaadd();"/>
+            </transition>
+            <transition event="tapC104" name="ttapC104105" target="s2">
+              <script script="this.fulldoadd();"/>
+            </transition>
+            <transition event="tapG108" name="ttapG108109" target="s2">
+              <script script="this.fullsoladd();"/>
+            </transition>
+            <transition event="tapA112" name="ttapA112113" target="s2">
+              <script script="this.fulllaadd();"/>
+            </transition>
+            <transition event="tapD116" name="ttapD116117" target="s2">
+              <script script="this.fullreadd();"/>
+            </transition>
+            <transition event="tapE120" name="ttapE120121" target="s2">
+              <script script="this.fullmiadd();"/>
+            </transition>
+            <transition event="tapB124" name="ttapB124125" target="s2">
+              <script script="this.fullsiadd();"/>
+            </transition>
+            <transition event="tapD132" name="ttapD132133" target="s2">
+              <script script="this.eighthreadd();"/>
+            </transition>
+            <transition event="tapC138" name="ttapC138139" target="s2">
+              <script script="this.eighthdoadd();"/>
+            </transition>
+            <transition event="tapE144" name="ttapE144145" target="s2">
+              <script script="this.eighthmiadd();"/>
+            </transition>
+            <transition event="tapA150" name="ttapA150151" target="s2">
+              <script script="this.eighthlaadd();"/>
+            </transition>
+            <transition event="tapF154" name="ttapF154155" target="s2">
+              <script script="this.eighthfaadd();"/>
+            </transition>
+            <transition event="tapB158" name="ttapB158159" target="s2">
+              <script script="this.eighthsiadd();"/>
+            </transition>
+            <transition event="tapG162" name="ttapG162163" target="s2">
+              <script script="this.eighthsoladd();"/>
+            </transition>
+            <transition event="tapF166" name="ttapF166167" target="s2">
+              <script script="this.eighthfaadd();"/>
+            </transition>
+            <transition event="tapB172" name="ttapB172173" target="s2">
+              <script script="this.eighthsiadd();"/>
+            </transition>
+            <transition event="tapD178" name="ttapD178179" target="s2">
+              <script script="this.eighthreadd();"/>
+            </transition>
+            <transition event="tapC184" name="ttapC184185" target="s2">
+              <script script="this.eighthdoadd();"/>
+            </transition>
+            <transition event="tapA188" name="ttapA188189" target="s2">
+              <script script="this.eighthlaadd();"/>
+            </transition>
+            <transition event="tapE194" name="ttapE194195" target="s2">
+              <script script="this.eighthmiadd();"/>
+            </transition>
+            <transition event="tapG200" name="ttapG200201" target="s2">
+              <script script="this.eighthsoladd();"/>
+            </transition>
+            <transition event="tapA214" name="ttapA214215" target="s2">
+              <script script="this.quarterlaadd();"/>
+            </transition>
+            <transition event="tapD218" name="ttapD218219" target="s2">
+              <script script="this.quarterreadd();"/>
+            </transition>
+            <transition event="tapB224" name="ttapB224225" target="s2">
+              <script script="this.quartersiadd();"/>
+            </transition>
+            <transition event="tapE228" name="ttapE228229" target="s2">
+              <script script="this.quartermiadd();"/>
+            </transition>
+            <transition event="tapF234" name="ttapF234235" target="s2">
+              <script script="this.quarterfaadd();"/>
+            </transition>
+            <transition event="tapG240" name="ttapG240241" target="s2">
+              <script script="this.quartersoladd();"/>
+            </transition>
+            <transition event="tapC246" name="ttapC246247" target="s2">
+              <script script="this.quarterdoadd();"/>
+            </transition>
+            <transition event="tapF252" name="ttapF252253" target="s2">
+              <script script="this.eighthfaadd();"/>
+            </transition>
+            <transition event="tapB258" name="ttapB258259" target="s2">
+              <script script="this.eighthsiadd();"/>
+            </transition>
+            <transition event="tapD264" name="ttapD264265" target="s2">
+              <script script="this.eighthreadd();"/>
+            </transition>
+            <transition event="tapC270" name="ttapC270271" target="s2">
+              <script script="this.eighthdoadd();"/>
+            </transition>
+            <transition event="tapA274" name="ttapA274275" target="s2">
+              <script script="this.eighthlaadd();"/>
+            </transition>
+            <transition event="tapE280" name="ttapE280281" target="s2">
+              <script script="this.eighthmiadd();"/>
+            </transition>
+            <transition event="tapG286" name="ttapG286287" target="s2">
+              <script script="this.eighthsoladd();"/>
+            </transition>
+            <transition event="tapC290" name="ttapC290291" target="s2">
+              <script script="this.halfdoadd();"/>
+            </transition>
+            <transition event="tapG298" name="ttapG298299" target="s2">
+              <script script="this.halfsoladd();"/>
+            </transition>
+            <transition event="tapD302" name="ttapD302303" target="s2">
+              <script script="this.halfreadd();"/>
+            </transition>
+            <transition event="tapA308" name="ttapA308309" target="s2">
+              <script script="this.halflaadd();"/>
+            </transition>
+            <transition event="tapF312" name="ttapF312313" target="s2">
+              <script script="this.halffaadd();"/>
+            </transition>
+            <transition event="tapE318" name="ttapE318319" target="s2">
+              <script script="this.halfmiadd();"/>
+            </transition>
+            <transition event="tapB324" name="ttapB324325" target="s2">
+              <script script="this.halfsiadd();"/>
+            </transition>
+            <transition event="tapA328" name="ttapA328329" target="s2">
+              <script script="this.quarterlaadd();"/>
+            </transition>
+            <transition event="tapD332" name="ttapD332333" target="s2">
+              <script script="this.quarterreadd();"/>
+            </transition>
+            <transition event="tapB338" name="ttapB338339" target="s2">
+              <script script="this.quartersiadd();"/>
+            </transition>
+            <transition event="tapE342" name="ttapE342343" target="s2">
+              <script script="this.quartermiadd();"/>
+            </transition>
+            <transition event="tapF348" name="ttapF348349" target="s2">
+              <script script="this.quarterfaadd();"/>
+            </transition>
+            <transition event="tapG354" name="ttapG354355" target="s2">
+              <script script="this.quartersoladd();"/>
+            </transition>
+            <transition event="tapC360" name="ttapC360361" target="s2">
+              <script script="this.quarterdoadd();"/>
+            </transition>
+            <transition event="tapB370" name="ttapB370371" target="s2">
+              <script script="this.fullsiadd();"/>
+            </transition>
+            <transition event="tapA374" name="ttapA374375" target="s2">
+              <script script="this.fulllaadd();"/>
+            </transition>
+            <transition event="tapD380" name="ttapD380381" target="s2">
+              <script script="this.fullreadd();"/>
+            </transition>
+            <transition event="tapF384" name="ttapF384385" target="s2">
+              <script script="this.fullfaadd();"/>
+            </transition>
+            <transition event="tapC388" name="ttapC388389" target="s2">
+              <script script="this.fulldoadd();"/>
+            </transition>
+            <transition event="tapE392" name="ttapE392393" target="s2">
+              <script script="this.fullmiadd();"/>
+            </transition>
+            <transition event="tapG396" name="ttapG396397" target="s2">
+              <script script="this.fullsoladd();"/>
+            </transition>
+            <transition event="tapC402" name="ttapC402403" target="s2">
+              <script script="this.halfdoadd();"/>
+            </transition>
+            <transition event="tapG410" name="ttapG410411" target="s2">
+              <script script="this.halfsoladd();"/>
+            </transition>
+            <transition event="tapD414" name="ttapD414415" target="s2">
+              <script script="this.halfreadd();"/>
+            </transition>
+            <transition event="tapA420" name="ttapA420421" target="s2">
+              <script script="this.halflaadd();"/>
+            </transition>
+            <transition event="tapF424" name="ttapF424425" target="s2">
+              <script script="this.halffaadd();"/>
+            </transition>
+            <transition event="tapE430" name="ttapE430431" target="s2">
+              <script script="this.halfmiadd();"/>
+            </transition>
+            <transition event="tapB436" name="ttapB436437" target="s2">
+              <script script="this.halfsiadd();"/>
+            </transition>
+            <transition event="tapB444" name="ttapB444445" target="s2">
+              <script script="this.fullsiadd();"/>
+            </transition>
+            <transition event="tapA448" name="ttapA448449" target="s2">
+              <script script="this.fulllaadd();"/>
+            </transition>
+            <transition event="tapD454" name="ttapD454455" target="s2">
+              <script script="this.fullreadd();"/>
+            </transition>
+            <transition event="tapF458" name="ttapF458459" target="s2">
+              <script script="this.fullfaadd();"/>
+            </transition>
+            <transition event="tapC462" name="ttapC462463" target="s2">
+              <script script="this.fulldoadd();"/>
+            </transition>
+            <transition event="tapE466" name="ttapE466467" target="s2">
+              <script script="this.fullmiadd();"/>
+            </transition>
+            <transition event="tapG470" name="ttapG470471" target="s2">
+              <script script="this.fullsoladd();"/>
+            </transition>
+            <ielement id="23" value="default"/>
+          </states>
+        </states>
+        <states id="Layercursor" initial="s3">
+          <states id="s3">
+            <transition event="tapG12" name="ttapG1214" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapF16" name="ttapF1618" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapA26" name="ttapA2628" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapD30" name="ttapD3032" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapE34" name="ttapE3436" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapB38" name="ttapB3840" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapC42" name="ttapC4244" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapD58" name="ttapD5860" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapF62" name="ttapF6264" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapA68" name="ttapA6870" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapC72" name="ttapC7274" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapB78" name="ttapB7880" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapE82" name="ttapE8284" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapG88" name="ttapG8890" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapF96" name="ttapF9698" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapC104" name="ttapC104106" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapG108" name="ttapG108110" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapA112" name="ttapA112114" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapD116" name="ttapD116118" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapE120" name="ttapE120122" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapB124" name="ttapB124126" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapD132" name="ttapD132134" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapC138" name="ttapC138140" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapE144" name="ttapE144146" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapA150" name="ttapA150152" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapF154" name="ttapF154156" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapB158" name="ttapB158160" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapG162" name="ttapG162164" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapF166" name="ttapF166168" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapB172" name="ttapB172174" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapD178" name="ttapD178180" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapC184" name="ttapC184186" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapA188" name="ttapA188190" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapE194" name="ttapE194196" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapG200" name="ttapG200202" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapA214" name="ttapA214216" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapD218" name="ttapD218220" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapB224" name="ttapB224226" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapE228" name="ttapE228230" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapF234" name="ttapF234236" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapG240" name="ttapG240242" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapC246" name="ttapC246248" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapF252" name="ttapF252254" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapB258" name="ttapB258260" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapD264" name="ttapD264266" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapC270" name="ttapC270272" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapA274" name="ttapA274276" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapE280" name="ttapE280282" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapG286" name="ttapG286288" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapC290" name="ttapC290292" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapG298" name="ttapG298300" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapD302" name="ttapD302304" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapA308" name="ttapA308310" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapF312" name="ttapF312314" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapE318" name="ttapE318320" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapB324" name="ttapB324326" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapA328" name="ttapA328330" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapD332" name="ttapD332334" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapB338" name="ttapB338340" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapE342" name="ttapE342344" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapF348" name="ttapF348350" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapG354" name="ttapG354356" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapC360" name="ttapC360362" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapB370" name="ttapB370372" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapA374" name="ttapA374376" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapD380" name="ttapD380382" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapF384" name="ttapF384386" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapC388" name="ttapC388390" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapE392" name="ttapE392394" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapG396" name="ttapG396398" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapC402" name="ttapC402404" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapG410" name="ttapG410412" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapD414" name="ttapD414416" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapA420" name="ttapA420422" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapF424" name="ttapF424426" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapE430" name="ttapE430432" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapB436" name="ttapB436438" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapB444" name="ttapB444446" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapA448" name="ttapA448450" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapD454" name="ttapD454456" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapF458" name="ttapF458460" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapC462" name="ttapC462464" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapE466" name="ttapE466468" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapG470" name="ttapG470472" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <ielement id="27" value="default"/>
+          </states>
+          <states id="s11">
+            <transition event="tapG12" name="ttapG1214" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapF16" name="ttapF1618" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapA26" name="ttapA2628" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapD30" name="ttapD3032" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapE34" name="ttapE3436" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapB38" name="ttapB3840" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapC42" name="ttapC4244" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapD58" name="ttapD5860" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapF62" name="ttapF6264" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapA68" name="ttapA6870" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapC72" name="ttapC7274" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapB78" name="ttapB7880" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapE82" name="ttapE8284" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapG88" name="ttapG8890" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapF96" name="ttapF9698" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapC104" name="ttapC104106" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapG108" name="ttapG108110" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapA112" name="ttapA112114" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapD116" name="ttapD116118" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapE120" name="ttapE120122" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapB124" name="ttapB124126" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapD132" name="ttapD132134" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapC138" name="ttapC138140" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapE144" name="ttapE144146" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapA150" name="ttapA150152" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapF154" name="ttapF154156" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapB158" name="ttapB158160" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapG162" name="ttapG162164" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapF166" name="ttapF166168" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapB172" name="ttapB172174" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapD178" name="ttapD178180" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapC184" name="ttapC184186" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapA188" name="ttapA188190" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapE194" name="ttapE194196" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapG200" name="ttapG200202" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapA214" name="ttapA214216" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapD218" name="ttapD218220" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapB224" name="ttapB224226" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapE228" name="ttapE228230" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapF234" name="ttapF234236" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapG240" name="ttapG240242" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapC246" name="ttapC246248" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapF252" name="ttapF252254" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapB258" name="ttapB258260" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapD264" name="ttapD264266" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapC270" name="ttapC270272" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapA274" name="ttapA274276" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapE280" name="ttapE280282" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapG286" name="ttapG286288" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapC290" name="ttapC290292" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapG298" name="ttapG298300" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapD302" name="ttapD302304" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapA308" name="ttapA308310" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapF312" name="ttapF312314" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapE318" name="ttapE318320" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapB324" name="ttapB324326" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapA328" name="ttapA328330" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapD332" name="ttapD332334" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapB338" name="ttapB338340" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapE342" name="ttapE342344" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapF348" name="ttapF348350" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapG354" name="ttapG354356" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapC360" name="ttapC360362" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapB370" name="ttapB370372" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapA374" name="ttapA374376" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapD380" name="ttapD380382" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapF384" name="ttapF384386" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapC388" name="ttapC388390" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapE392" name="ttapE392394" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapG396" name="ttapG396398" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapC402" name="ttapC402404" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapG410" name="ttapG410412" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapD414" name="ttapD414416" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapA420" name="ttapA420422" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapF424" name="ttapF424426" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapE430" name="ttapE430432" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapB436" name="ttapB436438" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapB444" name="ttapB444446" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapA448" name="ttapA448450" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapD454" name="ttapD454456" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapF458" name="ttapF458460" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapC462" name="ttapC462464" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapE466" name="ttapE466468" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <transition event="tapG470" name="ttapG470472" target="s11">
+              <script script="screenset.call(this, '27','update');"/>
+            </transition>
+            <ielement id="27" value="update"/>
+          </states>
+        </states>
+        <states id="Layertab01" initial="s4">
+          <states id="s4">
+            <ielement id="tab01" value="0"/>
+            <ielement id="line0101" value="default"/>
+            <ielement id="line0102" value="default"/>
+            <ielement id="line0103" value="default"/>
+            <ielement id="line0104" value="default"/>
+            <ielement id="line0105" value="default"/>
+            <ielement id="line0201" value="default"/>
+            <ielement id="line0202" value="default"/>
+            <ielement id="line0203" value="default"/>
+            <ielement id="line0204" value="default"/>
+            <ielement id="line0205" value="default"/>
+            <ielement id="line0301" value="default"/>
+            <ielement id="line0302" value="default"/>
+            <ielement id="line0303" value="default"/>
+            <ielement id="line0304" value="default"/>
+            <ielement id="line0305" value="default"/>
+            <ielement id="line0401" value="default"/>
+            <ielement id="line0402" value="default"/>
+            <ielement id="line0403" value="default"/>
+            <ielement id="line0404" value="default"/>
+            <ielement id="line0405" value="default"/>
+          </states>
+        </states>
+        <states id="LayerControler" initial="h00">
+          <states id="h00">
+            <transition event="select" cond="this.type == 'newModel' and INSTATE('/System/LayercommonTools/s0')" name="select" target="h00">
+              <raise event="select0"/>
+            </transition>
+            <transition event="select" cond="this.type == 'quarterTime' and INSTATE('/System/LayertimeBar/s1')" name="select" target="h00">
+              <raise event="select2"/>
+            </transition>
+            <transition event="select" cond="this.type == 'timedMode' and INSTATE('/System/LayertimeBar/s1')" name="select" target="h00">
+              <raise event="select4"/>
+            </transition>
+            <transition event="select" cond="this.type == 'halfTime' and INSTATE('/System/LayertimeBar/s1')" name="select" target="h00">
+              <raise event="select6"/>
+            </transition>
+            <transition event="select" cond="this.type == 'fullTime' and INSTATE('/System/LayertimeBar/s1')" name="select" target="h00">
+              <raise event="select8"/>
+            </transition>
+            <transition event="select" cond="this.type == 'eighthTime' and INSTATE('/System/LayertimeBar/s1')" name="select" target="h00">
+              <raise event="select10"/>
+            </transition>
+            <transition event="tapG" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s6')" name="tapG" target="h00">
+              <raise event="tapG12"/>
+            </transition>
+            <transition event="tapF" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s6')" name="tapF" target="h00">
+              <raise event="tapF16"/>
+            </transition>
+            <transition event="select" cond="this.type == 'timedMode' and INSTATE('/System/LayertimeBar/s6')" name="select" target="h00">
+              <raise event="select20"/>
+            </transition>
+            <transition event="select" cond="this.type == 'halfTime' and INSTATE('/System/LayertimeBar/s6')" name="select" target="h00">
+              <raise event="select22"/>
+            </transition>
+            <transition event="select" cond="this.type == 'fullTime' and INSTATE('/System/LayertimeBar/s6')" name="select" target="h00">
+              <raise event="select24"/>
+            </transition>
+            <transition event="tapA" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s6')" name="tapA" target="h00">
+              <raise event="tapA26"/>
+            </transition>
+            <transition event="tapD" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s6')" name="tapD" target="h00">
+              <raise event="tapD30"/>
+            </transition>
+            <transition event="tapE" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s6')" name="tapE" target="h00">
+              <raise event="tapE34"/>
+            </transition>
+            <transition event="tapB" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s6')" name="tapB" target="h00">
+              <raise event="tapB38"/>
+            </transition>
+            <transition event="tapC" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s6')" name="tapC" target="h00">
+              <raise event="tapC42"/>
+            </transition>
+            <transition event="select" cond="this.type == 'eighthTime' and INSTATE('/System/LayertimeBar/s6')" name="select" target="h00">
+              <raise event="select46"/>
+            </transition>
+            <transition event="select" cond="this.type == 'quarterTime' and INSTATE('/System/LayertimeBar/s7')" name="select" target="h00">
+              <raise event="select48"/>
+            </transition>
+            <transition event="select" cond="this.type == 'halfTime' and INSTATE('/System/LayertimeBar/s7')" name="select" target="h00">
+              <raise event="select50"/>
+            </transition>
+            <transition event="select" cond="this.type == 'fullTime' and INSTATE('/System/LayertimeBar/s7')" name="select" target="h00">
+              <raise event="select52"/>
+            </transition>
+            <transition event="pat" cond="INSTATE('/System/LayertimeBar/s7')" name="pat" target="h00">
+              <raise event="pat54"/>
+            </transition>
+            <transition event="select" cond="this.type == 'eighthTime' and INSTATE('/System/LayertimeBar/s7')" name="select" target="h00">
+              <raise event="select56"/>
+            </transition>
+            <transition event="tapD" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s8')" name="tapD" target="h00">
+              <raise event="tapD58"/>
+            </transition>
+            <transition event="tapF" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s8')" name="tapF" target="h00">
+              <raise event="tapF62"/>
+            </transition>
+            <transition event="select" cond="this.type == 'quarterTime' and INSTATE('/System/LayertimeBar/s8')" name="select" target="h00">
+              <raise event="select66"/>
+            </transition>
+            <transition event="tapA" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s8')" name="tapA" target="h00">
+              <raise event="tapA68"/>
+            </transition>
+            <transition event="tapC" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s8')" name="tapC" target="h00">
+              <raise event="tapC72"/>
+            </transition>
+            <transition event="select" cond="this.type == 'timedMode' and INSTATE('/System/LayertimeBar/s8')" name="select" target="h00">
+              <raise event="select76"/>
+            </transition>
+            <transition event="tapB" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s8')" name="tapB" target="h00">
+              <raise event="tapB78"/>
+            </transition>
+            <transition event="tapE" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s8')" name="tapE" target="h00">
+              <raise event="tapE82"/>
+            </transition>
+            <transition event="select" cond="this.type == 'fullTime' and INSTATE('/System/LayertimeBar/s8')" name="select" target="h00">
+              <raise event="select86"/>
+            </transition>
+            <transition event="tapG" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s8')" name="tapG" target="h00">
+              <raise event="tapG88"/>
+            </transition>
+            <transition event="select" cond="this.type == 'eighthTime' and INSTATE('/System/LayertimeBar/s8')" name="select" target="h00">
+              <raise event="select92"/>
+            </transition>
+            <transition event="select" cond="this.type == 'quarterTime' and INSTATE('/System/LayertimeBar/s9')" name="select" target="h00">
+              <raise event="select94"/>
+            </transition>
+            <transition event="tapF" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s9')" name="tapF" target="h00">
+              <raise event="tapF96"/>
+            </transition>
+            <transition event="select" cond="this.type == 'timedMode' and INSTATE('/System/LayertimeBar/s9')" name="select" target="h00">
+              <raise event="select100"/>
+            </transition>
+            <transition event="select" cond="this.type == 'halfTime' and INSTATE('/System/LayertimeBar/s9')" name="select" target="h00">
+              <raise event="select102"/>
+            </transition>
+            <transition event="tapC" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s9')" name="tapC" target="h00">
+              <raise event="tapC104"/>
+            </transition>
+            <transition event="tapG" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s9')" name="tapG" target="h00">
+              <raise event="tapG108"/>
+            </transition>
+            <transition event="tapA" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s9')" name="tapA" target="h00">
+              <raise event="tapA112"/>
+            </transition>
+            <transition event="tapD" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s9')" name="tapD" target="h00">
+              <raise event="tapD116"/>
+            </transition>
+            <transition event="tapE" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s9')" name="tapE" target="h00">
+              <raise event="tapE120"/>
+            </transition>
+            <transition event="tapB" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s9')" name="tapB" target="h00">
+              <raise event="tapB124"/>
+            </transition>
+            <transition event="select" cond="this.type == 'eighthTime' and INSTATE('/System/LayertimeBar/s9')" name="select" target="h00">
+              <raise event="select128"/>
+            </transition>
+            <transition event="select" cond="this.type == 'quarterTime' and INSTATE('/System/LayertimeBar/s10')" name="select" target="h00">
+              <raise event="select130"/>
+            </transition>
+            <transition event="tapD" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s10')" name="tapD" target="h00">
+              <raise event="tapD132"/>
+            </transition>
+            <transition event="select" cond="this.type == 'timedMode' and INSTATE('/System/LayertimeBar/s10')" name="select" target="h00">
+              <raise event="select136"/>
+            </transition>
+            <transition event="tapC" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s10')" name="tapC" target="h00">
+              <raise event="tapC138"/>
+            </transition>
+            <transition event="select" cond="this.type == 'halfTime' and INSTATE('/System/LayertimeBar/s10')" name="select" target="h00">
+              <raise event="select142"/>
+            </transition>
+            <transition event="tapE" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s10')" name="tapE" target="h00">
+              <raise event="tapE144"/>
+            </transition>
+            <transition event="select" cond="this.type == 'fullTime' and INSTATE('/System/LayertimeBar/s10')" name="select" target="h00">
+              <raise event="select148"/>
+            </transition>
+            <transition event="tapA" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s10')" name="tapA" target="h00">
+              <raise event="tapA150"/>
+            </transition>
+            <transition event="tapF" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s10')" name="tapF" target="h00">
+              <raise event="tapF154"/>
+            </transition>
+            <transition event="tapB" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s10')" name="tapB" target="h00">
+              <raise event="tapB158"/>
+            </transition>
+            <transition event="tapG" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s10')" name="tapG" target="h00">
+              <raise event="tapG162"/>
+            </transition>
+            <transition event="tapF" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s12')" name="tapF" target="h00">
+              <raise event="tapF166"/>
+            </transition>
+            <transition event="select" cond="this.type == 'quarterTime' and INSTATE('/System/LayertimeBar/s12')" name="select" target="h00">
+              <raise event="select170"/>
+            </transition>
+            <transition event="tapB" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s12')" name="tapB" target="h00">
+              <raise event="tapB172"/>
+            </transition>
+            <transition after="2" cond="INSTATE('/System/LayertimeBar/s12')" name="_after2" target="h00">
+              <raise event="_after2176"/>
+            </transition>
+            <transition event="tapD" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s12')" name="tapD" target="h00">
+              <raise event="tapD178"/>
+            </transition>
+            <transition event="select" cond="this.type == 'halfTime' and INSTATE('/System/LayertimeBar/s12')" name="select" target="h00">
+              <raise event="select182"/>
+            </transition>
+            <transition event="tapC" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s12')" name="tapC" target="h00">
+              <raise event="tapC184"/>
+            </transition>
+            <transition event="tapA" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s12')" name="tapA" target="h00">
+              <raise event="tapA188"/>
+            </transition>
+            <transition event="select" cond="this.type == 'fullTime' and INSTATE('/System/LayertimeBar/s12')" name="select" target="h00">
+              <raise event="select192"/>
+            </transition>
+            <transition event="tapE" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s12')" name="tapE" target="h00">
+              <raise event="tapE194"/>
+            </transition>
+            <transition event="pat" cond="INSTATE('/System/LayertimeBar/s12')" name="pat" target="h00">
+              <raise event="pat198"/>
+            </transition>
+            <transition event="tapG" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s12')" name="tapG" target="h00">
+              <raise event="tapG200"/>
+            </transition>
+            <transition event="select" cond="this.type == 'quarterTime' and INSTATE('/System/LayertimeBar/s7')" name="select" target="h00">
+              <raise event="select204"/>
+            </transition>
+            <transition event="select" cond="this.type == 'halfTime' and INSTATE('/System/LayertimeBar/s7')" name="select" target="h00">
+              <raise event="select206"/>
+            </transition>
+            <transition event="select" cond="this.type == 'fullTime' and INSTATE('/System/LayertimeBar/s7')" name="select" target="h00">
+              <raise event="select208"/>
+            </transition>
+            <transition event="pat" cond="INSTATE('/System/LayertimeBar/s7')" name="pat" target="h00">
+              <raise event="pat210"/>
+            </transition>
+            <transition event="select" cond="this.type == 'eighthTime' and INSTATE('/System/LayertimeBar/s7')" name="select" target="h00">
+              <raise event="select212"/>
+            </transition>
+            <transition event="tapA" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s13')" name="tapA" target="h00">
+              <raise event="tapA214"/>
+            </transition>
+            <transition event="tapD" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s13')" name="tapD" target="h00">
+              <raise event="tapD218"/>
+            </transition>
+            <transition after="2" cond="INSTATE('/System/LayertimeBar/s13')" name="_after2" target="h00">
+              <raise event="_after2222"/>
+            </transition>
+            <transition event="tapB" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s13')" name="tapB" target="h00">
+              <raise event="tapB224"/>
+            </transition>
+            <transition event="tapE" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s13')" name="tapE" target="h00">
+              <raise event="tapE228"/>
+            </transition>
+            <transition event="select" cond="this.type == 'halfTime' and INSTATE('/System/LayertimeBar/s13')" name="select" target="h00">
+              <raise event="select232"/>
+            </transition>
+            <transition event="tapF" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s13')" name="tapF" target="h00">
+              <raise event="tapF234"/>
+            </transition>
+            <transition event="select" cond="this.type == 'fullTime' and INSTATE('/System/LayertimeBar/s13')" name="select" target="h00">
+              <raise event="select238"/>
+            </transition>
+            <transition event="tapG" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s13')" name="tapG" target="h00">
+              <raise event="tapG240"/>
+            </transition>
+            <transition event="pat" cond="INSTATE('/System/LayertimeBar/s13')" name="pat" target="h00">
+              <raise event="pat244"/>
+            </transition>
+            <transition event="tapC" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s13')" name="tapC" target="h00">
+              <raise event="tapC246"/>
+            </transition>
+            <transition event="select" cond="this.type == 'eighthTime' and INSTATE('/System/LayertimeBar/s13')" name="select" target="h00">
+              <raise event="select250"/>
+            </transition>
+            <transition event="tapF" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s12')" name="tapF" target="h00">
+              <raise event="tapF252"/>
+            </transition>
+            <transition event="select" cond="this.type == 'quarterTime' and INSTATE('/System/LayertimeBar/s12')" name="select" target="h00">
+              <raise event="select256"/>
+            </transition>
+            <transition event="tapB" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s12')" name="tapB" target="h00">
+              <raise event="tapB258"/>
+            </transition>
+            <transition after="2" cond="INSTATE('/System/LayertimeBar/s12')" name="_after2" target="h00">
+              <raise event="_after2262"/>
+            </transition>
+            <transition event="tapD" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s12')" name="tapD" target="h00">
+              <raise event="tapD264"/>
+            </transition>
+            <transition event="select" cond="this.type == 'halfTime' and INSTATE('/System/LayertimeBar/s12')" name="select" target="h00">
+              <raise event="select268"/>
+            </transition>
+            <transition event="tapC" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s12')" name="tapC" target="h00">
+              <raise event="tapC270"/>
+            </transition>
+            <transition event="tapA" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s12')" name="tapA" target="h00">
+              <raise event="tapA274"/>
+            </transition>
+            <transition event="select" cond="this.type == 'fullTime' and INSTATE('/System/LayertimeBar/s12')" name="select" target="h00">
+              <raise event="select278"/>
+            </transition>
+            <transition event="tapE" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s12')" name="tapE" target="h00">
+              <raise event="tapE280"/>
+            </transition>
+            <transition event="pat" cond="INSTATE('/System/LayertimeBar/s12')" name="pat" target="h00">
+              <raise event="pat284"/>
+            </transition>
+            <transition event="tapG" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s12')" name="tapG" target="h00">
+              <raise event="tapG286"/>
+            </transition>
+            <transition event="tapC" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s14')" name="tapC" target="h00">
+              <raise event="tapC290"/>
+            </transition>
+            <transition after="4" cond="INSTATE('/System/LayertimeBar/s14')" name="_after4" target="h00">
+              <raise event="_after4294"/>
+            </transition>
+            <transition event="select" cond="this.type == 'quarterTime' and INSTATE('/System/LayertimeBar/s14')" name="select" target="h00">
+              <raise event="select296"/>
+            </transition>
+            <transition event="tapG" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s14')" name="tapG" target="h00">
+              <raise event="tapG298"/>
+            </transition>
+            <transition event="tapD" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s14')" name="tapD" target="h00">
+              <raise event="tapD302"/>
+            </transition>
+            <transition event="select" cond="this.type == 'fullTime' and INSTATE('/System/LayertimeBar/s14')" name="select" target="h00">
+              <raise event="select306"/>
+            </transition>
+            <transition event="tapA" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s14')" name="tapA" target="h00">
+              <raise event="tapA308"/>
+            </transition>
+            <transition event="tapF" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s14')" name="tapF" target="h00">
+              <raise event="tapF312"/>
+            </transition>
+            <transition event="pat" cond="INSTATE('/System/LayertimeBar/s14')" name="pat" target="h00">
+              <raise event="pat316"/>
+            </transition>
+            <transition event="tapE" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s14')" name="tapE" target="h00">
+              <raise event="tapE318"/>
+            </transition>
+            <transition event="select" cond="this.type == 'eighthTime' and INSTATE('/System/LayertimeBar/s14')" name="select" target="h00">
+              <raise event="select322"/>
+            </transition>
+            <transition event="tapB" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s14')" name="tapB" target="h00">
+              <raise event="tapB324"/>
+            </transition>
+            <transition event="tapA" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s13')" name="tapA" target="h00">
+              <raise event="tapA328"/>
+            </transition>
+            <transition event="tapD" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s13')" name="tapD" target="h00">
+              <raise event="tapD332"/>
+            </transition>
+            <transition after="2" cond="INSTATE('/System/LayertimeBar/s13')" name="_after2" target="h00">
+              <raise event="_after2336"/>
+            </transition>
+            <transition event="tapB" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s13')" name="tapB" target="h00">
+              <raise event="tapB338"/>
+            </transition>
+            <transition event="tapE" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s13')" name="tapE" target="h00">
+              <raise event="tapE342"/>
+            </transition>
+            <transition event="select" cond="this.type == 'halfTime' and INSTATE('/System/LayertimeBar/s13')" name="select" target="h00">
+              <raise event="select346"/>
+            </transition>
+            <transition event="tapF" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s13')" name="tapF" target="h00">
+              <raise event="tapF348"/>
+            </transition>
+            <transition event="select" cond="this.type == 'fullTime' and INSTATE('/System/LayertimeBar/s13')" name="select" target="h00">
+              <raise event="select352"/>
+            </transition>
+            <transition event="tapG" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s13')" name="tapG" target="h00">
+              <raise event="tapG354"/>
+            </transition>
+            <transition event="pat" cond="INSTATE('/System/LayertimeBar/s13')" name="pat" target="h00">
+              <raise event="pat358"/>
+            </transition>
+            <transition event="tapC" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s13')" name="tapC" target="h00">
+              <raise event="tapC360"/>
+            </transition>
+            <transition event="select" cond="this.type == 'eighthTime' and INSTATE('/System/LayertimeBar/s13')" name="select" target="h00">
+              <raise event="select364"/>
+            </transition>
+            <transition event="select" cond="this.type == 'quarterTime' and INSTATE('/System/LayertimeBar/s15')" name="select" target="h00">
+              <raise event="select366"/>
+            </transition>
+            <transition event="select" cond="this.type == 'halfTime' and INSTATE('/System/LayertimeBar/s15')" name="select" target="h00">
+              <raise event="select368"/>
+            </transition>
+            <transition event="tapB" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s15')" name="tapB" target="h00">
+              <raise event="tapB370"/>
+            </transition>
+            <transition event="tapA" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s15')" name="tapA" target="h00">
+              <raise event="tapA374"/>
+            </transition>
+            <transition event="pat" cond="INSTATE('/System/LayertimeBar/s15')" name="pat" target="h00">
+              <raise event="pat378"/>
+            </transition>
+            <transition event="tapD" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s15')" name="tapD" target="h00">
+              <raise event="tapD380"/>
+            </transition>
+            <transition event="tapF" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s15')" name="tapF" target="h00">
+              <raise event="tapF384"/>
+            </transition>
+            <transition event="tapC" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s15')" name="tapC" target="h00">
+              <raise event="tapC388"/>
+            </transition>
+            <transition event="tapE" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s15')" name="tapE" target="h00">
+              <raise event="tapE392"/>
+            </transition>
+            <transition event="tapG" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s15')" name="tapG" target="h00">
+              <raise event="tapG396"/>
+            </transition>
+            <transition event="select" cond="this.type == 'eighthTime' and INSTATE('/System/LayertimeBar/s15')" name="select" target="h00">
+              <raise event="select400"/>
+            </transition>
+            <transition event="tapC" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s14')" name="tapC" target="h00">
+              <raise event="tapC402"/>
+            </transition>
+            <transition after="4" cond="INSTATE('/System/LayertimeBar/s14')" name="_after4" target="h00">
+              <raise event="_after4406"/>
+            </transition>
+            <transition event="select" cond="this.type == 'quarterTime' and INSTATE('/System/LayertimeBar/s14')" name="select" target="h00">
+              <raise event="select408"/>
+            </transition>
+            <transition event="tapG" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s14')" name="tapG" target="h00">
+              <raise event="tapG410"/>
+            </transition>
+            <transition event="tapD" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s14')" name="tapD" target="h00">
+              <raise event="tapD414"/>
+            </transition>
+            <transition event="select" cond="this.type == 'fullTime' and INSTATE('/System/LayertimeBar/s14')" name="select" target="h00">
+              <raise event="select418"/>
+            </transition>
+            <transition event="tapA" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s14')" name="tapA" target="h00">
+              <raise event="tapA420"/>
+            </transition>
+            <transition event="tapF" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s14')" name="tapF" target="h00">
+              <raise event="tapF424"/>
+            </transition>
+            <transition event="pat" cond="INSTATE('/System/LayertimeBar/s14')" name="pat" target="h00">
+              <raise event="pat428"/>
+            </transition>
+            <transition event="tapE" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s14')" name="tapE" target="h00">
+              <raise event="tapE430"/>
+            </transition>
+            <transition event="select" cond="this.type == 'eighthTime' and INSTATE('/System/LayertimeBar/s14')" name="select" target="h00">
+              <raise event="select434"/>
+            </transition>
+            <transition event="tapB" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s14')" name="tapB" target="h00">
+              <raise event="tapB436"/>
+            </transition>
+            <transition event="select" cond="this.type == 'quarterTime' and INSTATE('/System/LayertimeBar/s15')" name="select" target="h00">
+              <raise event="select440"/>
+            </transition>
+            <transition event="select" cond="this.type == 'halfTime' and INSTATE('/System/LayertimeBar/s15')" name="select" target="h00">
+              <raise event="select442"/>
+            </transition>
+            <transition event="tapB" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s15')" name="tapB" target="h00">
+              <raise event="tapB444"/>
+            </transition>
+            <transition event="tapA" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s15')" name="tapA" target="h00">
+              <raise event="tapA448"/>
+            </transition>
+            <transition event="pat" cond="INSTATE('/System/LayertimeBar/s15')" name="pat" target="h00">
+              <raise event="pat452"/>
+            </transition>
+            <transition event="tapD" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s15')" name="tapD" target="h00">
+              <raise event="tapD454"/>
+            </transition>
+            <transition event="tapF" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s15')" name="tapF" target="h00">
+              <raise event="tapF458"/>
+            </transition>
+            <transition event="tapC" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s15')" name="tapC" target="h00">
+              <raise event="tapC462"/>
+            </transition>
+            <transition event="tapE" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s15')" name="tapE" target="h00">
+              <raise event="tapE466"/>
+            </transition>
+            <transition event="tapG" cond="INSTATE('/System/Layercanvas') and INSTATE('/System/Layercursor') and INSTATE('/System/LayertimeBar/s15')" name="tapG" target="h00">
+              <raise event="tapG470"/>
+            </transition>
+            <transition event="select" cond="this.type == 'eighthTime' and INSTATE('/System/LayertimeBar/s15')" name="select" target="h00">
+              <raise event="select474"/>
+            </transition>
+          </states>
+        </states>
+      </parallel>
+    </scxml>
+  </class>
+</sccd:Diagram>
