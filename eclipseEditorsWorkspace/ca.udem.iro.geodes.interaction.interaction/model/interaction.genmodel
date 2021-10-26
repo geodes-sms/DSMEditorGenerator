@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ca.udem.iro.geodes.interaction.interaction/src"
+    modelPluginID="ca.udem.iro.geodes.interaction.interaction" modelName="Interaction"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>interaction.ecore</foreignModel>
+  <genPackages prefix="Interaction" disposableProviderFactory="true" ecorePackage="interaction.ecore#/">
+    <genClasses ecoreClass="interaction.ecore#//State">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference interaction.ecore#//State/conditions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference interaction.ecore#//State/to"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference interaction.ecore#//State/from"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute interaction.ecore#//State/id"/>
+    </genClasses>
+    <genClasses ecoreClass="interaction.ecore#//Transition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute interaction.ecore#//Transition/Event"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference interaction.ecore#//Transition/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference interaction.ecore#//Transition/target"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="interaction.ecore#//CElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute interaction.ecore#//CElement/id"/>
+    </genClasses>
+    <genClasses ecoreClass="interaction.ecore#//NElement"/>
+    <genClasses ecoreClass="interaction.ecore#//PElement"/>
+    <genClasses ecoreClass="interaction.ecore#//Interactions">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference interaction.ecore#//Interactions/interactions"/>
+    </genClasses>
+    <genClasses ecoreClass="interaction.ecore#//AtomicInteraction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference interaction.ecore#//AtomicInteraction/hasStates"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference interaction.ecore#//AtomicInteraction/preCondition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference interaction.ecore#//AtomicInteraction/goal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference interaction.ecore#//AtomicInteraction/hasTransitions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute interaction.ecore#//AtomicInteraction/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

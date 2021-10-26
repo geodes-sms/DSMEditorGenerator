@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="interaction" nsURI="http://udem.iro.geodes.ca/interaction" nsPrefix="interaction">
+  <eClassifiers xsi:type="ecore:EClass" name="State">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditions" upperBound="-1"
+        eType="#//CElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//Transition"
+        eOpposite="#//Transition/source"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//Transition"
+        eOpposite="#//Transition/target"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Event" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//State"
+        eOpposite="#//State/to"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//State"
+        eOpposite="#//State/from"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNegative" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isFocus" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IElement" eSuperTypes="#//CElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OElement" eSuperTypes="#//CElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LElement" eSuperTypes="#//CElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VElement" eSuperTypes="#//CElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="#//CElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Interactions">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interactions" upperBound="-1"
+        eType="#//AtomicInteraction" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AtomicInteraction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasStates" lowerBound="2"
+        upperBound="-1" eType="#//State" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="preCondition" lowerBound="1"
+        eType="#//State"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal" lowerBound="1" eType="#//State"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasTransitions" lowerBound="1"
+        upperBound="-1" eType="#//Transition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

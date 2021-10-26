@@ -1,0 +1,276 @@
+<project name="PacMan03run" default="generateMermaid">
+	<taskdef resource="org/eclipse/epsilon/workflow/tasks/tasks.xml"/>
+	<taskdef resource="org/eclipse/epsilon/workflow/tasks/emf/tasks.xml"/>
+
+	<property name="RootPoint" value="${basedir}/.." />
+	<property name="projectPoint" value="" />
+	<property name="machineID" value="" />
+	<!--<property name="projectName" value="PacMan03" / -->
+
+	<target name="declarations" depends="genMapping,genInteractionXMI">
+
+		<epsilon.emf.register file="${RootPoint}/Models/layoutRel.ecore"/>
+		<epsilon.emf.loadModel name="LAYOUT" read="true" aliases="LD,Layout" store="false" modelfile="${projectPoint}/InModels/${projectName}.layoutrel" metamodelFile="${RootPoint}/Models/layoutRel.ecore" />
+
+		<epsilon.emf.register file="${RootPoint}/Models/sccd.ecore"/>
+		<epsilon.emf.loadModel name="SCCD" read="false" store="true" aliases="SC" modelfile="${projectPoint}/OutModels/${projectName}.sccd" metamodelFile="${RootPoint}/Models/sccd.ecore" />
+
+		<epsilon.emf.register file="${RootPoint}/Models/interaction.ecore"/>
+		<epsilon.emf.loadModel name="INTERACTION" read="true" store="false" modelfile="${projectPoint}/InModels/${projectName}.interaction" metamodelFile="${RootPoint}/Models/interaction.ecore" />
+
+		<epsilon.emf.register file="${RootPoint}/Models/auxiliar.ecore"/>
+		<epsilon.emf.loadModel name="AUX" read="false" store="true" modelfile="${projectPoint}/OutModels/output.out" metamodelFile="${RootPoint}/Models/auxiliar.ecore" />
+
+		<epsilon.emf.register file="${RootPoint}/Models/mapping.ecore"/>
+		<epsilon.emf.loadModel name="MAP" read="true" store="false" aliases="MappingM" modelfile="${projectPoint}/InModels/${projectName}.mapping" metamodelFile="${RootPoint}/Models/mapping.ecore" />
+
+		<tstamp>
+			<format property="timestampStart" pattern="yyyy-MM-dd HH:mm:ss.SSS" />
+		</tstamp>
+	</target>
+
+	<target name="generateHTMLinterface" depends="declarations">
+		<tstamp>
+			<format property="generateHTMLinterfaceStart" pattern="yyyy-MM-dd HH:mm:ss.SSS" />
+		</tstamp>
+		<epsilon.egl src="${RootPoint}/Transformations/generateInterfaceHtml.egl" target="${projectPoint}/OutModels/${projectName}.html">
+			<model ref="LD" />
+		</epsilon.egl>
+		<tstamp>
+			<format property="generateHTMLinterfaceEnd" pattern="yyyy-MM-dd HH:mm:ss.SSS" />
+		</tstamp>
+	</target>
+
+	<target name="transformLayoutToSccd" depends="declarations">
+		<tstamp>
+			<format property="transformLayoutToSccdStart" pattern="yyyy-MM-dd HH:mm:ss.SSS" />
+		</tstamp>
+		<epsilon.etl src="${RootPoint}/Transformations/relLayout2scd.etl">
+			<model ref="Layout" />
+			<model ref="SCCD" />
+		</epsilon.etl>
+		<tstamp>
+			<format property="transformLayoutToSccdEnd" pattern="yyyy-MM-dd HH:mm:ss.SSS" />
+		</tstamp>
+	</target>
+
+	<!-- <target name="transformInteractionToSccdRETE"	depends="transformLayoutToSccd,declarations">
+		<tstamp>
+			<format property="transformInteractionToSccdRETEStart" pattern="yyyy-MM-dd HH:mm:ss.SSS" />
+		</tstamp>
+		<epsilon.eol src="${RootPoint}/Transformations/interaction2RETEbuild.eol">
+			<model ref="INTERACTION" />
+			<model ref="AUX" />
+			<model ref="LAYOUT" />
+			<model ref="SCCD" />
+		</epsilon.eol>
+		<tstamp>
+			<format property="transformInteractionToSccdRETEEnd" pattern="yyyy-MM-dd HH:mm:ss.SSS" />
+		</tstamp>
+	</target> -->
+
+	<target name="transformInteractionToSccd"	depends="transformLayoutToSccd,declarations">
+		<tstamp>
+			<format property="transformInteractionToSccdStart" pattern="yyyy-MM-dd HH:mm:ss.SSS" />
+		</tstamp>
+		<epsilon.eol src="${RootPoint}/Transformations/interaction2sccd4.eol">
+			<model ref="INTERACTION" />
+			<model ref="AUX" />
+			<model ref="LAYOUT" />
+			<model ref="SCCD" />
+		</epsilon.eol>
+		<tstamp>
+			<format property="transformInteractionToSccdEnd" pattern="yyyy-MM-dd HH:mm:ss.SSS" />
+		</tstamp>
+	</target>
+
+	<target name="hackStatesOrStates" depends="transformInteractionToSccd,declarations">
+		<tstamp>
+			<format property="hackStatesOrStatesStart" pattern="yyyy-MM-dd HH:mm:ss.SSS" />
+		</tstamp>
+		<epsilon.eol src="${RootPoint}/Transformations/hackOrState.eol">
+			<model ref="SC" />
+		</epsilon.eol>
+		<tstamp>
+			<format property="hackStatesOrStatesEnd" pattern="yyyy-MM-dd HH:mm:ss.SSS" />
+		</tstamp>
+	</target>
+
+	<target name="generateSccd" depends="hackStatesOrStates,declarations">
+		<tstamp>
+			<format property="generateSccdStart" pattern="yyyy-MM-dd HH:mm:ss.SSS" />
+	 	</tstamp>
+		<epsilon.egl src="${RootPoint}/Transformations/generatesccd2javascript.egl" target="${projectPoint}/OutModels/${projectName}.xml">
+			<model ref="MAP" />
+			<model ref="SC" />
+		</epsilon.egl>
+		<tstamp>
+			<format property="generateSccdEnd" pattern="yyyy-MM-dd HH:mm:ss.SSS" />
+		</tstamp>
+	</target>
+
+	<target name="generateMermaid" depends="compile">
+		<epsilon.emf.register file="${RootPoint}/Models/sccd.ecore"/>
+		<epsilon.emf.loadModel name="SC" read="true" store="false" modelfile="${projectPoint}/OutModels/${projectName}.sccd" metamodelFile="${RootPoint}/Models/sccd.ecore" />
+		<epsilon.egl src="${RootPoint}/Transformations/generatesccd2mermaid.egl" target="${projectPoint}/OutModels/${projectName}.md">
+			<model ref="SC" />
+		</epsilon.egl>
+	</target>
+
+	<!--<condition property="isWindows">
+		<os family="windows" />
+	</condition>
+
+	<condition property="isUnix">
+		<os family="unix" />
+	</condition>-->
+
+	<target name="compile" depends="generateSccd,generateHTMLinterface">
+		<property name="OutModels" value="${basedir}/${projectPoint}/OutModels" />
+		<!--<exec dir="${OutModels}" executable="cmd" osfamily="windows">
+			<arg line="/c ${RootPoint}/PortablePython27/Python-Portable.exe -m sccd.compiler.sccdc -p eventloop -l javascript ${projectName}.xml"/>
+		</exec>-->
+		<exec dir="${OutModels}" executable="cmd" osfamily="windows">
+			<arg value="/c"/>
+			<arg value="${RootPoint}/PortablePython27/Python-Portable.exe"/>
+			<arg value="-m"/>
+			<arg value="sccd.compiler.sccdc"/>
+			<arg value="-p"/>
+			<arg value="eventloop"/>
+			<arg value="-l"/>
+			<arg value="javascript"/>
+			<arg value="${projectName}.xml"/>
+		</exec>
+		<exec dir="${OutModels}" executable="python2.7" osfamily="unix">
+			<arg value="-m"/>
+			<arg value="sccd.compiler.sccdc"/>
+			<arg value="-p"/>
+			<arg value="eventloop"/>
+			<arg value="-l"/>
+			<arg value="javascript"/>
+			<arg value="${projectName}.xml"/>
+			<!--arg value="python -m sccd.compiler.sccdc -p eventloop -l javascript ${projectName}.xml"/-->
+		</exec>
+		<tstamp>
+			<format property="timestampFinish" pattern="yyyy-MM-dd HH:mm:ss.SSS" />
+		</tstamp>
+	</target>
+
+	<target name="statistics" depends="compile">
+		<!-- <script language="javascript">
+			project.setProperty("memory",
+				Runtime.getRuntime().freeMemory()
+			)
+		</script> -->
+		<script language="javascript">
+			project.setProperty("run",
+				Math.abs(
+					(Date.parse(project.getProperty("timestampFinish"))) -
+					(Date.parse(project.getProperty("timestampStart")))
+				)
+			)
+			project.setProperty("transformLayout",
+				Math.abs(
+					(Date.parse(project.getProperty("transformLayoutToSccdEnd"))) -
+					(Date.parse(project.getProperty("transformLayoutToSccdStart")))
+				)
+			)
+			project.setProperty("transformInteractionRETE",
+				Math.abs(
+					(Date.parse(project.getProperty("transformInteractionToSccdRETEEnd"))) -
+					(Date.parse(project.getProperty("transformInteractionToSccdRETEStart")))
+				)
+			)
+			project.setProperty("transformInteraction",
+				Math.abs(
+					(Date.parse(project.getProperty("transformInteractionToSccdEnd"))) -
+					(Date.parse(project.getProperty("transformInteractionToSccdStart")))
+				)
+			)
+			project.setProperty("hackStates",
+				Math.abs(
+					(Date.parse(project.getProperty("hackStatesOrStatesEnd"))) -
+					(Date.parse(project.getProperty("hackStatesOrStatesStart")))
+				)
+			)
+			project.setProperty("generateSC",
+				Math.abs(
+					(Date.parse(project.getProperty("generateSccdEnd"))) -
+					(Date.parse(project.getProperty("generateSccdStart")))
+				)
+			)
+		</script>
+		<echo file="../Results/results${machineID}.csv" append="true">${projectName};${transformLayout};${transformInteractionRETE};${transformInteraction};${hackStates};${generateSC};${run}
+		</echo>
+	</target>
+
+	<target name="genInteractionXMI">
+		<epsilon.emf.register file="${RootPoint}/Models/interaction.ecore"/>
+		<epsilon.emf.loadModel name="Inter" read="false" store="true" modelfile="${projectPoint}/InModels/${projectName}.interaction" metamodelFile="${RootPoint}/Models/interaction.ecore" />
+
+		<epsilon.emf.register file="${RootPoint}/Models/interactiontxt.ecore"/>
+		<epsilon.emf.loadModel name="Intertxt" read="true" store="false" modelfile="${projectPoint}/InModels/${projectName}.interactionxmi" metamodelFile="${RootPoint}/Models/interactiontxt.ecore" />
+
+		<epsilon.etl src="${RootPoint}/Transformations/interaction2interaction.etl">
+			<model ref="Intertxt" />
+			<model ref="Inter" />
+		</epsilon.etl>
+	</target>
+
+
+	<target name="genInteraction">
+		<epsilon.emf.register file="${RootPoint}/Models/interaction.ecore"/>
+		<epsilon.emf.loadModel name="INTERACTION" read="false" store="true" modelfile="${projectPoint}/InModels/${projectName}.interaction" metamodelFile="${RootPoint}/Models/interaction.ecore" />
+
+		<epsilon.eol src="${RootPoint}/Transformations/interactionParser.eol">
+			<parameter name="inputFile" value="${projectPoint}/InModels/${projectName}.interactionTxt" />
+			<model ref="INTERACTION" />
+		</epsilon.eol>
+	</target>
+
+	<target name="genMapping">
+		<epsilon.emf.register file="${RootPoint}/Models/mapping.ecore"/>
+		<epsilon.emf.loadModel name="MappingM" read="false" store="true" modelfile="${projectPoint}/InModels/${projectName}.mapping" metamodelFile="${RootPoint}/Models/mapping.ecore" />
+
+		<epsilon.eol src="${RootPoint}/Transformations/mappingParser.eol">
+			<parameter name="inputFile" value="${projectPoint}/InModels/${projectName}.mappingTxt" />
+			<model ref="MappingM" />
+		</epsilon.eol>
+	</target>
+
+	<target name="clean">
+		<delete file="${projectPoint}/OutModels/output.out"/>
+		<delete file="${projectPoint}/OutModels/${projectName}.sccd"/>
+		<delete file="${projectPoint}/OutModels/${projectName}.xml"/>
+		<delete file="${projectPoint}/OutModels/${projectName}.js"/>
+		<delete file="${projectPoint}/OutModels/${projectName}.html"/>
+		<delete file="${projectPoint}/OutModels/${projectName}.md"/>
+	</target>
+
+	<target name="nuke" depends="clean">
+		<delete file="${projectPoint}/InModels/${projectName}.interaction"/>
+		<delete file="${projectPoint}/InModels/${projectName}.mapping"/>
+	</target>
+</project>
+
+	<!-- OLD CSV version <target name="genInteraction">
+		<epsilon.csv.loadModel name="text" read= "true" store= "false" alias= "" varargsHeaders= "false" cached= "true" file="${projectPoint}/InModels/${projectName}.interactionTxt" quoteChar='"' knownHeaders= "false" fieldSeparator= "#"/>
+		<epsilon.loadModel name="text" type="CSV">
+			<parameter name="read" value= "true"/>
+			<parameter name="store" value= "false"/>
+			<parameter name="varargsHeaders" value= "false"/>
+			<parameter name="cached" value= "true"/>
+			<parameter name="file" value="${projectPoint}/InModels/${projectName}.interactionTxt"/>
+			<parameter name="quoteChar" value='"'/>
+			<parameter name="knownHeaders" value= "false"/>
+			<parameter name="fieldSeparator" value= "#"/>
+		</epsilon.loadModel>
+
+		<epsilon.emf.register file="${RootPoint}/Models/interaction.ecore"/>
+		<epsilon.emf.loadModel name="InteractionM" read="false" store="true" modelfile="${projectPoint}/InModels/${projectName}.interaction" metamodelFile="${RootPoint}/Models/interaction.ecore" />
+
+		<epsilon.eol src="${RootPoint}/Transformations/interactionParser.eol">
+			<model ref="text" />
+			<model ref="InteractionM" />
+		</epsilon.eol>
+	</target>-->

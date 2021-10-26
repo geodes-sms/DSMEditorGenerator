@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:auxiliar="http:\\geodes.iro.ca\auxiliar" xsi:schemaLocation="http:\\geodes.iro.ca\auxiliar ../../../Models/auxiliar.ecore">
+  <auxiliar:Controll alphaParents="/1 /2 /3 /4 /5">
+    <rules queue="/6 /17" name="SelectLiveCellButton">
+      <rulePtr href="../InModels/GoLToolbar.interaction#//@interactions.0"/>
+    </rules>
+    <rules queue="/6 /41" name="SelectDeadCellButton">
+      <rulePtr href="../InModels/GoLToolbar.interaction#//@interactions.1"/>
+    </rules>
+    <rules queue="/41" name="DeselectLiveCellButton">
+      <rulePtr href="../InModels/GoLToolbar.interaction#//@interactions.2"/>
+    </rules>
+    <rules queue="/17" name="DeselectDeadCellButton">
+      <rulePtr href="../InModels/GoLToolbar.interaction#//@interactions.3"/>
+    </rules>
+    <rules queue="/6" name="RunTransfromation">
+      <rulePtr href="../InModels/GoLToolbar.interaction#//@interactions.4"/>
+    </rules>
+    <rules queue="/41" name="CSAddInstance">
+      <rulePtr href="../InModels/GoLToolbar.interaction#//@interactions.5"/>
+    </rules>
+    <rules queue="/17" name="CSRemInstance">
+      <rulePtr href="../InModels/GoLToolbar.interaction#//@interactions.6"/>
+    </rules>
+    <rules queue="/29" name="EndTransformation">
+      <rulePtr href="../InModels/GoLToolbar.interaction#//@interactions.7"/>
+    </rules>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="0" ruleParameterID="null"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="2" toBeta="/0/@desisions.0" ruleParameterID="liveCellButton" value="default" inLayer="/0/@parameters.2"/>
+    <parameters xsi:type="auxiliar:AlphaNodeLayer" tokenIndex="3" toBeta="/0/@desisions.0 /0/@desisions.1 /0/@desisions.2 /0/@desisions.3 /0/@desisions.5 /0/@desisions.6" hasParams="liveCellButton deadCellButton liveCellButton deadCellButton" layerID="LayerlanguageBar"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="5" toBeta="/0/@desisions.1" ruleParameterID="deadCellButton" value="default" inLayer="/0/@parameters.2"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="7" toBeta="/0/@desisions.2 /0/@desisions.5" ruleParameterID="liveCellButton" value="active" inLayer="/0/@parameters.2"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="9" toBeta="/0/@desisions.3 /0/@desisions.6" ruleParameterID="deadCellButton" value="active" inLayer="/0/@parameters.2"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="11" toBeta="/0/@desisions.4" ruleParameterID="playModelButton" value="default" inLayer="/0/@parameters.7"/>
+    <parameters xsi:type="auxiliar:AlphaNodeLayer" tokenIndex="12" toBeta="/0/@desisions.4 /0/@desisions.7" hasParams="playModelButton playModelButton" layerID="LayercomonTools"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="14" toBeta="/0/@desisions.5" ruleParameterID="23" value="default" inLayer="/0/@parameters.9"/>
+    <parameters xsi:type="auxiliar:AlphaNodeLayer" tokenIndex="15" toBeta="/0/@desisions.5 /0/@desisions.6" hasParams="23 23" layerID="Layercanvas"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="17" toBeta="/0/@desisions.6" ruleParameterID="23" value="default" inLayer="/0/@parameters.9"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="19" toBeta="/0/@desisions.7" ruleParameterID="playModelButton" value="active" inLayer="/0/@parameters.7"/>
+    <desisions tokenIndex="1" positiveValue="1" rule="/0/@rules.0" fromAlpha="liveCellButton /0/@parameters.2"/>
+    <desisions tokenIndex="4" positiveValue="1" rule="/0/@rules.1" fromAlpha="deadCellButton /0/@parameters.2"/>
+    <desisions tokenIndex="6" positiveValue="1" rule="/0/@rules.2" fromAlpha="liveCellButton /0/@parameters.2"/>
+    <desisions tokenIndex="8" positiveValue="1" rule="/0/@rules.3" fromAlpha="deadCellButton /0/@parameters.2"/>
+    <desisions tokenIndex="10" positiveValue="1" rule="/0/@rules.4" fromAlpha="playModelButton /0/@parameters.7"/>
+    <desisions tokenIndex="13" positiveValue="2" rule="/0/@rules.5" fromAlpha="23 /0/@parameters.9 liveCellButton /0/@parameters.2"/>
+    <desisions tokenIndex="16" positiveValue="2" rule="/0/@rules.6" fromAlpha="23 /0/@parameters.9 deadCellButton /0/@parameters.2"/>
+    <desisions tokenIndex="18" positiveValue="1" rule="/0/@rules.7" fromAlpha="playModelButton /0/@parameters.7"/>
+    <tokenConfigurations tokenID="/6">
+      <tokens/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+    </tokenConfigurations>
+    <tokenConfigurations tokenID="/17">
+      <tokens/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1" PrevValue="true"/>
+      <tokens isDirty="true" tokenValue="true" PrevValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" PrevValue="true"/>
+      <tokens isDirty="true" PrevValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens tokenValue="true" numberOfTokens="1" PrevValue="true"/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1" PrevValue="true"/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="2" PrevValue="true"/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens/>
+      <tokens/>
+    </tokenConfigurations>
+    <tokenConfigurations tokenID="/29">
+      <tokens/>
+      <tokens tokenValue="true" numberOfTokens="1" PrevValue="true"/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens/>
+      <tokens tokenValue="true" numberOfTokens="1" PrevValue="true"/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens/>
+      <tokens/>
+      <tokens/>
+      <tokens/>
+      <tokens isDirty="true" PrevValue="true"/>
+      <tokens isDirty="true" PrevValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens tokenValue="true" numberOfTokens="1" PrevValue="true"/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens/>
+      <tokens tokenValue="true" numberOfTokens="1" PrevValue="true"/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1"/>
+      <tokens isDirty="true" tokenValue="true"/>
+    </tokenConfigurations>
+    <tokenConfigurations tokenID="/41">
+      <tokens/>
+      <tokens isDirty="true" PrevValue="true"/>
+      <tokens isDirty="true" PrevValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1" PrevValue="true"/>
+      <tokens isDirty="true" tokenValue="true" PrevValue="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+      <tokens tokenValue="true" numberOfTokens="1" PrevValue="true"/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="2" PrevValue="true"/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1" PrevValue="true"/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens/>
+      <tokens/>
+    </tokenConfigurations>
+  </auxiliar:Controll>
+  <auxiliar:AlphaParent alphas="null" ruleParameterID="null"/>
+  <auxiliar:AlphaParent alphas="liveCellButton liveCellButton" ruleParameterID="liveCellButton"/>
+  <auxiliar:AlphaParent alphas="deadCellButton deadCellButton" ruleParameterID="deadCellButton"/>
+  <auxiliar:AlphaParent alphas="playModelButton playModelButton" ruleParameterID="playModelButton"/>
+  <auxiliar:AlphaParent alphas="23 23" ruleParameterID="23"/>
+  <auxiliar:QueueElem states="s0 s1 s2 h00" elements="/8 /9 /11 /12 /13 /15" tokenConfiguration="/0/@tokenConfigurations.0" dirtyElements="/8 /9 /11 /12 /13 /15"/>
+  <auxiliar:StateRef id="s0" layer="LayercomonTools" hasElements="/8 /9" inConfiguration="/6">
+    <statePtr href="GoLToolbar.sccd#s0"/>
+    <layerPtr href="GoLToolbar.sccd#LayercomonTools"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s0" id="comonTools" value="0">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s0" id="playModelButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s1" layer="LayerlanguageBar" hasElements="/11 /12 /13" inConfiguration="/6">
+    <statePtr href="GoLToolbar.sccd#s1"/>
+    <layerPtr href="GoLToolbar.sccd#LayerlanguageBar"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s1" id="languageBar" value="0">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s1" id="liveCellButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.0/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s1" id="deadCellButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.0/@ielement.2"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s2" layer="Layercanvas" hasElements="/15" inConfiguration="/6">
+    <statePtr href="GoLToolbar.sccd#s2"/>
+    <layerPtr href="GoLToolbar.sccd#Layercanvas"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s2" id="23" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.2/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="h00" layer="LayerControler" inConfiguration="/6">
+    <statePtr href="GoLToolbar.sccd#h00"/>
+    <layerPtr href="GoLToolbar.sccd#LayerControler"/>
+  </auxiliar:StateRef>
+  <auxiliar:QueueElem states="s0 s4 s2 h00" elements="/19 /20 /22 /23 /24 /26" tokenConfiguration="/0/@tokenConfigurations.1" dirtyElements="/23 /24"/>
+  <auxiliar:StateRef id="s0" layer="LayercomonTools" hasElements="/19 /20" inConfiguration="/17">
+    <statePtr href="GoLToolbar.sccd#s0"/>
+    <layerPtr href="GoLToolbar.sccd#LayercomonTools"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s0" id="comonTools" value="0">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s0" id="playModelButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s4" layer="LayerlanguageBar" hasElements="/22 /23 /24" isDirty="true" inConfiguration="/17">
+    <statePtr href="GoLToolbar.sccd#s4"/>
+    <layerPtr href="GoLToolbar.sccd#LayerlanguageBar"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s4" id="languageBar" value="0">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.1/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s4" id="liveCellButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.1/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s4" id="deadCellButton" value="active">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.1/@ielement.2"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s2" layer="Layercanvas" hasElements="/26" inConfiguration="/17">
+    <statePtr href="GoLToolbar.sccd#s2"/>
+    <layerPtr href="GoLToolbar.sccd#Layercanvas"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s2" id="23" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.2/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="h00" layer="LayerControler" inConfiguration="/17">
+    <statePtr href="GoLToolbar.sccd#h00"/>
+    <layerPtr href="GoLToolbar.sccd#LayerControler"/>
+  </auxiliar:StateRef>
+  <auxiliar:StateRef id="s4" layer="LayerlanguageBar">
+    <statePtr href="GoLToolbar.sccd#s4"/>
+    <layerPtr href="GoLToolbar.sccd#LayerlanguageBar"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.1/@hasStates.0/@conditions.0"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.1/@hasStates.0/@conditions.1"/>
+  </auxiliar:StateRef>
+  <auxiliar:QueueElem states="s5 s1 s2 h00" elements="/31 /32 /34 /35 /36 /38" tokenConfiguration="/0/@tokenConfigurations.2" dirtyElements="/32"/>
+  <auxiliar:StateRef id="s5" layer="LayercomonTools" hasElements="/31 /32" isDirty="true" inConfiguration="/29">
+    <statePtr href="GoLToolbar.sccd#s5"/>
+    <layerPtr href="GoLToolbar.sccd#LayercomonTools"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.4/@hasStates.0/@conditions.0"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.4/@hasStates.0/@conditions.1"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s5" id="comonTools" value="0">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.1/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s5" id="playModelButton" value="active">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.1/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s1" layer="LayerlanguageBar" hasElements="/34 /35 /36" inConfiguration="/29">
+    <statePtr href="GoLToolbar.sccd#s1"/>
+    <layerPtr href="GoLToolbar.sccd#LayerlanguageBar"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s1" id="languageBar" value="0">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s1" id="liveCellButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.0/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s1" id="deadCellButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.0/@ielement.2"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s2" layer="Layercanvas" hasElements="/38" inConfiguration="/29">
+    <statePtr href="GoLToolbar.sccd#s2"/>
+    <layerPtr href="GoLToolbar.sccd#Layercanvas"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s2" id="23" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.2/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="h00" layer="LayerControler" inConfiguration="/29">
+    <statePtr href="GoLToolbar.sccd#h00"/>
+    <layerPtr href="GoLToolbar.sccd#LayerControler"/>
+  </auxiliar:StateRef>
+  <auxiliar:StateRef id="s5" layer="LayercomonTools">
+    <statePtr href="GoLToolbar.sccd#s5"/>
+    <layerPtr href="GoLToolbar.sccd#LayercomonTools"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.4/@hasStates.0/@conditions.0"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.4/@hasStates.0/@conditions.1"/>
+  </auxiliar:StateRef>
+  <auxiliar:QueueElem states="s0 s6 s2 h00" elements="/43 /44 /46 /47 /48 /50" tokenConfiguration="/0/@tokenConfigurations.3" dirtyElements="/47 /48"/>
+  <auxiliar:StateRef id="s0" layer="LayercomonTools" hasElements="/43 /44" inConfiguration="/41">
+    <statePtr href="GoLToolbar.sccd#s0"/>
+    <layerPtr href="GoLToolbar.sccd#LayercomonTools"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s0" id="comonTools" value="0">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s0" id="playModelButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s6" layer="LayerlanguageBar" hasElements="/46 /47 /48" isDirty="true" inConfiguration="/41">
+    <statePtr href="GoLToolbar.sccd#s6"/>
+    <layerPtr href="GoLToolbar.sccd#LayerlanguageBar"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s6" id="languageBar" value="0">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.2/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s6" id="liveCellButton" value="active">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.2/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s6" id="deadCellButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.2/@ielement.2"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s2" layer="Layercanvas" hasElements="/50" inConfiguration="/41">
+    <statePtr href="GoLToolbar.sccd#s2"/>
+    <layerPtr href="GoLToolbar.sccd#Layercanvas"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s2" id="23" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.2/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="h00" layer="LayerControler" inConfiguration="/41">
+    <statePtr href="GoLToolbar.sccd#h00"/>
+    <layerPtr href="GoLToolbar.sccd#LayerControler"/>
+  </auxiliar:StateRef>
+  <auxiliar:StateRef id="s6" layer="LayerlanguageBar">
+    <statePtr href="GoLToolbar.sccd#s6"/>
+    <layerPtr href="GoLToolbar.sccd#LayerlanguageBar"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.0/@hasStates.0/@conditions.0"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.0/@hasStates.0/@conditions.1"/>
+  </auxiliar:StateRef>
+  <auxiliar:QueueElem states="s0 s4 s2 h00" elements="/55 /56 /58 /59 /60 /62" dirtyElements="/62"/>
+  <auxiliar:StateRef id="s0" layer="LayercomonTools" hasElements="/55 /56" inConfiguration="/53">
+    <statePtr href="GoLToolbar.sccd#s0"/>
+    <layerPtr href="GoLToolbar.sccd#LayercomonTools"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s0" id="comonTools" value="0">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s0" id="playModelButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s4" layer="LayerlanguageBar" hasElements="/58 /59 /60" inConfiguration="/53">
+    <statePtr href="GoLToolbar.sccd#s4"/>
+    <layerPtr href="GoLToolbar.sccd#LayerlanguageBar"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s4" id="languageBar" value="0">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.1/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s4" id="liveCellButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.1/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s4" id="deadCellButton" value="active">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.1/@ielement.2"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s2" layer="Layercanvas" hasElements="/62" isDirty="true" inConfiguration="/53">
+    <statePtr href="GoLToolbar.sccd#s2"/>
+    <layerPtr href="GoLToolbar.sccd#Layercanvas"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.6/@hasStates.0/@conditions.0"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s2" id="23" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.2/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="h00" layer="LayerControler" inConfiguration="/53">
+    <statePtr href="GoLToolbar.sccd#h00"/>
+    <layerPtr href="GoLToolbar.sccd#LayerControler"/>
+  </auxiliar:StateRef>
+  <auxiliar:StateRef id="s2" layer="Layercanvas">
+    <statePtr href="GoLToolbar.sccd#s2"/>
+    <layerPtr href="GoLToolbar.sccd#Layercanvas"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.6/@hasStates.0/@conditions.0"/>
+  </auxiliar:StateRef>
+  <auxiliar:StateRef id="s4" layer="LayerlanguageBar">
+    <statePtr href="GoLToolbar.sccd#s4"/>
+    <layerPtr href="GoLToolbar.sccd#LayerlanguageBar"/>
+  </auxiliar:StateRef>
+  <auxiliar:QueueElem states="s0 s6 s2 h00" elements="/68 /69 /71 /72 /73 /75" dirtyElements="/72 /73"/>
+  <auxiliar:StateRef id="s0" layer="LayercomonTools" hasElements="/68 /69" inConfiguration="/66">
+    <statePtr href="GoLToolbar.sccd#s0"/>
+    <layerPtr href="GoLToolbar.sccd#LayercomonTools"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s0" id="comonTools" value="0">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s0" id="playModelButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s6" layer="LayerlanguageBar" hasElements="/71 /72 /73" isDirty="true" inConfiguration="/66">
+    <statePtr href="GoLToolbar.sccd#s6"/>
+    <layerPtr href="GoLToolbar.sccd#LayerlanguageBar"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.0/@hasStates.0/@conditions.0"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.0/@hasStates.0/@conditions.1"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s6" id="languageBar" value="0">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.1/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s6" id="liveCellButton" value="active">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.1/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s6" id="deadCellButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.1/@ielement.2"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s2" layer="Layercanvas" hasElements="/75" inConfiguration="/66">
+    <statePtr href="GoLToolbar.sccd#s2"/>
+    <layerPtr href="GoLToolbar.sccd#Layercanvas"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s2" id="23" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.2/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="h00" layer="LayerControler" inConfiguration="/66">
+    <statePtr href="GoLToolbar.sccd#h00"/>
+    <layerPtr href="GoLToolbar.sccd#LayerControler"/>
+  </auxiliar:StateRef>
+  <auxiliar:StateRef id="s6" layer="LayerlanguageBar">
+    <statePtr href="GoLToolbar.sccd#s6"/>
+    <layerPtr href="GoLToolbar.sccd#LayerlanguageBar"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.0/@hasStates.0/@conditions.0"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.0/@hasStates.0/@conditions.1"/>
+  </auxiliar:StateRef>
+  <auxiliar:QueueElem states="s0 s1 s2 h00" elements="/80 /81 /83 /84 /85 /87" dirtyElements="/85"/>
+  <auxiliar:StateRef id="s0" layer="LayercomonTools" hasElements="/80 /81" inConfiguration="/78">
+    <statePtr href="GoLToolbar.sccd#s0"/>
+    <layerPtr href="GoLToolbar.sccd#LayercomonTools"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s0" id="comonTools" value="0">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s0" id="playModelButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s1" layer="LayerlanguageBar" hasElements="/83 /84 /85" isDirty="true" inConfiguration="/78">
+    <statePtr href="GoLToolbar.sccd#s1"/>
+    <layerPtr href="GoLToolbar.sccd#LayerlanguageBar"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.3/@hasStates.0/@conditions.0"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s1" id="languageBar" value="0">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.1/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s1" id="liveCellButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.1/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s1" id="deadCellButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.1/@ielement.2"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s2" layer="Layercanvas" hasElements="/87" inConfiguration="/78">
+    <statePtr href="GoLToolbar.sccd#s2"/>
+    <layerPtr href="GoLToolbar.sccd#Layercanvas"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s2" id="23" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.2/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="h00" layer="LayerControler" inConfiguration="/78">
+    <statePtr href="GoLToolbar.sccd#h00"/>
+    <layerPtr href="GoLToolbar.sccd#LayerControler"/>
+  </auxiliar:StateRef>
+  <auxiliar:StateRef id="s1" layer="LayerlanguageBar">
+    <statePtr href="GoLToolbar.sccd#s1"/>
+    <layerPtr href="GoLToolbar.sccd#LayerlanguageBar"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.3/@hasStates.0/@conditions.0"/>
+  </auxiliar:StateRef>
+  <auxiliar:QueueElem states="s0 s1 s2 h00" elements="/92 /93 /95 /96 /97 /99" dirtyElements="/93"/>
+  <auxiliar:StateRef id="s0" layer="LayercomonTools" hasElements="/92 /93" isDirty="true" inConfiguration="/90">
+    <statePtr href="GoLToolbar.sccd#s0"/>
+    <layerPtr href="GoLToolbar.sccd#LayercomonTools"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.7/@hasStates.0/@conditions.0"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s0" id="comonTools" value="0">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.1/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s0" id="playModelButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.1/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s1" layer="LayerlanguageBar" hasElements="/95 /96 /97" inConfiguration="/90">
+    <statePtr href="GoLToolbar.sccd#s1"/>
+    <layerPtr href="GoLToolbar.sccd#LayerlanguageBar"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s1" id="languageBar" value="0">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s1" id="liveCellButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.0/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s1" id="deadCellButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.0/@ielement.2"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s2" layer="Layercanvas" hasElements="/99" inConfiguration="/90">
+    <statePtr href="GoLToolbar.sccd#s2"/>
+    <layerPtr href="GoLToolbar.sccd#Layercanvas"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s2" id="23" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.2/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="h00" layer="LayerControler" inConfiguration="/90">
+    <statePtr href="GoLToolbar.sccd#h00"/>
+    <layerPtr href="GoLToolbar.sccd#LayerControler"/>
+  </auxiliar:StateRef>
+  <auxiliar:StateRef id="s0" layer="LayercomonTools">
+    <statePtr href="GoLToolbar.sccd#s0"/>
+    <layerPtr href="GoLToolbar.sccd#LayercomonTools"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.7/@hasStates.0/@conditions.0"/>
+  </auxiliar:StateRef>
+  <auxiliar:QueueElem states="s0 s1 s2 h00" elements="/104 /105 /107 /108 /109 /111" dirtyElements="/108"/>
+  <auxiliar:StateRef id="s0" layer="LayercomonTools" hasElements="/104 /105" inConfiguration="/102">
+    <statePtr href="GoLToolbar.sccd#s0"/>
+    <layerPtr href="GoLToolbar.sccd#LayercomonTools"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s0" id="comonTools" value="0">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s0" id="playModelButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s1" layer="LayerlanguageBar" hasElements="/107 /108 /109" isDirty="true" inConfiguration="/102">
+    <statePtr href="GoLToolbar.sccd#s1"/>
+    <layerPtr href="GoLToolbar.sccd#LayerlanguageBar"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.2/@hasStates.0/@conditions.0"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s1" id="languageBar" value="0">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.2/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s1" id="liveCellButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.2/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s1" id="deadCellButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.2/@ielement.2"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s2" layer="Layercanvas" hasElements="/111" inConfiguration="/102">
+    <statePtr href="GoLToolbar.sccd#s2"/>
+    <layerPtr href="GoLToolbar.sccd#Layercanvas"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s2" id="23" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.2/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="h00" layer="LayerControler" inConfiguration="/102">
+    <statePtr href="GoLToolbar.sccd#h00"/>
+    <layerPtr href="GoLToolbar.sccd#LayerControler"/>
+  </auxiliar:StateRef>
+  <auxiliar:StateRef id="s1" layer="LayerlanguageBar">
+    <statePtr href="GoLToolbar.sccd#s1"/>
+    <layerPtr href="GoLToolbar.sccd#LayerlanguageBar"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.2/@hasStates.0/@conditions.0"/>
+  </auxiliar:StateRef>
+  <auxiliar:QueueElem states="s0 s4 s2 h00" elements="/116 /117 /119 /120 /121 /123" dirtyElements="/120 /121"/>
+  <auxiliar:StateRef id="s0" layer="LayercomonTools" hasElements="/116 /117" inConfiguration="/114">
+    <statePtr href="GoLToolbar.sccd#s0"/>
+    <layerPtr href="GoLToolbar.sccd#LayercomonTools"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s0" id="comonTools" value="0">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s0" id="playModelButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s4" layer="LayerlanguageBar" hasElements="/119 /120 /121" isDirty="true" inConfiguration="/114">
+    <statePtr href="GoLToolbar.sccd#s4"/>
+    <layerPtr href="GoLToolbar.sccd#LayerlanguageBar"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.1/@hasStates.0/@conditions.0"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.1/@hasStates.0/@conditions.1"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s4" id="languageBar" value="0">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.2/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s4" id="liveCellButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.2/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s4" id="deadCellButton" value="active">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.2/@ielement.2"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s2" layer="Layercanvas" hasElements="/123" inConfiguration="/114">
+    <statePtr href="GoLToolbar.sccd#s2"/>
+    <layerPtr href="GoLToolbar.sccd#Layercanvas"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s2" id="23" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.2/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="h00" layer="LayerControler" inConfiguration="/114">
+    <statePtr href="GoLToolbar.sccd#h00"/>
+    <layerPtr href="GoLToolbar.sccd#LayerControler"/>
+  </auxiliar:StateRef>
+  <auxiliar:StateRef id="s4" layer="LayerlanguageBar">
+    <statePtr href="GoLToolbar.sccd#s4"/>
+    <layerPtr href="GoLToolbar.sccd#LayerlanguageBar"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.1/@hasStates.0/@conditions.0"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.1/@hasStates.0/@conditions.1"/>
+  </auxiliar:StateRef>
+  <auxiliar:QueueElem states="s0 s6 s2 h00" elements="/128 /129 /131 /132 /133 /135" dirtyElements="/135"/>
+  <auxiliar:StateRef id="s0" layer="LayercomonTools" hasElements="/128 /129" inConfiguration="/126">
+    <statePtr href="GoLToolbar.sccd#s0"/>
+    <layerPtr href="GoLToolbar.sccd#LayercomonTools"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s0" id="comonTools" value="0">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s0" id="playModelButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s6" layer="LayerlanguageBar" hasElements="/131 /132 /133" inConfiguration="/126">
+    <statePtr href="GoLToolbar.sccd#s6"/>
+    <layerPtr href="GoLToolbar.sccd#LayerlanguageBar"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s6" id="languageBar" value="0">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.2/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s6" id="liveCellButton" value="active">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.2/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s6" id="deadCellButton" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.2/@ielement.2"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s2" layer="Layercanvas" hasElements="/135" isDirty="true" inConfiguration="/126">
+    <statePtr href="GoLToolbar.sccd#s2"/>
+    <layerPtr href="GoLToolbar.sccd#Layercanvas"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.5/@hasStates.0/@conditions.0"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s2" id="23" value="default">
+    <elemPtr href="GoLToolbar.sccd#//@class.0/@scxml.0/@parallel.0/@states.2/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="h00" layer="LayerControler" inConfiguration="/126">
+    <statePtr href="GoLToolbar.sccd#h00"/>
+    <layerPtr href="GoLToolbar.sccd#LayerControler"/>
+  </auxiliar:StateRef>
+  <auxiliar:StateRef id="s2" layer="Layercanvas">
+    <statePtr href="GoLToolbar.sccd#s2"/>
+    <layerPtr href="GoLToolbar.sccd#Layercanvas"/>
+    <operations href="../InModels/GoLToolbar.interaction#//@interactions.5/@hasStates.0/@conditions.0"/>
+  </auxiliar:StateRef>
+  <auxiliar:StateRef id="s6" layer="LayerlanguageBar">
+    <statePtr href="GoLToolbar.sccd#s6"/>
+    <layerPtr href="GoLToolbar.sccd#LayerlanguageBar"/>
+  </auxiliar:StateRef>
+</xmi:XMI>

@@ -1,0 +1,795 @@
+//                                  oooo
+//                                  `888
+//   .oooo.   oo.ooooo.  oo.ooooo.   888  oooo    ooo
+//  `P  )88b   888' `88b  888' `88b  888   `88.  .8'
+//   .oP"888   888   888  888   888  888    `88..8'
+//  d8(  888   888   888  888   888  888     `888'
+//  `Y888""8o  888bod8P'  888bod8P' o888o     .8'
+//             888        888             .o..P'
+//            o888o      o888o            `Y8P'
+//
+//                            oooo
+//                            `888
+//       oooo d8b oooo  oooo   888   .ooooo.
+//       `888""8P `888  `888   888  d88' `88b
+//        888      888   888   888  888ooo888
+//        888      888   888   888  888    .o
+//       d888b     `V88V"V8P' o888o `Y8bod8P'
+//
+
+operation AUX!Rule applyRule(currentQueueElem : AUX!QueueElem, stateMap : Map, configurationsMap : Map) : AUX!QueueElem{
+	//self.name.errln("Rule name ");
+	pointRef = currentQueueElem;
+	//var newConfiguration  = new AUX!QueueElem; //outplace
+	var newConfiguration = currentQueueElem.clone(); //inplace
+	var pointRef02 = newConfiguration;
+	var endStates : Map = new Map;
+	var initialStates : Map = new Map;
+	var focus;
+	var selfStates : Map = new Map;
+	var returnStates : Map = new Map; // dont think this is needed
+	var newguard : String = '';
+
+	// get initial states
+	pointRef.printQE("32 ");
+	// give arbitrary focus to ensure layer to place operations
+	// issue with VElements
+//	var linkable = self.rulePtr.preCondition.conditions.reject(e| e.type().name = "VElement" );
+//	if (linkable.notEmpty()) {
+//		focus = linkable.first();
+//	}else{
+//		linkable = self.rulePtr.goal.conditions.reject(e| e.type().name = "VElement" || e.type().name = "OElement");
+//		if (linkable.notEmpty()) {
+//			focus = linkable.first();
+//		}else{
+//			panic();
+//		}
+//	}
+//	focus = self.rulePtr.preCondition.conditions.first().errln();
+
+	newConfiguration.printQE("34 ");
+	for(conditionElem in self.rulePtr.preCondition.conditions){
+		pointRef.printQE("36 ");
+		if (conditionElem.isTypeOf(INTERACTION!VElement)) {
+			//may need to rephrase this for actual execution in SCCD or outside
+			//JS platform specific solution
+			if (conditionElem.isNegative){
+				//newguard += conjunctionString + "this.vElement['" + conditionElem.id + "'] != '" + conditionElem.value + "'";
+				newguard += conjunctionString + "vElement['" + conditionElem.id + "'] != '" + conditionElem.value + "'";
+			}else{
+				//newguard += conjunctionString + "this.vElement['" + conditionElem.id + "'] == '" + conditionElem.value + "'";
+				newguard += conjunctionString + "vElement['" + conditionElem.id + "'] == '" + conditionElem.value + "'";
+			}
+		} else {
+			var guardState = currentQueueElem.find(conditionElem);
+
+			// streamline
+			pointRef.printQE("48 ");
+			//guardState.id.errln();
+			endStates.put(guardState.layer,guardState);
+			initialStates.put(guardState.layer,guardState);
+
+			if (conditionElem.isFocus) {
+				focus = conditionElem;
+				newguard += conjunctionString + selfObject + "type == '" + focus.id + "'";
+			} else {
+				/* if we are comparing to a value in a vElement */
+				if ( conditionElem.`operation` = "equalsVElement"){
+					focus = conditionElem;
+					newguard += conjunctionString + "equalsVElement.call(this, '" + conditionElem.value + "')";
+//					newguard += conjunctionString + 'document.getElementByID(vElement["' + conditionElem.value + '"]") != null';
+				}
+			}
+		}
+	}
+
+	// toStates are the states for the next step, endStates are now the end of interaction states
+
+	pointRef.printQE("64 ");
+	//focusRef is a stateRef
+	var focusRef;
+
+	if (focus.isDefined()) {
+		focusRef = currentQueueElem.find(focus);
+	}else{
+		focusRef = stateMap.values().random();
+	}
+	
+	
+	pointRef.printQE("66 ");
+	var toStates = newConfiguration.stepRule(self.rulePtr.preCondition.to.target,endStates,focusRef);
+
+	pointRef.printQE("69 ");
+	pointRef02.printQE("69 ");
+	//hack for parallel transitions // because of reasons we can do this in advance in the recursive version
+	var transition = new SCCD!Transition;
+	var event = self.rulePtr.preCondition.to.Event;
+	
+	pointRef.printQE("70 ");
+	if (event <> '') {
+	///	transition.event = self.rulePtr.hasTransitions.first().Event; // this is not proper
+		//event.errln();
+		if (event.startsWith("_after")){
+			//"Sup".errln();
+			transition.after = event.replace("_after","").asInteger();
+		}else{
+			//"Nooooo".errln();
+			transition.event = event;
+		}
+		transition.name = event;
+	}else {
+		/* Automatic Secondary steps with with in built auto step */
+		  //transition.after = 1;
+		  //transition.name = "after" + nextStateID.asString();
+		/* Hack because SCCD timer doesn't work on some modern browsers 
+			so we use an external ticker to clear empty transitions */
+		/* Maybe not here because this is only for the primary transition?*/
+		transition.event = "_step";
+		transition.name = "step" + nextStateID.asString();
+	}
+
+    /* for interaction debugging */
+
+	var debuggAction = new SCCD!Script;
+	debuggAction.script = 'console.log( "RULE : ' + self.name + '" );';
+	transition.script.add(debuggAction);
+	
+	/* end interaction debugging output */
+
+	pointRef.printQE("92 ");
+	var raise = new SCCD!Raise;
+	raise.event = transition.name + nextTransitionID.asString();
+	nextTransitionID++;
+	transition.raise.add(raise);
+	transition.target = controllerState;
+
+	// intermediate end hack for parallel transitions
+
+	pointRef.printQE("101 ");
+	for (stateRef in toStates.values()) {
+		//find original state
+		////stateRef.id.errln("stateRef ");
+		var sourceState = initialStates.get(stateRef.layer);
+
+		//	//create intermediate step state for that layer
+		//	var newIntermediateState = new SCCD!State;
+		//	newIntermediateState.id = "is" + nextStateID.asString();
+			
+//		// down actions preparation // do I need this ?
+//		if (selfStates.containsKey(stateRef.layer)) {
+//			condElems = selfStates.get(stateRef.layer);
+//			stateRef.operations = condElems;
+//		}else {
+//			stateRef.operations = Sequence{};
+//		}
+//		// end down actions preparation
+
+//		returnStates.put(stateRef.layer,stateRef); // don"t think this is needeed	
+
+		/* create transition from the intermediate step state to the next step state of that layer */
+		var newIntermediateTransition = new SCCD!Transition;
+		newIntermediateTransition.target = stateRef.statePtr;
+		newIntermediateTransition.name = "t" + raise.event + nextTransitionID.asString();
+		nextTransitionID++;
+		newIntermediateTransition.event = raise.event; // make transitions triggered by controll transition of the hack parallel transitions
+
+			/* timer hack raise to trigger automatic transitions*/
+			/* for now we raise in every paralel transition because we don't know the last or is que queue will consume prematuraly
+			because of guards it will not step untill the correct time */
+			var newIntermediateRaise = new SCCD!Raise;
+			newIntermediateRaise.event = "_step";
+			newIntermediateTransition.raise.add(newIntermediateRaise);
+			/* end of timer hack */
+			
+//		stateRef.state = newIntermediateState; //don't think this is needed
+
+		pointRef.printQE("130 ");
+		/* up actions application */
+		for (elem in stateRef.operations) {
+			var action = new SCCD!Script;
+			action.script = elem.asOp();
+			newIntermediateTransition.script.add(action);
+		}
+		/* end up actions application */
+		
+
+		
+		/* if we have condition that matches specific state start from there */
+		if(sourceState <> null){
+			sourceState.statePtr.transition.add(newIntermediateTransition);
+			
+			/* hack for parallel transitions guard colecting */
+			newguard += conjunctionString + "INSTATE('/System/" + sourceState.layer + "/" + sourceState.id + "')";
+			/* end hack for parallel transitions guard colecting */
+			
+		/* else we start from any state by starting the transition on the container state (layer) */
+		}else{
+			stateRef.layerPtr.transition.add(newIntermediateTransition);
+
+			/* hack for parallel transitions guard colecting */
+			newguard += conjunctionString + "INSTATE('/System/" + stateRef.layerPtr.id + "')";
+			/* end hack for parallel transitions guard colecting */
+		}
+	}
+
+	pointRef.printQE("153 ");
+	/* resume hack for parallel transitions */
+	transition.cond = newguard.substring(5); // skip first and/&&
+	controllerState.transition.add(transition);
+
+	pointRef.printQE("159 ");
+	/* end hack for parallel transitions */
+	var isDirty = false;
+	var key = newConfiguration.states.collect(i| i.id).asString();
+	if(not configurationsMap.containsKey(key)){
+		configurationsMap.put(key, newConfiguration);
+		isDirty = true;
+	}
+
+	/* if either state configuration is new composed of old states or of new states, process and return it to be evaluated */
+	pointRef.printQE("169 ");
+	if(isDirty){
+		/* copy token configuration and apply the copy to the network */
+		var newTokenConfig = new AUX!TokenConfiguration;
+		newTokenConfig.tokenID = newConfiguration;
+		pointRef.printQE("174 ");
+		for(t in currentQueueElem.tokenConfiguration.tokens){
+			var tokenCopy = new AUX!Token;
+			tokenCopy.tokenValue = t.tokenValue;
+			tokenCopy.PrevValue = t.tokenValue;
+			tokenCopy.numberOfTokens = t.numberOfTokens;
+			newTokenConfig.tokens.add(tokenCopy);
+		}
+		pointRef.printQE("181 ");
+		controll.tokenConfigurations.add(newTokenConfig); // probably unecessary
+		pointRef.printQE("183 ");
+		newConfiguration.tokenConfiguration = newTokenConfig;
+
+		pointRef.printQE("186 ");
+		pointRef02.printQE("186 ");
+		////"endStep".errln();
+		////"".errln();
+		return newConfiguration;
+	}else{
+		pointRef.printQE("189 ");
+		pointRef02.printQE("189 ");
+		////"endStep".errln();
+		////"".errln();
+		return null;
+	}
+}
+
+//                     .
+//                   .o8
+//         .oooo.o .o888oo  .ooooo.  oo.ooooo.
+//        d88(  "8   888   d88' `88b  888' `88b
+//        `"Y88b.    888   888ooo888  888   888
+//        o.  )88b   888 . 888    .o  888   888
+//        8""888P'   º888º `Y8bod8P'  888bod8P'
+//                                    888
+//                             oooo  o888o
+//                             `888
+//        oooo d8b oooo  oooo   888   .ooooo.
+//        `888""8P `888  `888   888  d88' `88b
+//         888      888   888   888  888ooo888
+//         888      888   888   888  888    .o
+//        d888b     `V88V"V8P' o888o `Y8bod8P
+//
+
+operation AUX!QueueElem stepRule(ruleState : INTERACTION!State, fromStates: Map, focus:AUX!StateRef) : Map{ //might need to add stateMap as parameter
+	var selfStates : Map = new Map;
+	var returnStates : Map = new Map;
+
+
+//  .ooPYoo. .ooPYoo. oooYooYoo. oooYooYoo. .ooPYoo. oodYoo. 
+//  88     ' 88    88 88' 88  88 88' 88  88 88    88 88' `88 
+//  88     . 88    88 88  88  88 88  88  88 88    88 88   88 
+//  `YooooP' `YooooP' 88  88  88 88  88  88 `YooooP' 88   88
+
+
+	pointRef.printQE("408 ");
+// streamline
+//	selfStates.putAll(fromStates); // copy the source state to the target
+	for (conditionElem in ruleState.conditions) { //compute the current step
+		////conditionElem.id.err("condition ");
+		////conditionElem.value.errln(" condition ");
+		var updatedState;
+		if (conditionElem.isTypeOf(INTERACTION!VElement) or conditionElem.isTypeOf(INTERACTION!OElement)) {
+			////self.states.select(s|s.layer = focus.layer).errln("state stelect ");
+			updatedState = self.states.selectOne(s|s.layer = focus.layer);// focus; //will this work ? what about now
+		}else{
+			updatedState = self.update(conditionElem);
+		}
+		////updatedState.id.errln("updated ");
+		pointRef.printQE("418 ");
+		var condElems : Sequence;
+		// for actions
+
+		if (selfStates.containsKey(updatedState.layer)) {
+			condElems = selfStates.get(updatedState.layer);
+			condElems.add(conditionElem);
+		}else {
+			selfStates.put(updatedState.layer,Sequence{conditionElem});
+		}
+		pointRef.printQE("428 ");
+		// streamline
+		////if (fromStates.get(updatedState.layer) <> null){
+		////	fromStates.get(updatedState.layer).id.errln("AA ");
+		////}
+		fromStates.put(updatedState.layer,updatedState);
+		////fromStates.get(updatedState.layer).id.errln("BB ");
+	}
+
+	pointRef.printQE("433 ");
+
+//
+//            oo
+//            88
+//  .ooPYoo. o88P .ooPYoo. .ooPYoo. 
+//  Y8b..     88  88oooo88 88    88 
+//     'Y8b.  88  88.      88    88 
+//  `YooooP'  88  `Yooooo' 88YoooP' 
+//                         88
+//                         88
+//
+
+	if (ruleState.to <> null) {
+		//compute inner arc
+		// streamline
+		var toStates = self.stepRule(ruleState.to.target,fromStates,focus); // compute the next step of the interaction
+
+		//hack for parallel transitions // because of reasons we can do this in advance in the recursive version
+		var transition = new SCCD!Transition;
+		if (ruleState.eContainer().hasTransitions.first().Event.isDefined() and ruleState.eContainer().hasTransitions.first().Event <> "") { // it should never go in here in the intermediate steps but you never know
+			transition.event = ruleState.eContainer().hasTransitions.first().Event;
+			transition.name = transition.event;			
+		}else {
+			//transition.after = 1;
+			transition.name = "step" + nextStateID.asString();
+			//because we don't want to use SCCD use of TIMER we set our own generic trigger event
+			transition.event = "_step";
+		}
+
+		var raise = new SCCD!Raise;
+		raise.event = transition.name + nextTransitionID.asString();
+		transition.raise.add(raise);
+		transition.target = controllerState;
+
+		var newguard : String = "";
+		var notStart : Boolean = false;		
+		// intermediate end hack for parallel transitions
+
+		for (stateRef in toStates.values()) {
+			//create intermediate step state for that layer
+			var newIntermediateState = new SCCD!State;
+			newIntermediateState.id = "is" + nextStateID.asString();
+
+			//create transition from the intermediate step state to the next step state of that layer
+			var newIntermediateTransition = new SCCD!Transition;
+			newIntermediateTransition.target = stateRef.statePtr;
+			newIntermediateTransition.name = "after" + nextStateID.asString();
+			newIntermediateTransition.event = raise.event; // make transitions be triggered by controll transition of the hack parallel transitions
+			nextStateID++;
+			
+			//up actions application
+			for (elem in stateRef.operations) {
+				".".print();
+				var action = new SCCD!Script;
+				action.script = elem.asOp();
+				newIntermediateTransition.script.add(action);
+			}
+			//end up actions application
+			
+			// down actions preparation /*it is here that I inject the raise _step if needed*/
+			if (selfStates.containsKey(stateRef.layer)) {
+				var condElems = selfStates.get(stateRef.layer);
+				stateRef.operations = condElems;
+			}else {
+				stateRef.operations = Sequence{};
+			}
+			// end down actions preparation
+			
+			newIntermediateState.transition.add(newIntermediateTransition);
+			
+			/* set state down recursion */
+			stateRef.layerPtr.states.add(newIntermediateState);
+			stateRef.statePtr = newIntermediateState;
+			stateRef.id = newIntermediateState.id;
+			returnStates.put(stateRef.layer,stateRef);
+
+			// hack for parallel transitions guard colecting
+			newguard += conjunctionString + "INSTATE('/System/" + stateRef.layer + "/" + stateRef.id + "')";
+			// end hack for parallel transitions guard colecting
+		}
+		
+		// resume hack for parallel transitions
+
+		transition.cond = newguard.substring(5); // skip first and/&&
+		controllerState.transition.add(transition);
+		nextTransitionID++;
+
+		//end hack for parallel transitions
+
+		return returnStates;
+
+	}else{
+
+
+//
+//  o                        o               o   o
+//  8                                        8
+// o8P .oPYo. oPYo. ooYoYo. o8 odYo. .oPYo. o8P o8 .oPYo. odYo.
+//  8  8oooo8 8  `' 8' #  8  8 8' `8 .oooo8  8   8 8    8 8' `8
+//  8  8.     8     8  #  8  8 8   8 8    8  8   8 8    8 8   8
+//  8  `Yooo' 8     8  #  8  8 8   8 `YooP8  8   8 `YooP' 8   8
+//
+
+
+		pointRef.printQE("328 ");
+		//search for the states in the statemachine
+		for (stateRef in fromStates.values()) { //maybe not from fromStates, might need to be from a copy
+			pointRef.printQE("331 ");
+			// down actions preparation
+			if (selfStates.containsKey(stateRef.layer)) {
+				var condElems = selfStates.get(stateRef.layer);
+				stateRef.operations = condElems;
+			}else {
+				stateRef.operations = Sequence{};
+			}
+			// end down actions preparation
+
+			pointRef.printQE("341 ");
+			//was there a state for this configuration
+	///		var oldStateRef = stateMap.get(stateRef.hasElements.asString()); // the issue if here ?
+			var oldStateRef = stateMap.get(stateRef.hasElements.collect(i| i.id).asString() + stateRef.hasElements.collect(i| i.value).asString()); // the issue if here ?
+			pointRef.printQE("345 ");
+			if(oldStateRef == null){
+				pointRef.printQE("347 ");
+				//create an actual new state
+	///			isDirty = true;
+				stateRef.id = "s" + nextStateID.asString();
+				nextStateID++;
+				var newState = new SCCD!State;
+				newState.id = stateRef.id;
+				stateRef.statePtr = newState; // keep track of the new state
+				stateRef.layerPtr.states.add(newState); //add state to statechart
+				for(elem in stateRef.hasElements){
+					var newElem = new SCCD!IElement;
+					newElem.id = elem.id;
+					newElem.value = elem.value;
+					elem.elemPtr = newElem;
+					newState.ielement.add(newElem);
+				}
+	///			stateMap.put(stateRef.hasElements.asString(),stateRef);
+				stateMap.put(stateRef.hasElements.collect(i| i.id).asString() + stateRef.hasElements.collect(i| i.value).asString(),stateRef);
+			}else{
+				pointRef.printQE("366 ");
+				//update the statereference to the existing state
+				stateRef.id = oldStateRef.id;
+				pointRef.printQE("369 ");
+				//there may be an issue here because the ptrs are not different before the match ...
+				stateRef.statePtr = oldStateRef.statePtr;
+				pointRef.printQE("372 ");
+				//layer should be the same
+				if (false) {//if we dont trust the pre existing elements in newState so we replace it with the oldState elements
+					stateRef.hasElements.clear();
+					for(e in oldStateRef.hasElements){
+						stateRef.hasElements.add(e.clone()); //or remove this and the clear
+					}				
+				}
+				pointRef.printQE("380 ");
+			}
+			pointRef.printQE("382 ");
+			returnStates.put(stateRef.layer,stateRef.copy()); // copy the source state to the target
+			pointRef.printQE("384 ");
+		}
+		pointRef.printQE("386 ");
+		// returnStates.putAll(fromStates); // copy the source state to the target // might need a proper copy
+		return returnStates; // return the set of final states afected by the rule
+	}
+}
+
+//            oooo
+//            `888
+//   .ooooo.   888   .ooooo.  ooo. .oo.    .ooooo.
+//  d88' `"Y8  888  d88' `88b `888PºY88b  d88' `88b
+//  888        888  888   888  888   888  888ooo888
+//  888   .o8  888  888   888  888   888  888    .o
+//  `Y8bod8P' o888o `Y8bod8P' o888o o888o `Y8bod8P'
+// 
+
+// let us deprecate this one :D
+operation AUX!QueueElem clone() : AUX!QueueElem {
+	var clone = new AUX!QueueElem;
+	for(s in self.states){
+		var pivotState : AUX!StateRef;
+		pivotState = s.clone();
+		clone.states.add(pivotState);
+		for(e in pivotState.hasElements){
+			clone.elements.add(e);
+		}
+	}
+	return clone;
+}
+
+// let us deprecate this one :D
+operation AUX!StateRef clone() : AUX!StateRef {
+	var clone = new AUX!StateRef;
+	clone.id = self.id;
+	clone.layer = self.layer;
+	clone.statePtr = self.statePtr;
+	clone.layerPtr = self.layerPtr;
+	//the clone of the set is the set of the clones
+	for(e in self.hasElements){
+		clone.hasElements.add(e.clone());
+	}
+	return clone;
+}
+
+operation AUX!ElemRef clone() : AUX!ElemRef {
+	var clone = new AUX!ElemRef;
+	clone.elemPtr = self.elemPtr;
+	clone.id = self.id;
+	clone.value = self.value;
+	return clone;
+}
+
+//   .o88o. o8o                    .o8
+//   888 `º `"'                   º888
+//  o888oo oooo  ooo. .oo.    .oooo888
+//   888   `888  `888P"Y88b  d88' `888
+//   888    888   888   888  888   888
+//   888    888   888   888  888   888
+//  o888o  o888o o888o o888o `Y8bod88P"
+//
+
+operation AUX!QueueElem find (conditionElem:INTERACTION!IElement) : AUX!StateRef {
+	var pivot = self.elements.selectOne(elem|conditionElem.id = elem.id );// off because compatibility and conditionElem.value = elem.value);
+	if(pivot <> null){
+		////if(pivot.value <> conditionElem.value ){
+		////	pivot.id.errln("find id ");
+		////	conditionElem.id.errln("find id ");
+		////	pivot.value.errln("find value ");
+		////	conditionElem.value.errln("find value ");
+		////}
+		return pivot.inState;
+	}
+	return null;
+}
+
+operation AUX!QueueElem find (conditionElem:INTERACTION!OElement) : AUX!StateRef {
+	var pivot = self.elements.selectOne(elem|canvas.id = elem.id);
+	if(pivot <> null){
+		return pivot.inState;
+	}
+	return null;
+}
+
+operation AUX!QueueElem find (conditionElem:INTERACTION!LElement) : AUX!StateRef {
+	var pivot = self.elements.selectOne(elem|canvas.id = elem.id); //maybe have this as static ?
+	if(pivot <> null){
+		return pivot.inState;
+	}
+	return null;
+}
+
+//                              .o8             .
+//                             "888           .o8
+//  oooo  oooo oo.ooooo.   .oooo888  .oooo. .o888oo .ooooo.
+//  `888  `888  888' `88b d88' `888 `P  )88b  888  d88' `88b
+//   888   888  888   888 888   888  .oP"888  888  888ooo888
+//   888   888  888   888 888   888 d8(  888  888 .888    .o
+//   `V88V"V8P' 888bod8P' `Y8bod88Pº`Y888º8o º888º`Y8bod8P'
+//              888
+//             o888o
+//
+
+operation AUX!QueueElem update (conditionElem:INTERACTION!IElement) : AUX!StateRef {
+	var pivot = self.elements.selectOne(elem|conditionElem.id = elem.id );
+	if(pivot <> null){
+		if (conditionElem.value = "" or conditionElem.value = null) {
+			pivot.value = "default";
+		}else{
+			pivot.value = conditionElem.value;
+		}		
+		//pivot.value = conditionElem.value; //discriminate type here
+		pivot.inState.isDirty = true;
+//		pivot.inState.inConfiguration.dirtyStates.add(pivot.inState);
+//		pivot.inState.inConfiguration.dirtyLayers.add(pivot.inState);
+		pivot.inState.inConfiguration.dirtyElements.add(pivot);
+		return pivot.inState;
+	}
+	return null;
+}
+
+operation AUX!QueueElem update (conditionElem:INTERACTION!OElement) : AUX!StateRef {
+	var pivot = self.elements.selectOne(elem|canvas.id = elem.id);
+	if(pivot <> null){
+		pivot.inState.isDirty = true;
+//		pivot.inState.inConfiguration.dirtyStates.add(pivot.inState);
+//		pivot.inState.inConfiguration.dirtyLayers.add(pivot.inState);
+		pivot.inState.inConfiguration.dirtyElements.add(pivot);
+		return pivot.inState;
+	}
+	return null;
+}
+
+operation AUX!QueueElem update (conditionElem:INTERACTION!LElement) : AUX!StateRef {
+	var pivot = self.elements.selectOne(elem|canvas.id = elem.id);
+	if(pivot <> null){
+//		pivot.value = conditionElem.id; //exclude this
+		pivot.inState.isDirty = true;
+//		pivot.inState.inConfiguration.dirtyStates.add(pivot.inState);
+//		pivot.inState.inConfiguration.dirtyLayers.add(pivot.inState);
+		pivot.inState.inConfiguration.dirtyElements.add(pivot);
+		return pivot.inState;
+	}
+	return null;
+}
+
+//   .ooooo.   .ooooo.  oo.ooooo.  oooo    ooo
+//  d88' `"Y8 d88' `88b  888' `88b  `88.  .8'
+//  888       888   888  888   888   `88..8'
+//  888   .o8 888   888  888   888    `888'
+//  `Y8bod8P' `Y8bod8P'  888bod8P'     .8'
+//                       888       .o..P'
+//                      o888o      `Y8P'
+//
+
+operation AUX!QueueElem copy() : AUX!QueueElem {
+	var r = new AUX!QueueElem;
+	for (s in self.states){
+		r.states.add(s.copy());
+	}
+	return r;
+}
+
+operation AUX!StateRef copy() : AUX!StateRef {
+	var r = new AUX!StateRef;
+	r.id = self.id;
+	r.layer = self.layer;
+	r.statePtr = self.statePtr;
+	r.layerPtr = self.layerPtr;
+	r.operations = self.operations;
+	return r;
+}
+
+//                       .oooooo.
+//                      d8P'  `Y8b
+//   .oooo.    .oooo.o 888      888 oo.ooooo.
+//  `P  )88b  d88(  "8 888      888  888' `88b
+//   .oP"888  `ºY88b.  888      888  888   888
+//  d8(  888  o.  )88b `88b    d88'  888   888
+//  `Y888ºº8o 8""888P'  `Y8bood8P'   888bod8P'
+//                                   888
+//                                  o888o
+//
+
+operation INTERACTION!IElement asOp() : String {
+    var is = LAYOUT!Element.allInstances().selectOne(i|self.id = i.id);
+    while (not is.isTypeOf(LAYOUT!InteractionStream)) {
+			is = is.eContainer();
+		}
+		var retValue = "";
+		if (is.name <> null){
+			retValue += is.name;
+		}
+		if (self.`operation` <> null){
+			retValue += self.`operation`;
+		}
+		if (self.attribute <> null){
+			retValue += self.attribute;
+		}
+		retValue += ".call(this, '" + self.id + "'";
+		if (self.value <> null){
+			retValue += ",'" + self.value + "'";
+		}
+		retValue += ");";
+// this should be done in the mapping
+	// Thisa should be handled by a more generic method call
+/*	var retValue = "";
+	switch (self.value) {
+	  case "visible" : retValue = (is.name + "Setter.call(this,'" + self.id + "',"+ 1 +");");
+    case "notvisible" : retValue = (is.name + "Setter.call(this,'" + self.id + "',"+ 0 +");");
+    case "active" : retValue = (is.name + "Active.call(this,'" + self.id + "',"+ 1 +");");
+    case "inactive" : retValue = (is.name + "Active.call(this,'" + self.id + "',"+ 0 +");");
+    case "update" : retValue = (is.name + "Updater.call(this,'" + self.id + "');");
+    case "enable" : retValue = (is.name + "Enable.call(this,'" + self.id + "',"+ 1 +");");
+    case "disable" : retValue = (is.name + "Disable.call(this,'" + self.id + "',"+ 0 +");");
+    default : retValue = (is.name + "Active.call(this,'" + self.id + "',"+ 0 +");");
+	}*/
+	return retValue;
+}
+
+operation INTERACTION!OElement asOp() : String {
+	return (selfObject + self.`operation` + "(" + self.value + ");");
+}
+
+operation INTERACTION!LElement asOp() : String {
+	return (selfObject + self.id + self.`operation` + "(" + self.value.asString().replace(',','","') + ");");
+//	return (self.value + self.id + ".call(this);");
+}
+
+operation INTERACTION!VElement asOp() : String {
+	//return (selfObject + self.value + "();");
+	//return ('this.vElement["'+self.id+'"] = "' + self.value + '"');
+	if(self.`operation` == "copy"){
+		return ('vElement["'+self.id+'"] = vElement["' + self.value + '"]');
+	}else{
+		return ('vElement["'+self.id+'"] = "' + self.value + '"');
+	}
+}
+
+//  oooooooooo.             .o8                            
+//  `888'   `Y8b           "888                            
+//   888      888  .ooooo.  888oooo. oooo  oooo  .oooooooo 
+//   888      888 d88' `88b d88' `88b`888  `888 888' `88b  
+//   888      888 888ooo888 888   888 888   888 888   888  
+//   888     d88' 888    .o 888   888 888   888 `88bod8P'  
+//  o888bood8P'   `Y8bod8P' `Y8bod8P' `V88V"V8P'`8oooooo.  
+//                                              d"     YD  
+//                                              "Y88888P'  
+// 
+
+operation AUX!QueueElem printQE(head:String){ // for debugging purpouses remove in final commit
+/*return
+head.err();
+
+for(k in stateMap.keySet()){
+	stateMap.get(k).id.err(" - ");
+	k.errln(" : ");
+}
+/*
+for(e in self.elements){
+	if(e.inState <> null){
+		e.inState.id.err("\t");
+	}else{
+		"HERE".err(" ");
+	}
+}*/
+/*"".errln();
+
+/*	for(e in self.elements){
+		if(e.id = "23"){
+			e.elemPtr.asString().substring(45,51).err(head);
+			e.id.err(" ");
+			if(e.inState <> null){
+				e.inState.id.err(" ");
+				e.inState.asString().substring(45,51).err(" ");
+			}else{
+				"HERE".err(" ");
+			}
+			e.value.errln(" ");
+		}
+	"".errln();
+	}*/
+}
+
+operation panic(){
+'                          oooo$$$$$$$$$$$$oooo'.errln();
+'                      oo$$$$$$$$$$$$$$$$$$$$$$$$o'.errln();
+'                   oo$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$o         o$   $$ o$'.errln();
+'   o $ oo        o$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$o       $$ $$ $$o$'.errln();
+'oo $ $ "$      o$$$$$$$$$    $$$$$$$$$$$$$    $$$$$$$$$o       $$$o$$o$'.errln();
+'"$$$$$$o$     o$$$$$$$$$      $$$$$$$$$$$      $$$$$$$$$$o    $$$$$$$$'.errln();
+'  $$$$$$$    $$$$$$$$$$$      $$$$$$$$$$$      $$$$$$$$$$$$$$$$$$$$$$$'.errln();
+'  $$$$$$$$$$$$$$$$$$$$$$$    $$$$$$$$$$$$$    $$$$$$$$$$$$$$  """$$$'.errln();
+'   "$$$""""$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$     "$$$'.errln();
+'    $$$   o$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$     "$$$o'.errln();
+'   o$$"   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$       $$$o'.errln();
+'   $$$    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$" "$$$$$$ooooo$$$$o'.errln();
+'  o$$$oooo$$$$$  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$   o$$$$$$$$$$$$$$$$$'.errln();
+'  $$$$$$$$"$$$$   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$     $$$$""""""""'.errln();
+' """"       $$$$    "$$$$$$$$$$$$$$$$$$$$$$$$$$$$"      o$$$'.errln();
+'            "$$$o     """$$$$$$$$$$$$$$$$$$"$$"         $$$'.errln();
+'              $$$o          "$$""$$$$$$""""           o$$$'.errln();
+'               $$$$o                                o$$$"'.errln();
+'                "$$$$o      o$$$$$$o"$$$$o        o$$$$'.errln();
+'                  "$$$$$oo     ""$$$$o$$$$$o   o$$$$""'.errln();
+'                     ""$$$$$oooo  "$$$o$$$$$$$$$"""'.errln();
+'                        ""$$$$$$$oo $$$$$$$$$$'.errln();
+'                                """"$$$$$$$$$$$'.errln();
+'                                    $$$$$$$$$$$$'.errln();
+'                                     $$$$$$$$$$"'.errln();
+'                                      "$$$""""'.errln();
+}

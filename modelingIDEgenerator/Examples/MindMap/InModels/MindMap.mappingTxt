@@ -1,0 +1,42 @@
+I#leftmousedown#document.addEventListener("mousedown",function() {if(event.which == 1) {MindMap.Interaction.prototype.triggerEvent(event,event.target.getAttribute("data-type"),'leftmousedown');}}, false);
+I#leftmousemove#document.addEventListener("mousemove",function() {if(event.which == 1){MindMap.Interaction.prototype.triggerEvent(event,event.target.getAttribute("data-type"),'leftmousemove');}}, false);
+I#leftmouseup#document.addEventListener("mouseup",function() {if(event.which == 1){MindMap.Interaction.prototype.triggerEvent(event,event.target.getAttribute("data-type"),'leftmouseup');}}, false);
+I#rightmousedown#document.addEventListener("mousedown",function() {if(event.which == 3) {MindMap.Interaction.prototype.triggerEvent(event,event.target.getAttribute("data-type"),'rightmousedown');}}, false);
+I#rightmousemove#document.addEventListener("mousemove",function() {if(event.which == 3){MindMap.Interaction.prototype.triggerEvent(event,event.target.getAttribute("data-type"),'rightmousemove');}}, false);
+I#rightmouseup#document.addEventListener("mouseup",function() {if(event.which == 3) {MindMap.Interaction.prototype.triggerEvent(event,event.target.getAttribute("data-type"),'rightmouseup');}}, false);
+I#backspacekey#document.addEventListener("keydown", function() {if(event.keyCode == 8 && !event.repeat){MindMap.Interaction.prototype.triggerEvent(event,"",'backspacekey');}}, false);
+I#deletekey#document.addEventListener("keydown", function() {if(event.keyCode == 46 && !event.repeat){MindMap.Interaction.prototype.triggerEvent(event,"",'deletekey');}}, false);
+I#tabkey#document.addEventListener("keydown", function() {if(event.keyCode == 9 && !event.repeat){MindMap.Interaction.prototype.triggerEvent(event,"",'tabkey');}}, false);
+I#enterkey#document.addEventListener("keydown", function() {if(event.keyCode == 13 && !event.repeat){MindMap.Interaction.prototype.triggerEvent(event,"",'enterkey');}}, false);
+I#shiftkey#document.addEventListener("keydown", function() {if(event.keyCode == 16 && !event.repeat){MindMap.Interaction.prototype.triggerEvent(event,"",'shiftkey');}}, false);
+I#ctrlkey#document.addEventListener("keydown", function() {if(event.keyCode == 17 && !event.repeat){MindMap.Interaction.prototype.triggerEvent(event,"",'ctrlkey');}}, false);
+I#altkey#document.addEventListener("keydown", function() {if(event.keyCode == 18 && !event.repeat){MindMap.Interaction.prototype.triggerEvent(event,"",'altkey');}}, false);
+I#escapekey#document.addEventListener("keydown", function() {if(event.keyCode == 27 && !event.repeat){MindMap.Interaction.prototype.triggerEvent(event,"",'escapekey');}}, false);
+I#spacekey#document.addEventListener("keydown", function() {if(event.keyCode == 32 && !event.repeat){MindMap.Interaction.prototype.triggerEvent(event,"",'spacekey');}}, false);
+I#keyrelease#document.addEventListener("keyup", function() {MindMap.Interaction.prototype.triggerEvent(event,"",'keyrelease');}, false);
+
+
+O#Topicadd#add.call(this,"23","Topic");
+O#SubTopicadd#add.call(this,"23","SubTopic");
+O#Linkadd#addLink.call(this,parOne,parTwo);
+
+O#Topicrem#rem.call(this,this.event.target);
+O#SubTopicrem#rem.call(this,this.event.target);
+O#Linkrem#rem.call(this,this.event.target);
+
+O#Topicmove#move.call(this,parOne,"23");
+O#SubTopicmove#move.call(this,parOne,"23");
+
+C#_#vElement = {};
+C#_#this.svg = scConstructor("23");#SubTopicadd#add.call(this,"23","SubTopic");
+O#Linkadd#addLink.call(this,parOne,parTwo);
+
+O#Topicrem#rem.call(this,this.event.target);
+O#SubTopicrem#rem.call(this,this.event.target);
+O#Linkrem#rem.call(this,this.event.target);
+
+O#Topicmove#move.call(this,parOne,"23");
+O#SubTopicmove#move.call(this,parOne,"23");
+
+C#_#vElement = {};
+C#_#this.svg = scConstructor("23");

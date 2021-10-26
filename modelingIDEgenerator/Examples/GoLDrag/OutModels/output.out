@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:auxiliar="http:\\geodes.iro.ca\auxiliar" xsi:schemaLocation="http:\\geodes.iro.ca\auxiliar ../../../Models/auxiliar.ecore">
+  <auxiliar:Controll alphaParents="/1 /2 /3">
+    <rules queue="/4" name="RunTransfromation">
+      <rulePtr href="../InModels/GoLDrag.interaction#//@interactions.0"/>
+    </rules>
+    <rules queue="/4" name="CSSetAddInstance">
+      <rulePtr href="../InModels/GoLDrag.interaction#//@interactions.1"/>
+    </rules>
+    <rules queue="/4" name="CSAddInstance">
+      <rulePtr href="../InModels/GoLDrag.interaction#//@interactions.2"/>
+    </rules>
+    <rules queue="/4" name="CSAddInstance">
+      <rulePtr href="../InModels/GoLDrag.interaction#//@interactions.3"/>
+    </rules>
+    <rules queue="/4" name="CSDef">
+      <rulePtr href="../InModels/GoLDrag.interaction#//@interactions.4"/>
+    </rules>
+    <rules queue="/4" name="CSSetRemInstance">
+      <rulePtr href="../InModels/GoLDrag.interaction#//@interactions.5"/>
+    </rules>
+    <rules queue="/4" name="CSRemInstance">
+      <rulePtr href="../InModels/GoLDrag.interaction#//@interactions.6"/>
+    </rules>
+    <rules queue="/4" name="CSRemInstance">
+      <rulePtr href="../InModels/GoLDrag.interaction#//@interactions.7"/>
+    </rules>
+    <rules queue="/4" name="CSDef">
+      <rulePtr href="../InModels/GoLDrag.interaction#//@interactions.8"/>
+    </rules>
+    <rules queue="/35" name="EndTransformation">
+      <rulePtr href="../InModels/GoLDrag.interaction#//@interactions.9"/>
+    </rules>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="0" ruleParameterID="null"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="2" toBeta="/0/@desisions.0" ruleParameterID="playModelButton" value="default" inLayer="/0/@parameters.2"/>
+    <parameters xsi:type="auxiliar:AlphaNodeLayer" tokenIndex="3" toBeta="/0/@desisions.0 /0/@desisions.9" hasParams="playModelButton playModelButton" layerID="LayercomonTools"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="5" toBeta="/0/@desisions.1" ruleParameterID="23" value="default" inLayer="/0/@parameters.4"/>
+    <parameters xsi:type="auxiliar:AlphaNodeLayer" tokenIndex="6" toBeta="/0/@desisions.1 /0/@desisions.2 /0/@desisions.3 /0/@desisions.4 /0/@desisions.5 /0/@desisions.6 /0/@desisions.7 /0/@desisions.8" hasParams="23 23 23 23 23 23 23 23" layerID="Layercanvas"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="8" toBeta="/0/@desisions.2" ruleParameterID="23" value="default" inLayer="/0/@parameters.4"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="10" toBeta="/0/@desisions.3" ruleParameterID="23" value="default" inLayer="/0/@parameters.4"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="12" toBeta="/0/@desisions.4" ruleParameterID="23" value="default" inLayer="/0/@parameters.4"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="14" toBeta="/0/@desisions.5" ruleParameterID="23" value="default" inLayer="/0/@parameters.4"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="16" toBeta="/0/@desisions.6" ruleParameterID="23" value="default" inLayer="/0/@parameters.4"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="18" toBeta="/0/@desisions.7" ruleParameterID="23" value="default" inLayer="/0/@parameters.4"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="20" toBeta="/0/@desisions.8" ruleParameterID="23" value="default" inLayer="/0/@parameters.4"/>
+    <parameters xsi:type="auxiliar:AlphaNodeParam" tokenIndex="22" toBeta="/0/@desisions.9" ruleParameterID="playModelButton" value="active" inLayer="/0/@parameters.2"/>
+    <desisions tokenIndex="1" positiveValue="1" rule="/0/@rules.0" fromAlpha="playModelButton /0/@parameters.2"/>
+    <desisions tokenIndex="4" positiveValue="1" rule="/0/@rules.1" fromAlpha="23 /0/@parameters.4"/>
+    <desisions tokenIndex="7" positiveValue="1" rule="/0/@rules.2" fromAlpha="23 /0/@parameters.4"/>
+    <desisions tokenIndex="9" positiveValue="1" rule="/0/@rules.3" fromAlpha="23 /0/@parameters.4"/>
+    <desisions tokenIndex="11" positiveValue="1" rule="/0/@rules.4" fromAlpha="23 /0/@parameters.4"/>
+    <desisions tokenIndex="13" positiveValue="1" rule="/0/@rules.5" fromAlpha="23 /0/@parameters.4"/>
+    <desisions tokenIndex="15" positiveValue="1" rule="/0/@rules.6" fromAlpha="23 /0/@parameters.4"/>
+    <desisions tokenIndex="17" positiveValue="1" rule="/0/@rules.7" fromAlpha="23 /0/@parameters.4"/>
+    <desisions tokenIndex="19" positiveValue="1" rule="/0/@rules.8" fromAlpha="23 /0/@parameters.4"/>
+    <desisions tokenIndex="21" positiveValue="1" rule="/0/@rules.9" fromAlpha="playModelButton /0/@parameters.2"/>
+    <tokenConfigurations tokenID="/4">
+      <tokens/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1"/>
+      <tokens isDirty="true" tokenValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens isDirty="true"/>
+    </tokenConfigurations>
+    <tokenConfigurations tokenID="/35">
+      <tokens/>
+      <tokens isDirty="true" PrevValue="true"/>
+      <tokens isDirty="true" PrevValue="true"/>
+      <tokens isDirty="true"/>
+      <tokens tokenValue="true" numberOfTokens="1" PrevValue="true"/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens/>
+      <tokens tokenValue="true" numberOfTokens="1" PrevValue="true"/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens tokenValue="true" numberOfTokens="1" PrevValue="true"/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens tokenValue="true" numberOfTokens="1" PrevValue="true"/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens tokenValue="true" numberOfTokens="1" PrevValue="true"/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens tokenValue="true" numberOfTokens="1" PrevValue="true"/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens tokenValue="true" numberOfTokens="1" PrevValue="true"/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens tokenValue="true" numberOfTokens="1" PrevValue="true"/>
+      <tokens tokenValue="true" PrevValue="true"/>
+      <tokens isDirty="true" tokenValue="true" numberOfTokens="1"/>
+      <tokens isDirty="true" tokenValue="true"/>
+    </tokenConfigurations>
+  </auxiliar:Controll>
+  <auxiliar:AlphaParent alphas="null" ruleParameterID="null"/>
+  <auxiliar:AlphaParent alphas="playModelButton playModelButton" ruleParameterID="playModelButton"/>
+  <auxiliar:AlphaParent alphas="23 23 23 23 23 23 23 23" ruleParameterID="23"/>
+  <auxiliar:QueueElem states="s0 s1 h00" elements="/6 /7 /9" tokenConfiguration="/0/@tokenConfigurations.0" dirtyElements="/6 /7 /9"/>
+  <auxiliar:StateRef id="s0" layer="LayercomonTools" hasElements="/6 /7" inConfiguration="/4">
+    <statePtr href="GoLDrag.sccd#s0"/>
+    <layerPtr href="GoLDrag.sccd#LayercomonTools"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s0" id="comonTools" value="0">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s0" id="playModelButton" value="default">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s1" layer="Layercanvas" hasElements="/9" inConfiguration="/4">
+    <statePtr href="GoLDrag.sccd#s1"/>
+    <layerPtr href="GoLDrag.sccd#Layercanvas"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s1" id="23" value="default">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="h00" layer="LayerControler" inConfiguration="/4">
+    <statePtr href="GoLDrag.sccd#h00"/>
+    <layerPtr href="GoLDrag.sccd#LayerControler"/>
+  </auxiliar:StateRef>
+  <auxiliar:QueueElem states="s0 s1 h00" elements="/13 /14 /16"/>
+  <auxiliar:StateRef id="s0" layer="LayercomonTools" hasElements="/13 /14" inConfiguration="/11">
+    <statePtr href="GoLDrag.sccd#s0"/>
+    <layerPtr href="GoLDrag.sccd#LayercomonTools"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s0" id="comonTools" value="0">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s0" id="playModelButton" value="default">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s1" layer="Layercanvas" hasElements="/16" inConfiguration="/11">
+    <statePtr href="GoLDrag.sccd#s1"/>
+    <layerPtr href="GoLDrag.sccd#Layercanvas"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.5/@hasStates.0/@conditions.0"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s1" id="23" value="default">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="h00" layer="LayerControler" inConfiguration="/11">
+    <statePtr href="GoLDrag.sccd#h00"/>
+    <layerPtr href="GoLDrag.sccd#LayerControler"/>
+  </auxiliar:StateRef>
+  <auxiliar:StateRef id="s1" layer="Layercanvas">
+    <statePtr href="GoLDrag.sccd#s1"/>
+    <layerPtr href="GoLDrag.sccd#Layercanvas"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.5/@hasStates.0/@conditions.0"/>
+  </auxiliar:StateRef>
+  <auxiliar:QueueElem states="s0 s1 h00" elements="/21 /22 /24" dirtyElements="/24"/>
+  <auxiliar:StateRef id="s0" layer="LayercomonTools" hasElements="/21 /22" inConfiguration="/19">
+    <statePtr href="GoLDrag.sccd#s0"/>
+    <layerPtr href="GoLDrag.sccd#LayercomonTools"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s0" id="comonTools" value="0">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s0" id="playModelButton" value="default">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s1" layer="Layercanvas" hasElements="/24" isDirty="true" inConfiguration="/19">
+    <statePtr href="GoLDrag.sccd#s1"/>
+    <layerPtr href="GoLDrag.sccd#Layercanvas"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.6/@hasStates.0/@conditions.0"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s1" id="23" value="default">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="h00" layer="LayerControler" inConfiguration="/19">
+    <statePtr href="GoLDrag.sccd#h00"/>
+    <layerPtr href="GoLDrag.sccd#LayerControler"/>
+  </auxiliar:StateRef>
+  <auxiliar:StateRef id="s1" layer="Layercanvas">
+    <statePtr href="GoLDrag.sccd#s1"/>
+    <layerPtr href="GoLDrag.sccd#Layercanvas"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.6/@hasStates.0/@conditions.0"/>
+  </auxiliar:StateRef>
+  <auxiliar:QueueElem states="s0 s1 h00" elements="/29 /30 /32" dirtyElements="/32"/>
+  <auxiliar:StateRef id="s0" layer="LayercomonTools" hasElements="/29 /30" inConfiguration="/27">
+    <statePtr href="GoLDrag.sccd#s0"/>
+    <layerPtr href="GoLDrag.sccd#LayercomonTools"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s0" id="comonTools" value="0">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s0" id="playModelButton" value="default">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s1" layer="Layercanvas" hasElements="/32" isDirty="true" inConfiguration="/27">
+    <statePtr href="GoLDrag.sccd#s1"/>
+    <layerPtr href="GoLDrag.sccd#Layercanvas"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.2/@hasStates.0/@conditions.0"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s1" id="23" value="default">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="h00" layer="LayerControler" inConfiguration="/27">
+    <statePtr href="GoLDrag.sccd#h00"/>
+    <layerPtr href="GoLDrag.sccd#LayerControler"/>
+  </auxiliar:StateRef>
+  <auxiliar:StateRef id="s1" layer="Layercanvas">
+    <statePtr href="GoLDrag.sccd#s1"/>
+    <layerPtr href="GoLDrag.sccd#Layercanvas"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.2/@hasStates.0/@conditions.0"/>
+  </auxiliar:StateRef>
+  <auxiliar:QueueElem states="s3 s1 h00" elements="/37 /38 /40" tokenConfiguration="/0/@tokenConfigurations.1" dirtyElements="/38"/>
+  <auxiliar:StateRef id="s3" layer="LayercomonTools" hasElements="/37 /38" isDirty="true" inConfiguration="/35">
+    <statePtr href="GoLDrag.sccd#s3"/>
+    <layerPtr href="GoLDrag.sccd#LayercomonTools"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.0/@hasStates.0/@conditions.0"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.0/@hasStates.0/@conditions.1"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s3" id="comonTools" value="0">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.1/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s3" id="playModelButton" value="active">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.1/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s1" layer="Layercanvas" hasElements="/40" inConfiguration="/35">
+    <statePtr href="GoLDrag.sccd#s1"/>
+    <layerPtr href="GoLDrag.sccd#Layercanvas"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s1" id="23" value="default">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="h00" layer="LayerControler" inConfiguration="/35">
+    <statePtr href="GoLDrag.sccd#h00"/>
+    <layerPtr href="GoLDrag.sccd#LayerControler"/>
+  </auxiliar:StateRef>
+  <auxiliar:StateRef id="s3" layer="LayercomonTools">
+    <statePtr href="GoLDrag.sccd#s3"/>
+    <layerPtr href="GoLDrag.sccd#LayercomonTools"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.0/@hasStates.0/@conditions.0"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.0/@hasStates.0/@conditions.1"/>
+  </auxiliar:StateRef>
+  <auxiliar:QueueElem states="s0 s1 h00" elements="/45 /46 /48"/>
+  <auxiliar:StateRef id="s0" layer="LayercomonTools" hasElements="/45 /46" inConfiguration="/43">
+    <statePtr href="GoLDrag.sccd#s0"/>
+    <layerPtr href="GoLDrag.sccd#LayercomonTools"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s0" id="comonTools" value="0">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s0" id="playModelButton" value="default">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s1" layer="Layercanvas" hasElements="/48" inConfiguration="/43">
+    <statePtr href="GoLDrag.sccd#s1"/>
+    <layerPtr href="GoLDrag.sccd#Layercanvas"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.1/@hasStates.0/@conditions.0"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s1" id="23" value="default">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="h00" layer="LayerControler" inConfiguration="/43">
+    <statePtr href="GoLDrag.sccd#h00"/>
+    <layerPtr href="GoLDrag.sccd#LayerControler"/>
+  </auxiliar:StateRef>
+  <auxiliar:StateRef id="s1" layer="Layercanvas">
+    <statePtr href="GoLDrag.sccd#s1"/>
+    <layerPtr href="GoLDrag.sccd#Layercanvas"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.1/@hasStates.0/@conditions.0"/>
+  </auxiliar:StateRef>
+  <auxiliar:QueueElem states="s0 s1 h00" elements="/53 /54 /56"/>
+  <auxiliar:StateRef id="s0" layer="LayercomonTools" hasElements="/53 /54" inConfiguration="/51">
+    <statePtr href="GoLDrag.sccd#s0"/>
+    <layerPtr href="GoLDrag.sccd#LayercomonTools"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s0" id="comonTools" value="0">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s0" id="playModelButton" value="default">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s1" layer="Layercanvas" hasElements="/56" inConfiguration="/51">
+    <statePtr href="GoLDrag.sccd#s1"/>
+    <layerPtr href="GoLDrag.sccd#Layercanvas"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.4/@hasStates.0/@conditions.0"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s1" id="23" value="default">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="h00" layer="LayerControler" inConfiguration="/51">
+    <statePtr href="GoLDrag.sccd#h00"/>
+    <layerPtr href="GoLDrag.sccd#LayerControler"/>
+  </auxiliar:StateRef>
+  <auxiliar:StateRef id="s1" layer="Layercanvas">
+    <statePtr href="GoLDrag.sccd#s1"/>
+    <layerPtr href="GoLDrag.sccd#Layercanvas"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.4/@hasStates.0/@conditions.0"/>
+  </auxiliar:StateRef>
+  <auxiliar:QueueElem states="s0 s1 h00" elements="/61 /62 /64" dirtyElements="/64"/>
+  <auxiliar:StateRef id="s0" layer="LayercomonTools" hasElements="/61 /62" inConfiguration="/59">
+    <statePtr href="GoLDrag.sccd#s0"/>
+    <layerPtr href="GoLDrag.sccd#LayercomonTools"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s0" id="comonTools" value="0">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s0" id="playModelButton" value="default">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s1" layer="Layercanvas" hasElements="/64" isDirty="true" inConfiguration="/59">
+    <statePtr href="GoLDrag.sccd#s1"/>
+    <layerPtr href="GoLDrag.sccd#Layercanvas"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.7/@hasStates.0/@conditions.0"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.7/@hasStates.0/@conditions.1"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s1" id="23" value="default">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="h00" layer="LayerControler" inConfiguration="/59">
+    <statePtr href="GoLDrag.sccd#h00"/>
+    <layerPtr href="GoLDrag.sccd#LayerControler"/>
+  </auxiliar:StateRef>
+  <auxiliar:StateRef id="s1" layer="Layercanvas">
+    <statePtr href="GoLDrag.sccd#s1"/>
+    <layerPtr href="GoLDrag.sccd#Layercanvas"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.7/@hasStates.0/@conditions.0"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.7/@hasStates.0/@conditions.1"/>
+  </auxiliar:StateRef>
+  <auxiliar:QueueElem states="s0 s1 h00" elements="/69 /70 /72" dirtyElements="/72"/>
+  <auxiliar:StateRef id="s0" layer="LayercomonTools" hasElements="/69 /70" inConfiguration="/67">
+    <statePtr href="GoLDrag.sccd#s0"/>
+    <layerPtr href="GoLDrag.sccd#LayercomonTools"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s0" id="comonTools" value="0">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s0" id="playModelButton" value="default">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s1" layer="Layercanvas" hasElements="/72" isDirty="true" inConfiguration="/67">
+    <statePtr href="GoLDrag.sccd#s1"/>
+    <layerPtr href="GoLDrag.sccd#Layercanvas"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.3/@hasStates.0/@conditions.0"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.3/@hasStates.0/@conditions.1"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s1" id="23" value="default">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="h00" layer="LayerControler" inConfiguration="/67">
+    <statePtr href="GoLDrag.sccd#h00"/>
+    <layerPtr href="GoLDrag.sccd#LayerControler"/>
+  </auxiliar:StateRef>
+  <auxiliar:StateRef id="s1" layer="Layercanvas">
+    <statePtr href="GoLDrag.sccd#s1"/>
+    <layerPtr href="GoLDrag.sccd#Layercanvas"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.3/@hasStates.0/@conditions.0"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.3/@hasStates.0/@conditions.1"/>
+  </auxiliar:StateRef>
+  <auxiliar:QueueElem states="s0 s1 h00" elements="/77 /78 /80"/>
+  <auxiliar:StateRef id="s0" layer="LayercomonTools" hasElements="/77 /78" inConfiguration="/75">
+    <statePtr href="GoLDrag.sccd#s0"/>
+    <layerPtr href="GoLDrag.sccd#LayercomonTools"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s0" id="comonTools" value="0">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s0" id="playModelButton" value="default">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.0/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s1" layer="Layercanvas" hasElements="/80" inConfiguration="/75">
+    <statePtr href="GoLDrag.sccd#s1"/>
+    <layerPtr href="GoLDrag.sccd#Layercanvas"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.8/@hasStates.0/@conditions.0"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s1" id="23" value="default">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="h00" layer="LayerControler" inConfiguration="/75">
+    <statePtr href="GoLDrag.sccd#h00"/>
+    <layerPtr href="GoLDrag.sccd#LayerControler"/>
+  </auxiliar:StateRef>
+  <auxiliar:StateRef id="s1" layer="Layercanvas">
+    <statePtr href="GoLDrag.sccd#s1"/>
+    <layerPtr href="GoLDrag.sccd#Layercanvas"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.8/@hasStates.0/@conditions.0"/>
+  </auxiliar:StateRef>
+  <auxiliar:QueueElem states="s0 s1 h00" elements="/85 /86 /88" dirtyElements="/86"/>
+  <auxiliar:StateRef id="s0" layer="LayercomonTools" hasElements="/85 /86" isDirty="true" inConfiguration="/83">
+    <statePtr href="GoLDrag.sccd#s0"/>
+    <layerPtr href="GoLDrag.sccd#LayercomonTools"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.9/@hasStates.0/@conditions.0"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s0" id="comonTools" value="0">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.1/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:ElemRef inState="s0" id="playModelButton" value="default">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.0/@states.1/@ielement.1"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="s1" layer="Layercanvas" hasElements="/88" inConfiguration="/83">
+    <statePtr href="GoLDrag.sccd#s1"/>
+    <layerPtr href="GoLDrag.sccd#Layercanvas"/>
+  </auxiliar:StateRef>
+  <auxiliar:ElemRef inState="s1" id="23" value="default">
+    <elemPtr href="GoLDrag.sccd#//@class.0/@scxml.0/@parallel.0/@states.1/@states.0/@ielement.0"/>
+  </auxiliar:ElemRef>
+  <auxiliar:StateRef id="h00" layer="LayerControler" inConfiguration="/83">
+    <statePtr href="GoLDrag.sccd#h00"/>
+    <layerPtr href="GoLDrag.sccd#LayerControler"/>
+  </auxiliar:StateRef>
+  <auxiliar:StateRef id="s0" layer="LayercomonTools">
+    <statePtr href="GoLDrag.sccd#s0"/>
+    <layerPtr href="GoLDrag.sccd#LayercomonTools"/>
+    <operations href="../InModels/GoLDrag.interaction#//@interactions.9/@hasStates.0/@conditions.0"/>
+  </auxiliar:StateRef>
+</xmi:XMI>

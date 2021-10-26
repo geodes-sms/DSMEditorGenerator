@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="ASCII"?>
+<interaction:Interactions xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:interaction="http://udem.iro.geodes.ca/interaction" xsi:schemaLocation="http://udem.iro.geodes.ca/interaction ../../../Models/interaction.ecore">
+  <interactions preCondition="//@interactions.0/@hasStates.0" goal="//@interactions.0/@hasStates.1" name="SelectPacmanButton01">
+    <hasStates to="//@interactions.0/@hasTransitions.0" id="S101">
+      <conditions xsi:type="interaction:IElement" id="pacmanButton" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.0/@hasTransitions.0" id="S102">
+      <conditions xsi:type="interaction:IElement" id="pacmanButton" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="ghostButton" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="foodButton" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="gridButton" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="scoreButton" value="default"/>
+    </hasStates>
+    <hasTransitions Event="press" source="//@interactions.0/@hasStates.0" target="//@interactions.0/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.1/@hasStates.0" goal="//@interactions.1/@hasStates.1" name="SelectGhostButton01">
+    <hasStates to="//@interactions.1/@hasTransitions.0" id="S201">
+      <conditions xsi:type="interaction:IElement" id="ghostButton" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.1/@hasTransitions.0" id="S202">
+      <conditions xsi:type="interaction:IElement" id="ghostButton" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="pacmanButton" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="foodButton" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="gridButton" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="scoreButton" value="default"/>
+    </hasStates>
+    <hasTransitions Event="press" source="//@interactions.1/@hasStates.0" target="//@interactions.1/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.2/@hasStates.0" goal="//@interactions.2/@hasStates.1" name="SelectFoodButton01">
+    <hasStates to="//@interactions.2/@hasTransitions.0" id="S301">
+      <conditions xsi:type="interaction:IElement" id="foodButton" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.2/@hasTransitions.0" id="S302">
+      <conditions xsi:type="interaction:IElement" id="foodButton" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="pacmanButton" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="ghostButton" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="gridButton" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="scoreButton" value="default"/>
+    </hasStates>
+    <hasTransitions Event="press" source="//@interactions.2/@hasStates.0" target="//@interactions.2/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.3/@hasStates.0" goal="//@interactions.3/@hasStates.1" name="SelectGridButton01">
+    <hasStates to="//@interactions.3/@hasTransitions.0" id="S401">
+      <conditions xsi:type="interaction:IElement" id="gridButton" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.3/@hasTransitions.0" id="S402">
+      <conditions xsi:type="interaction:IElement" id="gridButton" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="pacmanButton" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="ghostButton" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="foodButton" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="scoreButton" value="default"/>
+    </hasStates>
+    <hasTransitions Event="press" source="//@interactions.3/@hasStates.0" target="//@interactions.3/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.4/@hasStates.0" goal="//@interactions.4/@hasStates.1" name="SelectScoreButton01">
+    <hasStates to="//@interactions.4/@hasTransitions.0" id="S501">
+      <conditions xsi:type="interaction:IElement" id="scoreButton" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.4/@hasTransitions.0" id="S502">
+      <conditions xsi:type="interaction:IElement" id="scoreButton" value="active"/>
+      <conditions xsi:type="interaction:IElement" id="pacmanButton" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="ghostButton" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="foodButton" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="gridButton" value="default"/>
+    </hasStates>
+    <hasTransitions Event="press" source="//@interactions.4/@hasStates.0" target="//@interactions.4/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.5/@hasStates.0" goal="//@interactions.5/@hasStates.1" name="DeselectPacmanButton">
+    <hasStates to="//@interactions.5/@hasTransitions.0" id="D1">
+      <conditions xsi:type="interaction:IElement" id="pacmanButton" isFocus="true" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.5/@hasTransitions.0" id="D2">
+      <conditions xsi:type="interaction:IElement" id="pacmanButton" value="default"/>
+    </hasStates>
+    <hasTransitions Event="press" source="//@interactions.5/@hasStates.0" target="//@interactions.5/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.6/@hasStates.0" goal="//@interactions.6/@hasStates.1" name="DeselectGhostButton&#x9;">
+    <hasStates to="//@interactions.6/@hasTransitions.0" id="D3">
+      <conditions xsi:type="interaction:IElement" id="ghostButton" isFocus="true" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.6/@hasTransitions.0" id="D4">
+      <conditions xsi:type="interaction:IElement" id="ghostButton" value="default"/>
+    </hasStates>
+    <hasTransitions Event="press" source="//@interactions.6/@hasStates.0" target="//@interactions.6/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.7/@hasStates.0" goal="//@interactions.7/@hasStates.1" name="DeselectFoodButton&#x9;">
+    <hasStates to="//@interactions.7/@hasTransitions.0" id="D5">
+      <conditions xsi:type="interaction:IElement" id="foodButton" isFocus="true" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.7/@hasTransitions.0" id="D6">
+      <conditions xsi:type="interaction:IElement" id="foodButton" value="default"/>
+    </hasStates>
+    <hasTransitions Event="press" source="//@interactions.7/@hasStates.0" target="//@interactions.7/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.8/@hasStates.0" goal="//@interactions.8/@hasStates.1" name="DeselectGridButton&#x9;">
+    <hasStates to="//@interactions.8/@hasTransitions.0" id="D7">
+      <conditions xsi:type="interaction:IElement" id="gridButton" isFocus="true" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.8/@hasTransitions.0" id="D8">
+      <conditions xsi:type="interaction:IElement" id="gridButton" value="default"/>
+    </hasStates>
+    <hasTransitions Event="press" source="//@interactions.8/@hasStates.0" target="//@interactions.8/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.9/@hasStates.0" goal="//@interactions.9/@hasStates.1" name="DeselectScoreButton&#x9;">
+    <hasStates to="//@interactions.9/@hasTransitions.0" id="D9">
+      <conditions xsi:type="interaction:IElement" id="scoreButton" isFocus="true" value="active"/>
+    </hasStates>
+    <hasStates from="//@interactions.9/@hasTransitions.0" id="D10">
+      <conditions xsi:type="interaction:IElement" id="scoreButton" value="default"/>
+    </hasStates>
+    <hasTransitions Event="press" source="//@interactions.9/@hasStates.0" target="//@interactions.9/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.10/@hasStates.0" goal="//@interactions.10/@hasStates.1" name="CSMarkPacManInstance">
+    <hasStates to="//@interactions.10/@hasTransitions.0" id="R101">
+      <conditions xsi:type="interaction:LElement" id="PacManInstance" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.10/@hasTransitions.0" id="R102">
+      <conditions xsi:type="interaction:LElement" id="PacManInstance" value="mark"/>
+      <conditions xsi:type="interaction:VElement" id="Tset" value="PacMan"/>
+    </hasStates>
+    <hasTransitions Event="mark" source="//@interactions.10/@hasStates.0" target="//@interactions.10/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.11/@hasStates.0" goal="//@interactions.11/@hasStates.1" name="CSMarkGhostInstance">
+    <hasStates to="//@interactions.11/@hasTransitions.0" id="R103">
+      <conditions xsi:type="interaction:LElement" id="GhostInstance" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.11/@hasTransitions.0" id="R104">
+      <conditions xsi:type="interaction:LElement" id="GhostInstance" value="mark"/>
+      <conditions xsi:type="interaction:VElement" id="Tset" value="Ghost"/>
+    </hasStates>
+    <hasTransitions Event="mark" source="//@interactions.11/@hasStates.0" target="//@interactions.11/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.12/@hasStates.0" goal="//@interactions.12/@hasStates.1" name="CSMarkFoodInstance">
+    <hasStates to="//@interactions.12/@hasTransitions.0" id="R105">
+      <conditions xsi:type="interaction:LElement" id="FoodInstance" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.12/@hasTransitions.0" id="R106">
+      <conditions xsi:type="interaction:LElement" id="FoodInstance" value="mark"/>
+      <conditions xsi:type="interaction:VElement" id="Tset" value="Food"/>
+    </hasStates>
+    <hasTransitions Event="mark" source="//@interactions.12/@hasStates.0" target="//@interactions.12/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.13/@hasStates.0" goal="//@interactions.13/@hasStates.1" name="CSMarkGridInstance">
+    <hasStates to="//@interactions.13/@hasTransitions.0" id="R107">
+      <conditions xsi:type="interaction:LElement" id="GridInstance" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.13/@hasTransitions.0" id="R108">
+      <conditions xsi:type="interaction:LElement" id="GridInstance" value="mark"/>
+      <conditions xsi:type="interaction:VElement" id="Tset" value="Grid"/>
+    </hasStates>
+    <hasTransitions Event="mark" source="//@interactions.13/@hasStates.0" target="//@interactions.13/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.14/@hasStates.0" goal="//@interactions.14/@hasStates.1" name="CSMarkScoreInstance">
+    <hasStates to="//@interactions.14/@hasTransitions.0" id="R109">
+      <conditions xsi:type="interaction:LElement" id="ScoreInstance" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.14/@hasTransitions.0" id="R110">
+      <conditions xsi:type="interaction:LElement" id="ScoreInstance" value="mark"/>
+      <conditions xsi:type="interaction:VElement" id="Tset" value="Score"/>
+    </hasStates>
+    <hasTransitions Event="mark" source="//@interactions.14/@hasStates.0" target="//@interactions.14/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.15/@hasStates.0" goal="//@interactions.15/@hasStates.1" name="CSMovePacManInstance">
+    <hasStates to="//@interactions.15/@hasTransitions.0" id="R201">
+      <conditions xsi:type="interaction:LElement" id="PacManInstance" value="mark"/>
+    </hasStates>
+    <hasStates from="//@interactions.15/@hasTransitions.0" id="R202">
+      <conditions xsi:type="interaction:LElement" id="PacManInstance" value="move"/>
+      <conditions xsi:type="interaction:VElement" id="MLock" value="true"/>
+    </hasStates>
+    <hasTransitions Event="move" source="//@interactions.15/@hasStates.0" target="//@interactions.15/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.16/@hasStates.0" goal="//@interactions.16/@hasStates.1" name="CSMoveGhostInstance">
+    <hasStates to="//@interactions.16/@hasTransitions.0" id="R203">
+      <conditions xsi:type="interaction:LElement" id="GhostInstance" value="mark"/>
+    </hasStates>
+    <hasStates from="//@interactions.16/@hasTransitions.0" id="R204">
+      <conditions xsi:type="interaction:LElement" id="GhostInstance" value="move"/>
+      <conditions xsi:type="interaction:VElement" id="MLock" value="true"/>
+    </hasStates>
+    <hasTransitions Event="move" source="//@interactions.16/@hasStates.0" target="//@interactions.16/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.17/@hasStates.0" goal="//@interactions.17/@hasStates.1" name="CSMoveFoodInstance">
+    <hasStates to="//@interactions.17/@hasTransitions.0" id="R205">
+      <conditions xsi:type="interaction:LElement" id="FoodInstance" value="mark"/>
+    </hasStates>
+    <hasStates from="//@interactions.17/@hasTransitions.0" id="R206">
+      <conditions xsi:type="interaction:LElement" id="FoodInstance" value="move"/>
+      <conditions xsi:type="interaction:VElement" id="MLock" value="true"/>
+    </hasStates>
+    <hasTransitions Event="move" source="//@interactions.17/@hasStates.0" target="//@interactions.17/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.18/@hasStates.0" goal="//@interactions.18/@hasStates.1" name="CSMoveGridInstance">
+    <hasStates to="//@interactions.18/@hasTransitions.0" id="R207">
+      <conditions xsi:type="interaction:LElement" id="GridInstance" value="mark"/>
+    </hasStates>
+    <hasStates from="//@interactions.18/@hasTransitions.0" id="R208">
+      <conditions xsi:type="interaction:LElement" id="GridInstance" value="move"/>
+      <conditions xsi:type="interaction:VElement" id="MLock" value="true"/>
+    </hasStates>
+    <hasTransitions Event="move" source="//@interactions.18/@hasStates.0" target="//@interactions.18/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.19/@hasStates.0" goal="//@interactions.19/@hasStates.1" name="CSMoveScoreInstance">
+    <hasStates to="//@interactions.19/@hasTransitions.0" id="R209">
+      <conditions xsi:type="interaction:LElement" id="ScoreInstance" value="mark"/>
+    </hasStates>
+    <hasStates from="//@interactions.19/@hasTransitions.0" id="R210">
+      <conditions xsi:type="interaction:LElement" id="ScoreInstance" value="move"/>
+      <conditions xsi:type="interaction:VElement" id="MLock" value="true"/>
+    </hasStates>
+    <hasTransitions Event="move" source="//@interactions.19/@hasStates.0" target="//@interactions.19/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.20/@hasStates.0" goal="//@interactions.20/@hasStates.1" name="CSMarkPacManInstance">
+    <hasStates to="//@interactions.20/@hasTransitions.0" id="R301">
+      <conditions xsi:type="interaction:LElement" id="PacManInstance" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.20/@hasTransitions.0" id="R302">
+      <conditions xsi:type="interaction:LElement" id="PacManInstance" value="mark"/>
+      <conditions xsi:type="interaction:VElement" id="MLock" value="false"/>
+    </hasStates>
+    <hasTransitions Event="release" source="//@interactions.20/@hasStates.0" target="//@interactions.20/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.21/@hasStates.0" goal="//@interactions.21/@hasStates.1" name="CSMarkGhostInstance">
+    <hasStates to="//@interactions.21/@hasTransitions.0" id="R303">
+      <conditions xsi:type="interaction:LElement" id="GhostInstance" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.21/@hasTransitions.0" id="R304">
+      <conditions xsi:type="interaction:LElement" id="GhostInstance" value="mark"/>
+      <conditions xsi:type="interaction:VElement" id="MLock" value="false"/>
+    </hasStates>
+    <hasTransitions Event="release" source="//@interactions.21/@hasStates.0" target="//@interactions.21/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.22/@hasStates.0" goal="//@interactions.22/@hasStates.1" name="CSMarkFoodInstance">
+    <hasStates to="//@interactions.22/@hasTransitions.0" id="R305">
+      <conditions xsi:type="interaction:LElement" id="FoodInstance" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.22/@hasTransitions.0" id="R306">
+      <conditions xsi:type="interaction:LElement" id="FoodInstance" value="mark"/>
+      <conditions xsi:type="interaction:VElement" id="MLock" value="false"/>
+    </hasStates>
+    <hasTransitions Event="release" source="//@interactions.22/@hasStates.0" target="//@interactions.22/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.23/@hasStates.0" goal="//@interactions.23/@hasStates.1" name="CSMarkGridInstance">
+    <hasStates to="//@interactions.23/@hasTransitions.0" id="R307">
+      <conditions xsi:type="interaction:LElement" id="GridInstance" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.23/@hasTransitions.0" id="R308">
+      <conditions xsi:type="interaction:LElement" id="GridInstance" value="mark"/>
+      <conditions xsi:type="interaction:VElement" id="MLock" value="false"/>
+    </hasStates>
+    <hasTransitions Event="release" source="//@interactions.23/@hasStates.0" target="//@interactions.23/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.24/@hasStates.0" goal="//@interactions.24/@hasStates.1" name="CSMarkScoreInstance">
+    <hasStates to="//@interactions.24/@hasTransitions.0" id="R309">
+      <conditions xsi:type="interaction:LElement" id="ScoreInstance" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.24/@hasTransitions.0" id="R310">
+      <conditions xsi:type="interaction:LElement" id="ScoreInstance" value="mark"/>
+      <conditions xsi:type="interaction:VElement" id="MLock" value="false"/>
+    </hasStates>
+    <hasTransitions Event="release" source="//@interactions.24/@hasStates.0" target="//@interactions.24/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.25/@hasStates.0" goal="//@interactions.25/@hasStates.1" name="CSAddPacMan">
+    <hasStates to="//@interactions.25/@hasTransitions.0" id="S901">
+      <conditions xsi:type="interaction:LElement" id="GridInstance" isFocus="true" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="pacmanButton" value="active"/>
+      <conditions xsi:type="interaction:VElement" id="MLock" isNegative="true" value="true"/>
+    </hasStates>
+    <hasStates from="//@interactions.25/@hasTransitions.0" id="S902">
+      <conditions xsi:type="interaction:LElement" id="PacManInstance" value="add"/>
+    </hasStates>
+    <hasTransitions Event="place" source="//@interactions.25/@hasStates.0" target="//@interactions.25/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.26/@hasStates.0" goal="//@interactions.26/@hasStates.1" name="CSAddGhost">
+    <hasStates to="//@interactions.26/@hasTransitions.0" id="S903">
+      <conditions xsi:type="interaction:LElement" id="GridInstance" isFocus="true" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="ghostButton" value="active"/>
+      <conditions xsi:type="interaction:VElement" id="MLock" isNegative="true" value="true"/>
+    </hasStates>
+    <hasStates from="//@interactions.26/@hasTransitions.0" id="S904">
+      <conditions xsi:type="interaction:LElement" id="GhostInstance" value="add"/>
+    </hasStates>
+    <hasTransitions Event="place" source="//@interactions.26/@hasStates.0" target="//@interactions.26/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.27/@hasStates.0" goal="//@interactions.27/@hasStates.1" name="CSAddFood">
+    <hasStates to="//@interactions.27/@hasTransitions.0" id="S901">
+      <conditions xsi:type="interaction:LElement" id="GridInstance" isFocus="true" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="foodButton" value="active"/>
+      <conditions xsi:type="interaction:VElement" id="MLock" isNegative="true" value="true"/>
+    </hasStates>
+    <hasStates from="//@interactions.27/@hasTransitions.0" id="S902">
+      <conditions xsi:type="interaction:LElement" id="FoodInstance" value="add"/>
+    </hasStates>
+    <hasTransitions Event="place" source="//@interactions.27/@hasStates.0" target="//@interactions.27/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.28/@hasStates.0" goal="//@interactions.28/@hasStates.1" name="CSAddGrid">
+    <hasStates to="//@interactions.28/@hasTransitions.0" id="S903">
+      <conditions xsi:type="interaction:LElement" id="svgCanvas" isFocus="true" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="gridButton" value="active"/>
+      <conditions xsi:type="interaction:VElement" id="MLock" isNegative="true" value="true"/>
+    </hasStates>
+    <hasStates from="//@interactions.28/@hasTransitions.0" id="S904">
+      <conditions xsi:type="interaction:LElement" id="GridInstance" value="add"/>
+    </hasStates>
+    <hasTransitions Event="place" source="//@interactions.28/@hasStates.0" target="//@interactions.28/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.29/@hasStates.0" goal="//@interactions.29/@hasStates.1" name="CSAddScore">
+    <hasStates to="//@interactions.29/@hasTransitions.0" id="S901">
+      <conditions xsi:type="interaction:LElement" id="svgCanvas" isFocus="true" value="default"/>
+      <conditions xsi:type="interaction:IElement" id="scoreButton" value="active"/>
+      <conditions xsi:type="interaction:VElement" id="MLock" isNegative="true" value="true"/>
+    </hasStates>
+    <hasStates from="//@interactions.29/@hasTransitions.0" id="S902">
+      <conditions xsi:type="interaction:LElement" id="ScoreInstance" value="add"/>
+    </hasStates>
+    <hasTransitions Event="place" source="//@interactions.29/@hasStates.0" target="//@interactions.29/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.30/@hasStates.0" goal="//@interactions.30/@hasStates.1" name="CSDeletePacMan">
+    <hasStates to="//@interactions.30/@hasTransitions.0" id="S901">
+      <conditions xsi:type="interaction:LElement" id="PacManInstance" value="mark"/>
+    </hasStates>
+    <hasStates from="//@interactions.30/@hasTransitions.0" id="S902">
+      <conditions xsi:type="interaction:LElement" id="PacManInstance" value="rem"/>
+    </hasStates>
+    <hasTransitions Event="remove" source="//@interactions.30/@hasStates.0" target="//@interactions.30/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.31/@hasStates.0" goal="//@interactions.31/@hasStates.1" name="CSDeleteGhost">
+    <hasStates to="//@interactions.31/@hasTransitions.0" id="S903">
+      <conditions xsi:type="interaction:LElement" id="GhostInstance" value="mark"/>
+    </hasStates>
+    <hasStates from="//@interactions.31/@hasTransitions.0" id="S904">
+      <conditions xsi:type="interaction:LElement" id="GhostInstance" value="rem"/>
+    </hasStates>
+    <hasTransitions Event="remove" source="//@interactions.31/@hasStates.0" target="//@interactions.31/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.32/@hasStates.0" goal="//@interactions.32/@hasStates.1" name="CSDeleteFood">
+    <hasStates to="//@interactions.32/@hasTransitions.0" id="S901">
+      <conditions xsi:type="interaction:LElement" id="FoodInstance" value="mark"/>
+    </hasStates>
+    <hasStates from="//@interactions.32/@hasTransitions.0" id="S902">
+      <conditions xsi:type="interaction:LElement" id="FoodInstance" value="rem"/>
+    </hasStates>
+    <hasTransitions Event="remove" source="//@interactions.32/@hasStates.0" target="//@interactions.32/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.33/@hasStates.0" goal="//@interactions.33/@hasStates.1" name="CSDeleteGrid">
+    <hasStates to="//@interactions.33/@hasTransitions.0" id="S903">
+      <conditions xsi:type="interaction:LElement" id="GridInstance" value="mark"/>
+    </hasStates>
+    <hasStates from="//@interactions.33/@hasTransitions.0" id="S904">
+      <conditions xsi:type="interaction:LElement" id="GridInstance" value="rem"/>
+    </hasStates>
+    <hasTransitions Event="remove" source="//@interactions.33/@hasStates.0" target="//@interactions.33/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.34/@hasStates.0" goal="//@interactions.34/@hasStates.1" name="CSDeleteScore">
+    <hasStates to="//@interactions.34/@hasTransitions.0" id="S901">
+      <conditions xsi:type="interaction:LElement" id="ScoreInstance" value="mark"/>
+    </hasStates>
+    <hasStates from="//@interactions.34/@hasTransitions.0" id="S902">
+      <conditions xsi:type="interaction:LElement" id="ScoreInstance" value="rem"/>
+    </hasStates>
+    <hasTransitions Event="remove" source="//@interactions.34/@hasStates.0" target="//@interactions.34/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.35/@hasStates.0" goal="//@interactions.35/@hasStates.1" name="OpenPacManProperties">
+    <hasStates to="//@interactions.35/@hasTransitions.0" id="P101">
+      <conditions xsi:type="interaction:LElement" id="PacManInstance" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.35/@hasTransitions.0" id="P102">
+      <conditions xsi:type="interaction:IElement" id="cellPropertiesTab" value="visible"/>
+      <conditions xsi:type="interaction:IElement" id="namePropertie" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="xPos" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="yPos" value="update"/>
+    </hasStates>
+    <hasTransitions Event="context" source="//@interactions.35/@hasStates.0" target="//@interactions.35/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.36/@hasStates.0" goal="//@interactions.36/@hasStates.1" name="OpenGhostProperties">
+    <hasStates to="//@interactions.36/@hasTransitions.0" id="P103">
+      <conditions xsi:type="interaction:LElement" id="GhostInstance" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.36/@hasTransitions.0" id="P104">
+      <conditions xsi:type="interaction:IElement" id="cellPropertiesTab" value="visible"/>
+      <conditions xsi:type="interaction:IElement" id="namePropertie" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="xPos" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="yPos" value="update"/>
+    </hasStates>
+    <hasTransitions Event="context" source="//@interactions.36/@hasStates.0" target="//@interactions.36/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.37/@hasStates.0" goal="//@interactions.37/@hasStates.1" name="OpenFoodProperties">
+    <hasStates to="//@interactions.37/@hasTransitions.0" id="P105">
+      <conditions xsi:type="interaction:LElement" id="FoodInstance" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.37/@hasTransitions.0" id="P106">
+      <conditions xsi:type="interaction:IElement" id="cellPropertiesTab" value="visible"/>
+      <conditions xsi:type="interaction:IElement" id="namePropertie" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="xPos" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="yPos" value="update"/>
+    </hasStates>
+    <hasTransitions Event="context" source="//@interactions.37/@hasStates.0" target="//@interactions.37/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.38/@hasStates.0" goal="//@interactions.38/@hasStates.1" name="OpenGridProperties">
+    <hasStates to="//@interactions.38/@hasTransitions.0" id="P107">
+      <conditions xsi:type="interaction:LElement" id="GridInstance" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.38/@hasTransitions.0" id="P108">
+      <conditions xsi:type="interaction:IElement" id="cellPropertiesTab" value="visible"/>
+      <conditions xsi:type="interaction:IElement" id="namePropertie" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="xPos" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="yPos" value="update"/>
+    </hasStates>
+    <hasTransitions Event="context" source="//@interactions.38/@hasStates.0" target="//@interactions.38/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.39/@hasStates.0" goal="//@interactions.39/@hasStates.1" name="OpenScoreProperties">
+    <hasStates to="//@interactions.39/@hasTransitions.0" id="P109">
+      <conditions xsi:type="interaction:LElement" id="ScoreInstance" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.39/@hasTransitions.0" id="P110">
+      <conditions xsi:type="interaction:IElement" id="cellPropertiesTab" value="visible"/>
+      <conditions xsi:type="interaction:IElement" id="namePropertie" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="xPos" value="update"/>
+      <conditions xsi:type="interaction:IElement" id="yPos" value="update"/>
+    </hasStates>
+    <hasTransitions Event="context" source="//@interactions.39/@hasStates.0" target="//@interactions.39/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.40/@hasStates.0" goal="//@interactions.40/@hasStates.1" name="CloseProperties">
+    <hasStates to="//@interactions.40/@hasTransitions.0" id="P5">
+      <conditions xsi:type="interaction:IElement" id="cellPropertiesTab" value="visible"/>
+    </hasStates>
+    <hasStates from="//@interactions.40/@hasTransitions.0" id="P6">
+      <conditions xsi:type="interaction:IElement" id="cellPropertiesTab" value="notvisible"/>
+    </hasStates>
+    <hasTransitions Event="escape" source="//@interactions.40/@hasStates.0" target="//@interactions.40/@hasStates.1"/>
+  </interactions>
+  <interactions preCondition="//@interactions.41/@hasStates.0" goal="//@interactions.41/@hasStates.1" name="NewModel">
+    <hasStates to="//@interactions.41/@hasTransitions.0" id="E1">
+      <conditions xsi:type="interaction:IElement" id="newModel" isFocus="true" value="default"/>
+    </hasStates>
+    <hasStates from="//@interactions.41/@hasTransitions.0" id="E2">
+      <conditions xsi:type="interaction:OElement" id="3001" value="newModel"/>
+    </hasStates>
+    <hasTransitions Event="press" source="//@interactions.41/@hasStates.0" target="//@interactions.41/@hasStates.1"/>
+  </interactions>
+</interaction:Interactions>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layoutRel:RelLayoutDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:layoutRel="http://udem.iro.geodes.ca/layoutRel" name="MindMap">
+  <interactionStreams name="screen">
+    <layers name="toolbar" index="5" behaviour="overlap">
+      <components>
+        <element xsi:type="layoutRel:VisualContainer" id="upLeftToolbar" name="upLeftToolbar" isDefault="true" behaviour="horizontal">
+          <elements xsi:type="layoutRel:ButtonWidget" id="button01" name="button01" isDefault="true" ySize="60" foregroundColour="white" backgroundColour="#818181" ref="fas fa-dice-six"/>
+        </element>
+      </components>
+      <components>
+        <element xsi:type="layoutRel:VisualContainer" id="upRightToolbar" name="upRightToolbar" isDefault="true" behaviour="vertical">
+          <elements xsi:type="layoutRel:ButtonWidget" id="button02" name="button02" isDefault="true" ySize="60" foregroundColour="white" backgroundColour="#818181" ref="fas fa-dice-six"/>
+        </element>
+      </components>
+      <components>
+        <element xsi:type="layoutRel:VisualContainer" id="downLeftToolbar" name="downLeftToolbar" isDefault="true" behaviour="horizontal">
+          <elements xsi:type="layoutRel:ButtonWidget" id="button03" name="button03" isDefault="true" ySize="60" foregroundColour="white" backgroundColour="#818181" ref="fas fa-dice-six"/>
+        </element>
+      </components>
+      <components>
+        <element xsi:type="layoutRel:VisualContainer" id="downRightToolbar" name="downRightToolbar" isDefault="true" behaviour="horizontal">
+          <elements xsi:type="layoutRel:ButtonWidget" id="button04" name="button04" isDefault="true" ySize="60" foregroundColour="white" backgroundColour="#818181" ref="fas fa-dice-six"/>
+        </element>
+      </components>
+    </layers>
+    <layers name="canvas" index="0">
+      <components>
+        <element xsi:type="layoutRel:Canvas" id="23" name="canvas" isDefault="true" gridSizeX="5" gridSizeY="5" gridScaleX="1" gridScaleY="1"/>
+      </components>
+    </layers>
+  </interactionStreams>
+</layoutRel:RelLayoutDiagram>

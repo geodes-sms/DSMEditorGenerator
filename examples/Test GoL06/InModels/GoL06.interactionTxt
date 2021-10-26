@@ -1,7 +1,0 @@
-Run Transformation # S101 | f:I:playModelButton:_ # --- press --> # S102 | _:I:lightBlue:update , _:I:playModelButton:active, _:O:3002:runGoL  #
-Turn Light Off # S103 | f:I:lightButton:_ # --- press --> # S104 | _:I:lightBlue:update #
-
-CS Add Instance # S901 | f:L:svgCanvas:_ # --- select --> # S902 | _:L:Life:add #
-CS Rem Instance # S901 | f:L:Life:_ # --- select --> # S902 | _:L:Life:rem #
-
-End Transformation # P101 | _:I:playModelButton:active # --- _after50 --> # P102 | _:I:lightBlue:update , _:I:playModelButton:_ #

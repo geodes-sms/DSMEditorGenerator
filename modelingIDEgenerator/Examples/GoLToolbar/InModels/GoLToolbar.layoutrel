@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layoutRel:RelLayoutDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:layoutRel="http://udem.iro.geodes.ca/layoutRel" name="GoLToolbar">
+  <interactionStreams name="screen">
+    <layers name="toolbars" index="1" behaviour="horizontal">
+      <components>
+        <element xsi:type="layoutRel:VisualContainer" id="comonTools" name="comonTools" isDefault="true" behaviour="horizontal">
+          <elements xsi:type="layoutRel:ButtonWidget" id="playModelButton" name="playModelButton" isDefault="true" ySize="60" foregroundColour="white" backgroundColour="#818181" ref="fas fa-play"/>
+        </element>
+      </components>
+      <components>
+        <element xsi:type="layoutRel:VisualContainer" id="languageBar" name="languageBar" isDefault="true" behaviour="horizontal">
+          <elements xsi:type="layoutRel:ButtonWidget" id="liveCellButton" name="liveCellButton" isDefault="true" ySize="60" foregroundColour="black" backgroundColour="#818181" ref="fas fa-square-full"/>
+          <elements xsi:type="layoutRel:ButtonWidget" id="deadCellButton" name="deadCellButton" isDefault="true" ySize="60" foregroundColour="white" backgroundColour="#818181" ref="fas fa-square-full"/>
+        </element>
+      </components>
+    </layers>
+    <layers name="canvas">
+      <components>
+        <element xsi:type="layoutRel:Canvas" id="23" name="canvas" isDefault="true" gridSizeX="10" gridSizeY="10" gridScaleX="1" gridScaleY="1"/>
+      </components>
+    </layers>
+  </interactionStreams>
+</layoutRel:RelLayoutDiagram>

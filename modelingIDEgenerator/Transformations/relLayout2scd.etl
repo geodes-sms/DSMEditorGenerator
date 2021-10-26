@@ -1,0 +1,147 @@
+pre {
+	var counter = 0;
+}
+
+rule LayoutDiagram2SCD
+	transform sD : Layout!RelLayoutDiagram
+	to tD : SCCD!Diagram, tC : SCCD!Class, tSC : SCCD!Scxml, tSt : SCCD!Parallel,tAt : SCCD!Attribute , hackBaseState : SCCD!State, hackInitState : SCCD!State {
+	tD.class.add(tC);
+	tD.name = sD.name;
+	tD.description = "RunGhostGameofLifeEditor";
+	tC.name = "Interaction";
+	tC.attributes.add(tAt);
+	tAt.name = "context";
+	tAt.type = "String";
+	tC.scxml.add(tSC);
+	tSC.parallel.add(tSt);
+	tSt.id = "System";
+	tSC.initialState = tSt;
+//	tSt.states.addAll(sD.hasLayers.equivalents());
+	for (siS in sD.interactionStreams) {
+		for (slS in siS.layers) {
+			for (scS in slS.components) { 
+				tSt.states.add(scS.equivalent());	
+			}	
+		}
+	}
+// hack for parallel transitions
+	tSt.states.add(hackBaseState);
+	hackBaseState.states.add(hackInitState);
+	hackBaseState.id = "LayerControler";
+	hackBaseState.initial = hackInitState;
+	hackInitState.id ="h00";
+}
+
+rule Component2State 
+	transform sC : Layout!Component
+	to tBS : SCCD!State, tIS : SCCD!State {
+	tBS.id = "Layer"+sC.element.name;
+	tBS.states.add(tIS);
+	tBS.initial = tIS;
+	tIS.id = "s" + counter.toString();
+	counter++;
+	tIS.ielement = sC.closure();
+}
+
+rule Element2IElement
+	transform sE : Layout!Element
+	to tIE : SCCD!IElement {
+	tIE.id = sE.id;
+	tIE.value = "default";
+}
+
+rule ContainerElement2IElement
+	transform sE : Layout!ContainerElement
+	to tIE : SCCD!IElement {
+	tIE.id = sE.id;
+	tIE.value = sE.visibility.asString();
+}
+
+rule ElemSequence2IElement
+	transform sE : Layout!ElemSequence
+	to tIE : SCCD!IElement {
+	tIE.id = sE.id;
+	tIE.value = sE.visibility.asString();
+}
+
+rule ElemSelector2IElement
+	transform sE : Layout!ElemSelector
+	to tIE : SCCD!IElement {
+	tIE.id = sE.id;
+	tIE.value = sE.visibility.asString();
+}
+
+rule VisualContainer2IElement
+	transform sE : Layout!VisualContainer
+	to tIE : SCCD!IElement {
+	tIE.id = sE.id;
+	tIE.value = sE.visibility.asString();
+}
+
+rule VisualElement2IElement
+	transform sE : Layout!VisualElement
+	to tIE : SCCD!IElement {
+	tIE.id = sE.id;
+	tIE.value = "default";
+}
+
+rule Image2IElement
+	transform sE : Layout!Image
+	to tIE : SCCD!IElement {
+	tIE.id = sE.id;
+	tIE.value = "default";
+}
+
+rule Text2IElement
+	transform sE : Layout!Text
+	to tIE : SCCD!IElement {
+	tIE.id = sE.id;
+	tIE.value = "default";
+}
+
+rule Widget2IElement
+	transform sE : Layout!Widget
+	to tIE : SCCD!IElement {
+	tIE.id = sE.id;
+	tIE.value = "default";
+}
+
+rule TextWidget2IElement
+	transform sE : Layout!TextWidget
+	to tIE : SCCD!IElement {
+	tIE.id = sE.id;
+	tIE.value = "default";
+}
+
+rule ButtonWidget2IElement
+	transform sE : Layout!ButtonWidget
+	to tIE : SCCD!IElement {
+	tIE.id = sE.id;
+	tIE.value = "default";
+}
+
+rule Canvas2IElement
+	transform sE : Layout!Canvas
+	to tIE : SCCD!IElement {
+	tIE.id = sE.id;
+	tIE.value = "default";
+}
+
+operation Layout!Component closure() : List {
+	var c = new List(SCCD!IElement);
+	c = self.element.closure(c);
+	return c;
+}
+
+operation Layout!ContainerElement closure (c : List(SCCD!IElement)) : List {
+	c.add(self.equivalent());
+	for (e in self.elements){
+		c = e.closure(c);
+	}
+	return c;
+}
+
+operation Layout!Element closure (c : List(SCCD!IElement)) : List {
+	c.add(self.equivalent());
+	return c;
+}

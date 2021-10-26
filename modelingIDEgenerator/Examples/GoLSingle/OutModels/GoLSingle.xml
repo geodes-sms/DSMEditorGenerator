@@ -1,0 +1,232 @@
+<?xml version="1.1" ?>
+<diagram author="Vasco and Khady" name="GoLSingle">
+    <description>
+        RunGhostGameofLifeEditor
+    </description>
+    <inport name="ui" />
+        <class name="Interaction" default="false">
+            <attribute name="context" type="String"/>        
+            <constructor>
+                <body>
+                    <![CDATA[
+                    vElement = {};
+                    this.svg = scConstructor("23");
+                    document.getElementById("playModelButton").addEventListener("click", function() {GoLSingle.Interaction.prototype.triggerEvent(event,"playModelButton",'press');}, false);
+                    document.getElementById("23").addEventListener("click",function() {GoLSingle.Interaction.prototype.triggerEvent(event,event.target.id,'select');}, false);
+                    ]]>
+                </body>
+            </constructor>
+            <method name="triggerEvent">
+                <parameter name="evt">
+                </parameter>
+                <parameter name="type">
+                </parameter>
+                <parameter name="internalEvt">
+                </parameter>
+                <body>
+                    console.log(evt);
+                    var target = evt.target;
+                    // this is wrong but compiler gives error on ampersand, hack module corrects this
+                    if(type == null and evt.type != "message") {
+    //                    if(evt.target.nodeName.toLowerCase() === "div"){
+    //                        target = evt.target;
+    //                    }else{
+                        if(evt.target.nodeName.toLowerCase() === "a"){
+                                target = evt.target.parentElement;
+                            }else{if(evt.target.nodeName.toLowerCase() === "i"){
+                                    target = evt.target.parentElement.parentElement;
+                                }
+                            }
+                        }
+                        // this is wrong but compiler gives error on ampersand, hack module corrects this
+                        if(target != null and target.hasAttribute("id")){
+                            type = target.getAttribute("id");
+                        }
+                    }
+                    console.log(target.nodeName);
+                    console.log(type);
+                    console.log(internalEvt);
+                    console.log(controller.object_manager.instances[0].configuration);
+                    this.event=evt;
+                    vElement["focusEvent"] = evt;
+                    this.type = type;
+                    vElement["focusElement"] = evt.target;
+                    controller.addInput(new Event(internalEvt, "ui"), []);
+                    console.log(controller.object_manager.instances[0].configuration);
+                </body>
+            </method>
+            <method name="Lifeadd">
+            	<parameter name="parOne">
+            	</parameter>
+            	<parameter name="parTwo">
+            	</parameter>
+                <body>
+                    addLife.call(this,"23");
+                </body>
+            </method>
+            <method name="Liferem">
+            	<parameter name="parOne">
+            	</parameter>
+            	<parameter name="parTwo">
+            	</parameter>
+                <body>
+                    remLife.call(this,this.event.target);
+                </body>
+            </method>
+            <method name="runGoL">
+            	<parameter name="parOne">
+            	</parameter>
+            	<parameter name="parTwo">
+            	</parameter>
+                <body>
+                    simulateGoL.call(this);
+                </body>
+            </method>
+            <scxml initial="System">
+                <parallel id="System">
+                    
+                    
+                    
+                    <state id="LayercomonTools" initial="s0" >
+                        
+                        
+                        
+                        <state id="s0" >
+                            
+                            
+                            
+                            
+                            <transition event="press2" target="../s3" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenset.call(this, 'playModelButton','active');
+                                    this.runGoL();
+                                    ]]>
+                                </script>
+                                <raise event='_step'>
+                                    
+                                </raise>
+                            </transition>
+                        </state>
+                        <state id="s3" >
+                            
+                            
+                            
+                            
+                            <transition event="_finish6" target="../s0" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    screenset.call(this, 'playModelButton','default');
+                                    ]]>
+                                </script>
+                                <raise event='_step'>
+                                    
+                                </raise>
+                            </transition>
+                        </state>
+                        
+                    </state>
+                    <state id="Layercanvas" initial="s1" >
+                        
+                        
+                        
+                        <state id="s1" >
+                            
+                            
+                            
+                            
+                            <transition event="select0" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.Lifeadd("");
+                                    ]]>
+                                </script>
+                                <raise event='_step'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="select4" target="." >
+                                
+                                <script>
+                                    <![CDATA[
+                                    this.Liferem("");
+                                    ]]>
+                                </script>
+                                <raise event='_step'>
+                                    
+                                </raise>
+                            </transition>
+                        </state>
+                        
+                    </state>
+                    <state id="LayerControler" initial="h00" >
+                        
+                        
+                        
+                        <state id="h00" >
+                            
+                            
+                            
+                            
+                            <transition event="select" target="." cond="this.type == 'svgCanvas' and INSTATE('/System/Layercanvas/s1')" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    console.log( "RULE : CSAddInstance" );
+                                    ]]>
+                                </script>
+                                <raise event='select0'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="press" target="." cond="this.type == 'playModelButton' and INSTATE('/System/LayercomonTools/s0')" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    console.log( "RULE : RunTransfromation" );
+                                    ]]>
+                                </script>
+                                <raise event='press2'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="select" target="." cond="this.type == 'Life' and INSTATE('/System/Layercanvas/s1')" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    console.log( "RULE : CSRemInstance" );
+                                    ]]>
+                                </script>
+                                <raise event='select4'>
+                                    
+                                </raise>
+                            </transition>
+                            <transition event="_finish" target="." cond="INSTATE('/System/LayercomonTools/s3')" >
+                                
+                                <script>
+                                    <![CDATA[
+                                    console.log( "RULE : EndTransformation" );
+                                    ]]>
+                                </script>
+                                <raise event='_finish6'>
+                                    
+                                </raise>
+                            </transition>
+                        </state>
+                        
+                    </state>
+                    <state id="LayerController" initial="controller" >
+                        <state id="controller">
+                        </state>
+                    </state>
+                    
+                </parallel>
+                
+            </scxml>
+        </class>
+</diagram>
+
+

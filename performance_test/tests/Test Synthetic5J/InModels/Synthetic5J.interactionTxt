@@ -1,5 +1,0 @@
-R1 # C1 | f:I:E6:_,_:I:E6:_,_:I:E5:_,_:L:E1:_,_:L:E2:_,_:L:E3:_,_:I:E4:_,_:L:E6:_,_:L:E5:_,_:L:E4:_ # --- event --> # E1 | _:L:E5:add,_:I:E6:_,_:I:E9:_,_:I:E3:1,_:L:E5:rem,_:I:E10:1 #
-R2 # C2 | f:L:E6:_,_:L:E7:_,_:I:E3:_,_:L:E8:_,_:I:E10:1,_:I:E3:1,_:I:E10:1,_:L:E6:_,_:I:E7:_ # --- event --> # E2 | _:L:E3:update,_:L:E3:add,_:I:E9:_,_:I:E6:_,_:L:E9:update,_:L:E5:update,_:L:E6:update #
-R3 # C3 | f:L:E10:_,_:L:E5:_,_:I:E6:_ # --- event --> # E3 | _:L:E6:add,_:L:E6:rem,_:L:E3:add,_:L:E8:rem,_:L:E7:add,_:L:E9:update #
-R4 # C4 | f:I:E5:_,_:I:E3:_,_:L:E8:_,_:L:E3:_,_:I:E8:_,_:I:E10:_,_:I:E1:_ # --- event --> # E4 | _:L:E9:rem,_:L:E5:add,_:I:E10:1,_:L:E7:rem,_:L:E6:rem #
-R5 # C5 | f:I:E8:_,_:L:E1:_,_:I:E10:2 # --- event --> # E5 | _:I:E10:1,_:I:E8:_,_:I:E7:_ #

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--script defer src="https://use.fontawesome.com/releases/v5.7.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Vasco Sousa">
+
+    <title>AToMPM</title>
+    <style type="text/css">
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .vertical{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;    
+        }
+        
+        .horizontal{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;    
+        }
+        
+        .overlap *{
+            position: absolute;
+        }
+        
+        .textWidget{
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            background-color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        
+        .buttonWidget a{
+            float: left;
+            text-align: center;
+            padding: 12px 16px;
+            transition: all 0.3s ease;
+            font-size: 30px;
+        }
+                
+        .buttonWidget a:hover {
+            background-color: #000;
+        }
+        
+        .buttonWidget.active {
+            background-color: dodgerblue;
+        }
+        
+        .buttonWidget.active :hover{
+            background-color:darkblue;
+        }
+        
+        .text{
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            display: block;
+            transition: 0.3s;
+        }
+        
+        .image{
+        }
+        
+        .notVisible{
+            display: none;
+        }
+        
+    .toolbar{
+        z-index: 5;
+        position: fixed;                       
+        top: 0px;
+        left: 0px;
+    }
+    .button01{
+        background-color: #818181;
+        color: white;
+        height: 60px;
+    }
+    
+    .button01 a{
+        color: white;
+    }
+    .space{
+    	width: 200px;
+        height: 60px;
+    }
+    
+    .space a{
+    }
+    .upLeftToolbar{
+        z-index: 5;
+    }
+    .toolbar02{
+        z-index: 5;
+        position: fixed;                       
+        top: 0px;
+        right: 0px;
+    }
+    .button02{
+        background-color: #818181;
+        color: white;
+        height: 60px;
+    }
+    
+    .button02 a{
+        color: white;
+    }
+    .upRightToolbar{
+        z-index: 5;
+    }
+    .toolbar03{
+        z-index: 5;
+        position: fixed;                       
+        bottom: 0px;
+        left: 0px;
+    }
+    .button03{
+        background-color: #818181;
+        color: white;
+        height: 60px;
+    }
+    
+    .button03 a{
+        color: white;
+    }
+    .downLeftToolbar{
+        z-index: 5;
+    }
+    .toolbar04{
+        z-index: 5;
+        position: fixed;                       
+        bottom: 0px;
+        right: 0px;
+    }
+    .button04{
+        background-color: #818181;
+        color: white;
+        height: 60px;
+    }
+    
+    .button04 a{
+        color: white;
+    }
+    .downRightToolbar{
+        z-index: 5;
+    }
+    .canvas{
+        z-index: 0;
+        position: fixed;                       
+        top: 0px;
+        left: 0px;
+    }
+    
+
+        .cellPropertiesTab{
+          height: 100%;
+          width: 250px;
+          position: fixed;
+          top: 0px;
+          right: 0px;
+          background-color: #515151;
+          overflow-x: hidden;
+          transition: 0.5s;
+        }
+
+    </style>
+</head>
+
+<script src="./javascript_sccd_runtime/libs/HackTimer.js"></script>
+<script src="./javascript_sccd_runtime/libs/utils.js"></script>
+<script src="./javascript_sccd_runtime/libs/svg.js"></script>
+<script src="./javascript_sccd_runtime/libs/ui.js"></script>
+<script src="./javascript_sccd_runtime/statecharts_core.js"></script>
+<script src="./mapinglib.js"></script>
+<script src="./MindMap.js"></script>
+
+<body>
+    <div id="toolbar" class="none toolbar container">
+        <div id="upLeftToolbar" class="upLeftToolbar horizontal container">
+            <div id="button01" class="button01 buttonWidget">
+                <a href="#"><i class="fas fa-dice-one"></i></a>
+            </div>
+            <a id="space" " class="space image" href="#"><i class=" notVisible"></i></a>
+        </div>
+    </div>
+    <div id="toolbar02" class="none toolbar02 container">
+        <div id="upRightToolbar" class="upRightToolbar vertical container">
+            <div id="button02" class="button02 buttonWidget">
+                <a href="#"><i class="fas fa-dice-two"></i></a>
+            </div>
+        </div>
+    </div>
+    <div id="toolbar03" class="none toolbar03 container">
+        <div id="downLeftToolbar" class="downLeftToolbar horizontal container">
+            <div id="button03" class="button03 buttonWidget">
+                <a href="#"><i class="fas fa-dice-three"></i></a>
+            </div>
+        </div>
+    </div>
+    <div id="toolbar04" class="none toolbar04 container">
+        <div id="downRightToolbar" class="downRightToolbar horizontal container">
+            <div id="button04" class="button04 buttonWidget">
+                <a href="#"><i class="fas fa-dice-six"></i></a>
+            </div>
+        </div>
+    </div>
+    <div id="canvas" class="none canvas container">
+        <div id="23" class="canvas container" data-gridSizeX=5 data-gridSizeY=5>
+            <script>
+                controller = new MindMap.Controller(new JsEventLoop());
+                controller.start();
+                console.log('echo');
+            </script>
+        </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <!--p class="lead">Icons from Font Awesome used and colors altered under creative commons licence</p-->
+        </div>
+      </div>
+    </div>
+
+<script>
+</script>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <!--script src="vendor/jquery/jquery.min.js"></script-->
+    <!--script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script-->
+
+  </body>
+
+</html>
+

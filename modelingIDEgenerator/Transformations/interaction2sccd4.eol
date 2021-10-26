@@ -1,0 +1,446 @@
+// Current version
+// recursion version with multistep suport
+// velement suport
+// TODO generalize operations
+// TODO cleanup unused variables
+// TODO remove hack for SCCD
+
+
+
+//   .oooooo..o     .                          .
+//  d8P'    `Y8   .o8                        .o8
+//  Y88bo.      .o888oo  .oooo.   oooo d8b .o888oo
+//   `ºY8888o.    888   `P  )88b  `888""8P   888
+//       `ºY88b   888    .oP"888   888       888
+//  oo     .d8P   888 . d8(  888   888       888 .
+//  8ºº88888P'    "888º `Y888ºº8o d888b      º888º
+//
+//     oooo
+//     `888
+//      888 .oo.    .ooooo.  oooo d8b  .ooooo.
+//      888PºY88b  d88' `88b `888""8P d88' `88b
+//      888   888  888ooo888  888     888ooo888
+//      888   888  888    .o  888     888    .o
+//     o888o o888o `Y8bod8P' d888b    `Y8bod8P'
+//
+
+import "interaction2scReteEval.eol";
+import "interaction2scRuleEval.eol";
+
+//Comented out because native deep clone sucks
+//var emfTool = new Native("org.eclipse.epsilon.emc.emf.tools.EmfTool");
+//var ecoreUtil = emfTool.ecoreUtil;
+
+var controll = new AUX!Controll;
+
+var pointRef : AUX!QueueElem; //global debugging var // remove in final commit
+
+//   .oooooo..o               .                          
+//  d8P'    `Y8             .o8                          
+//  Y88bo.       .ooooo.  .o888oo oooo  oooo  oo.ooooo.  
+//   `"Y8888o.  d88' `88b   888   `888  `888   888' `88b 
+//       `"Y88b 888ooo888   888    888   888   888   888 
+//  oo     .d8P 888    .o   888 .  888   888   888   888 
+//  8""88888P'  `Y8bod8P'   º888º  `V88VºV8P'  888bod8P' 
+//                                             888       
+//                                            o888o      
+//
+
+//Initial setup
+
+//var conjunctionString = " and "; // Python // make sure it is 5 characters long
+//&& is giving error at compile time : TODO check why
+//var conjunctionString = " \&\&  "; // javascript // make sure it is 5 characters long
+var conjunctionString = " and "; // javascript // make sure it is 5 characters long
+
+//var selfObject = "self."; //Python
+var selfObject = "this."; // javascript
+
+var rule;
+var beta : AUX!BetaNode;
+var alpha : AUX!AlphaNodeParam;
+var alphaLayer : AUX!AlphaNodeLayer;
+var message : String;
+var nextStateID : Integer = 0;
+var nextTStateID : Integer = 0;
+//hack for parallel transitions
+var nextTransitionID : Integer = 0;
+var controllerState : SCCD!State = SCCD!State.allInstances().selectOne(i|"h00" = i.id);
+
+var token : AUX!Token;
+var tokenConfig = new AUX!TokenConfiguration;
+controll.tokenConfigurations.add(tokenConfig);
+
+var canvas : LAYOUT!Canvas = LAYOUT!Canvas.allInstances().first();
+
+var nullRun = true;
+
+
+
+//  oooooooooo.               o8o  oooo        .o8  
+//  `888'   `Y8b              `"'  `888       º888  
+//   888     888 oooo  oooo  oooo   888   .oooo888  
+//   888oooo888' `888  `888  `888   888  d88' `888  
+//   888    `88b  888   888   888   888  888   888  
+//   888    .88P  888   888   888   888  888   888  
+//  o888bood8P'   `V88V"V8P' o888o o888o `Y8bod88Pº 
+//
+
+//build initial RETElike network
+// O(n^2)
+//one beta node per interaction rule
+//one alpha node per globaly diferent lhs element
+//connect alphas and betas as per lhs requirements
+"Building initial RETE like Network".println();
+
+var nullAlpha:AUX!AlphaNodeParam = new AUX!AlphaNodeParam;
+nullAlpha.tokenIndex = tokenConfig.tokens.size();
+nullAlpha.ruleParameterID = "null";
+token = new AUX!Token;
+tokenConfig.tokens.add(token);
+controll.parameters.add(nullAlpha);
+var alphaParent:AUX!AlphaParent;
+alphaParent = new AUX!AlphaParent;
+alphaParent.ruleParameterID = nullAlpha.ruleParameterID;
+controll.alphaParents.add(alphaParent);
+alphaParent.alphas.add(nullAlpha);
+
+for (r in INTERACTION!AtomicInteraction) {
+	rule = new AUX!Rule;
+	rule.name = r.name;
+	rule.rulePtr = r;
+	//one beta per rule
+	beta = new AUX!BetaNode;
+	beta.rule = rule;
+	controll.rules.add(rule);
+	controll.desisions.add(beta);
+	//add stub token
+	token = new AUX!Token;
+	beta.tokenIndex = tokenConfig.tokens.size();
+	tokenConfig.tokens.add(token);
+	//if we consider the VElements in the alphas
+	//for(e in rule.rulePtr.preCondition.conditions){
+	//if we relegate VElements to guards
+	for(e in rule.rulePtr.preCondition.conditions.flatten().reject(c : INTERACTION!VElement | true)){
+		//issues with the token indexes
+		//get alphaNode // if it did not exist before it will return a newly created one
+		alpha = e.findAsParamIn(controll.parameters);
+		//add stub token //this should be inside findAsParamIn // pass tokenConfig as parameter for this
+		if(alpha.tokenIndex = -1){
+			token = new AUX!Token;
+			alpha.tokenIndex = tokenConfig.tokens.size();
+			tokenConfig.tokens.add(token);
+		}
+		//alpha parent is an alpha of the element itself to simplify access to dirty alphas
+		//not using it might be more efficient on elements with many possible values ?
+		alphaParent = controll.alphaParents.selectOne(a|a.ruleParameterID = alpha.ruleParameterID);
+		if(alphaParent = null){
+			alphaParent = new AUX!AlphaParent;
+			alphaParent.ruleParameterID = alpha.ruleParameterID;
+			controll.alphaParents.add(alphaParent);
+		}
+		alphaParent.alphas.add(alpha);
+		
+		//get and connect to  Layer alphaNode // if it did not exist before it will return a newly created one
+		//alphaLayer = betaOR just placed as alpha to skip one step of computation
+		alphaLayer = alpha.getLayerAsParamIn(controll.parameters);
+		//add stub token //this should be inside findLayerAsParamIn // pass tokenConfig as parameter for this
+		if(alphaLayer.tokenIndex = -1){
+			token = new AUX!Token;
+			alphaLayer.tokenIndex = tokenConfig.tokens.size();
+			tokenConfig.tokens.add(token);
+		}
+		//connect alphas to relevant beta node
+		alpha.toBeta.add(beta);
+		//might need to check if it already exists //maybe should check if they where already connected
+		alphaLayer.toBeta.add(beta);
+		
+		//here because layers do not count!
+		beta.positiveValue++;
+	}
+	//add any additional layers as betas to the rules
+
+	//TODO check what is execuded here //I think it is to add effects as alphas to deal with rules without conditions
+	if(false) {
+		// do not use as is ; not up to date, no consederation to VElements
+		for(e in rule.rulePtr.hasStates.collect(s|s.conditions).flatten().reject(c : INTERACTION!OElement | true).asSet().excludingAll(rule.rulePtr.preCondition.conditions)) {
+			var alID;
+			if(e.type().name <> "LElement"){
+//			if(SCCD!IElement.allInstances().selectOne(i|e.id = i.id) <> null){
+				alID = SCCD!IElement.allInstances().selectOne(i|e.id = i.id).eContainer().eContainer().id;
+			}else{ // if at first you don"t succeed try and try again"
+				alID = SCCD!IElement.allInstances().selectOne(i|canvas.id = i.id).eContainer().eContainer().id;
+			}
+			alphaLayer = controll.parameters.selectOne(p : AUX!AlphaNodeLayer|p.layerID = alID);
+			if(alphaLayer == null){
+				alphaLayer = new AUX!AlphaNodeLayer;
+				alphaLayer.layerID = alID;
+				//add stub token
+				token = new AUX!Token;
+				alphaLayer.tokenIndex = tokenConfig.tokens.size();
+				tokenConfig.tokens.add(token);
+				controll.parameters.add(alphaLayer);
+				alphaLayer.toBeta.add(beta);
+			}
+		}	
+	}else{
+		if (beta.positiveValue = 0) {
+			nullAlpha.toBeta.add(beta);
+		}
+	}
+}
+
+"RETE like Network built".println();
+
+
+
+//  ooooo              o8o      .   
+//  `888'              `"'    .o8   
+//   888  ooo. .oo.   oooo  .o888oo 
+//   888  `888P"Y88b  `888    888   
+//   888   888   888   888    888   
+//   888   888   888   888    888 . 
+//  o888o o888o o888o o888o   "888º 
+//
+
+// generate initial state configuration to apply rules
+// each new rule will create a potencialy new state configuration
+// if it does it will be enqueued for evaluation
+
+//var stateConfig = new OrderedSet(AUX!StateRef);
+
+"Generating initial state configuration".println();
+
+var stateMap : Map;
+var configurationsMap : Map;
+//var key : String;
+var stateConfig = new AUX!QueueElem;
+var ref : AUX!StateRef;
+var s : SCCD!State;
+var newElem : AUX!ElemRef;
+
+for (e in SCCD!Parallel) { //this should be just one, we loop them for security
+	for (l in e.states){ // a parallel state hasorthogonal components (or layers in our encoding)
+		s = l.states.selectOne(i|true); // maybe change this to loop pre existing statechart
+		nextStateID++; //count the ids of the initial states // could be done by query e.states.size() ...
+		ref = new AUX!StateRef;
+		ref.layer = l.id;
+		ref.layerPtr = l;
+		ref.id = s.id;
+		ref.statePtr = s;
+		stateConfig.states.add(ref);
+//		stateConfig.dirtyStates.add(ref);
+		for(elem in s.ielement){
+			newElem = new AUX!ElemRef;
+			newElem.id = elem.id;
+			//rename this in SCCD
+			if (elem.value = "" or elem.value = null) {
+				newElem.value = "default";
+			}else{
+				newElem.value = elem.value;
+			}
+			newElem.elemPtr = elem;
+			newElem.inState = ref;
+			stateConfig.elements.add(newElem);
+			stateConfig.dirtyElements.add(newElem);
+		}
+		//put states in a map for later indexing
+		//stateMap.put(ref.hasElements.asString(),ref); //eclipse verrsion not good in headless execution
+		stateMap.put(ref.hasElements.collect(i| i.id).asString() + ref.hasElements.collect(i| i.value).asString(),ref);
+	}
+}
+
+tokenConfig.tokenID = stateConfig;
+stateConfig.tokenConfiguration = tokenConfig;
+//plce initial state configuration in evaluation history
+configurationsMap.put(stateConfig.states.collect(i| i.id).asString(), stateConfig);
+
+
+"Initial state configuration generated".println();
+
+controll.globalQueue.add(stateConfig);
+
+
+
+//  oooooooooooo                                 
+//  `888'     `8                                 
+//   888         oooo    ooo  .ooooo.   .ooooo.  
+//   888oooo8     `88b..8P'  d88' `88b d88' `"Y8 
+//   888    "       Y888'    888ooo888 888       
+//   888       o  .o8"'88b   888    .o 888   .o8 
+//  o888ooooood8 o88'   888o `Y8bod8P' `Y8bod8P' 
+//
+
+
+"Roundrobin interaction processing".println();
+
+var ruleList : Sequence<AUX!Rule>;
+
+while (not controll.globalQueue.isEmpty()){
+	var currentQueueElem = controll.globalQueue.first();
+	currentQueueElem.printQF("old 0 ");
+	var newQueueElem : AUX!QueueElem;
+	ruleList = currentQueueElem.RETERun(controll);
+	for(r in ruleList){
+		currentQueueElem.printQF(r.name + " 1 ");
+		newQueueElem = r.applyRule(currentQueueElem, stateMap, configurationsMap);
+		currentQueueElem.printQF(r.name + " 2 ");
+		if(newQueueElem <> null){
+			newQueueElem.printQF(r.name + " 3 ");
+			controll.globalQueue.add(newQueueElem);
+		}
+		////controll.globalQueue.size().errln();
+	}
+	controll.globalQueue.remove(currentQueueElem);
+}
+
+//roundrobin the rules
+//O(n^4) for rules application
+//O(n^3) for rete
+
+"Interactions processed".println();
+
+//       88      88                             .o8
+//      .8'     .8'                            "888
+//     .8'     .8'   .ooooo.  ooo. .oo.    .oooo888
+//    .8'     .8'   d88' `88b `888P"Y88b  d88' `888
+//   .8'     .8'    888ooo888  888   888  888   888
+//  .8'     .8'     888    .o  888   888  888   888
+//  88      88      `Y8bod8P' o888o o888o `Y8bod88P"
+//
+
+
+
+
+
+
+//   .o88o. o8o                    .o8
+//   888 `º `"'                   º888
+//  o888oo oooo  ooo. .oo.    .oooo888
+//   888   `888  `888P"Y88b  d88' `888
+//   888    888   888   888  888   888
+//   888    888   888   888  888   888
+//  o888o  o888o o888o o888o `Y8bod88P"
+//
+//                     ooooooooo.
+//                     `888   `Y88.
+//   .oooo.    .oooo.o  888   .d88' .oooo.   oooo d8b
+//  `P  )88b  d88(  º8  888ooo88P' `P  )88b  `888""8P
+//   .oPº888  `"Y88b.   888         .oPº888   888
+//  d8(  888  o.  )88b  888        d8(  888   888
+//  `Y888ºº8o 8""888P' o888o       `Y888ºº8o d888b
+//
+
+//operations to identify elements
+operation INTERACTION!IElement findAsParamIn(params:OrderedSet(AUX!AlphaNodeParam)) : AUX!AlphaNodeParam {
+	var a = params.selectOne(p: AUX!AlphaNodeParam|p.ruleParameterID = self.id and p.value = self.value and p.isNegative = self.isNegative);
+	if(a = null){
+		a = new AUX!AlphaNodeParam;
+		a.ruleParameterID = self.id;
+		if (self.value = "" or self.value = null) {
+			a.value = "default";
+		}else{
+			a.value = self.value;
+		}
+		a.isNegative = self.isNegative;
+		params.add(a);
+	}
+	return a;
+}
+
+operation INTERACTION!OElement findAsParamIn(params:OrderedSet(AUX!AlphaNodeParam)) : AUX!AlphaNodeParam {
+	var a = params.selectOne(p: AUX!AlphaNodeParam|p.ruleParameterID = self.id and p.isNegative = self.isNegative);
+	if(a = null){
+		a = new AUX!AlphaNodeParam;
+		a.ruleParameterID = self.id;
+		a.isNegative = self.isNegative;
+		params.add(a);
+	}
+	return a;
+}
+
+operation INTERACTION!LElement findAsParamIn(params:OrderedSet(AUX!AlphaNodeParam)) : AUX!AlphaNodeParam {
+	var a = params.selectOne(p: AUX!AlphaNodeParam|p.ruleParameterID = self.id and p.isNegative = self.isNegative);
+	if(a = null){
+		a = new AUX!AlphaNodeParam;
+		a.ruleParameterID = canvas.id;
+		a.value = "default";
+//		a.value = self.id;  //comment this out
+		a.isNegative = self.isNegative;
+		params.add(a);
+	}
+	return a;
+}
+
+operation INTERACTION!VElement findAsParamIn(params:OrderedSet(AUX!AlphaNodeParam)) : AUX!AlphaNodeParam {
+	var a = params.selectOne(p: AUX!AlphaNodeParam|p.ruleParameterID = self.id and p.isNegative = self.isNegative);
+	if(a = null){
+		a = new AUX!AlphaNodeParam;
+		a.ruleParameterID = self.id;
+		a.value = self.value; 
+		a.isNegative = self.isNegative;
+		params.add(a);
+	}
+	return a;
+}
+
+operation AUX!AlphaNodeParam getLayerAsParamIn(params:OrderedSet(AUX!AlphaNodeParam)) : AUX!AlphaNodeLayer {
+	var al = self.inLayer;
+	if(al == null){
+		//make sure the base statechart has all referenced elements
+		var alID = SCCD!IElement.allInstances().selectOne(i|self.id = i.id).eContainer().eContainer().id;
+		al = params.selectOne(p : AUX!AlphaNodeLayer|p.layerID = alID);
+		if(al == null){
+			al = new AUX!AlphaNodeLayer;
+			al.layerID = alID;
+			params.add(al);
+		}
+		al.hasParams.add(self);
+	}
+	return al;
+}
+
+//  oooooooooo.             .o8                            
+//  `888'   `Y8b           "888                            
+//   888      888  .ooooo.  888oooo. oooo  oooo  .oooooooo 
+//   888      888 d88' `88b d88' `88b`888  `888 888' `88b  
+//   888      888 888ooo888 888   888 888   888 888   888  
+//   888     d88' 888    .o 888   888 888   888 `88bod8P'  
+//  o888bood8P'   `Y8bod8P' `Y8bod8P' `V88V"V8P'`8oooooo.  
+//                                              d"     YD  
+//                                              "Y88888P'  
+// 
+
+operation AUX!QueueElem printQF(head:String){ // for debugging purpouses. remove in final commit
+/*return
+head.err();
+for(e in self.elements){
+	if(e.inState <> null){
+		e.inState.id.err("\t");
+	}else{
+		"HERE".err(" ");
+	}
+}
+"".errln();
+head.err();
+for(i in self.dirtyElements){
+	i.id.err("\t");
+	i.value.err("-");
+}
+"".errln();
+
+/*	for(e in self.elements){
+		if(e.id = "23"){
+			e.elemPtr.asString().substring(45,51).err(head);
+			e.id.err(" ");
+			if(e.inState <> null){
+				e.inState.id.err(" ");
+				e.inState.asString().substring(45,51).err(" ");
+			}else{
+				"HERE".err(" ");
+			}
+			e.value.errln(" ");
+		}
+	"".errln();
+	}*/
+}
