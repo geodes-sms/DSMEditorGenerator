@@ -134,6 +134,6 @@ The file **generatesccd2mermaid.egl** is similar to the conversion of the intern
 But instead of generating a new statechart with the mapping details refined into it and the contextual information of the layout removed, it simply generates a visual representation of the Statechart in Mermaid.
 
 
-![Modeling IDE Generator architecture Diagram](MIDEGArchitecture.png)
+![Modeling IDE Generator architecture Diagram](MIDEGArchitecture.drawio.png)
 
 and text here 
