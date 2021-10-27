@@ -133,7 +133,6 @@ For this a simple string replacement operation is performed. In Linux this utili
 The file **generatesccd2mermaid.egl** is similar to the conversion of the internal SC into SCCD, in how it navigates the Statechart.
 But instead of generating a new statechart with the mapping details refined into it and the contextual information of the layout removed, it simply generates a visual representation of the Statechart in Mermaid.
 
-
 ![Modeling IDE Generator architecture Diagram](MIDEGArchitecture.drawio.png)
 
 and text here 
