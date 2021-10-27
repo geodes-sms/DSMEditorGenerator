@@ -20,7 +20,7 @@ The inclusion of **epsilon-1.5.1-kitchensink.jar** allows for the execution of E
 
 ## 5. ANT
 
-A task scripting utility that in conjunction with **epsilon-1.5.1-kitchensink.jar** allows fro the scripted execution of Epsilon code from the command line.
+A task scripting utility that in conjunction with **epsilon-1.5.1-kitchensink.jar** allows for the scripted execution of Epsilon code from the command line.
 
 ## 6. SCCD compiler
 
@@ -133,85 +133,6 @@ For this a simple string replacement operation is performed. In Linux this utili
 The file **generatesccd2mermaid.egl** is similar to the conversion of the internal SC into SCCD, in how it navigates the Statechart.
 But instead of generating a new statechart with the mapping details refined into it and the contextual information of the layout removed, it simply generates a visual representation of the Statechart in Mermaid.
 
+![Modeling IDE Generator architecture Diagram](MIDEGArchitecture.drawio.png)
 
-```mermaid
-graph LR %%comments
-%%subgraph System
-IDUser((user))
-subgraph Editors
- IDE01LayoutEdit(Layout Editor)
- IDE02InteractionEdit( Interaction Editor)
- IDE03MappingEdit(Mapping Editor) 
-end
- IDLayoutModel[[Layout Model]]
- IDInteractionModel[[InteractionModel]]
- IDMappingModel[[Mapping Model]]
-subgraph Launcher
- IDRun(Run.bat/Run.sh)
-end
-IDAntS( build.xml )
-subgraph Epsilon
- IDGenInt( Generate Interaction )
-    click IDGenInt alert "language : ETL/EOL <br> file : interaction2interaction.etl/interactionParser.eol <br> in : Interaction/txt <br> out : Interaction"
- IDGenMap( Generate Mapping )
-    click IDGenInt alert "language : /EOL <br> file : mappingParser.eol <br> in : txt <br> out : Map"
- IDInt( InterfaceGen)
-    click IDInt alert "language : EGL <br> file : generateInterfaceHtml.egl <br> in : Layout <br> out : Interface HTML"
- IDSC1( GenSC )
-    click IDSC1 alert "language : ETL <br> file : relLayout2scd.etl <br> in : Layout <br> out : SC"
- subgraph Refinement
-  IDSC2( RefineSC )
-    click IDSC2 alert "language : EOL <br> file : interaction2sccd4.eol <br> in : Layout, Interaction, AUX <br> out : SC, AUX"
-  IDSC3( RefactorSC/OrStates )
-    click IDSC3 alert "language : EOL <br> file : hackOrState.eol <br> in : SC <br> out : SC"
- end
- IDSC4( GenMermaid <br> documentation )
-    click IDSC5 alert "language : EGL <br> file : generatesccd2mermaid.egl <br> in : SC <br> out : Mermaid"
- subgraph SCCD
-  IDSC5( GenSCCD )
-    click IDSC4 alert "language : EGL <br> file : generatesccd2javascript.egl <br> in : SC, Map <br> out : SCCD"
-  IDSCCD[SCCD compiler]
-    click IDSCCD alert "in : ScCD, Map <br> out : sccd.js"
- end
-end
-subgraph Dependencies 0
- IDEclipse[Eclipse]
-end
-subgraph Dependencies
- IDKS[Epsilon Kitchen Sink]
- IDPy[Python]
- IDAnt[Ant]
-end
-IDAntS -.-|depends| IDAnt
-IDJava[Java]
-IDUser --> IDRun
-IDUser --> IDE02InteractionEdit
-IDUser --> IDE01LayoutEdit
-IDUser --> IDE03MappingEdit
-IDE01LayoutEdit --- IDLayoutModel -.-|input| IDInt
-IDE02InteractionEdit --- IDInteractionModel -.-|input| IDGenInt
-IDE03MappingEdit --- IDMappingModel -.-|input| IDGenMap
-IDE01LayoutEdit -.-|depends| IDEclipse
-IDE02InteractionEdit -.-|depends| IDEclipse
-IDEclipse -.-|depends| IDJava
-IDRun -->|launches| IDAntS
-IDAntS ---|launches| IDGenInt -.-|depends| IDKS
-IDAntS ---|launches| IDGenMap -.-|depends| IDKS
-IDAntS ---|launches| IDInt -.-|depends| IDKS
-IDAntS ---|launches| IDSC1 -.-|depends| IDKS
-IDAntS ---|launches| IDSC2 -.-|depends| IDKS
-IDAntS ---|launches| IDSC3 -.-|depends| IDKS
-IDAntS ---|launches| IDSC4 -.-|depends| IDKS
-IDAntS ---|launches| IDSC5 -.-|depends| IDKS
-IDAntS ---|launches| IDSCCD -.-|depends| IDPy
-IDKS -.-|depends| IDJava
-%% class/classDef
-classDef blue fill:#08f,stroke:#fff;
-class IDJava,IDPy,IDAnt,IDEclipse blue
-classDef green fill:#1a6508,stroke:#fff;
-class IDRun,IDAntS,IDSC1,IDSC2,IDSC3,IDSC4,IDSC5,IDGenInt,IDGenMap,IDInt green
-classDef dblue fill:#000080,stroke:#fff;
-class IDSCCD,IDKS dblue
-%%end
-```
 and text here 

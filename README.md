@@ -146,4 +146,4 @@ required models.
   internal events as a conclusion of the "simulation")
 	
 ## Development documentation
-The file documentation.md has the detailed information of the architecture of the provided tools, a description of each file and their purpose in the overall tool.  
+The file [documentation.md](documentation.md) has the detailed information of the architecture of the provided tools, a description of each file and their purpose in the overall tool.

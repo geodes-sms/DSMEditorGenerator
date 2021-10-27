@@ -1,0 +1,4 @@
+#add epsilot to detectable languages ?
+*.eol linguist-detectable
+*.etl linguist-detectable
+*.egl linguist-detectable
