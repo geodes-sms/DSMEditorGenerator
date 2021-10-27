@@ -6,8 +6,9 @@
 
 #exclude generated code
 eclipseEditorsWorkspace/** linguist-generated
-OutModels/** linguist-generated
+modelingIDEgenerator/Examples/*/OutModels/* linguist-generated
+modelingIDEgenerator/Examples/*/OutModels/*.js -linguist-generated
 
 #exclude external code
-javascript_sccd_runtime/** linguist-vendored
+modelingIDEgenerator/Examples/*/OutModels/javascript_sccd_runtime/** linguist-vendored
 epsilon-1.5.1-kitchensink.jar linguist-vendored
