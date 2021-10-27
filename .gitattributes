@@ -1,4 +1,13 @@
+#configure github linguist to correctly classifu project
 #add epsilot to detectable languages ?
 *.eol linguist-detectable
 *.etl linguist-detectable
 *.egl linguist-detectable
+
+#exclude generated code
+eclipseEditorsWorkspace/** linguist-generated
+OutModels/** linguist-generated
+
+#exclude external code
+javascript_sccd_runtime/** linguist-vendored
+epsilon-1.5.1-kitchensink.jar linguist-vendored
