@@ -20,7 +20,7 @@ The inclusion of **epsilon-1.5.1-kitchensink.jar** allows for the execution of E
 
 ## 5. ANT
 
-A task scripting utility that in conjunction with **epsilon-1.5.1-kitchensink.jar** allows fro the scripted execution of Epsilon code from the command line.
+A task scripting utility that in conjunction with **epsilon-1.5.1-kitchensink.jar** allows for the scripted execution of Epsilon code from the command line.
 
 ## 6. SCCD compiler
 
